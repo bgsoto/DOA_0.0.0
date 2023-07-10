@@ -4,15 +4,21 @@ using UnityEngine;
 
 public class ItemHolder : MonoBehaviour
 {
-    // Start is called before the first frame update
-    public Transform Irotate;
 
-
+    public bool onPerson = false;
+    
     private void Update()
     {
-        
-        transform.rotation = Irotate.rotation;
-
-
+        Vector3 newPosition = new Vector3(0f, 0f, 0f);
+        SetNewPosition(newPosition);
     }
+    void SetNewPosition(Vector3 newPosition)
+    {
+        if (onPerson == true)
+        {
+           // Vector3 newPosition = new Vector3(0f, 0f, 0f);
+            this.transform.position = newPosition;
+        }
+    }
+
 }

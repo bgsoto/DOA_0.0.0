@@ -5,14 +5,9 @@ using UnityEngine;
 public class Item : MonoBehaviour
 
 {
-
-    public string itemName;
-    public bool beingHeld;
+    GameObject yougameobject;
+    Item yourscriptcomponent;
    
-
-
-
-
 
 
 

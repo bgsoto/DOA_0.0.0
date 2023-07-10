@@ -1,21 +1,37 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-namespace lists
-
+class inventory:MonoBehaviour
+ 
 {
+    public GameObject[] itemslots;
 
-    public class Inventory
+
+
+    private void Start()
     {
-
-        List<string> invList = new List <string>();
-
-
-
-
+        
+        itemslots = new GameObject[4]; //itemslots variable array gameobject can hold a limit of 4 gameobjects
 
     }
+
+    private void Update()
+    {
+        
+    }
+
+
+
+
+
+
+
+
+
+
+
 
 
 
