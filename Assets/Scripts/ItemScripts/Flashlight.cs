@@ -4,34 +4,36 @@ using UnityEngine;
 using UnityEngine.Experimental.GlobalIllumination;
 
 public class Flashlight : MonoBehaviour
-
-
 {
+
     public GameObject point, spot;
     public bool on;
-    //[SerializeField] Flashlight flashlightscript;
-
-
 
     private void Start()
     {
-       
+     
+        
+        FlashLightPosition();
         on = false;
     }
+
     public void Update()
+
     {
-        
-        // collects mouse input to turn light off/on
+       
+
         if (Input.GetKeyDown(KeyCode.Mouse0))
+
         {
 
             if (on == false) 
+
             {
 
                 on = true;
                 TurnOn();
             
-            
+          
             }
 
             else
@@ -46,12 +48,6 @@ public class Flashlight : MonoBehaviour
     }
 
 
-
-    
-
-
-
-
     public void TurnOn()
     {
         point.SetActive(true);
@@ -64,5 +60,14 @@ public class Flashlight : MonoBehaviour
         spot.SetActive(false);
     }
 
-    
+    void FlashLightPosition()
+
+    {
+        
+            transform.localPosition = new Vector3(0.08f, -0.1f, 0.17f);
+            transform.localRotation = Quaternion.Euler(-95f, -86.91f, 0f);
+        
+    }
+
+
 }

@@ -1,41 +1,53 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
+//using Unity.PlasticSCM.Editor.WebApi;
+using Unity.VisualScripting;
 using UnityEngine;
 
-public class ParentDetector :  MonoBehaviour
+public class ParentDetector : MonoBehaviour
 {
 
-    public Flashlight Flashlightscript;
-
+    [SerializeField] public Flashlight Flashlightscript;
+    [SerializeField] public Tablet tabletScript;
+    [SerializeField] public Wrench wrenchScript;
+    [SerializeField] public JerryCan jerrycanScript;
     
-    // Start is called before the first frame update
-    void Start()
+    
+  
+    [SerializeField] public List<MonoBehaviour> scriptList;
+
+
+    private void Start()
     {
+       
+       scriptList = new List<MonoBehaviour>();
         
-   
-    
-    
+
     }
-
-
     private void Update()
     {
+        MonoBehaviour[] itemScripts = GetComponentsInChildren<MonoBehaviour>(true);
+       
 
-        ParentCheck();
-    
-    
+        foreach (MonoBehaviour script in itemScripts)
+            {
+                script.enabled = true;
+                if (!script.gameObject.activeSelf ) 
+                    
+                    {
+                            
+                      script.enabled = false;
+            
+                    }
+            }
+
+       
+
+
     }
 
-    public void ParentCheck()
-    {
-        if (transform.parent != null)
-        {
-            Flashlightscript.enabled = true;
+    
 
-        }
-        else
-        {
-            Flashlightscript.enabled = false;
-        }
-    }
 }
+

@@ -2,7 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
-using UnityEditor.Search;
+//using UnityEditor.Search;
 using UnityEngine;
 using UnityEngine.EventSystems;
 
@@ -20,16 +20,19 @@ public class PlayerInteraction : MonoBehaviour
     public GameObject parentLoc;
     public GameObject childLoc;
     public GameObject equippedItem;
+    public MonoBehaviour[] scriptArray;
     RaycastHit hit;
 
 
     private void Start()
     {
         itemslots = new GameObject[4];
+        scriptArray = new MonoBehaviour[4];
     }
 
     void Update()
     {
+
         DropKey();
         
         //project raycast onto item your looking at
@@ -114,9 +117,7 @@ public class PlayerInteraction : MonoBehaviour
                 itemslots[0].gameObject.transform.SetParent(parentLoc.transform, true);
                 itemslots[0].gameObject.GetComponent<Rigidbody>().isKinematic = true;
                 itemslots[0].gameObject.GetComponent<BoxCollider>().enabled = false;
-                itemslots[0].gameObject.transform.localPosition = new Vector3(0f, 0f, 0f);
-                itemslots[0].gameObject.transform.localScale = Vector3.one;
-                itemslots[0].gameObject.transform.localRotation = Quaternion.Euler(-95, 0, -95);
+              
                 
             }
 
@@ -138,9 +139,7 @@ public class PlayerInteraction : MonoBehaviour
                 itemslots[1].gameObject.transform.SetParent(parentLoc.transform, true);
                 itemslots[1].gameObject.GetComponent<Rigidbody>().isKinematic = true;
                 itemslots[1].gameObject.GetComponent<BoxCollider>().enabled = false;
-                itemslots[1].gameObject.transform.localPosition = new Vector3(0f, 0f, 0f);
-                itemslots[1].gameObject.transform.localScale = Vector3.one;
-                itemslots[1].gameObject.transform.localRotation = Quaternion.Euler(-95, 0, -95);
+               
                
                 Debug.Log(" pressed 2 ");
 
@@ -167,10 +166,7 @@ public class PlayerInteraction : MonoBehaviour
                 itemslots[2].gameObject.transform.SetParent(parentLoc.transform, true);
                 itemslots[2].gameObject.GetComponent<Rigidbody>().isKinematic = true;
                 itemslots[2].gameObject.GetComponent<BoxCollider>().enabled = false;
-                itemslots[2].gameObject.transform.localPosition = new Vector3(0f, 0f, 0f);
-                itemslots[2].gameObject.transform.localScale = Vector3.one;
-                itemslots[2].gameObject.transform.localRotation = Quaternion.Euler(-95, 0, -95);
-                //equippedItem = itemslots[0].gameObject;
+              
 
             }
 
@@ -195,10 +191,7 @@ public class PlayerInteraction : MonoBehaviour
                 itemslots[3].gameObject.transform.SetParent(parentLoc.transform, true);
                 itemslots[3].gameObject.GetComponent<Rigidbody>().isKinematic = true;
                 itemslots[3].gameObject.GetComponent<BoxCollider>().enabled = false;
-                itemslots[3].gameObject.transform.localPosition = new Vector3(0f, 0f, 0f);
-                itemslots[3].gameObject.transform.localScale = Vector3.one;
-                itemslots[3].gameObject.transform.localRotation = Quaternion.Euler(-95, 0, -95);
-               // equippedItem = itemslots[0].gameObject;
+               
 
             }
 
@@ -277,14 +270,13 @@ public class PlayerInteraction : MonoBehaviour
         Currentlyhelditem.gameObject.transform.SetParent(parentLoc.transform, true);
         Currentlyhelditem.gameObject.GetComponent<Rigidbody>().isKinematic = true;
         Currentlyhelditem.gameObject.GetComponent<BoxCollider>().enabled = false;
-        Currentlyhelditem.gameObject.transform.localPosition = new Vector3(0f, 0f, 0f);
-        Currentlyhelditem.gameObject.transform.localScale = Vector3.one;
-        Currentlyhelditem.gameObject.transform.localRotation = Quaternion.Euler(-95, 0, -95);
+        
 
 
 
     }
-
-
    
+
+
+
 }
