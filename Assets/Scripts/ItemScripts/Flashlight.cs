@@ -44,7 +44,12 @@ public class Flashlight : MonoBehaviour
             }
             
         }
-
+       
+            if (transform.parent == true)
+            {
+            FlashLightPosition();
+            }
+        
     }
 
 

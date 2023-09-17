@@ -33,6 +33,7 @@ public class ParentDetector : MonoBehaviour
         foreach (MonoBehaviour script in itemScripts)
             {
                 script.enabled = true;
+
                 if (!script.gameObject.activeSelf ) 
                     
                     {
@@ -40,6 +41,7 @@ public class ParentDetector : MonoBehaviour
                       script.enabled = false;
             
                     }
+
             }
 
        

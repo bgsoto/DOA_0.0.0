@@ -11,6 +11,15 @@ public class Tablet : MonoBehaviour
         gameObject.transform.localRotation = Quaternion.Euler(-10.8f, -181.17f, -91f);
         gameObject.transform.localScale = new Vector3(1f, 1f, 3f);
     }
+    private void Update()
+    {
+        if (transform.parent == true)
+        {
+            gameObject.transform.localPosition = new Vector3(0.227f, -0.04f, 0.083f);
+            gameObject.transform.localRotation = Quaternion.Euler(-10.8f, -181.17f, -91f);
+            gameObject.transform.localScale = new Vector3(1f, 1f, 3f);
+        }
+    }
 }
 
    

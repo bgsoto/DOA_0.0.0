@@ -28,25 +28,9 @@ public class engineRepair : MonoBehaviour
     private void Update()
     {
 
-        if (Input.GetKey(KeyCode.E) && inRepairDistance == true)
-        {
-            
-            repairProgressBar.SetActive(true);
-            repairTime = repairSpeed / Time.timeScale;
-            repairProgress += Time.deltaTime * repairTime;
-            Meter();
-            repairing = true;
-            OnEngineRepairCompletion();
-        }
+        EngineRepairSystem();
 
-
-
-        else
-        {
-            repairProgressBar.SetActive(false);
-
-        }
-        
+   
 
     }
      
@@ -55,6 +39,7 @@ public class engineRepair : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Player"))
         {
+
             inRepairDistance = true;
            // Debug.Log("in position");
         }
@@ -66,12 +51,13 @@ public class engineRepair : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Player"))
         {
+
             inRepairDistance = false;
             //Debug.Log("out position");
         }
     }
 
-    private void Meter()
+    private void MeterClamp()
     {
 
         float clampedPosition = Mathf.Clamp(repairProgress, 0f, 3.85f);
@@ -87,6 +73,25 @@ public class engineRepair : MonoBehaviour
             Debug.Log("machine fixed");
             engineRepaired = true;
             repairProgressBar.SetActive(false);
+        }
+    }
+
+    private void EngineRepairSystem()
+    {
+        if (Input.GetKey(KeyCode.E) && inRepairDistance == true)
+        {
+
+            repairProgressBar.SetActive(true);
+            repairTime = repairSpeed / Time.timeScale;
+            repairProgress += Time.deltaTime * repairTime;
+            MeterClamp();
+            repairing = true;
+            OnEngineRepairCompletion();
+        }
+        else
+        {
+            repairProgressBar.SetActive(false);
+
         }
     }
 
