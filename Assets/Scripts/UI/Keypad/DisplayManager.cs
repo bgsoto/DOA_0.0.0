@@ -16,7 +16,7 @@ public class DisplayManager : MonoBehaviour
     private void Awake()
     {
         /*
-        * Subscribes to the events in Key script.
+        * Subscribes to events in Key script.
         * Subscribes to OnWrongCoor event in ActivateRig script.
         * Invokes: AddDigit(), RemoveDigit(), EnterCode(), ResetDisplay()
         */
@@ -118,11 +118,18 @@ public class DisplayManager : MonoBehaviour
     }
 
     public void EnterCode()
-    {       
+    {
+        /* For each string in the list (displayTextList) concatenate to enterCoordinates string. */
         foreach (TMP_Text text in displayTextList) { enteredCoordinates += text.text; }
+
+        /*
+        * Calls all functions subscribed to this event.
+        * Subscription: ActivateRig script.
+        */
         OnCodeEntered?.Invoke(enteredCoordinates);
     }
 
+    /* Reset the values of the DisplayManager. */
     private void ResetDisplay()
     {
         foreach (TMP_Text text in displayTextList) { text.text = ""; }

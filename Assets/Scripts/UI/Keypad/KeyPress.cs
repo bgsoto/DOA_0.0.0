@@ -12,6 +12,7 @@ public class KeyPress : MonoBehaviour
 
     private void Awake()
     {
+        /* Gets all TMP_Text objects from this object's childern. */
         keyText = GetComponentInChildren<TMP_Text>().text;
     }
 
@@ -26,6 +27,10 @@ public class KeyPress : MonoBehaviour
 
     public void PressEnter()
     {
+        /*
+        * Calls all functions subscribed to this event.
+        * Subscription: DisplayManager.
+        */
         OnEnterPressed?.Invoke();
     }
 

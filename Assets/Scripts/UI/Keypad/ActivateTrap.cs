@@ -9,6 +9,10 @@ public class ActivateRig : MonoBehaviour
     
     private void Awake()
     {
+        /*
+        * Subscribes to event in DisplayManager script.
+        * Invokes: EnableRig()
+        */
         DisplayManager.OnCodeEntered += EnableRig;
     }
 
@@ -20,6 +24,10 @@ public class ActivateRig : MonoBehaviour
         }
         else
         {
+            /*
+            * Calls all functions subscribed to this event.
+            * Subscription: DisplayManager.
+            */
             OnWrongCoor?.Invoke();
         }
     }
