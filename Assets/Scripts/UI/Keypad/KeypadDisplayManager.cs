@@ -2,9 +2,11 @@ using System;
 using TMPro;
 using UnityEngine;
 
-public class DisplayManager : MonoBehaviour
+public class KeypadDisplayManager : MonoBehaviour
 {
-    public static Action<string> OnCodeEntered;
+    [SerializeField] private string dimensionalCoordinates;
+
+    public static Action OnCorrectCoor;
 
     private TMP_Text[] displayTextList;
     
@@ -13,29 +15,20 @@ public class DisplayManager : MonoBehaviour
     private bool displayIsEmpty = true;
     private string enteredCoordinates = "";
 
-    private void Awake()
+    private void OnEnable()
     {
-        /*
-        * Subscribes to events in Key script.
-        * Subscribes to OnWrongCoor event in ActivateRig script.
-        * Invokes: AddDigit(), RemoveDigit(), EnterCode(), ResetDisplay()
-        */
+        /* Subscribes to event(s). */
         KeyPress.OnKeyPressed += AddDigit;
         KeyPress.OnReturnPressed += RemoveDigit;
         KeyPress.OnEnterPressed += EnterCode;
-        ActivateRig.OnWrongCoor += ResetDisplay;
     }
 
     private void OnDisable()
     {
-        /* 
-         * Unsubscribes from events in Key script. 
-         * Unsubscribes from event in ActivateRig script.
-         */
+        /* Unsubscribes from event(s). */
         KeyPress.OnKeyPressed -= AddDigit;
         KeyPress.OnReturnPressed -= RemoveDigit;
         KeyPress.OnEnterPressed -= EnterCode;
-        ActivateRig.OnWrongCoor -= ResetDisplay;
     }
 
     private void Start()
@@ -122,14 +115,18 @@ public class DisplayManager : MonoBehaviour
         /* For each string in the list (displayTextList) concatenate to enterCoordinates string. */
         foreach (TMP_Text text in displayTextList) { enteredCoordinates += text.text; }
 
-        /*
-        * Calls all functions subscribed to this event.
-        * Subscription: ActivateRig script.
-        */
-        OnCodeEntered?.Invoke(enteredCoordinates);
+        if (enteredCoordinates == dimensionalCoordinates)
+        {
+            /* Subscription: UIManager script. */
+            OnCorrectCoor?.Invoke();
+        }
+        else
+        {
+            ResetDisplay();
+        }
     }
 
-    /* Reset the values of the DisplayManager. */
+    /* Reset values. */
     private void ResetDisplay()
     {
         foreach (TMP_Text text in displayTextList) { text.text = ""; }

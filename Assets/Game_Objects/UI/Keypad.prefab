@@ -146,9 +146,8 @@ GameObject:
   - component: {fileID: 4782179962259813738}
   - component: {fileID: 1288583446244654863}
   - component: {fileID: 8941839707593227810}
-  - component: {fileID: 7284597765495664134}
   m_Layer: 5
-  m_Name: Keypad
+  m_Name: Key_Group
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -224,19 +223,6 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
---- !u!114 &7284597765495664134
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 623667527645142956}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 65cccb6088360f54ba23f0bd27c836bb, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  dimensionalCoordinates: 111111111111
 --- !u!1 &773840445907803424
 GameObject:
   m_ObjectHideFlags: 0
@@ -425,6 +411,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 820e3173e0443da4c9181ed9a6e17b1c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  dimensionalCoordinates: 111111111111
 --- !u!1 &1219385096689597604
 GameObject:
   m_ObjectHideFlags: 0
