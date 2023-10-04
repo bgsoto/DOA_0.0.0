@@ -10,6 +10,7 @@ TagManager:
   - Wrench
   - Datapad
   - Fuel
+  - Anomaly
   layers:
   - Default
   - TransparentFX

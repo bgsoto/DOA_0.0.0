@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
@@ -16,6 +14,7 @@ public class PlayerMovement : MonoBehaviour
     
     private float horizontalInput;
     private float verticalInput;
+    private bool inMenu = false;
     private bool isGrounded;
     private float rayLength;
 
@@ -27,23 +26,42 @@ public class PlayerMovement : MonoBehaviour
         rayLength = (playerHeight * 0.5f) + 0.2f;
     }
 
+
+    private void OnEnable()
+    {
+        /* Subscribes to event(s). */
+        UIManager.DisablePlayerControls += PlayerInput;
+    }
+
+    private void OnDisable()
+    {
+        /* Unsubscribes from event(s). */
+        UIManager.DisablePlayerControls += PlayerInput;
+    }
+
     private void Update()
     {
-        /* 
-         * Shoots Raycast from the center of the object and determines if it hits an another object 
-         * with the layer mask of "Ground". 
-         */
-        isGrounded = Physics.Raycast(transform.position, Vector3.down, rayLength, groundLayer);
-       
-        GetInput();
-        SpeedControl();
+        if (!inMenu)
+        {
+            /* 
+             * Shoots Raycast from the center of the object and determines if it hits an another object 
+             * with the layer mask of "Ground". 
+             */
+            isGrounded = Physics.Raycast(transform.position, Vector3.down, rayLength, groundLayer);
 
-        /* 
-         * Applies drag if the object is on the ground.
-         * Shorthand if-statement Syntax: <value> = <condition> ? <valueIfTrue> : <valueIfFalse>
-         */
-        rb.drag = isGrounded ? groundDrag : 0;
+            GetInput();
+            SpeedControl();
+
+            /* 
+             * Applies drag if the object is on the ground.
+             * Shorthand if-statement Syntax: <value> = <condition> ? <valueIfTrue> : <valueIfFalse>
+             */
+            rb.drag = isGrounded ? groundDrag : 0;
+        }
     }
+
+    /* Pauses player input when a menu is displayed */
+    private void PlayerInput(bool value) { inMenu = value; }
 
     private void FixedUpdate()
     {
@@ -53,8 +71,8 @@ public class PlayerMovement : MonoBehaviour
     private void GetInput()
     {
         /* Retrives input from WASD, Arrow Keys, or Joystick. */
-        horizontalInput = Input.GetAxis("Horizontal");
-        verticalInput = Input.GetAxis("Vertical");
+        horizontalInput = Input.GetAxisRaw("Horizontal");
+        verticalInput = Input.GetAxisRaw("Vertical");
     }
 
     private void SpeedControl()

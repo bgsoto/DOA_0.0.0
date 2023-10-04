@@ -1,5 +1,4 @@
-using System.Collections;
-using System.Collections.Generic;
+using System;
 using UnityEngine;
 
 public class PlayerCamera : MonoBehaviour
@@ -12,21 +11,33 @@ public class PlayerCamera : MonoBehaviour
     [SerializeField] private float sensitivityX;
     [Range(500, 1500)]
     [SerializeField] private float sensitivityY;
-    
+
+    private bool inMenu = false;
     private float rotationX;
     private float rotationY;
 
-    private void Start()
+    private void OnEnable()
     {
-        /* Locks cursor in the middle of the screen and hides the cursor. */
-        Cursor.lockState = CursorLockMode.Locked;
-        Cursor.visible = false;
+        /* Subscribes to event(s). */
+        UIManager.DisablePlayerControls += PlayerInput;
+    }
+
+    private void OnDisable()
+    {
+        /* Unsubscribes from event(s). */
+        UIManager.DisablePlayerControls += PlayerInput;
     }
 
     private void Update()
     {
-        Camera();
+        if (!inMenu)
+        {
+            Camera();
+        }
     }
+
+    /* Pauses player input when a menu is displayed */
+    private void PlayerInput(bool value) { inMenu = value; }
 
     private void Camera()
     {

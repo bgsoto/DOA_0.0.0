@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 8731787275736789434}
   m_Layer: 0
   m_Name: Object
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -116,11 +116,12 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4210634275450052090}
-  - component: {fileID: 7051818525689803888}
-  - component: {fileID: 7285984970593318620}
+  - component: {fileID: 6453178884332398278}
+  - component: {fileID: 8949043957732210511}
+  - component: {fileID: 5338437075114938544}
   m_Layer: 0
   m_Name: Player
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -141,9 +142,9 @@ Transform:
   - {fileID: 5032204577334425951}
   - {fileID: 443001923730974851}
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!54 &7051818525689803888
+--- !u!54 &6453178884332398278
 Rigidbody:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -170,7 +171,7 @@ Rigidbody:
   m_Interpolate: 1
   m_Constraints: 112
   m_CollisionDetection: 1
---- !u!114 &7285984970593318620
+--- !u!114 &8949043957732210511
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -184,10 +185,22 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   moveSpeed: 7
   playerHeight: 2
-  groundDrag: 5
+  groundDrag: 12
   groundLayer:
     serializedVersion: 2
     m_Bits: 8
+--- !u!114 &5338437075114938544
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1199833588195082063}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 260359b057d7e94479dcf662107f030b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1353593402900437731
 GameObject:
   m_ObjectHideFlags: 0
