@@ -11,6 +11,11 @@ public class GameStart : MonoBehaviour
 
     public void LoadScene()
     {
+        if(sceneToLoad == null || sceneToLoad == "")
+        {
+            Debug.Log("No Scene set on the " +gameObject.name + " gameobject.");
+            return;
+        }
         SceneManager.LoadScene(sceneToLoad);
     }
 }
