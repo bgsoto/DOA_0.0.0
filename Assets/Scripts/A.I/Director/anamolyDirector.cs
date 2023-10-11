@@ -25,6 +25,15 @@ public class anamolyDirector : MonoBehaviour
 
     public GameObject Lure;
 
+    public GameObject MonsterStateMachine;
+    
+    public bool atCheckpoint;
+
+    public Transform[] rooms;
+    public int chosenRoom;
+    
+
+
 
 
     
@@ -41,7 +50,6 @@ public class anamolyDirector : MonoBehaviour
 
         PlayerLocNode();
 
-
     }
 
     public void PlayerLocNode()
@@ -56,14 +64,9 @@ public class anamolyDirector : MonoBehaviour
             playerlocationpins.Add(playerLocation);
 
             Lure.transform.position = playerlocationpins[listIndex].position;
-            
-          
 
             //reset timer
             elapsedTime = 0f;
-
-            
-            
 
             Debug.Log(playerlocationpins[listIndex]);
 
@@ -74,13 +77,17 @@ public class anamolyDirector : MonoBehaviour
 
     public void UpdateInitialLurePosition()
     {
-
         listIndex++;
+    }
 
-
+    public void nextRoom()
+    {
 
     }
 
-
+    public void randRoom()
+    {
+       // chosenRoom = Random.Range(0, rooms.Length);
+    }
     
 }
