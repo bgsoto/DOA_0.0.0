@@ -545,8 +545,6 @@ GameObject:
   - component: {fileID: 386838888}
   - component: {fileID: 386838887}
   - component: {fileID: 386838892}
-  - component: {fileID: 386838891}
-  - component: {fileID: 386838893}
   - component: {fileID: 386838894}
   m_Layer: 0
   m_Name: Monster
@@ -643,23 +641,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &386838891
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 386838886}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7fce0832b5fd7854c9cb8bcfb28599c3, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  location: {fileID: 329593881}
-  agent: {fileID: 386838892}
-  directorHolder: {fileID: 2095136200}
-  playerLoc: {fileID: 0}
-  Lure: {fileID: 0}
 --- !u!195 &386838892
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -682,26 +663,6 @@ NavMeshAgent:
   m_BaseOffset: 1
   m_WalkableMask: 4294967295
   m_ObstacleAvoidanceType: 4
---- !u!114 &386838893
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 386838886}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9d2703aa7c44946448575a0a8918f0b2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  coneAngle: 45
-  maxRange: 10
-  targetLayer:
-    serializedVersion: 2
-    m_Bits: 0
-  obstacleLayer:
-    serializedVersion: 2
-    m_Bits: 64
 --- !u!114 &386838894
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -726,8 +687,6 @@ MonoBehaviour:
   maxKillRange: 2
   coneAngle: 45
   maxDetectDistance: 10
-  timeSearching: 5
-  searchTimer: 0
   playerDetected: 0
 --- !u!1 &449174246
 GameObject:
@@ -1569,7 +1528,6 @@ GameObject:
   - component: {fileID: 1426777344}
   - component: {fileID: 1426777343}
   - component: {fileID: 1426777342}
-  - component: {fileID: 1426777346}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -1665,19 +1623,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 18
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1426777346
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1426777341}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b646fbd4139f8bd4c89774468bcf2afd, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  playerLocation: {fileID: 0}
 --- !u!1 &1722318308
 GameObject:
   m_ObjectHideFlags: 0
