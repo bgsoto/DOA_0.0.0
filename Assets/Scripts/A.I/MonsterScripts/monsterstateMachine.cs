@@ -18,6 +18,7 @@ public class MonsterStateMachine : MonoBehaviour
     [SerializeField] public float maxKillRange = 5f;
     [SerializeField] public float coneAngle = 45f;
     [SerializeField] public float maxDetectDistance = 10f;
+    [SerializeField] public float elevation = 2.0f;
     [SerializeField] private bool playerDetected = false;
 
     public enum AnomalyState
@@ -167,11 +168,16 @@ public class MonsterStateMachine : MonoBehaviour
         float angleIncrement = coneAngle / numRays;
         Vector3 forwardDirection = transform.forward; // Get the forward direction
 
+        float elevation = 2.0f;
+
         for (int i = 0; i < numRays; i++)
         {
             // Calculate the direction of the ray based on angle
             float angle = i * angleIncrement - coneAngle / 2;
             Vector3 direction = Quaternion.AngleAxis(angle, transform.up) * forwardDirection;
+
+            // Elevate the ray by adding a value to the y-coordinate of the origin
+            Vector3 rayOrigin = new Vector3(transform.position.x, transform.position.y + elevation, transform.position.z);
 
             RaycastHit hit;
             if (Physics.Raycast(transform.position, direction, out hit, maxDetectDistance, layerMask))
