@@ -25,7 +25,7 @@ public class animationStateController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Anamoly.currentState == MonsterStateMachine.AnomalyState.Patrol|| Anamoly.currentState == MonsterStateMachine.AnomalyState.Stalk)
+        if (Anamoly.currentState == MonsterStateMachine.AnomalyState.Patrol || Anamoly.currentState == MonsterStateMachine.AnomalyState.Stalk)
         {
             animator.SetBool("isWalking", true);
         }
