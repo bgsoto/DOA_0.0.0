@@ -5,9 +5,10 @@ using UnityEngine.Experimental.GlobalIllumination;
 
 public class Flashlight : MonoBehaviour
 {
-
-    public GameObject point, spot;
-    public bool on;
+    
+    [SerializeField] public GameObject point, spot;
+    [SerializeField] public bool on;
+    [SerializeField] public bool isEquipped;
 
     private void Start()
     {
@@ -20,35 +21,37 @@ public class Flashlight : MonoBehaviour
     public void Update()
 
     {
-       
-
-        if (Input.GetKeyDown(KeyCode.Mouse0))
-
+        if (isEquipped)
         {
 
-            if (on == false) 
+            if (Input.GetKeyDown(KeyCode.Mouse0))
 
             {
 
-                on = true;
-                TurnOn();
-            
-          
+                if (on == false)
+
+                {
+
+                    on = true;
+                    TurnOn();
+
+
+                }
+
+                else
+                {
+
+                    on = false;
+                    TurnOff();
+                }
+
             }
 
-            else
-            {
-
-                on = false;
-                TurnOff();
-            }
-            
-        }
-       
             if (transform.parent == true)
             {
-            FlashLightPosition();
+                FlashLightPosition();
             }
+        }
         
     }
 

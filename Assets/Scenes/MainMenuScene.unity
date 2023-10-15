@@ -435,7 +435,7 @@ MonoBehaviour:
 
     "Starfield Skybox" by PULSAR BYTES
 
-    
+
 
     -Google
     Fonts-
@@ -2399,7 +2399,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1fc681691ea14ac418f01517c5284ca3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sceneToLoad: 
+  sceneToLoad: SampleScene
 --- !u!1 &1867679650
 GameObject:
   m_ObjectHideFlags: 0
@@ -2521,7 +2521,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: 0, y: 0, z: 0, w: 0}
+  m_margin: {x: 0, y: 0, z: 0, w: -151.48889}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_hasFontAssetChanged: 0
