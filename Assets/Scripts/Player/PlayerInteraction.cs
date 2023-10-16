@@ -1,14 +1,14 @@
+
 using System;
 using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
-//using UnityEditor.Search;
 using UnityEngine;
 using UnityEngine.EventSystems;
 
 public class PlayerInteraction : MonoBehaviour
 {
-
+    public UnityEngine.UI.Image reticle;
     public float Rlength;
     public GameObject player;
     public bool onTarget = false;
@@ -23,7 +23,6 @@ public class PlayerInteraction : MonoBehaviour
     public MonoBehaviour[] scriptArray;
     RaycastHit hit;
 
-
     private void Start()
     {
         itemslots = new GameObject[4];
@@ -32,76 +31,64 @@ public class PlayerInteraction : MonoBehaviour
 
     void Update()
     {
-
         DropKey();
-        
-        //project raycast onto item your looking at
-        if (Physics.Raycast(transform.position, transform.TransformDirection(Vector3.forward), out RaycastHit hit, Rlength))
 
+        // Create a ray that follows the mouse cursor's position on the screen
+        Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+        if (Physics.Raycast(ray, out RaycastHit interactionHit, Rlength))
         {
-
-            string tagName = hit.transform.gameObject.tag;
-
-            Debug.Log(tagName);
-
-            Debug.DrawRay(transform.position, transform.TransformDirection(Vector3.forward) * hit.distance, Color.red);
-
-            onTarget = true;
-
-            // player pick up item by pressing E while looking at object with item tag
-            if (hit.transform.gameObject.CompareTag("Item") && Input.GetKeyDown(KeyCode.E))
-
+            if (interactionHit.collider.gameObject.CompareTag("Item"))
             {
-                //place item in selecteditem variable
-                GameObject selectedItem = hit.transform.gameObject;
-                Currentlyhelditem = selectedItem;
-
-
-                Placeinslot();
-                itemSelector();
-
+                reticle.color = Color.green;
             }
-
-
-
+            else
+            {
+                reticle.color = Color.white;
+            }
+        }
+        else
+        {
+            reticle.color = Color.white;
         }
 
-        else
+        
+        if (Physics.Raycast(transform.position, transform.TransformDirection(Vector3.forward), out hit, Rlength))
+        {
+            string tagName = hit.transform.gameObject.tag;
+            Debug.Log(tagName);
+            Debug.DrawRay(transform.position, transform.TransformDirection(Vector3.forward) * hit.distance, Color.red);
+            onTarget = true;
 
+            // player picks up item by pressing E while looking at object with item tag
+            if (hit.transform.gameObject.CompareTag("Item") && Input.GetKeyDown(KeyCode.E))
+            {
+                GameObject selectedItem = hit.transform.gameObject;
+                Currentlyhelditem = selectedItem;
+                Placeinslot();
+                itemSelector();
+            }
+        }
+        else
         {
             Debug.Log("nothing");
             Debug.DrawRay(transform.position, transform.TransformDirection(Vector3.forward) * hit.distance, Color.green);
             onTarget = false;
         }
-
         itemSelector();
-
     }
-
-   
 
     void Placeinslot()
     {
-
-        // for loop to count available space within inventory
         for (int i = 0; i < itemslots.Length; i++)
         {
-            // if statement to check if an array spot is empty
             if (itemslots[i] == null)
             {
-
-                //if empty place gameobject within the empty array spot
                 itemslots[i] = Currentlyhelditem;
-
                 itemslots[i].SetActive(false);
-
                 ShowPickedUpItem();
                 break;
-
             }
-
         }
-
     }
 
     void itemSelector()
