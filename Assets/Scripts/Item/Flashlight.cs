@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.Experimental.GlobalIllumination;
 
@@ -21,8 +22,11 @@ public class Flashlight : MonoBehaviour
     public void Update()
 
     {
+        checkifEquipped();
+
         if (isEquipped)
         {
+
 
             if (Input.GetKeyDown(KeyCode.Mouse0))
 
@@ -52,7 +56,10 @@ public class Flashlight : MonoBehaviour
                 FlashLightPosition();
             }
         }
-        
+
+
+
+
     }
 
 
@@ -74,6 +81,23 @@ public class Flashlight : MonoBehaviour
         
             transform.localPosition = new Vector3(0.08f, -0.1f, 0.17f);
             transform.localRotation = Quaternion.Euler(-95f, -86.91f, 0f);
+        
+    }
+
+    public void checkifEquipped()
+    {
+        if (this.transform.parent != null ) 
+        {
+            
+            isEquipped = true;
+        }
+        else
+        {
+            isEquipped = false;
+        }
+
+        
+        
         
     }
 

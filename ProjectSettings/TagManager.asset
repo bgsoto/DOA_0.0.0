@@ -11,6 +11,8 @@ TagManager:
   - Datapad
   - Fuel
   - Anomaly
+  - CinemachineTarget
+  - Inventory
   layers:
   - Default
   - TransparentFX
