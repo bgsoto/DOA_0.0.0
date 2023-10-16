@@ -4,6 +4,7 @@ using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
+using DG.Tweening;
 using UnityEngine.EventSystems;
 
 public class PlayerInteraction : MonoBehaviour
@@ -233,9 +234,13 @@ public class PlayerInteraction : MonoBehaviour
                 {
                     itemslots[d].gameObject.GetComponent<Rigidbody>().isKinematic = false;
                     itemslots[d].gameObject.GetComponent<BoxCollider>().enabled = true;
-                    itemslots[d].gameObject.transform.position = itemdropPoint.position;
+                    itemslots[d].gameObject.GetComponent<Rigidbody>().DOJump(
+                        endValue: itemdropPoint.transform.position,
+                        jumpPower: 0.1f,
+                        numJumps: 1,
+                        duration: 0.3f).SetEase(Ease.InOutSine);
                     itemslots[d].gameObject.transform.parent = null;
-                    
+                   
                     itemslots[d] = null;
                     break;
 
