@@ -494,6 +494,11 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
+--- !u!1 &432500951 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1334270464132555187, guid: c5efc39a8aaf6e64ea40e9ad573e9b47, type: 3}
+  m_PrefabInstance: {fileID: 3328503858553417710}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &480784429
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3183,7 +3188,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8762286023885395322, guid: 9c489a8547f4d9e4387da15a4ff82c81, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 3.2150002
+      value: 1.375
       objectReference: {fileID: 0}
     - target: {fileID: 8762286023885395322, guid: 9c489a8547f4d9e4387da15a4ff82c81, type: 3}
       propertyPath: m_LocalPosition.z
@@ -3228,12 +3233,13 @@ PrefabInstance:
     - target: {fileID: 8762286024517199035, guid: 9c489a8547f4d9e4387da15a4ff82c81, type: 3}
       propertyPath: m_NoiseProfile
       value: 
-      objectReference: {fileID: 11400000, guid: e4c8e2b4e0c2fcc4d885ad24fde44a5c, type: 2}
+      objectReference: {fileID: 0}
     - target: {fileID: 8762286024517199035, guid: 9c489a8547f4d9e4387da15a4ff82c81, type: 3}
       propertyPath: m_PivotOffset.z
       value: 1
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 8762286024517199035, guid: 9c489a8547f4d9e4387da15a4ff82c81, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents:
@@ -3249,6 +3255,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 108755898354587684, guid: 25522248d41324d43ba2221bbb536608, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4330344616682274551, guid: 25522248d41324d43ba2221bbb536608, type: 3}
       propertyPath: m_RootOrder
       value: 11
@@ -3310,18 +3320,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 5393215578589016655, guid: c5efc39a8aaf6e64ea40e9ad573e9b47, type: 3}
-      propertyPath: m_Materials.Array.data[0]
-      value: 
-      objectReference: {fileID: 2100000, guid: afa9b1f9b8438774aa1542a5ed9cba49, type: 2}
     - target: {fileID: 8616685848737228371, guid: c5efc39a8aaf6e64ea40e9ad573e9b47, type: 3}
       propertyPath: vcam
       value: 
       objectReference: {fileID: 1169086141}
-    - target: {fileID: 8616685848737228371, guid: c5efc39a8aaf6e64ea40e9ad573e9b47, type: 3}
-      propertyPath: GroundLayers.m_Bits
-      value: 9
-      objectReference: {fileID: 0}
     - target: {fileID: 8616685848737228372, guid: c5efc39a8aaf6e64ea40e9ad573e9b47, type: 3}
       propertyPath: m_Name
       value: PlayerCapsule
@@ -3336,7 +3338,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8997996947095583982, guid: c5efc39a8aaf6e64ea40e9ad573e9b47, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1.84
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8997996947095583982, guid: c5efc39a8aaf6e64ea40e9ad573e9b47, type: 3}
       propertyPath: m_LocalPosition.z
@@ -3449,10 +3451,6 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 669524147}
     - target: {fileID: 184750880121671678, guid: cca9690b8a73c324db45ea1b34bcc13e, type: 3}
-      propertyPath: jerrycanScript
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 184750880121671678, guid: cca9690b8a73c324db45ea1b34bcc13e, type: 3}
       propertyPath: Flashlightscript
       value: 
       objectReference: {fileID: 1289678842}
@@ -3512,12 +3510,19 @@ PrefabInstance:
       propertyPath: reticle
       value: 
       objectReference: {fileID: 1848896993}
+    - target: {fileID: 2252825456962137738, guid: cca9690b8a73c324db45ea1b34bcc13e, type: 3}
+      propertyPath: Inventory
+      value: 
+      objectReference: {fileID: 432500951}
     - target: {fileID: 6359411483635749361, guid: cca9690b8a73c324db45ea1b34bcc13e, type: 3}
       propertyPath: m_Name
       value: CamerH
       objectReference: {fileID: 0}
-    m_RemovedComponents:
-    - {fileID: 9090431500351622207, guid: cca9690b8a73c324db45ea1b34bcc13e, type: 3}
+    - target: {fileID: 7243416941480415746, guid: cca9690b8a73c324db45ea1b34bcc13e, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0.24199998
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []

@@ -110,7 +110,7 @@ Transform:
   m_Children:
   - {fileID: 7243416941480415746}
   m_Father: {fileID: 0}
-  m_RootOrder: 12
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &7450107959196714174
 GameObject:
@@ -154,7 +154,6 @@ GameObject:
   - component: {fileID: 7243416941480415746}
   - component: {fileID: 954452812474011392}
   - component: {fileID: 1024471189164785088}
-  - component: {fileID: 9090431500351622207}
   - component: {fileID: 2252825456962137738}
   - component: {fileID: 1687384878541198399}
   m_Layer: 0
@@ -241,21 +240,6 @@ AudioListener:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8647346306707856281}
   m_Enabled: 1
---- !u!114 &9090431500351622207
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8647346306707856281}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 920f418554342a643b653605300a9dd7, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  orientation: {fileID: 0}
-  sensitivityX: 500
-  sensitivityY: 500
 --- !u!114 &2252825456962137738
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -268,6 +252,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ca98dd7b8e8de7e4ba908a06fa017981, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  reticle: {fileID: 0}
   Rlength: 20
   player: {fileID: 0}
   onTarget: 0
