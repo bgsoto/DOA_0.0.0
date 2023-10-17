@@ -13,7 +13,11 @@ TagManager:
   - Anomaly
   - CinemachineTarget
   - Inventory
+<<<<<<< HEAD
   - Key
+=======
+  - Metal
+>>>>>>> 6c7b2aa9c7e80e991f3d93bb2452e832037e6978
   layers:
   - Default
   - TransparentFX

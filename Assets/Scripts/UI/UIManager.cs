@@ -15,7 +15,7 @@ public class UIManager : MonoBehaviour
         /* Subscribes to event(s). */
         MenuDisplay.OnMenuEnter += DisplayMenu;
         KeypadDisplayManager.OnCorrectCoor += HideMenu;
-        
+        GenericCloseMenu.CloseCurrentMenu += HideMenu;
     }
 
     private void OnDisable()
@@ -23,6 +23,7 @@ public class UIManager : MonoBehaviour
         /* Unsubscribes from event(s). */
         MenuDisplay.OnMenuEnter -= DisplayMenu;
         KeypadDisplayManager.OnCorrectCoor -= HideMenu;
+        GenericCloseMenu.CloseCurrentMenu -= HideMenu;
     }
 
     private void Start()
