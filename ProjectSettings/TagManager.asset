@@ -3,31 +3,17 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags:
-  - floor
-  - flashlight
-  - Item
-  - Wrench
-  - Datapad
-  - Fuel
-  - Anomaly
-  - CinemachineTarget
-  - Inventory
-<<<<<<< HEAD
-  - Key
-=======
-  - Metal
->>>>>>> 6c7b2aa9c7e80e991f3d93bb2452e832037e6978
+  tags: []
   layers:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - Ground
+  - 
   - Water
   - UI
-  - Obstacles
-  - Items
-  - Player
+  - 
+  - 
+  - 
   - 
   - 
   - 
