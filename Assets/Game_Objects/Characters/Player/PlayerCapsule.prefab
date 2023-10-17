@@ -105,8 +105,8 @@ AudioSource:
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
-  m_PlayOnAwake: 1
-  m_Volume: 1
+  m_PlayOnAwake: 0
+  m_Volume: 0.635
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -426,11 +426,12 @@ MonoBehaviour:
   vcam: {fileID: 0}
   footstepTimer: 0
   metalSounds:
-  - {fileID: 8300000, guid: f410c9792240f0a43860bf58829e000c, type: 3}
   - {fileID: 8300000, guid: 3413289aa6293e341a7a5e3b5ec5b9f6, type: 3}
+  - {fileID: 8300000, guid: f410c9792240f0a43860bf58829e000c, type: 3}
   source: {fileID: 3918261780332602872}
   volumeChangeMultiplier: 0.2
   pitchChangeMultiplier: 0.2
+  GroundType: 
 --- !u!114 &1978471637655604388
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -1465,6 +1465,10 @@ PrefabInstance:
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: 2b255e4105eaa2144a32b1e56277f6f8, type: 2}
+    - target: {fileID: 559890182981511530, guid: d57ee9b4dc6d07245b1ec5a4ff8d4be9, type: 3}
+      propertyPath: m_TagString
+      value: Metal
+      objectReference: {fileID: 0}
     - target: {fileID: 607374784879075146, guid: d57ee9b4dc6d07245b1ec5a4ff8d4be9, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
@@ -1481,6 +1485,10 @@ PrefabInstance:
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: 079292c01c2d9fb4d8aa1191fedb2bdf, type: 2}
+    - target: {fileID: 951431220354349197, guid: d57ee9b4dc6d07245b1ec5a4ff8d4be9, type: 3}
+      propertyPath: m_TagString
+      value: Metal
+      objectReference: {fileID: 0}
     - target: {fileID: 988698361781682777, guid: d57ee9b4dc6d07245b1ec5a4ff8d4be9, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
@@ -1525,10 +1533,18 @@ PrefabInstance:
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: 2b255e4105eaa2144a32b1e56277f6f8, type: 2}
+    - target: {fileID: 2374774172483523690, guid: d57ee9b4dc6d07245b1ec5a4ff8d4be9, type: 3}
+      propertyPath: m_TagString
+      value: Metal
+      objectReference: {fileID: 0}
     - target: {fileID: 2386511415864567678, guid: d57ee9b4dc6d07245b1ec5a4ff8d4be9, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: 079292c01c2d9fb4d8aa1191fedb2bdf, type: 2}
+    - target: {fileID: 2400932440085966944, guid: d57ee9b4dc6d07245b1ec5a4ff8d4be9, type: 3}
+      propertyPath: m_TagString
+      value: Metal
+      objectReference: {fileID: 0}
     - target: {fileID: 2404646678708270636, guid: d57ee9b4dc6d07245b1ec5a4ff8d4be9, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
@@ -1593,6 +1609,14 @@ PrefabInstance:
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: 2b255e4105eaa2144a32b1e56277f6f8, type: 2}
+    - target: {fileID: 2958637517655640804, guid: d57ee9b4dc6d07245b1ec5a4ff8d4be9, type: 3}
+      propertyPath: m_TagString
+      value: Metal
+      objectReference: {fileID: 0}
+    - target: {fileID: 3159241682306597262, guid: d57ee9b4dc6d07245b1ec5a4ff8d4be9, type: 3}
+      propertyPath: m_TagString
+      value: Metal
+      objectReference: {fileID: 0}
     - target: {fileID: 3265486907321602167, guid: d57ee9b4dc6d07245b1ec5a4ff8d4be9, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
@@ -1613,10 +1637,18 @@ PrefabInstance:
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: 079292c01c2d9fb4d8aa1191fedb2bdf, type: 2}
+    - target: {fileID: 3822415616931977058, guid: d57ee9b4dc6d07245b1ec5a4ff8d4be9, type: 3}
+      propertyPath: m_TagString
+      value: Metal
+      objectReference: {fileID: 0}
     - target: {fileID: 3848640605595570048, guid: d57ee9b4dc6d07245b1ec5a4ff8d4be9, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: 2b255e4105eaa2144a32b1e56277f6f8, type: 2}
+    - target: {fileID: 3869508683899330149, guid: d57ee9b4dc6d07245b1ec5a4ff8d4be9, type: 3}
+      propertyPath: m_TagString
+      value: Metal
+      objectReference: {fileID: 0}
     - target: {fileID: 3920239782566426561, guid: d57ee9b4dc6d07245b1ec5a4ff8d4be9, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
@@ -1629,6 +1661,10 @@ PrefabInstance:
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: 079292c01c2d9fb4d8aa1191fedb2bdf, type: 2}
+    - target: {fileID: 4126768787371036948, guid: d57ee9b4dc6d07245b1ec5a4ff8d4be9, type: 3}
+      propertyPath: m_TagString
+      value: Metal
+      objectReference: {fileID: 0}
     - target: {fileID: 4139686714129264265, guid: d57ee9b4dc6d07245b1ec5a4ff8d4be9, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
@@ -1637,6 +1673,10 @@ PrefabInstance:
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: 2b255e4105eaa2144a32b1e56277f6f8, type: 2}
+    - target: {fileID: 4417525409992952525, guid: d57ee9b4dc6d07245b1ec5a4ff8d4be9, type: 3}
+      propertyPath: m_TagString
+      value: Metal
+      objectReference: {fileID: 0}
     - target: {fileID: 4556202798030623107, guid: d57ee9b4dc6d07245b1ec5a4ff8d4be9, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
@@ -1661,6 +1701,10 @@ PrefabInstance:
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: 2b255e4105eaa2144a32b1e56277f6f8, type: 2}
+    - target: {fileID: 5155957472807513995, guid: d57ee9b4dc6d07245b1ec5a4ff8d4be9, type: 3}
+      propertyPath: m_TagString
+      value: Metal
+      objectReference: {fileID: 0}
     - target: {fileID: 5313423370262170647, guid: d57ee9b4dc6d07245b1ec5a4ff8d4be9, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
@@ -1741,6 +1785,10 @@ PrefabInstance:
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: 2b255e4105eaa2144a32b1e56277f6f8, type: 2}
+    - target: {fileID: 7167064886028647205, guid: d57ee9b4dc6d07245b1ec5a4ff8d4be9, type: 3}
+      propertyPath: m_TagString
+      value: Metal
+      objectReference: {fileID: 0}
     - target: {fileID: 7256410990649574334, guid: d57ee9b4dc6d07245b1ec5a4ff8d4be9, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
@@ -1749,6 +1797,10 @@ PrefabInstance:
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: 2b255e4105eaa2144a32b1e56277f6f8, type: 2}
+    - target: {fileID: 7296274667883809851, guid: d57ee9b4dc6d07245b1ec5a4ff8d4be9, type: 3}
+      propertyPath: m_TagString
+      value: Metal
+      objectReference: {fileID: 0}
     - target: {fileID: 7363485628411508410, guid: d57ee9b4dc6d07245b1ec5a4ff8d4be9, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
@@ -1761,6 +1813,18 @@ PrefabInstance:
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: 2b255e4105eaa2144a32b1e56277f6f8, type: 2}
+    - target: {fileID: 7650504305161811962, guid: d57ee9b4dc6d07245b1ec5a4ff8d4be9, type: 3}
+      propertyPath: m_TagString
+      value: Metal
+      objectReference: {fileID: 0}
+    - target: {fileID: 7784306028786291602, guid: d57ee9b4dc6d07245b1ec5a4ff8d4be9, type: 3}
+      propertyPath: m_TagString
+      value: Metal
+      objectReference: {fileID: 0}
+    - target: {fileID: 7802592099120945294, guid: d57ee9b4dc6d07245b1ec5a4ff8d4be9, type: 3}
+      propertyPath: m_TagString
+      value: Metal
+      objectReference: {fileID: 0}
     - target: {fileID: 7848241770328361537, guid: d57ee9b4dc6d07245b1ec5a4ff8d4be9, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
@@ -1793,6 +1857,10 @@ PrefabInstance:
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: 2b255e4105eaa2144a32b1e56277f6f8, type: 2}
+    - target: {fileID: 8544949489349706123, guid: d57ee9b4dc6d07245b1ec5a4ff8d4be9, type: 3}
+      propertyPath: m_TagString
+      value: Metal
+      objectReference: {fileID: 0}
     - target: {fileID: 8653666162304037782, guid: d57ee9b4dc6d07245b1ec5a4ff8d4be9, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
@@ -2554,10 +2622,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 4135013735270702863, guid: c5efc39a8aaf6e64ea40e9ad573e9b47, type: 3}
-      propertyPath: m_Layer
-      value: 8
-      objectReference: {fileID: 0}
     - target: {fileID: 8616685848737228371, guid: c5efc39a8aaf6e64ea40e9ad573e9b47, type: 3}
       propertyPath: vcam
       value: 

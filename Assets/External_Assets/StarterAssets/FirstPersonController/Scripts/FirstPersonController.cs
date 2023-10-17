@@ -78,7 +78,7 @@ namespace StarterAssets
         private float baseStepSpeed = 0.5f;
         private float sprintStepMultiplier = 0.6f;
         private float GetCurrentOffset => _input.sprint ? baseStepSpeed * sprintStepMultiplier : baseStepSpeed;
-        private string GroundType;
+       [SerializeField] private string GroundType;
 
 #if ENABLE_INPUT_SYSTEM
         private PlayerInput _playerInput;
@@ -327,7 +327,7 @@ namespace StarterAssets
             if (_input.move == Vector2.zero) return;
 
             footstepTimer -= Time.deltaTime;
-            if (footstepTimer <= 0)
+            if (footstepTimer <= 0 )
             {
                 if (GroundType == "Metal")
                 {
