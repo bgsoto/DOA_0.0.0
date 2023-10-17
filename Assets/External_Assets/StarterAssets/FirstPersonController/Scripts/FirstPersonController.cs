@@ -67,6 +67,19 @@ namespace StarterAssets
 
         public CinemachineVirtualCamera vcam;
 
+        //footsteps
+        public float footstepTimer = 0;
+        public AudioClip[] metalSounds;
+        public AudioSource source;
+        [Range(0.1f, 0.5f)]
+        public float volumeChangeMultiplier = 0.2f;
+        [Range(0.1f, 0.5f)]
+        public float pitchChangeMultiplier = 0.2f;
+        private float baseStepSpeed = 0.5f;
+        private float sprintStepMultiplier = 0.6f;
+        private float GetCurrentOffset => _input.sprint ? baseStepSpeed * sprintStepMultiplier : baseStepSpeed;
+        private string GroundType;
+
 #if ENABLE_INPUT_SYSTEM
         private PlayerInput _playerInput;
 #endif
@@ -74,7 +87,9 @@ namespace StarterAssets
 		private StarterAssetsInputs _input;
 		private GameObject _mainCamera;
 
-		private const float _threshold = 0.01f;
+        private bool inMenu = false;
+
+        private const float _threshold = 0.01f;
 
 		private bool IsCurrentDeviceMouse
 		{
@@ -114,18 +129,39 @@ namespace StarterAssets
 
 		private void Update()
 		{
-			JumpAndGravity();
-			GroundedCheck();
-			Move();
+			if (!inMenu)
+			{
+				JumpAndGravity();
+				GroundedCheck();
+				Move();
+			}
 		}
 
 		private void LateUpdate()
 		{
-			CameraRotation();
-            SprintFOV();
+			if (!inMenu)
+			{
+				CameraRotation();
+				SprintFOV();
+				CheckLayers();
+				Footsteps();
+			}
+		}
+
+        private void OnEnable()
+        {
+            /* Subscribes to event(s). */
+            UIManager.DisablePlayerControls += PlayerInput;
         }
 
-		private void GroundedCheck()
+        private void OnDisable()
+        {
+            /* Unsubscribes from event(s). */
+            UIManager.DisablePlayerControls += PlayerInput;
+        }
+
+        private void PlayerInput(bool value) { inMenu = value; }
+        private void GroundedCheck()
 		{
 			// set sphere position, with offset
 			Vector3 spherePosition = new Vector3(transform.position.x, transform.position.y - GroundedOffset, transform.position.z);
@@ -283,6 +319,32 @@ namespace StarterAssets
                 {
                     vcam.m_Lens.FieldOfView = Mathf.Lerp(vcam.m_Lens.FieldOfView, 40, 10 * Time.deltaTime);
                 }
+            }
+        }
+        private void Footsteps()
+        {
+            if (!_controller.isGrounded) return;
+            if (_input.move == Vector2.zero) return;
+
+            footstepTimer -= Time.deltaTime;
+            if (footstepTimer <= 0)
+            {
+                if (GroundType == "Metal")
+                {
+                    source.clip = metalSounds[Random.Range(0, metalSounds.Length)];
+                }
+                source.volume = Random.Range(1 - volumeChangeMultiplier, 1);
+                source.pitch = Random.Range(1 - pitchChangeMultiplier, 1 + pitchChangeMultiplier);
+                source.PlayOneShot(source.clip); //code from : https://www.youtube.com/watch?v=lqyzGntF5Hw //
+                footstepTimer = GetCurrentOffset;
+            }
+        }
+        public void CheckLayers()
+        {
+            RaycastHit hit;
+            if (Physics.Raycast(transform.position, Vector3.down, out hit, 3))
+            {
+                GroundType = hit.transform.tag;
             }
         }
     }

@@ -13,17 +13,10 @@ public class SubtitleDisplayer : MonoBehaviour
   [Range(0, 1)]
   public float FadeTime;
 
-  private bool _isPaused;
-  private bool _isPausedTimeSet;
-  private float _pausedTime;
 
   void Update()
   {
-      if (Input.GetKeyDown("space"))
-      {
-          Debug.Log("Subtitles Paused");
-          _isPaused = !_isPaused;
-      }
+
   }
   
   public IEnumerator Begin()
@@ -46,22 +39,6 @@ public class SubtitleDisplayer : MonoBehaviour
     SubtitleBlock currentSubtitle = null;
     while (true)
     {
-      while (_isPaused)
-      {
-        if (!_isPausedTimeSet)
-        {
-          _pausedTime = Time.time;
-          _isPausedTimeSet = true;
-        }
-        
-        yield return null;
-      }
-
-      if (_isPausedTimeSet)
-      {
-        startTime += Time.time - _pausedTime;
-        _isPausedTimeSet = false;
-      }
 
       var elapsed = Time.time - startTime;
 

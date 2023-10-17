@@ -8,7 +8,8 @@ public class MenuDisplay : MonoBehaviour, IInteractable
     /* The "list" of the different UI menus. */ 
     private enum Menu
     {
-        Keypad = 0
+        Menu0 = 0, 
+        Menu1 = 1
     }
     
     public static Action<int> OnMenuEnter;

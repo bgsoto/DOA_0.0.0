@@ -24,6 +24,9 @@ public class PlayerInteraction : MonoBehaviour
     public MonoBehaviour[] scriptArray;
     RaycastHit hit;
 
+    private bool canInteract = false;
+    private IInteractable interactableObject;
+
     private void Start()
     {
         itemslots = new GameObject[4];
@@ -42,11 +45,20 @@ public class PlayerInteraction : MonoBehaviour
             {
                 reticle.color = Color.green;
             }
+            else if (interactionHit.collider.gameObject.GetComponent<IInteractable>() != null)
+                {
+                    interactableObject = interactionHit.collider.gameObject.GetComponent<IInteractable>();
+                    canInteract = true;
+                    reticle.color = Color.green;
+                Debug.Log("PRESS E TO INTERACT");
+                }
             else
             {
                 reticle.color = Color.white;
+                canInteract = false;
+                Debug.Log("NO ACTION AVAILIABLE");
             }
-        }
+            }
         else
         {
             reticle.color = Color.white;
@@ -67,6 +79,13 @@ public class PlayerInteraction : MonoBehaviour
                 Currentlyhelditem = selectedItem;
                 Placeinslot();
                 itemSelector();
+            }
+            if (canInteract)
+            {
+                if (Input.GetKeyDown(KeyCode.E))
+                {
+                    interactableObject.Interact();
+                }
             }
         }
         else
