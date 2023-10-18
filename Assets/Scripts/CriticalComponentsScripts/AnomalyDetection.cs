@@ -4,7 +4,7 @@ using UnityEngine.SceneManagement;
 public class AnomalyDetection : MonoBehaviour
 {
     [SerializeField] private string targetObjectTag;
-    [SerializeField] private float trapDistance;
+    [SerializeField] private float distanceToContain;
     
     private Transform targetObjectTransform;
 
@@ -56,7 +56,7 @@ public class AnomalyDetection : MonoBehaviour
         {
             float distance = Vector3.Distance(transform.position, targetObjectTransform.position);
 
-            if (distance <= trapDistance && isTrapOn)
+            if (distance <= distanceToContain && isTrapOn)
             {
                 Invoke("ResetScene", 2f);
             }

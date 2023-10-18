@@ -4713,8 +4713,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   targetObjectTag: Monster
-  trapDistance: 3
-  isTrapOn: 0
+  distanceToContain: 1
 --- !u!65 &1318418484
 BoxCollider:
   m_ObjectHideFlags: 0
