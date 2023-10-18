@@ -198,7 +198,7 @@ public class MonsterStateMachine : MonoBehaviour
         }
 
         // Draw a line indicating the player's facing direction
-        Debug.DrawRay(transform.position, forwardDirection * maxDetectDistance, Color.green);
+       // Debug.DrawRay(transform.position, forwardDirection * maxDetectDistance, Color.green);
     }
 
     /* Getter/Setters */
