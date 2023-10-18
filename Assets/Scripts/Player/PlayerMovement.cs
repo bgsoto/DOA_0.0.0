@@ -2,6 +2,8 @@ using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
 {
+    //NOT USING THIS SCRIPT CURRENTLY, SEE PLAYER PREFAB FOR ACTIVE SCRIPT!
+
     [Header("Character Settings")]
     [SerializeField] private float moveSpeed;
     [SerializeField] private float playerHeight;

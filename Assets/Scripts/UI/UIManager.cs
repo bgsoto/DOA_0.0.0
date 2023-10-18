@@ -14,10 +14,7 @@ public class UIManager : MonoBehaviour
 
     private Stack<int> UIStack = new Stack<int>();
 
-    [SerializeField] private bool doAnim;
-
-    [SerializeField] private Ease ease;
-    [SerializeField] private float duration;
+    [SerializeField] private AudioSource audioSource;
     private void OnEnable()
     {
         /* Subscribes to event(s). */
@@ -44,11 +41,13 @@ public class UIManager : MonoBehaviour
     /* 
      * Disables player controls when a menu is active. 
      * Uses a Stack data structure to manage the number of active menus.
+     * Will check settings for animation and sound info, settings script should be on any UI object.
      */
     private void DisplayMenu(int menuIndex)
     {
         UIStack.Push(menuIndex);
-        if (doAnim == true) { OpenMenuAnim(menuIndex); }
+        if (UIList[UIStack.Peek()].GetComponent<UISettings>().doSound == true) { OpenMenuSound(); }
+        if (UIList[UIStack.Peek()].GetComponent<UISettings>().doAnim == true) { OpenMenuAnim(menuIndex); }
         else { UIList[menuIndex].SetActive(true); }
         Cursor.lockState = CursorLockMode.Confined;
         Cursor.visible = true;
@@ -60,7 +59,7 @@ public class UIManager : MonoBehaviour
     /* Enables player controls if there are no active menus. */
     private void HideMenu()
     {
-        if (doAnim == true) { StartCoroutine(CloseMenuAnim()); }
+        if (UIList[UIStack.Peek()].GetComponent<UISettings>().doAnim == true) { StartCoroutine(CloseMenuAnim()); }
         else { UIList[UIStack.Pop()].SetActive(false); }
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
@@ -75,12 +74,18 @@ public class UIManager : MonoBehaviour
     public void OpenMenuAnim(int menuIndex)//animation for opening menu if doAnim is ticked
     {
         UIList[menuIndex].SetActive(true);
-        UIList[menuIndex].GetComponent<CanvasGroup>().DOFade(1, duration);
+        UIList[menuIndex].GetComponent<CanvasGroup>().DOFade(1, UIList[UIStack.Peek()].GetComponent<UISettings>().duration);
     }
+    public void OpenMenuSound()//animation for opening menu if doAnim is ticked
+    {
+        var audioClip  = UIList[UIStack.Peek()].GetComponent<UISettings>().clip;
+        if (audioClip != null) { audioSource.PlayOneShot(audioClip); }
+    }
+
     IEnumerator CloseMenuAnim() //animation for closing menu (waits until completed before closing fully)
     {
-        UIList[UIStack.Peek()].GetComponent<CanvasGroup>().DOFade(0, duration/2);
-        yield return new WaitForSeconds(duration / 2);
+        UIList[UIStack.Peek()].GetComponent<CanvasGroup>().DOFade(0, UIList[UIStack.Peek()].GetComponent<UISettings>().duration / 2);
+        yield return new WaitForSeconds(UIList[UIStack.Peek()].GetComponent<UISettings>().duration / 2);
         UIList[UIStack.Pop()].SetActive(false);
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
