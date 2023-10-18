@@ -22,6 +22,14 @@ public class PlayerInteraction : MonoBehaviour
     public GameObject childLoc;
     public GameObject equippedItem;
     public MonoBehaviour[] scriptArray;
+
+
+    public int keys_collected;
+    public bool Artifact_collected;
+    public bool allKeysCollected;
+    public GameObject Artifact;
+    
+
     RaycastHit hit;
 
     private bool canInteract = false;
@@ -41,7 +49,7 @@ public class PlayerInteraction : MonoBehaviour
         Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
         if (Physics.Raycast(ray, out RaycastHit interactionHit, Rlength))
         {
-            if (interactionHit.collider.gameObject.CompareTag("Item"))
+            if (interactionHit.collider.gameObject.CompareTag("Item") || interactionHit.collider.gameObject.CompareTag("Key") || interactionHit.collider.gameObject.CompareTag("Safe") || interactionHit.collider.gameObject.CompareTag("Artifact"))
             {
                 reticle.color = Color.green;
             }
@@ -80,6 +88,36 @@ public class PlayerInteraction : MonoBehaviour
                 Placeinslot();
                 itemSelector();
             }
+
+            if (hit.transform.gameObject.CompareTag("Key") && Input.GetKeyDown(KeyCode.E))
+            {
+                Destroy(hit.collider.gameObject);
+                keys_collected++;
+
+                if (keys_collected == 2)
+                {
+                    allKeysCollected = true;
+                }
+                else
+                {
+                    allKeysCollected = false;
+                }
+            }
+
+            if (hit.transform.gameObject.CompareTag("Artifact") && Input.GetKeyDown(KeyCode.E))
+            {
+                Destroy(hit.collider.gameObject);
+                Artifact_collected = true;
+                
+               
+            }
+            if (hit.transform.gameObject.CompareTag("Safe") && Input.GetKeyDown(KeyCode.E) && allKeysCollected)
+            {
+                Instantiate(Artifact, hit.transform);
+                Destroy(hit.collider.gameObject);
+                
+            }
+
             if (canInteract)
             {
                 if (Input.GetKeyDown(KeyCode.E))
