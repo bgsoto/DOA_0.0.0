@@ -1,6 +1,10 @@
+using DG.Tweening;
 using System;
+using System.Collections;
 using System.Collections.Generic;
+using System.Threading.Tasks;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class UIManager : MonoBehaviour
 {
@@ -10,6 +14,10 @@ public class UIManager : MonoBehaviour
 
     private Stack<int> UIStack = new Stack<int>();
 
+    [SerializeField] private bool doAnim;
+
+    [SerializeField] private Ease ease;
+    [SerializeField] private float duration;
     private void OnEnable()
     {
         /* Subscribes to event(s). */
@@ -40,7 +48,8 @@ public class UIManager : MonoBehaviour
     private void DisplayMenu(int menuIndex)
     {
         UIStack.Push(menuIndex);
-        UIList[menuIndex].SetActive(true);
+        if (doAnim == true) { OpenMenuAnim(menuIndex); }
+        else { UIList[menuIndex].SetActive(true); }
         Cursor.lockState = CursorLockMode.Confined;
         Cursor.visible = true;
 
@@ -51,14 +60,36 @@ public class UIManager : MonoBehaviour
     /* Enables player controls if there are no active menus. */
     private void HideMenu()
     {
-        UIList[UIStack.Pop()].SetActive(false);
+        if (doAnim == true) { StartCoroutine(CloseMenuAnim()); }
+        else { UIList[UIStack.Pop()].SetActive(false); }
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
-        
+
         if (UIStack.Count <= 0)
         {
             /* Subscription: PlayerCamera, PlayerMovement. */
             DisablePlayerControls?.Invoke(false);
         }
+    }
+
+    public void OpenMenuAnim(int menuIndex)//animation for opening menu if doAnim is ticked
+    {
+        UIList[menuIndex].SetActive(true);
+        UIList[menuIndex].GetComponent<CanvasGroup>().DOFade(1, duration);
+    }
+    IEnumerator CloseMenuAnim() //animation for closing menu (waits until completed before closing fully)
+    {
+        UIList[UIStack.Peek()].GetComponent<CanvasGroup>().DOFade(0, duration/2);
+        yield return new WaitForSeconds(duration / 2);
+        UIList[UIStack.Pop()].SetActive(false);
+        Cursor.lockState = CursorLockMode.Locked;
+        Cursor.visible = false;
+
+        if (UIStack.Count <= 0)
+        {
+            /* Subscription: PlayerCamera, PlayerMovement. */
+            DisablePlayerControls?.Invoke(false);
+        }
+        yield return null;
     }
 }
