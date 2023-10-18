@@ -12,6 +12,7 @@ TagManager:
   - flashlight
   - Safe
   - Artifact
+  - Monster
   layers:
   - Default
   - TransparentFX

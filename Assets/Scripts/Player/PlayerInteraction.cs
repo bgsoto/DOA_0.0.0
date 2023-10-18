@@ -58,13 +58,13 @@ public class PlayerInteraction : MonoBehaviour
                     interactableObject = interactionHit.collider.gameObject.GetComponent<IInteractable>();
                     canInteract = true;
                     reticle.color = Color.green;
-                Debug.Log("PRESS E TO INTERACT");
+                //Debug.Log("PRESS E TO INTERACT");
                 }
             else
             {
                 reticle.color = Color.white;
                 canInteract = false;
-                Debug.Log("NO ACTION AVAILIABLE");
+                //Debug.Log("NO ACTION AVAILIABLE");
             }
             }
         else
@@ -76,7 +76,7 @@ public class PlayerInteraction : MonoBehaviour
         if (Physics.Raycast(transform.position, transform.TransformDirection(Vector3.forward), out hit, Rlength))
         {
             string tagName = hit.transform.gameObject.tag;
-            Debug.Log(tagName);
+            //Debug.Log(tagName);
             Debug.DrawRay(transform.position, transform.TransformDirection(Vector3.forward) * hit.distance, Color.red);
             onTarget = true;
 
@@ -128,7 +128,7 @@ public class PlayerInteraction : MonoBehaviour
         }
         else
         {
-            Debug.Log("nothing");
+            //Debug.Log("nothing");
             Debug.DrawRay(transform.position, transform.TransformDirection(Vector3.forward) * hit.distance, Color.green);
             onTarget = false;
         }
