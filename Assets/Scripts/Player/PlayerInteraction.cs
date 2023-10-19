@@ -28,6 +28,10 @@ public class PlayerInteraction : MonoBehaviour
     public bool Artifact_collected;
     public bool allKeysCollected;
     public GameObject Artifact;
+
+    public AudioSource inventoryAudioSource;
+    public AudioClip pickupSound;
+    public AudioClip dropSound;
     
 
     RaycastHit hit;
@@ -83,6 +87,7 @@ public class PlayerInteraction : MonoBehaviour
             // player picks up item by pressing E while looking at object with item tag
             if (hit.transform.gameObject.CompareTag("Item") && Input.GetKeyDown(KeyCode.E))
             {
+                inventoryAudioSource.PlayOneShot(pickupSound);
                 GameObject selectedItem = hit.transform.gameObject;
                 Currentlyhelditem = selectedItem;
                 Placeinslot();
@@ -296,6 +301,7 @@ public class PlayerInteraction : MonoBehaviour
                         jumpPower: 0.1f,
                         numJumps: 1,
                         duration: 0.3f).SetEase(Ease.InOutSine);
+                    inventoryAudioSource.PlayOneShot(dropSound);
                     itemslots[d].gameObject.transform.parent = null;
                    
                     itemslots[d] = null;

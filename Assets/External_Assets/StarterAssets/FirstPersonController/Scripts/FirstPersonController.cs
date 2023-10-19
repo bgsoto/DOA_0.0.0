@@ -75,6 +75,8 @@ namespace StarterAssets
         public float volumeChangeMultiplier = 0.2f;
         [Range(0.1f, 0.5f)]
         public float pitchChangeMultiplier = 0.2f;
+		[Range (0.1f, 1f)]
+		public float baseVolume;
         private float baseStepSpeed = 0.5f;
         private float sprintStepMultiplier = 0.6f;
         private float GetCurrentOffset => _input.sprint ? baseStepSpeed * sprintStepMultiplier : baseStepSpeed;
@@ -333,7 +335,7 @@ namespace StarterAssets
                 {
                     source.clip = metalSounds[Random.Range(0, metalSounds.Length)];
                 }
-                source.volume = Random.Range(1 - volumeChangeMultiplier, 1);
+                source.volume = Random.Range(baseVolume - volumeChangeMultiplier, baseVolume);
                 source.pitch = Random.Range(1 - pitchChangeMultiplier, 1 + pitchChangeMultiplier);
                 source.PlayOneShot(source.clip); //code from : https://www.youtube.com/watch?v=lqyzGntF5Hw //
                 footstepTimer = GetCurrentOffset;
