@@ -5,19 +5,14 @@ using UnityEngine;
 
 public class ObjectiveUpdater : MonoBehaviour
 {
-    [SerializeField] private int objectiveIndex; //index of objective to set, see objective scriptable object
-    [SerializeField] private int clueIndex; //index of clue to set, see objective scriptable object
-    [SerializeField] private bool updateObj;
-    [SerializeField] private bool updateClue;
+    [SerializeField] private int stageToSet; //stage of objective to set, see objective scriptable objects (increments by 10)
 
     public static Action<int> UpdateObjectives;
-    public static Action<int> UpdateClues;
 
-    // updates objectives/clues based on index. call these on objectives being completed.
+    // updates objectives/clues based on quest stage. call these on objectives being completed.
 
-    public void UpdateAll() //call this when an objective is complete or clue is found
+    public void UpdateAll() //call this when an objective is complete or clue is found through unity events, otherwise use the static action
     {
-        if(updateObj) { UpdateObjectives.Invoke(objectiveIndex); }
-        if(updateClue) { UpdateClues.Invoke(clueIndex); }
+        UpdateObjectives?.Invoke(stageToSet);
     }
 }

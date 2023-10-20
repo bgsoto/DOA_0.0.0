@@ -1,0 +1,29 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cb02e16d6b4bc6a4f84468132e69a542, type: 3}
+  m_Name: KeycardNote
+  m_EditorClassIdentifier: 
+  noteTitle: 'Note to Staff: IN EVENT OF EMERGENCY'
+  noteText: 'Two backup keycards have been hidden aboard the SC Curie. Provided are
+    two clues to their locations. I had Miles write these, so they should be obtuse
+    enough to stump any of those pirate types.
+
+    
+
+    <align="center">Location
+    1: TBD
+
+    Location 2: TBD
+
+    
+
+    <align="right">-Captain Naomi Holcomb'

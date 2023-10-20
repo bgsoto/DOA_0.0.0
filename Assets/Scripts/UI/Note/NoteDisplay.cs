@@ -9,7 +9,7 @@ public class NoteDisplay : MonoBehaviour, IInteractable
     [SerializeField] private Note noteToDisplay;
     [SerializeField] private TMP_Text noteText;
     [SerializeField] private TMP_Text noteTitle;
-    private bool noteCollected;
+    private bool noteCollected = false;
 
     private void Start()
     {
@@ -21,6 +21,7 @@ public class NoteDisplay : MonoBehaviour, IInteractable
         if (!noteCollected)
         {
             noteCollected = true;
+            ObjectiveUpdater.UpdateObjectives?.Invoke(10);
         }
     }
 }

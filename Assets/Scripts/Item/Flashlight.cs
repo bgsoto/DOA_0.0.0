@@ -1,3 +1,4 @@
+using Cinemachine;
 using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
@@ -10,6 +11,7 @@ public class Flashlight : MonoBehaviour
     [SerializeField] public GameObject point, spot;
     [SerializeField] public bool on;
     [SerializeField] public bool isEquipped;
+    [SerializeField] public Material lens;
 
     private void Start()
     {
@@ -67,12 +69,14 @@ public class Flashlight : MonoBehaviour
     {
         point.SetActive(true);
         spot.SetActive(true);
+        lens.EnableKeyword("_EMISSION");
     }
 
     public void TurnOff()
     {
         point.SetActive(false);
         spot.SetActive(false);
+        lens.DisableKeyword("_EMISSION");
     }
 
     void FlashLightPosition()

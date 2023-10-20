@@ -101,6 +101,7 @@ public class PlayerInteraction : MonoBehaviour
 
                 if (keys_collected == 2)
                 {
+                    ObjectiveUpdater.UpdateObjectives?.Invoke(30);
                     allKeysCollected = true;
                 }
                 else
@@ -111,6 +112,7 @@ public class PlayerInteraction : MonoBehaviour
 
             if (hit.transform.gameObject.CompareTag("Artifact") && Input.GetKeyDown(KeyCode.E))
             {
+                ObjectiveUpdater.UpdateObjectives?.Invoke(40);
                 Destroy(hit.collider.gameObject);
                 Artifact_collected = true;
                 
