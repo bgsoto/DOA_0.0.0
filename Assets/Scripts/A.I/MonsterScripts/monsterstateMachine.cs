@@ -9,6 +9,7 @@ public class MonsterStateMachine : MonoBehaviour
     [SerializeField] private AnomalyDirector director;
 
     [Header("Monster Settings")]
+    [SerializeField] public anamolySight_Sensor sensor;
     [SerializeField] public AnomalyState currentState;
     [SerializeField] public LayerMask layerMask;
     [SerializeField] private NavMeshAgent agent;
@@ -35,6 +36,7 @@ public class MonsterStateMachine : MonoBehaviour
     {
         currentState = AnomalyState.Patrol;
         agent = GetComponent<NavMeshAgent>();
+        playerDetected = sensor.canSeePlayer;
     }
 
     void Update()
@@ -163,42 +165,7 @@ public class MonsterStateMachine : MonoBehaviour
      */
     private void CheckForPlayer()
     {
-        int numRays = 30;
-        float angleIncrement = coneAngle / numRays;
-        Vector3 forwardDirection = transform.forward; // Get the forward direction
-
-        
-
-        for (int i = 0; i < numRays; i++)
-        {
-            // Calculate the direction of the ray based on angle
-            float angle = i * angleIncrement - coneAngle / 2;
-            Vector3 direction = Quaternion.AngleAxis(angle, transform.up) * forwardDirection;
-
-            
-          
-
-            RaycastHit hit;
-            if (Physics.Raycast(transform.position, direction, out hit, maxDetectDistance, layerMask))
-            {
-                if (hit.collider.CompareTag("Player"))
-                {
-                    playerDetected = true;
-                    Debug.Log("Player Detected");
-                }
-                else
-                {
-                    playerDetected = false;
-                    Debug.Log("Player Not Detected");
-                }
-            }
-
-            // Draw ray for visualization
-            Debug.DrawRay(transform.position, direction * maxDetectDistance, Color.blue);
-        }
-
-        // Draw a line indicating the player's facing direction
-       // Debug.DrawRay(transform.position, forwardDirection * maxDetectDistance, Color.green);
+        playerDetected = sensor.canSeePlayer;
     }
 
     /* Getter/Setters */
