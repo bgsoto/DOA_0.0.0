@@ -80,7 +80,7 @@ namespace StarterAssets
         private float baseStepSpeed = 0.5f;
         private float sprintStepMultiplier = 0.6f;
         private float GetCurrentOffset => _input.sprint ? baseStepSpeed * sprintStepMultiplier : baseStepSpeed;
-       [SerializeField] private string GroundType;
+        private string GroundType;
 
 #if ENABLE_INPUT_SYSTEM
         private PlayerInput _playerInput;
