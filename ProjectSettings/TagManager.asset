@@ -13,6 +13,8 @@ TagManager:
   - Safe
   - Artifact
   - Monster
+  - Anomaly
+  - Obstacle
   layers:
   - Default
   - TransparentFX
@@ -23,8 +25,8 @@ TagManager:
   - Items
   - Player
   - Metal
-  - 
-  - 
+  - Obstacle
+  - Target
   - 
   - 
   - 
