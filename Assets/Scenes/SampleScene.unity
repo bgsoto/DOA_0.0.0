@@ -1196,6 +1196,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 213408212149557906, guid: 94c90b2d910d68e48b9c06f61fe5ed65, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 501027419562345986, guid: 94c90b2d910d68e48b9c06f61fe5ed65, type: 3}
       propertyPath: m_Name
       value: TabCanvas
@@ -12655,7 +12659,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5252706724001264664, guid: a481cf1effc06d24098210cc2375ee47, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5262801085694430565, guid: a481cf1effc06d24098210cc2375ee47, type: 3}
       propertyPath: m_Layer
@@ -21208,6 +21212,14 @@ PrefabInstance:
     - target: {fileID: 2913216304476199033, guid: d78391d1a42431f4c995508b90028ef5, type: 3}
       propertyPath: m_RootOrder
       value: 30
+      objectReference: {fileID: 0}
+    - target: {fileID: 2913216304476199033, guid: d78391d1a42431f4c995508b90028ef5, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2913216304476199033, guid: d78391d1a42431f4c995508b90028ef5, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.15
       objectReference: {fileID: 0}
     - target: {fileID: 2913216304476199033, guid: d78391d1a42431f4c995508b90028ef5, type: 3}
       propertyPath: m_LocalPosition.x

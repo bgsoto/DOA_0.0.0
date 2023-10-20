@@ -20,6 +20,7 @@ public class MonsterStateMachine : MonoBehaviour
     [SerializeField] public float coneAngle = 45f;
     [SerializeField] public float maxDetectDistance = 10f;
     [SerializeField] private bool playerDetected = false;
+    [SerializeField] private float Speed;
 
     public enum AnomalyState
     {
@@ -37,6 +38,7 @@ public class MonsterStateMachine : MonoBehaviour
         currentState = AnomalyState.Patrol;
         agent = GetComponent<NavMeshAgent>();
         playerDetected = sensor.canSeePlayer;
+        Speed = agent.speed;
     }
 
     void Update()
@@ -48,6 +50,7 @@ public class MonsterStateMachine : MonoBehaviour
             case AnomalyDirector.DirectorState.Search:
                 
                 Patrol();
+                agent.speed = 3;
                 break;
 
             case AnomalyDirector.DirectorState.Hunt:
@@ -56,9 +59,11 @@ public class MonsterStateMachine : MonoBehaviour
                 {
                     case AnomalyState.Stalk:
                         Stalk();
+                        agent.speed = 3;
                         break;
                     case AnomalyState.Chase:
                         Chase();
+                        agent.speed = 6;
                         break;
                     case AnomalyState.Kill:
                         Kill();
@@ -79,6 +84,7 @@ public class MonsterStateMachine : MonoBehaviour
      */
     void Patrol()
     {
+        Speed = 3.5f;
         agent.SetDestination(targetDestination);
 
         if (playerDetected)
@@ -96,6 +102,7 @@ public class MonsterStateMachine : MonoBehaviour
     /* Only during Hunt State (Director) <Look at Patrol comment> */
     void Stalk()
     {
+        Speed = 3.5f;
         agent.SetDestination(targetDestination);
 
         if (playerDetected)
@@ -133,8 +140,10 @@ public class MonsterStateMachine : MonoBehaviour
      */
     void Chase()
     {
+        
         if (Vector3.Distance(transform.position, director.PlayerPosition) < maxDetectDistance)
         {
+            Speed = 7f;
             Debug.Log("IN");
             agent.SetDestination(director.PlayerPosition);
 
