@@ -13,11 +13,9 @@ MonoBehaviour:
   m_Name: Curie2
   m_EditorClassIdentifier: 
   objectiveName: Curie2/ComputerFound
-  objectiveDescription: 'Find 2 Keycards to Open the Safe
-
-    Card 1 Clue:
-
-    Card
-    2 Clue: '
+  objectiveDescription: "Find 2 Keycards to Open the Safe\n "
   objectiveStage: 10
-  clueDescription: 
+  clueDescription: 'Red Card Clue: Where Science Advances
+
+    Blue Card Clue: Where
+    Leaders Convene'
