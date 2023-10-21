@@ -15,6 +15,7 @@ TagManager:
   - Monster
   - Anomaly
   - Obstacle
+  - DoorTrigger
   layers:
   - Default
   - TransparentFX

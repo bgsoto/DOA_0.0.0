@@ -6,6 +6,7 @@ using Unity.VisualScripting;
 using UnityEngine;
 using DG.Tweening;
 using UnityEngine.EventSystems;
+using TMPro;
 
 public class PlayerInteraction : MonoBehaviour
 {
@@ -22,6 +23,7 @@ public class PlayerInteraction : MonoBehaviour
     public GameObject childLoc;
     public GameObject equippedItem;
     public MonoBehaviour[] scriptArray;
+    public GameObject interactTextObject; // Reference to the TextMeshPro GameObject
 
 
     public int keys_collected;
@@ -56,24 +58,31 @@ public class PlayerInteraction : MonoBehaviour
             if (interactionHit.collider.gameObject.CompareTag("Item") || interactionHit.collider.gameObject.CompareTag("Key") || interactionHit.collider.gameObject.CompareTag("Safe") || interactionHit.collider.gameObject.CompareTag("Artifact"))
             {
                 reticle.color = Color.green;
+                interactTextObject.SetActive(true); // Enable the Press E to interact GameObject
+
             }
             else if (interactionHit.collider.gameObject.GetComponent<IInteractable>() != null)
                 {
                     interactableObject = interactionHit.collider.gameObject.GetComponent<IInteractable>();
                     canInteract = true;
                     reticle.color = Color.green;
+                    interactTextObject.SetActive(true); // Enable the Press E to interact GameObject
+
                 //Debug.Log("PRESS E TO INTERACT");
                 }
             else
             {
                 reticle.color = Color.white;
                 canInteract = false;
+                interactTextObject.SetActive(false); // Disable the Press E to interact GameObject
                 //Debug.Log("NO ACTION AVAILIABLE");
             }
             }
         else
         {
             reticle.color = Color.white;
+            interactTextObject.SetActive(false); // Disable the Press E to interact GameObject
+
         }
 
         
