@@ -36,6 +36,10 @@ public class FieldOFViewEditor : Editor
 
     }
 
+
+
+
+
     private Vector3 DirectionFromAngle(float eulerY, float angleInDegrees)
     {
         angleInDegrees += eulerY;

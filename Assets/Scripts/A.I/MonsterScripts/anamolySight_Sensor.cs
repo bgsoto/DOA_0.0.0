@@ -16,11 +16,17 @@ public class anamolySight_Sensor : MonoBehaviour
     [Header("Relationships")]
     [SerializeField] public GameObject playerReference;
 
-    [Header("Settings")] 
+    [Header("Anom. Sight Settings")] 
     [SerializeField] public float radius;
     [Range(0,360)]
     [SerializeField] public float angle;
     [SerializeField] public bool canSeePlayer;
+
+    [Header(" Anom. Sense Settings")]
+    [SerializeField] public float senseRadius;
+    [Range(0, 360)]
+    [SerializeField] public float senseAngle;
+    [SerializeField] public bool canSensePlayer;
 
     [Header("Layer Maskes")]
     [SerializeField] public LayerMask targetMask;
@@ -40,35 +46,57 @@ public class anamolySight_Sensor : MonoBehaviour
         {
             yield return wait;
             FieldOfViewCheck();
+            AnomalySenseFOV();
         }
     }
 
     private void FieldOfViewCheck()
     {
+        // Find all colliders within a sphere around the current object
         Collider[] rangeChecks = Physics.OverlapSphere(transform.position, radius, targetMask);
 
+        // If there are any colliders found
         if (rangeChecks.Length != 0)
         {
+            // Get the first target's transform
             Transform target = rangeChecks[0].transform;
-            Vector3 directionToTarget = (target.position - transform.position).normalized; 
 
+            // Calculate the normalized direction from current position to target
+            Vector3 directionToTarget = (target.position - transform.position).normalized;
+
+            // Check if the angle between forward direction and direction to target is within the FOV
             if (Vector3.Angle(transform.forward, directionToTarget) < angle / 2)
             {
+                // Calculate the distance to the target
                 float distanceToTarget = Vector3.Distance(transform.position, target.position);
 
+                // Raycast to check for obstacles in the line of sight
                 if (!Physics.Raycast(transform.position, directionToTarget, distanceToTarget, obstacleMask))
-                    canSeePlayer = true;
-               
+                    canSeePlayer = true; // Player is within FOV and not obstructed by obstacles
                 else
-                    canSeePlayer = false;
-
+                    canSeePlayer = false; // Player is obstructed by obstacles
             }
             else
-                canSeePlayer = false;
+                canSeePlayer = false; // Player is outside of FOV
 
         }
         else if (canSeePlayer)
-            canSeePlayer = false;
+            canSeePlayer = false; // No targets found, reset canSeePlayer flag
+    }
+
+    private void AnomalySenseFOV()
+    {
+        Collider[] SenseCheck = Physics.OverlapSphere(transform.position, senseRadius, targetMask);
+
+        if (SenseCheck.Length != 0)
+        {
+            canSeePlayer = true;
+        }
+        else canSeePlayer = false;
+    }
+    private void OnDrawGizmos()
+    {
+        Gizmos.DrawWireSphere(transform.position, senseRadius);
     }
 
 
