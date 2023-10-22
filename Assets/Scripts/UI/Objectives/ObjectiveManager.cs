@@ -8,9 +8,9 @@ using UnityEngine.UI;
 
 public class ObjectiveManager : MonoBehaviour
 {
+    [Header ("Relationships")]
     [SerializeField] private GameObject objectiveCanvas;
     [SerializeField] private GameObject hamburgerIcon;
-
     [SerializeField] private TMP_Text objectiveText;
     [SerializeField] private string currentObjective;
     [SerializeField] private TMP_Text clueText;
@@ -18,6 +18,7 @@ public class ObjectiveManager : MonoBehaviour
     [SerializeField] private Text noteNotif;
 
     [SerializeField] private int questState = 0;
+    private bool isFaded = false;
 
     [SerializeField] private List<ObjectiveInfo> objectiveData;
 
@@ -38,15 +39,17 @@ public class ObjectiveManager : MonoBehaviour
     }
     private void Update()
     {
-        if (Input.GetKey(KeyCode.Tab))
+        if (Input.GetKey(KeyCode.Tab) && !isFaded )
         {
             objectiveCanvas.GetComponent<CanvasGroup>().DOFade(1, 1f);
             hamburgerIcon.GetComponent<CanvasGroup>().DOFade(0, 0);
+            isFaded = true;
             UpdateText();
         }
         if (Input.GetKeyUp(KeyCode.Tab)) {
             objectiveCanvas.GetComponent<CanvasGroup>().DOFade(0, 1f); }
         hamburgerIcon.GetComponent<CanvasGroup>().DOFade(1, 1f);
+        isFaded = false;
     }
     private void UpdateObjective(int questStage)
     {

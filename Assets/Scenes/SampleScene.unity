@@ -1256,6 +1256,18 @@ PrefabInstance:
       propertyPath: m_Name
       value: TabCanvas
       objectReference: {fileID: 0}
+    - target: {fileID: 4206889215500148725, guid: 94c90b2d910d68e48b9c06f61fe5ed65, type: 3}
+      propertyPath: m_Color.b
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4206889215500148725, guid: 94c90b2d910d68e48b9c06f61fe5ed65, type: 3}
+      propertyPath: m_Color.g
+      value: 0.3773585
+      objectReference: {fileID: 0}
+    - target: {fileID: 4206889215500148725, guid: 94c90b2d910d68e48b9c06f61fe5ed65, type: 3}
+      propertyPath: m_Color.r
+      value: 0.034807898
+      objectReference: {fileID: 0}
     - target: {fileID: 4910552267877480591, guid: 94c90b2d910d68e48b9c06f61fe5ed65, type: 3}
       propertyPath: m_Pivot.x
       value: 0
@@ -1388,6 +1400,26 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 9061735161199567254, guid: 94c90b2d910d68e48b9c06f61fe5ed65, type: 3}
+      propertyPath: objectiveData.Array.size
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 9061735161199567254, guid: 94c90b2d910d68e48b9c06f61fe5ed65, type: 3}
+      propertyPath: objectiveData.Array.data[1]
+      value: 
+      objectReference: {fileID: 11400000, guid: 54ce5ff110841454dbd1c4f14288bcd6, type: 2}
+    - target: {fileID: 9061735161199567254, guid: 94c90b2d910d68e48b9c06f61fe5ed65, type: 3}
+      propertyPath: objectiveData.Array.data[2]
+      value: 
+      objectReference: {fileID: 11400000, guid: eaf1f56d803607449a2acaa7f19ea88d, type: 2}
+    - target: {fileID: 9061735161199567254, guid: 94c90b2d910d68e48b9c06f61fe5ed65, type: 3}
+      propertyPath: objectiveData.Array.data[3]
+      value: 
+      objectReference: {fileID: 11400000, guid: fb9e512792874044bb3041d5bb72781f, type: 2}
+    - target: {fileID: 9061735161199567254, guid: 94c90b2d910d68e48b9c06f61fe5ed65, type: 3}
+      propertyPath: objectiveData.Array.data[4]
+      value: 
+      objectReference: {fileID: 11400000, guid: e93d63d1f4be4dd4f89a7b18e21b97fe, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -22712,6 +22744,10 @@ PrefabInstance:
       propertyPath: m_Volume
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 842564102551535684, guid: 8b20ef73775d2b647aecc51c6fd9ac9d, type: 3}
+      propertyPath: MaxDistance
+      value: 2.5
+      objectReference: {fileID: 0}
     - target: {fileID: 3066303905547298905, guid: 8b20ef73775d2b647aecc51c6fd9ac9d, type: 3}
       propertyPath: m_RootOrder
       value: 43
@@ -23646,7 +23682,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f1cd3b7504819c743abad835f83ff353, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerReference: {fileID: 0}
+  playerReference: {fileID: 698388397}
   radius: 15.8
   angle: 93
   canSeePlayer: 0
@@ -29365,6 +29401,10 @@ PrefabInstance:
       propertyPath: vcam
       value: 
       objectReference: {fileID: 1169086141}
+    - target: {fileID: 8616685848737228371, guid: c5efc39a8aaf6e64ea40e9ad573e9b47, type: 3}
+      propertyPath: JumpHeight
+      value: 0.5
+      objectReference: {fileID: 0}
     - target: {fileID: 8616685848737228371, guid: c5efc39a8aaf6e64ea40e9ad573e9b47, type: 3}
       propertyPath: baseVolume
       value: 0.284
