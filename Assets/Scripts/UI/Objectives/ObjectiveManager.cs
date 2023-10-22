@@ -3,6 +3,8 @@ using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using UnityEngine.Networking;
+using UnityEngine.UI;
 
 public class ObjectiveManager : MonoBehaviour
 {
@@ -13,6 +15,7 @@ public class ObjectiveManager : MonoBehaviour
     [SerializeField] private string currentObjective;
     [SerializeField] private TMP_Text clueText;
     [SerializeField] private string activeClue;
+    [SerializeField] private Text noteNotif;
 
     [SerializeField] private int questState = 0;
 
@@ -26,10 +29,12 @@ public class ObjectiveManager : MonoBehaviour
     private void OnEnable()
     {
         ObjectiveUpdater.UpdateObjectives += UpdateObjective;
+        NoteDisplay.NoteGathered += NoteGatheredNotif;
     }
     private void OnDisable()
     {
         ObjectiveUpdater.UpdateObjectives -= UpdateObjective;
+        NoteDisplay.NoteGathered -= NoteGatheredNotif;
     }
     private void Update()
     {
@@ -41,7 +46,7 @@ public class ObjectiveManager : MonoBehaviour
         }
         if (Input.GetKeyUp(KeyCode.Tab)) {
             objectiveCanvas.GetComponent<CanvasGroup>().DOFade(0, 1f); }
-            hamburgerIcon.GetComponent<CanvasGroup>().DOFade(1, 1f);
+        hamburgerIcon.GetComponent<CanvasGroup>().DOFade(1, 1f);
     }
     private void UpdateObjective(int questStage)
     {
@@ -64,4 +69,12 @@ public class ObjectiveManager : MonoBehaviour
         objectiveText.text = currentObjective;
         clueText.text = activeClue;
     }
-}
+
+    private void NoteGatheredNotif()
+    {
+        noteNotif.DOText("Note Gathered", 1f, false, ScrambleMode.Custom, "10").OnComplete(() =>
+        {
+            noteNotif.DOText("         ", 1f, false, ScrambleMode.Custom, "10").SetDelay(0.5f);
+        }); 
+    }
+    }

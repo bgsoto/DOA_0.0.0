@@ -8,4 +8,5 @@ public class Note : ScriptableObject
     public string noteTitle;
     [TextArea(5, 20)]
     public string noteText;
+    public int objectiveStage = 0;
 }
