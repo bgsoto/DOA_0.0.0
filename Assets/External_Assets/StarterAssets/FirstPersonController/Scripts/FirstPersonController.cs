@@ -91,7 +91,7 @@ namespace StarterAssets
 
         private bool inMenu = false;
 
-        private const float _threshold = 0.01f;
+        private const float _threshold = 0.001f;
 
 		private bool IsCurrentDeviceMouse
 		{
