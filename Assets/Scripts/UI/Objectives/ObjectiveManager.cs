@@ -16,9 +16,11 @@ public class ObjectiveManager : MonoBehaviour
     [SerializeField] private TMP_Text clueText;
     [SerializeField] private string activeClue;
     [SerializeField] private Text noteNotif;
+    [SerializeField] private GameObject objectiveNotif;
 
     [SerializeField] private int questState = 0;
     private bool isFaded = false;
+    
 
     [SerializeField] private List<ObjectiveInfo> objectiveData;
 
@@ -43,18 +45,22 @@ public class ObjectiveManager : MonoBehaviour
         {
             objectiveCanvas.GetComponent<CanvasGroup>().DOFade(1, 1f);
             hamburgerIcon.GetComponent<CanvasGroup>().DOFade(0, 0);
+            objectiveNotif.SetActive(false);
             isFaded = true;
             UpdateText();
         }
-        if (Input.GetKeyUp(KeyCode.Tab)) {
-            objectiveCanvas.GetComponent<CanvasGroup>().DOFade(0, 1f); }
-        hamburgerIcon.GetComponent<CanvasGroup>().DOFade(1, 1f);
-        isFaded = false;
+        if (Input.GetKeyUp(KeyCode.Tab))
+        {
+            objectiveCanvas.GetComponent<CanvasGroup>().DOFade(0, 1f);
+            hamburgerIcon.GetComponent<CanvasGroup>().DOFade(1, 1f);
+            isFaded = false;
+        }
     }
     private void UpdateObjective(int questStage)
     {
-        if (questStage >= questState)
+        if (questStage > questState)
         {
+            objectiveNotif.SetActive(true);
             foreach (var obj in objectiveData) { if (questStage == obj.objectiveStage)
                 {
                     //sets objectives according to quest state
