@@ -408,9 +408,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   MoveSpeed: 3
   SprintSpeed: 6
+  CrouchSpeed: 2
   RotationSpeed: 1
   SpeedChangeRate: 10
-  JumpHeight: 1.2
+  CrouchHeight: 1
+  CrouchCenter: {x: 0, y: 0.84, z: 0}
+  StandingHeight: 2
+  StandingCenter: {x: 0, y: 0.93, z: 0}
+  JumpHeight: 0.5
   Gravity: -15
   JumpTimeout: 0.1
   FallTimeout: 0.15
@@ -420,6 +425,9 @@ MonoBehaviour:
   GroundLayers:
     serializedVersion: 2
     m_Bits: 257
+  obstacleLayers:
+    serializedVersion: 2
+    m_Bits: 513
   CinemachineCameraTarget: {fileID: 4135013735270702863}
   TopClamp: 89
   BottomClamp: -89
@@ -431,8 +439,7 @@ MonoBehaviour:
   source: {fileID: 3918261780332602872}
   volumeChangeMultiplier: 0.2
   pitchChangeMultiplier: 0.2
-  baseVolume: 0
-  GroundType: 
+  baseVolume: 0.337
 --- !u!114 &1978471637655604388
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -466,6 +473,7 @@ MonoBehaviour:
   look: {x: 0, y: 0}
   jump: 0
   sprint: 0
+  crouch: 0
   analogMovement: 0
   cursorLocked: 1
   cursorInputForLook: 1
