@@ -46,8 +46,7 @@ public class UIManager : MonoBehaviour
     private void DisplayMenu(int menuIndex)
     {
         UIStack.Push(menuIndex);
-        if (UIList[UIStack.Peek()].GetComponent<UISettings>().doSound == true) { OpenMenuSound(); }
-        if (UIList[UIStack.Peek()].GetComponent<UISettings>().doAnim == true) { OpenMenuAnim(menuIndex); }
+        if (UIList[UIStack.Peek()].GetComponent<UISettings>() != null) { OpenMenuSound(); OpenMenuAnim(menuIndex); }
         else { UIList[menuIndex].SetActive(true); }
         Cursor.lockState = CursorLockMode.Confined;
         Cursor.visible = true;
@@ -74,18 +73,18 @@ public class UIManager : MonoBehaviour
     public void OpenMenuAnim(int menuIndex)//animation for opening menu if doAnim is ticked
     {
         UIList[menuIndex].SetActive(true);
+        if (!UIList[UIStack.Peek()].GetComponent<UISettings>().doAnim) { return; }
         UIList[menuIndex].GetComponent<CanvasGroup>().DOFade(1, UIList[UIStack.Peek()].GetComponent<UISettings>().duration);
     }
-    public void OpenMenuSound()//animation for opening menu if doAnim is ticked
+    public void OpenMenuSound()//sound for opening menu if doSound is ticked
     {
+        if (!UIList[UIStack.Peek()].GetComponent<UISettings>().doSound) { return; }
         var audioClip  = UIList[UIStack.Peek()].GetComponent<UISettings>().clip;
         if (audioClip != null) { audioSource.PlayOneShot(audioClip); }
     }
 
     IEnumerator CloseMenuAnim() //animation for closing menu (waits until completed before closing fully)
     {
-        UIList[UIStack.Peek()].GetComponent<CanvasGroup>().DOFade(0, UIList[UIStack.Peek()].GetComponent<UISettings>().duration / 2);
-        yield return new WaitForSeconds(UIList[UIStack.Peek()].GetComponent<UISettings>().duration / 2);
         UIList[UIStack.Pop()].SetActive(false);
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;

@@ -163,7 +163,7 @@ namespace StarterAssets
             {
                 CameraRotation();
                 SprintFOV();
-                CheckLayers();
+                //CheckLayers();
                 Footsteps();
             }
         }
@@ -180,12 +180,12 @@ namespace StarterAssets
             UIManager.DisablePlayerControls += PlayerInput;
         }
 
-        private void PlayerInput(bool value) { inMenu = value; }
+        private void PlayerInput(bool value) { inMenu = value; } //checks if in menu, if true, no move is processed.
         private void GroundedCheck()
         {
-            // set sphere position, with offset
+            // set sphere position, with offset below player
             Vector3 spherePosition = new Vector3(transform.position.x, transform.position.y - GroundedOffset, transform.position.z);
-            Grounded = Physics.CheckSphere(spherePosition, GroundedRadius, GroundLayers, QueryTriggerInteraction.Ignore);
+            Grounded = Physics.CheckSphere(spherePosition, GroundedRadius, GroundLayers, QueryTriggerInteraction.Ignore); //checks "Sphere position" for overlap with valid ground layers
         }
 
         private void CameraRotation()
@@ -223,7 +223,7 @@ namespace StarterAssets
             float currentHorizontalSpeed = new Vector3(_controller.velocity.x, 0.0f, _controller.velocity.z).magnitude;
 
             float speedOffset = 0.1f;
-            float inputMagnitude = _input.analogMovement ? _input.move.magnitude : 1f;
+            float inputMagnitude = _input.analogMovement ? _input.move.magnitude : 1f; //for controllers, allows variable move magnitudes
 
             // accelerate or decelerate to target speed
             if (currentHorizontalSpeed < targetSpeed - speedOffset || currentHorizontalSpeed > targetSpeed + speedOffset)
@@ -301,13 +301,13 @@ namespace StarterAssets
             if (_verticalVelocity < _terminalVelocity)
             {
                 _verticalVelocity += Gravity * Time.deltaTime;
-            }
+            } //ensures player falling doesnt exceed terminal velocity
         }
         private static float ClampAngle(float lfAngle, float lfMin, float lfMax)
         {
             if (lfAngle < -360f) lfAngle += 360f;
             if (lfAngle > 360f) lfAngle -= 360f;
-            return Mathf.Clamp(lfAngle, lfMin, lfMax);
+            return Mathf.Clamp(lfAngle, lfMin, lfMax); //clamps cam angle to 360/-360
         }
 
         private void OnDrawGizmosSelected()
@@ -324,7 +324,8 @@ namespace StarterAssets
 
         private void SprintFOV()
         {
-            if (_input.sprint)
+            vcam.m_Lens.FieldOfView = _input.sprint ? Mathf.Lerp(vcam.m_Lens.FieldOfView, 50, 10 * Time.deltaTime) : vcam.m_Lens.FieldOfView = Mathf.Lerp(vcam.m_Lens.FieldOfView, 40, 10 * Time.deltaTime);
+           /* if (_input.sprint)
             {
                 if (vcam.m_Lens.FieldOfView < 50)
                 {
@@ -337,7 +338,7 @@ namespace StarterAssets
                 {
                     vcam.m_Lens.FieldOfView = Mathf.Lerp(vcam.m_Lens.FieldOfView, 40, 10 * Time.deltaTime);
                 }
-            }
+            }*/
         }
 
         private void Crouch()
@@ -351,11 +352,11 @@ namespace StarterAssets
                 _controller.height = CrouchHeight;
                 _controller.center = CrouchCenter;
                 isCrouching = true;
-            }
+            } //checks state machine for crouch input, if true then shrinks cc height and center.
 
             Vector3 newBottom = StandingCenter + Vector3.down * StandingHeight * 0.5f;
             newBottom = transform.TransformPoint(newBottom); //resets bottom of cc
-            if (!_input.crouch && isCrouching == true) //try to stand up if crouching but no crouch input
+            if (!_input.crouch && isCrouching == true) //try to stand up if crouching but no crouch input but the player is crouching.
             {
                 RaycastHit hit;
                 if (Physics.SphereCast(newBottom, _controller.radius, transform.up, out hit, StandingHeight, obstacleLayers) == false)
@@ -375,23 +376,23 @@ namespace StarterAssets
             footstepTimer -= Time.deltaTime;
             if (footstepTimer <= 0)
             {
-                if (GroundType == "Metal")
-                {
-                    source.clip = metalSounds[Random.Range(0, metalSounds.Length)];
-                }
+                //if (GroundType == "Metal")
+                //{
+                    source.clip = metalSounds[Random.Range(0, metalSounds.Length)]; //plays footsteps with randomized pitch and volume when footstep timer is 0. timer updated every frame if moving.
+                //}
                 source.volume = Random.Range(baseVolume - volumeChangeMultiplier, baseVolume);
                 source.pitch = Random.Range(1 - pitchChangeMultiplier, 1 + pitchChangeMultiplier);
                 source.PlayOneShot(source.clip); //code from : https://www.youtube.com/watch?v=lqyzGntF5Hw //
                 footstepTimer = GetCurrentOffset;
             }
         }
-        public void CheckLayers()
+        /*public void CheckLayers()
         {
             RaycastHit hit;
             if (Physics.Raycast(transform.position, Vector3.down, out hit, 3))
             {
                 GroundType = hit.transform.tag;
             }
-        }
+        } actually not necessary for this game, spaceships are like 100% metal lol*/
     }
 }

@@ -174,7 +174,7 @@ RectTransform:
   - {fileID: 2643054663298471273}
   - {fileID: 4929687396506423399}
   m_Father: {fileID: 0}
-  m_RootOrder: 0
+  m_RootOrder: 43
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -264,10 +264,13 @@ MonoBehaviour:
   activeClue: 
   noteNotif: {fileID: 4206889215500148725}
   objectiveNotif: {fileID: 6502487203111476490}
-  questState: 0
+  questState: -1
   objectiveData:
-  - {fileID: 11400000, guid: 872e1754342e916418e2db610ad4eed8, type: 2}
-  - {fileID: 11400000, guid: 665c50823f9f43f4faad27b93e7755b8, type: 2}
+  - {fileID: 11400000, guid: 2efe5df0a8672624a984a5aca0856600, type: 2}
+  - {fileID: 11400000, guid: 54ce5ff110841454dbd1c4f14288bcd6, type: 2}
+  - {fileID: 11400000, guid: eaf1f56d803607449a2acaa7f19ea88d, type: 2}
+  - {fileID: 11400000, guid: fb9e512792874044bb3041d5bb72781f, type: 2}
+  - {fileID: 11400000, guid: e93d63d1f4be4dd4f89a7b18e21b97fe, type: 2}
 --- !u!114 &8457618004269100804
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1062,7 +1065,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0.034807898, g: 0.3773585, b: 0, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -1470,7 +1473,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 50, y: -64}
+  m_AnchoredPosition: {x: 50, y: -50}
   m_SizeDelta: {x: 50, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &4608829402225422763

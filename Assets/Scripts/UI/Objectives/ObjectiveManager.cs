@@ -18,7 +18,7 @@ public class ObjectiveManager : MonoBehaviour
     [SerializeField] private Text noteNotif;
     [SerializeField] private GameObject objectiveNotif;
 
-    [SerializeField] private int questState = 0;
+    [SerializeField] private int questState = -1;
     private bool isFaded = false;
     
 
@@ -28,6 +28,7 @@ public class ObjectiveManager : MonoBehaviour
     {
         //set objective and clue text to defaults
         UpdateObjective(0);
+        UpdateText();
     }
     private void OnEnable()
     {
@@ -46,8 +47,8 @@ public class ObjectiveManager : MonoBehaviour
             objectiveCanvas.GetComponent<CanvasGroup>().DOFade(1, 1f);
             hamburgerIcon.GetComponent<CanvasGroup>().DOFade(0, 0);
             objectiveNotif.SetActive(false);
-            isFaded = true;
             UpdateText();
+            isFaded = true;
         }
         if (Input.GetKeyUp(KeyCode.Tab))
         {

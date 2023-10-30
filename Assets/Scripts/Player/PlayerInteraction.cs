@@ -37,6 +37,7 @@ public class PlayerInteraction : MonoBehaviour
     
 
     RaycastHit hit;
+    Vector3 rayOrigin = new(0.5f, 0.5f, 0f); // center of the screen
 
     private bool canInteract = false;
     private IInteractable interactableObject;
@@ -51,8 +52,8 @@ public class PlayerInteraction : MonoBehaviour
     {
         DropKey();
 
-        // Create a ray that follows the mouse cursor's position on the screen
-        Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+        // Create a ray from center of the screen (cursor sometimes gets unlocked so this will prevent bugs)
+        Ray ray = Camera.main.ViewportPointToRay(rayOrigin);
         if (Physics.Raycast(ray, out RaycastHit interactionHit, Rlength))
         {
             if (interactionHit.collider.gameObject.CompareTag("Item") || interactionHit.collider.gameObject.CompareTag("Key") || interactionHit.collider.gameObject.CompareTag("Safe") || interactionHit.collider.gameObject.CompareTag("Artifact"))

@@ -13879,8 +13879,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Size: {x: 0.7873867, y: 1, z: 0.4671235}
+  m_Center: {x: 0.106310174, y: 0, z: 0.26643825}
 --- !u!4 &2082933551
 Transform:
   m_ObjectHideFlags: 0
@@ -14479,6 +14479,18 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 9061735161199567254, guid: 94c90b2d910d68e48b9c06f61fe5ed65, type: 3}
+      propertyPath: objectiveData.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 9061735161199567254, guid: 94c90b2d910d68e48b9c06f61fe5ed65, type: 3}
+      propertyPath: objectiveData.Array.data[0]
+      value: 
+      objectReference: {fileID: 11400000, guid: 872e1754342e916418e2db610ad4eed8, type: 2}
+    - target: {fileID: 9061735161199567254, guid: 94c90b2d910d68e48b9c06f61fe5ed65, type: 3}
+      propertyPath: objectiveData.Array.data[1]
+      value: 
+      objectReference: {fileID: 11400000, guid: 665c50823f9f43f4faad27b93e7755b8, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
