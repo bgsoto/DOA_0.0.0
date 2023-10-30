@@ -82,7 +82,6 @@ public class Flashlight : MonoBehaviour
     void FlashLightPosition()
 
     {
-        
             transform.localPosition = new Vector3(0.08f, -0.1f, 0.17f);
             transform.localRotation = Quaternion.Euler(-95f, -86.91f, 0f);
         
