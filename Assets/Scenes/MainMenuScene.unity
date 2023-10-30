@@ -549,12 +549,12 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: '-Unity Asset Store-
+  m_text: '-Assets-
 
     "Sci-Fi Facility" by Triplebrick
 
-    "Amazing
-    Shaders Bundle" by Amazing Assets
+    "Amazing Shaders Bundle"
+    by Amazing Assets
 
     "Humanoid Creatures Pack" by Maksim Bugrimov
 
@@ -563,12 +563,15 @@ MonoBehaviour:
 
     "Starfield Skybox" by PULSAR BYTES
 
+    "Solar
+    System Model (Orrery)" (https://skfb.ly/o6Xop) by Smoggybeard is licensed under
+    Creative Commons Attribution (http://creativecommons.org/licenses/by/4.0/).
 
 
-    -Google
-    Fonts-
+    -Fonts-
 
-    "Play" by Jonas Hecksher
+    "Play"
+    by Jonas Hecksher
 
 '
   m_isRightToLeft: 0

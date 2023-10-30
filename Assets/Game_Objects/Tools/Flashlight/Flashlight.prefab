@@ -108,6 +108,7 @@ GameObject:
   - component: {fileID: 7183127215050015238}
   - component: {fileID: 8706498153627188913}
   - component: {fileID: 5651678184855603055}
+  - component: {fileID: 4019474305793758656}
   m_Layer: 0
   m_Name: Flashlight
   m_TagString: Item
@@ -248,6 +249,19 @@ MonoBehaviour:
   on: 0
   isEquipped: 0
   lens: {fileID: 2100000, guid: 53458964f4ce2e8438251ae0c80392e9, type: 2}
+--- !u!114 &4019474305793758656
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7775546678062608144}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 920963a24d8a1794b864414e38fa9d93, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  interactDescription: Press E to Pick Up
 --- !u!1 &7885212645624099065
 GameObject:
   m_ObjectHideFlags: 0

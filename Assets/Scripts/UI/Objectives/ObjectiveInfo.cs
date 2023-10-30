@@ -6,6 +6,7 @@ using UnityEngine;
 public class ObjectiveInfo : ScriptableObject
 {
     public string objectiveName;
+    public bool isObjective2;
     [TextArea(5, 20)]
     public string objectiveDescription;
     public int objectiveStage;

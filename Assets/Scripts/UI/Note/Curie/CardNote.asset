@@ -10,13 +10,12 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: cb02e16d6b4bc6a4f84468132e69a542, type: 3}
-  m_Name: TutorialNote
+  m_Name: CardNote
   m_EditorClassIdentifier: 
-  noteTitle: Hey, listen!
-  noteText: 'Around the ship, you might come across terminals or computers displaying
-    notes like this! Make sure to interact with them, and you can record down any
-    information important to the mission. Check your [TAB] menu to view relevant
-    clues at any time!
-
-    <align="right">-B.O.S.S.'
-  objectiveStage: 5
+  noteTitle: 'Security Log Day 27:'
+  isObjective2: 0
+  noteText: "6:45 - RED entered the Cafeteria. \r\n7:02 - BLUE entered the Security
+    Room.\r\n7:40 - BLUE entered the Cafeteria.\r\n8:00 - BLUE entered the Meeting
+    Room.\r\n8:10 - Emergency Protocol Triggered.\r\n8:43 - Security System Damaged.
+    End of Log.\r"
+  objectiveStage: 15

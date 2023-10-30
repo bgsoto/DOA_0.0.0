@@ -10,12 +10,13 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: f791432f7824ab54f9d37500854f8bf2, type: 3}
-  m_Name: Curie2
+  m_Name: CurieKeycard2 1
   m_EditorClassIdentifier: 
   objectiveName: Curie2/ComputerFound
+  isObjective2: 0
   objectiveDescription: "Find 2 Keycards to Open the Safe\n "
-  objectiveStage: 10
-  clueDescription: 'Red Card Clue: Where Science Advances
+  objectiveStage: 15
+  clueDescription: 'Red Card: Last Seen in Meeting Room.
 
-    Blue Card Clue: Where
-    Leaders Convene'
+    Blue Card: Last Seen
+    in Cafeteria.'

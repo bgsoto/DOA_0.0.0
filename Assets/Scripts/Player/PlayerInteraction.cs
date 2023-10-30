@@ -1,12 +1,6 @@
-
-using System;
-using System.Collections;
-using System.Collections.Generic;
-using Unity.VisualScripting;
-using UnityEngine;
 using DG.Tweening;
-using UnityEngine.EventSystems;
 using TMPro;
+using UnityEngine;
 
 public class PlayerInteraction : MonoBehaviour
 {
@@ -34,7 +28,7 @@ public class PlayerInteraction : MonoBehaviour
     public AudioSource inventoryAudioSource;
     public AudioClip pickupSound;
     public AudioClip dropSound;
-    
+
 
     RaycastHit hit;
     Vector3 rayOrigin = new(0.5f, 0.5f, 0f); // center of the screen
@@ -59,18 +53,19 @@ public class PlayerInteraction : MonoBehaviour
             if (interactionHit.collider.gameObject.CompareTag("Item") || interactionHit.collider.gameObject.CompareTag("Key") || interactionHit.collider.gameObject.CompareTag("Safe") || interactionHit.collider.gameObject.CompareTag("Artifact"))
             {
                 reticle.color = Color.green;
+                interactTextObject.GetComponent<TMP_Text>().text = interactionHit.collider.gameObject.GetComponent<CustomInteractText>() ? interactionHit.collider.gameObject.GetComponent<CustomInteractText>().interactDescription : "Press E to Interact";
                 interactTextObject.SetActive(true); // Enable the Press E to interact GameObject
-
             }
             else if (interactionHit.collider.gameObject.GetComponent<IInteractable>() != null)
-                {
-                    interactableObject = interactionHit.collider.gameObject.GetComponent<IInteractable>();
-                    canInteract = true;
-                    reticle.color = Color.green;
-                    interactTextObject.SetActive(true); // Enable the Press E to interact GameObject
+            {
+                interactableObject = interactionHit.collider.gameObject.GetComponent<IInteractable>();
+                canInteract = true;
+                reticle.color = Color.green;
+                interactTextObject.GetComponent<TMP_Text>().text = interactionHit.collider.gameObject.GetComponent<CustomInteractText>() ? interactionHit.collider.gameObject.GetComponent<CustomInteractText>().interactDescription : "Press E to Interact";
+                interactTextObject.SetActive(true); // Enable the Press E to interact GameObject
 
                 //Debug.Log("PRESS E TO INTERACT");
-                }
+            }
             else
             {
                 reticle.color = Color.white;
@@ -78,7 +73,7 @@ public class PlayerInteraction : MonoBehaviour
                 interactTextObject.SetActive(false); // Disable the Press E to interact GameObject
                 //Debug.Log("NO ACTION AVAILIABLE");
             }
-            }
+        }
         else
         {
             reticle.color = Color.white;
@@ -86,7 +81,7 @@ public class PlayerInteraction : MonoBehaviour
 
         }
 
-        
+
         if (Physics.Raycast(transform.position, transform.TransformDirection(Vector3.forward), out hit, Rlength))
         {
             string tagName = hit.transform.gameObject.tag;
@@ -125,14 +120,14 @@ public class PlayerInteraction : MonoBehaviour
                 ObjectiveUpdater.UpdateObjectives?.Invoke(40);
                 Destroy(hit.collider.gameObject);
                 Artifact_collected = true;
-                
-               
+
+
             }
             if (hit.transform.gameObject.CompareTag("Safe") && Input.GetKeyDown(KeyCode.E) && allKeysCollected)
             {
                 Instantiate(Artifact, hit.transform);
                 Destroy(hit.collider.gameObject);
-                
+
             }
 
             if (canInteract)
@@ -179,8 +174,8 @@ public class PlayerInteraction : MonoBehaviour
                 itemslots[0].gameObject.transform.SetParent(parentLoc.transform, true);
                 itemslots[0].gameObject.GetComponent<Rigidbody>().isKinematic = true;
                 itemslots[0].gameObject.GetComponent<BoxCollider>().enabled = false;
-              
-                
+
+
             }
 
 
@@ -201,8 +196,8 @@ public class PlayerInteraction : MonoBehaviour
                 itemslots[1].gameObject.transform.SetParent(parentLoc.transform, true);
                 itemslots[1].gameObject.GetComponent<Rigidbody>().isKinematic = true;
                 itemslots[1].gameObject.GetComponent<BoxCollider>().enabled = false;
-               
-               
+
+
                 Debug.Log(" pressed 2 ");
 
             }
@@ -214,10 +209,10 @@ public class PlayerInteraction : MonoBehaviour
 
 
         }
-        
-        
+
+
         // 
-          
+
         if (Input.GetKey(KeyCode.Alpha3))
         {
             Debug.Log("pressed 3");
@@ -228,7 +223,7 @@ public class PlayerInteraction : MonoBehaviour
                 itemslots[2].gameObject.transform.SetParent(parentLoc.transform, true);
                 itemslots[2].gameObject.GetComponent<Rigidbody>().isKinematic = true;
                 itemslots[2].gameObject.GetComponent<BoxCollider>().enabled = false;
-              
+
 
             }
 
@@ -242,7 +237,7 @@ public class PlayerInteraction : MonoBehaviour
         }
 
 
-       
+
         if (Input.GetKey(KeyCode.Alpha4))
         {
             Debug.Log("pressed 4");
@@ -253,7 +248,7 @@ public class PlayerInteraction : MonoBehaviour
                 itemslots[3].gameObject.transform.SetParent(parentLoc.transform, true);
                 itemslots[3].gameObject.GetComponent<Rigidbody>().isKinematic = true;
                 itemslots[3].gameObject.GetComponent<BoxCollider>().enabled = false;
-               
+
 
             }
 
@@ -315,13 +310,13 @@ public class PlayerInteraction : MonoBehaviour
                         duration: 0.3f).SetEase(Ease.InOutSine);
                     inventoryAudioSource.PlayOneShot(dropSound);
                     itemslots[d].gameObject.transform.parent = null;
-                   
+
                     itemslots[d] = null;
                     break;
 
 
                 }
-               
+
 
             }
         }
@@ -337,12 +332,12 @@ public class PlayerInteraction : MonoBehaviour
         Currentlyhelditem.gameObject.transform.SetParent(parentLoc.transform, true);
         Currentlyhelditem.gameObject.GetComponent<Rigidbody>().isKinematic = true;
         Currentlyhelditem.gameObject.GetComponent<BoxCollider>().enabled = false;
-        
+
 
 
 
     }
-   
+
 
 
 

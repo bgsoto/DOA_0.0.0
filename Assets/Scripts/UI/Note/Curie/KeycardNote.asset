@@ -12,18 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cb02e16d6b4bc6a4f84468132e69a542, type: 3}
   m_Name: KeycardNote
   m_EditorClassIdentifier: 
-  noteTitle: 'Note to Staff: IN EVENT OF EMERGENCY'
-  noteText: 'Two backup keycards have been hidden aboard the SC Curie. Provided are
-    two clues to their locations. I had Miles write these, so they should be obtuse
-    enough to stump any of those pirate types.
-
-
-    <align="center">Location 1:
-    Where Science Advances
-
-    Location 2: Where Leaders Convene
-
-
-    <align="right">-Captain
-    Naomi Holcomb'
+  noteTitle: EMERGENCY PROTOCOL
+  noteText: "The emergency protocol has been activated. As per SC guidelines, instructions
+    to open the safe are as follows: \n\nThe two backup keycards should be with the
+    Head of Research and Chief of Security respectively. Their whereabouts are logged
+    in the meeting room, located in the port (left) wing of the ship."
   objectiveStage: 10

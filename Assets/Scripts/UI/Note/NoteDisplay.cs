@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using TMPro;
+using UnityEditor;
 using UnityEngine;
 
 public class NoteDisplay : MonoBehaviour, IInteractable
@@ -13,7 +14,6 @@ public class NoteDisplay : MonoBehaviour, IInteractable
     private bool noteCollected = false;
 
     public static Action NoteGathered;
-
     private void Start()
     {
         noteText.text = noteToDisplay.noteText;
@@ -25,9 +25,10 @@ public class NoteDisplay : MonoBehaviour, IInteractable
         {
             noteCollected = true;
             objectiveStage = noteToDisplay.objectiveStage;
-            ObjectiveUpdater.UpdateObjectives?.Invoke(objectiveStage);
+            if (noteToDisplay.isObjective2) { ObjectiveUpdater.UpdateObjectives2?.Invoke(objectiveStage); }
+            else { ObjectiveUpdater.UpdateObjectives?.Invoke(objectiveStage); }//sets either objective 1 or 2 depending on what note effects
             NoteGathered?.Invoke();
-            Destroy(this);
+            Destroy(this); //removes interactable.
         }
     }
 }

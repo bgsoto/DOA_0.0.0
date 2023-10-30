@@ -10,10 +10,10 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: f791432f7824ab54f9d37500854f8bf2, type: 3}
-  m_Name: Curie3
+  m_Name: CurieKeycard1.5
   m_EditorClassIdentifier: 
-  objectiveName: Curie3/Cards
-  objectiveDescription: Use the Keycards to Unlock the Safe and Obtain the Artifact
-  objectiveStage: 30
-  clueDescription: The safe is a large blue box in the room connected to where you
-    spawned.
+  objectiveName: Curie1.5
+  isObjective2: 0
+  objectiveDescription: Find 2 Keycards to Open the Safe
+  objectiveStage: 5
+  clueDescription: Interact with computers and tablets to gain useful hints.

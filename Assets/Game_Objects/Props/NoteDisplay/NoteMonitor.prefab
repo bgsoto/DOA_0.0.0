@@ -116,6 +116,7 @@ GameObject:
   - component: {fileID: 4849876282388361457}
   - component: {fileID: 5337411920120406570}
   - component: {fileID: 1283413947348218487}
+  - component: {fileID: 4898497373126381623}
   m_Layer: 0
   m_Name: NoteMonitor
   m_TagString: Untagged
@@ -178,6 +179,19 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 0.57870924, y: 0.46778166, z: 0.12208371}
   m_Center: {x: 0.004704118, y: 0.26610917, z: -0.015310742}
+--- !u!114 &4898497373126381623
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1636628372725777684}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 920963a24d8a1794b864414e38fa9d93, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  interactDescription: Press E to Gather Note
 --- !u!1 &1746042272981056028
 GameObject:
   m_ObjectHideFlags: 0
@@ -522,8 +536,8 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4294967295
-  m_fontColor: {r: 1, g: 1, b: 1, a: 1}
+    rgba: 4278190080
+  m_fontColor: {r: 0, g: 0, b: 0, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -735,8 +749,8 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4294967295
-  m_fontColor: {r: 1, g: 1, b: 1, a: 1}
+    rgba: 4278190080
+  m_fontColor: {r: 0, g: 0, b: 0, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -753,11 +767,11 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 14
+  m_fontSize: 10
   m_fontSizeBase: 20
   m_fontWeight: 400
   m_enableAutoSizing: 1
-  m_fontSizeMin: 14
+  m_fontSizeMin: 10
   m_fontSizeMax: 72
   m_fontStyle: 1
   m_HorizontalAlignment: 1

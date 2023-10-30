@@ -28,7 +28,7 @@ public class PlanetInteract : MonoBehaviour, IInteractable
         Rotate();
         gameObject.GetComponent<SphereCollider>().enabled = false;
     }
-    
+
     private void Rotate()
     {
         gameObject.transform.DOLocalRotate(new Vector3(0, 360, 0), cycleLength, RotateMode.LocalAxisAdd).SetEase(Ease.Linear).OnComplete(() =>

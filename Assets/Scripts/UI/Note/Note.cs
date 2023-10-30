@@ -6,6 +6,7 @@ using UnityEngine;
 public class Note : ScriptableObject
 {
     public string noteTitle;
+    public bool isObjective2;
     [TextArea(5, 20)]
     public string noteText;
     public int objectiveStage = 0;

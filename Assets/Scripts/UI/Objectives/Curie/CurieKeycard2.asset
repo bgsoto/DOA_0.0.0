@@ -1,0 +1,21 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f791432f7824ab54f9d37500854f8bf2, type: 3}
+  m_Name: CurieKeycard2
+  m_EditorClassIdentifier: 
+  objectiveName: Curie2/ComputerFound
+  isObjective2: 0
+  objectiveDescription: "Find 2 Keycards to Open the Safe\n "
+  objectiveStage: 10
+  clueDescription: The Head of Research and Chief of Security should be carrying
+    the keycards needed to unlock the safe. Their whereabouts are logged in the meeting
+    room on the left side of the ship.

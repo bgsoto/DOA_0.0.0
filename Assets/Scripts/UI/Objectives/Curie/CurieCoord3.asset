@@ -1,0 +1,28 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f791432f7824ab54f9d37500854f8bf2, type: 3}
+  m_Name: CurieCoord3
+  m_EditorClassIdentifier: 
+  objectiveName: CurieCoord3
+  isObjective2: 1
+  objectiveDescription: 'Search for information about the anomaly:
+
+    -Room of
+    Origin: ???
+
+    -Targeting Parameters: ???'
+  objectiveStage: 20
+  clueDescription: 'Miles was seen reciting "Neptune is 9" and "Day of Creation is
+    the Key".
+
+    The security chief planned to ask him about this on his birthday,
+    7/13.'
