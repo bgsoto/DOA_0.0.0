@@ -22,7 +22,7 @@ public class anamolySight_Sensor : MonoBehaviour
     [SerializeField] public float angle;
     [SerializeField] public bool canSeePlayer;
 
-    [Header(" Anom. Sense Settings")]
+    [Header("Anom. Sense Settings")]
     [SerializeField] public float senseRadius;
     [Range(0, 360)]
     [SerializeField] public float senseAngle;
@@ -46,7 +46,7 @@ public class anamolySight_Sensor : MonoBehaviour
         {
             yield return wait;
             FieldOfViewCheck();
-            AnomalySenseFOV();
+           // AnomalySenseFOV();
         }
     }
 

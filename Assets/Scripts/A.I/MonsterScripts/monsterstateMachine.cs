@@ -19,7 +19,7 @@ public class MonsterStateMachine : MonoBehaviour
     [SerializeField] public float maxKillRange = 5f;
     [SerializeField] public float coneAngle = 45f;
     [SerializeField] public float maxDetectDistance = 10f;
-    [SerializeField] private bool playerDetected = false;
+    [SerializeField] private bool playerDetected;
     [SerializeField] private float Speed;
 
     public enum AnomalyState
