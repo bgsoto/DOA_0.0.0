@@ -1,14 +1,12 @@
 using DG.Tweening;
-using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
-using UnityEngine.Networking;
 using UnityEngine.UI;
 
 public class ObjectiveManager : MonoBehaviour
 {
-    [Header ("Relationships")]
+    [Header("Relationships")]
     [SerializeField] private GameObject objectiveCanvas;
     [SerializeField] private GameObject hamburgerIcon;
 
@@ -32,32 +30,32 @@ public class ObjectiveManager : MonoBehaviour
     [SerializeField] private int questState = -1;
     [SerializeField] private int questState2 = -1;
     private bool isFaded = false;
-    
+
 
     [SerializeField] private List<ObjectiveInfo> objectiveData;
 
     private void Start()
     {
         //set objective and clue text to defaults
-        UpdateObjective(0);
-        UpdateObjective2(0);
+        UpdateObjective(false, 0);
+        UpdateObjective(true, 0);
         UpdateText();
     }
     private void OnEnable()
     {
         ObjectiveUpdater.UpdateObjectives += UpdateObjective;
-        ObjectiveUpdater.UpdateObjectives2 += UpdateObjective2;
+        CoordAppend.AppendObjective += AppendText;
         NoteDisplay.NoteGathered += NoteGatheredNotif;
     }
     private void OnDisable()
     {
         ObjectiveUpdater.UpdateObjectives -= UpdateObjective;
-        ObjectiveUpdater.UpdateObjectives2 -= UpdateObjective2;
+        CoordAppend.AppendObjective += AppendText;
         NoteDisplay.NoteGathered -= NoteGatheredNotif;
     }
     private void Update()
     {
-        if (Input.GetKey(KeyCode.Tab) && !isFaded )
+        if (Input.GetKey(KeyCode.Tab) && !isFaded)
         {
             objectiveCanvas.GetComponent<CanvasGroup>().DOFade(1, 1f);
             hamburgerIcon.GetComponent<CanvasGroup>().DOFade(0, 0);
@@ -72,35 +70,28 @@ public class ObjectiveManager : MonoBehaviour
             isFaded = false;
         }
     }
-    private void UpdateObjective(int questStage)
+    private void UpdateObjective(bool objective2, int questStage)
     {
-        if (questStage > questState)
+        if (objective2 ? questStage > questState2 : questStage > questState) //checks if objective 2 is true, if true then checks if questStage is greater than questState2. if obj2 not true, checks questStage1
         {
-            objectiveNotif.SetActive(true);
-            foreach (var obj in objectiveData) { if (questStage == obj.objectiveStage && !obj.isObjective2)
-                {
-                    //sets objectives according to quest state
-                    currentObjective = obj.objectiveDescription;
-                    questState = questStage;
-                    activeClue = obj.clueDescription;
-                    objectiveUpdatedSound.PlayOneShot(objectiveUpdatedClip);
-                }
-            }
-        }
-    }
-    private void UpdateObjective2(int questStage)
-    {
-        if (questStage > questState2)
-        {
+            Debug.Log(objective2);
             objectiveNotif.SetActive(true);
             foreach (var obj in objectiveData)
             {
-                if (questStage == obj.objectiveStage && obj.isObjective2)
+                if (questStage == obj.objectiveStage && obj.isObjective2 == objective2)
                 {
                     //sets objectives according to quest state
-                    currentObjective2 = obj.objectiveDescription;
-                    questState2 = questStage;
-                    activeClue2 = obj.clueDescription;
+                    if (objective2)
+                    {
+                        currentObjective2 = obj.objectiveDescription; questState2 = questStage;
+                        activeClue2 = obj.clueDescription;
+                    }
+                    else
+                    {
+                        currentObjective = obj.objectiveDescription; questState = questStage;
+                        activeClue = obj.clueDescription;
+                    }
+
                     objectiveUpdatedSound.PlayOneShot(objectiveUpdatedClip);
                 }
             }
@@ -112,7 +103,19 @@ public class ObjectiveManager : MonoBehaviour
         objectiveText.text = currentObjective;
         objectiveText2.text = currentObjective2;
         clueText.text = activeClue;
-        clueText2.text = activeClue2; 
+        clueText2.text = activeClue2;
+    }
+
+    private void AppendText(int objectiveToAppend, string textToAppend)
+    {
+        if (objectiveToAppend == 1)
+        {
+            currentObjective += textToAppend; //if objectiveToAppend is 1, add the string and return
+            Debug.Log(currentObjective);
+            return;
+        }//else do that for objective2
+        currentObjective2 += textToAppend;
+        Debug.Log(currentObjective2);
     }
 
     private void NoteGatheredNotif()
@@ -120,6 +123,6 @@ public class ObjectiveManager : MonoBehaviour
         noteNotif.DOText("Note Gathered", 1f, false, ScrambleMode.Custom, "10").OnComplete(() =>
         {
             noteNotif.DOText("         ", 1f, false, ScrambleMode.Custom, "10").SetDelay(0.5f);
-        }); 
+        });
     }
-    }
+}

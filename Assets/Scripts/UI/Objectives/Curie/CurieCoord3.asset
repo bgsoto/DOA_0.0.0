@@ -16,10 +16,8 @@ MonoBehaviour:
   isObjective2: 1
   objectiveDescription: 'Search for information about the anomaly:
 
-    -Room of
-    Origin: ???
-
-    -Targeting Parameters: ???'
+    -Targeting
+    Parameters: ???'
   objectiveStage: 20
   clueDescription: 'Miles was seen reciting "Neptune is 9" and "Day of Creation is
     the Key".

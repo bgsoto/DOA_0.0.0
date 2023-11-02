@@ -16,9 +16,7 @@ MonoBehaviour:
   isObjective2: 1
   objectiveDescription: 'Search for information about the anomaly:
 
-    -Room of
-    Origin: ???
-
-    -Targeting Parameters: ???'
+    -Targeting
+    Parameters: ???'
   objectiveStage: 0
   clueDescription: The research department may have useful information...

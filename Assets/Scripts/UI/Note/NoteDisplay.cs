@@ -25,8 +25,8 @@ public class NoteDisplay : MonoBehaviour, IInteractable
         {
             noteCollected = true;
             objectiveStage = noteToDisplay.objectiveStage;
-            if (noteToDisplay.isObjective2) { ObjectiveUpdater.UpdateObjectives2?.Invoke(objectiveStage); }
-            else { ObjectiveUpdater.UpdateObjectives?.Invoke(objectiveStage); }//sets either objective 1 or 2 depending on what note effects
+            if (noteToDisplay.isObjective2) { ObjectiveUpdater.UpdateObjectives?.Invoke(true, objectiveStage); }
+            else { ObjectiveUpdater.UpdateObjectives?.Invoke(false, objectiveStage); }//sets either objective 1 or 2 depending on what note effects
             NoteGathered?.Invoke();
             Destroy(this); //removes interactable.
         }

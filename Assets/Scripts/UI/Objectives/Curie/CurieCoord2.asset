@@ -16,10 +16,8 @@ MonoBehaviour:
   isObjective2: 1
   objectiveDescription: 'Search for information about the anomaly:
 
-    -Room of
-    Origin: ???
-
-    -Targeting Parameters: ???'
+    -Targeting
+    Parameters: ???'
   objectiveStage: 10
   clueDescription: The strange model solar system sticks out like a sore thumb in
     the research department. Security might have information about how it works...
