@@ -1612,6 +1612,69 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 400006, guid: 6af2d6892b4aa65428f8e4495a396cce, type: 3}
   m_PrefabInstance: {fileID: 223067326}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &225439830
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 225439832}
+  - component: {fileID: 225439831}
+  m_Layer: 0
+  m_Name: AtmosphereAudioSource
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &225439831
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 225439830}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CollisionTag: 
+  EventReference:
+    Guid:
+      Data1: 530007404
+      Data2: 1239358061
+      Data3: 805964164
+      Data4: -985574573
+    Path: event:/SC Curie
+  Event: 
+  PlayEvent: 1
+  StopEvent: 0
+  AllowFadeout: 1
+  TriggerOnce: 0
+  Preload: 0
+  AllowNonRigidbodyDoppler: 0
+  Params: []
+  OverrideAttenuation: 1
+  OverrideMinDistance: 100
+  OverrideMaxDistance: 100
+--- !u!4 &225439832
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 225439830}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -81.4, y: 0, z: 0.02}
+  m_LocalScale: {x: 3.0064, y: 3.0064, z: 3.0064}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 52
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &229914088
 GameObject:
   m_ObjectHideFlags: 0
@@ -8287,6 +8350,11 @@ MonoBehaviour:
     m_FrequencyGain: 1
     m_Duration: 1
     m_NoiseOffsets: {x: 0, y: 0, z: 0}
+--- !u!1 &1173162075 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8647346306707856281, guid: cca9690b8a73c324db45ea1b34bcc13e, type: 3}
+  m_PrefabInstance: {fileID: 5615814595321325215}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1186769349
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -12009,6 +12077,19 @@ Camera:
   m_CorrespondingSourceObject: {fileID: 954452812474011392, guid: cca9690b8a73c324db45ea1b34bcc13e, type: 3}
   m_PrefabInstance: {fileID: 5615814595321325215}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &2054363661
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1173162075}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 86c6556701af9e04380698b89f691b6e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  attenuationObject: {fileID: 698388397}
 --- !u!1001 &2055739512
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -13160,7 +13241,10 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 7207557500730155619, guid: cca9690b8a73c324db45ea1b34bcc13e, type: 3}
       insertIndex: -1
       addedObject: {fileID: 612035279}
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 8647346306707856281, guid: cca9690b8a73c324db45ea1b34bcc13e, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 2054363661}
   m_SourcePrefab: {fileID: 100100000, guid: cca9690b8a73c324db45ea1b34bcc13e, type: 3}
 --- !u!1001 &5644137912384428872
 PrefabInstance:
