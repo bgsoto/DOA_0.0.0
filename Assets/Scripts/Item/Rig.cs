@@ -155,13 +155,7 @@ public class Rig : MonoBehaviour, IInteractable
     public void ResetControls()
     {
         wasPreviewCreated = false;
-
-        if (transform.childCount > 0 && previewObject != null)
-        {
-            previewObject.transform.parent = null;
-            Destroy(previewObject);
-        }
-
+        Destroy(previewObject);
         hasPlacementStarted = false;
         wasPlacementAccepted = false;
     }
