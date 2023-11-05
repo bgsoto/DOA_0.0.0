@@ -5,6 +5,11 @@ public class MenuDisplay : MonoBehaviour, IInteractable
 {
     [SerializeField] private Menu menuToDisplay;
 
+    /* Not used */
+    private ItemData itemData;
+    private bool pickable;
+    private string actionText;
+
     /* The "list" of the different UI menus. */ 
     private enum Menu
     {
@@ -21,4 +26,9 @@ public class MenuDisplay : MonoBehaviour, IInteractable
         /* Subscription: UIManager */
         OnMenuEnter?.Invoke(menuIndex);
     }
+
+    public void Use() { return; }
+    public ItemData ItemData { get { return itemData; } set { itemData = value; } }
+    public bool Pickable { get { return pickable; } set { pickable = value; } }
+    public string ActionText { get { return actionText; } set { actionText = value; } }
 }

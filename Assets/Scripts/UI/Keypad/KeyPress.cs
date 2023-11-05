@@ -16,7 +16,7 @@ public class KeyPress : MonoBehaviour
         keyText = GetComponentInChildren<TMP_Text>().text;
     }
 
-    /* Subscription: DisplayManager. */
+    /* Subscription: KeypadDisplayManager. */
     public void PressKey() { OnKeyPressed?.Invoke(keyText); }
     public void PressEnter() { OnEnterPressed?.Invoke(); }
     public void PressReturn() { OnReturnPressed?.Invoke(); }

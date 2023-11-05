@@ -8,92 +8,10 @@ using UnityEngine.UI;
 
 public class UIManager : MonoBehaviour
 {
-    [SerializeField] private GameObject[] UIList;
+    [SerializeField] private GameObject keypadUI;
 
-    public static Action<bool> DisablePlayerControls;
-
-    private Stack<int> UIStack = new Stack<int>();
-
-    [SerializeField] private AudioSource audioSource;
-    private void OnEnable()
+    public void ShowKeypad(bool value)
     {
-        /* Subscribes to event(s). */
-        MenuDisplay.OnMenuEnter += DisplayMenu;
-        KeypadDisplayManager.OnCorrectCoor += HideMenu;
-        GenericCloseMenu.CloseCurrentMenu += HideMenu;
-    }
-
-    private void OnDisable()
-    {
-        /* Unsubscribes from event(s). */
-        MenuDisplay.OnMenuEnter -= DisplayMenu;
-        KeypadDisplayManager.OnCorrectCoor -= HideMenu;
-        GenericCloseMenu.CloseCurrentMenu -= HideMenu;
-    }
-
-    private void Start()
-    {
-        /* Locks cursor in the middle of the screen and hides the cursor. */
-        Cursor.lockState = CursorLockMode.Locked;
-        Cursor.visible = false;
-    }
-
-    /* 
-     * Disables player controls when a menu is active. 
-     * Uses a Stack data structure to manage the number of active menus.
-     * Will check settings for animation and sound info, settings script should be on any UI object.
-     */
-    private void DisplayMenu(int menuIndex)
-    {
-        UIStack.Push(menuIndex);
-        if (UIList[UIStack.Peek()].GetComponent<UISettings>() != null) { OpenMenuSound(); OpenMenuAnim(menuIndex); }
-        else { UIList[menuIndex].SetActive(true); }
-        Cursor.lockState = CursorLockMode.Confined;
-        Cursor.visible = true;
-
-        /* Subscription: PlayerCamera, PlayerMovement. */
-        DisablePlayerControls?.Invoke(true);
-    }
-
-    /* Enables player controls if there are no active menus. */
-    private void HideMenu()
-    {
-        if (UIList[UIStack.Peek()].GetComponent<UISettings>().doAnim == true) { StartCoroutine(CloseMenuAnim()); }
-        else { UIList[UIStack.Pop()].SetActive(false); }
-        Cursor.lockState = CursorLockMode.Locked;
-        Cursor.visible = false;
-
-        if (UIStack.Count <= 0)
-        {
-            /* Subscription: PlayerCamera, PlayerMovement. */
-            DisablePlayerControls?.Invoke(false);
-        }
-    }
-
-    public void OpenMenuAnim(int menuIndex)//animation for opening menu if doAnim is ticked
-    {
-        UIList[menuIndex].SetActive(true);
-        if (!UIList[UIStack.Peek()].GetComponent<UISettings>().doAnim) { return; }
-        UIList[menuIndex].GetComponent<CanvasGroup>().DOFade(1, UIList[UIStack.Peek()].GetComponent<UISettings>().duration);
-    }
-    public void OpenMenuSound()//sound for opening menu if doSound is ticked
-    {
-        if (!UIList[UIStack.Peek()].GetComponent<UISettings>().doSound) { return; }
-        var audioClip  = UIList[UIStack.Peek()].GetComponent<UISettings>().clip;
-        if (audioClip != null) { audioSource.PlayOneShot(audioClip); }
-    }
-
-    IEnumerator CloseMenuAnim() //animation for closing menu (waits until completed before closing fully)
-    {
-        UIList[UIStack.Pop()].SetActive(false);
-        Cursor.lockState = CursorLockMode.Locked;
-        Cursor.visible = false;
-
-        if (UIStack.Count <= 0)
-        {
-            /* Subscription: PlayerCamera, PlayerMovement. */
-            DisablePlayerControls?.Invoke(false);
-        }
-        yield return null;
+        keypadUI.SetActive(value);
     }
 }

@@ -31,6 +31,8 @@ public class ObjectiveManager : MonoBehaviour
     [SerializeField] private int questState2 = -1;
     private bool isFaded = false;
 
+    private bool areAllKeysCollected = false;
+    private bool isArtifactCollected = false;
 
     [SerializeField] private List<ObjectiveInfo> objectiveData;
 
@@ -43,14 +45,20 @@ public class ObjectiveManager : MonoBehaviour
     }
     private void OnEnable()
     {
-        ObjectiveUpdater.UpdateObjectives += UpdateObjective;
+        PlayerInteraction.onAllKeysCollected += UpdateObjective;
+        PlayerInteraction.onArtifactCollected += UpdateObjective;
+        PlayerInteraction.onAllKeysCollected += keysCollected;
+        PlayerInteraction.onArtifactCollected += artifactCollected;
         CoordAppend.AppendObjective += AppendText;
         NoteDisplay.NoteGathered += NoteGatheredNotif;
     }
     private void OnDisable()
     {
-        ObjectiveUpdater.UpdateObjectives -= UpdateObjective;
-        CoordAppend.AppendObjective += AppendText;
+        PlayerInteraction.onAllKeysCollected -= UpdateObjective;
+        PlayerInteraction.onArtifactCollected -= UpdateObjective;
+        PlayerInteraction.onAllKeysCollected -= keysCollected;
+        PlayerInteraction.onArtifactCollected -= artifactCollected;
+        CoordAppend.AppendObjective -= AppendText;
         NoteDisplay.NoteGathered -= NoteGatheredNotif;
     }
     private void Update()
@@ -74,7 +82,7 @@ public class ObjectiveManager : MonoBehaviour
     {
         if (objective2 ? questStage > questState2 : questStage > questState) //checks if objective 2 is true, if true then checks if questStage is greater than questState2. if obj2 not true, checks questStage1
         {
-            Debug.Log(objective2);
+            //Debug.Log(objective2);
             objectiveNotif.SetActive(true);
             foreach (var obj in objectiveData)
             {
@@ -115,7 +123,7 @@ public class ObjectiveManager : MonoBehaviour
             return;
         }//else do that for objective2
         currentObjective2 += textToAppend;
-        Debug.Log(currentObjective2);
+        //Debug.Log(currentObjective2);
     }
 
     private void NoteGatheredNotif()
@@ -125,4 +133,10 @@ public class ObjectiveManager : MonoBehaviour
             noteNotif.DOText("         ", 1f, false, ScrambleMode.Custom, "10").SetDelay(0.5f);
         });
     }
+
+    private void keysCollected(bool objective2, int questStage) { areAllKeysCollected = true; }
+    private void artifactCollected(bool objective2, int questStage) { isArtifactCollected = true; }
+
+    public bool AreAllKeysCollected { get { return areAllKeysCollected; } set { areAllKeysCollected = value; } }
+    public bool IsArtifactCollected { get { return isArtifactCollected; } set { isArtifactCollected = value; } }
 }

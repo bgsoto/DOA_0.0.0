@@ -1,46 +1,131 @@
+using DG.Tweening;
+using System;
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class ItemHolder : MonoBehaviour
 {
+    [Header("Relationships")]
+    [SerializeField] private List<GameObject> itemList = new List<GameObject>();
+    [SerializeField] private Transform itemDropTransform;
 
-    [SerializeField] Transform wrenchPos;
-    [SerializeField] Transform tabletPos;
-    [SerializeField] Transform jerrycanPos;
-    [SerializeField] Transform flashlightPos;
+    [Header("Settings")]
+    [SerializeField] private AudioSource inventoryAudioSource;
+    [SerializeField] private AudioClip pickupSound;
+    [SerializeField] private AudioClip dropSound;
 
-   void FlashLight()
+    private int itemIndex = 0;
 
+    private void Update()
     {
+        if (Input.GetAxis("Mouse ScrollWheel") < 0)
+        {
+            itemIndex--;
+            if (itemIndex < 0) { itemIndex = 0; }
+            ShowItem(itemIndex);
+        }
+        else if (Input.GetAxis("Mouse ScrollWheel") > 0)
+        {
+            itemIndex++;
+            if (itemIndex > itemList.Count) { itemIndex = itemList.Count - 1; }
+            ShowItem(itemIndex);
+        }
 
-        flashlightPos.position = new Vector3(0.03f,-0.44f,-0.1f);
-        flashlightPos.rotation = Quaternion.Euler(19.66f,40.06f,5f);
-
+        if (Input.GetMouseButtonDown(0))
+        {
+            if (itemList.Count > 0)
+            {
+                itemList[itemIndex].GetComponentInChildren<IInteractable>().Use();
+            }
+        }
+        else if (Input.GetKeyDown(KeyCode.R))
+        {
+            DropItem();
+        }
     }
-    void Wrench()
 
+    public void AddToInventory(ItemData itemData)
     {
-
-        wrenchPos.position = new Vector3(0.03f, -0.44f, -0.1f);
-        wrenchPos.rotation = Quaternion.Euler(19.66f, 40.06f, 5f);
-
+        GameObject newItem = Instantiate(itemData.itemPrefab, transform);
+        newItem.gameObject.name = itemData.name;
+        newItem.transform.localPosition = itemData.equippedLocalPosition;
+        newItem.transform.localRotation = Quaternion.Euler(itemData.equippedLocalRotation);
+        newItem.GetComponentInChildren<Rigidbody>().isKinematic = true;
+        newItem.GetComponentInChildren<BoxCollider>().enabled = false;
+        newItem.SetActive(false);
+        itemList.Add(newItem);
+        ShowItem(itemIndex);
     }
-    void Tablet()
 
+    public void RemoveFromInventory(ItemData itemData)
     {
-
-        tabletPos.position = new Vector3(0.091f, -0.086f, 0.178f);
-        tabletPos.rotation = Quaternion.Euler(-20.4f, 174.5f, -93.2f);
-
+        foreach (GameObject itemObject in itemList)
+        {
+            if (itemObject.GetComponentInChildren<IInteractable>().ItemData.itemID == itemData.itemID)
+            {
+                itemObject.transform.parent = null;
+                itemList.Remove(itemObject);
+                return;
+            }
+        }
     }
-    void Jerrycan()
 
+    private void ShowItem(int itemIndex)
     {
+        if (itemList.Count > 0)
+        {
+            for (int i = 0; i < itemList.Count; i++)
+            {
+                if (i == itemIndex)
+                {
+                    itemList[i].SetActive(true);
+                }
+                else
+                {
+                    if (itemList[i].GetComponentInChildren<IInteractable>().ItemData.itemID == 0)
+                    {
+                        itemList[i].GetComponentInChildren<Rig>().ResetControls();
+                    }
 
-        jerrycanPos.position = new Vector3(0.104f, -0.395f, 0.096f);
-        jerrycanPos.rotation = Quaternion.Euler(4.83f,107.66f,2.5f);
-
+                    itemList[i].SetActive(false);
+                }
+            }
+        }
     }
 
+    private void DropItem()
+    {
+        GameObject currentItem = itemList[itemIndex];
+
+        if (currentItem.GetComponentInChildren<IInteractable>().ItemData.itemID == 0)
+        {
+            currentItem.GetComponentInChildren<Rig>().ResetControls();
+        }
+
+        currentItem.transform.parent = null;
+        currentItem.GetComponent<Rigidbody>().isKinematic = false;
+        currentItem.GetComponent<BoxCollider>().enabled = true;
+        currentItem.GetComponent<Rigidbody>().DOJump(
+            endValue: itemDropTransform.position,
+            jumpPower: 0.1f,
+            numJumps: 1,
+            duration: 0.3f).SetEase(Ease.InOutSine);
+
+        inventoryAudioSource.PlayOneShot(dropSound);
+        RemoveFromInventory(itemList[itemIndex].GetComponent<IInteractable>().ItemData);
+        itemIndex++;
+
+        if (itemList.Count <= 0)
+        {
+            itemIndex = 0;
+        }
+        else
+        {
+            if (itemIndex > itemList.Count) { itemIndex = itemList.Count - 1; }
+        }
+
+        ShowItem(itemIndex);
+    }
 }

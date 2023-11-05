@@ -14,13 +14,13 @@ public class AnomalyDetection : MonoBehaviour
     private void OnEnable()
     {
         /* Subscribes to event(s). */
-        ActivateRig.onActivateRig += EnableTrap;
+        KeypadDisplayManager.OnCorrectCoor += EnableTrap;
     }
 
     private void OnDisable()
     {
         /* Unsubscribes from event(s). */
-        ActivateRig.onActivateRig -= EnableTrap;
+        KeypadDisplayManager.OnCorrectCoor -= EnableTrap;
     }
 
     /* Detects if the Anomaly object is in within the containment area. */
@@ -30,7 +30,7 @@ public class AnomalyDetection : MonoBehaviour
         {
             isDetected = true;
             targetObjectTransform = collider.gameObject.transform;
-            //Debug.Log("ANOMALY DETECTED");
+            Debug.Log("ANOMALY DETECTED");
         }
     }
 
@@ -39,7 +39,7 @@ public class AnomalyDetection : MonoBehaviour
         if (collider.gameObject.CompareTag(targetObjectTag))
         {
             isDetected = false;
-            //Debug.Log("ANOMALY LOST");
+            Debug.Log("ANOMALY LOST");
         }
     }
 

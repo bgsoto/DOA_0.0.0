@@ -253,26 +253,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ca98dd7b8e8de7e4ba908a06fa017981, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  itemHolderObject: {fileID: 0}
   reticle: {fileID: 0}
-  Rlength: 5
-  player: {fileID: 0}
-  onTarget: 0
-  Inventory: {fileID: 0}
-  itemdropPoint: {fileID: 7207557500730155619}
-  itemslots:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  pickupPoint: {fileID: 8739243681863098468}
-  parentLoc: {fileID: 4765137058726792462}
-  childLoc: {fileID: 7450107959196714174}
-  equippedItem: {fileID: 0}
-  scriptArray: []
-  keys_collected: 0
-  Artifact_collected: 0
-  allKeysCollected: 0
-  Artifact: {fileID: 8641274945842966608, guid: 8b20ef73775d2b647aecc51c6fd9ac9d, type: 3}
+  rayLength: 5
+  interactText: {fileID: 0}
+  inventoryAudioSource: {fileID: 0}
+  pickupSound: {fileID: 0}
+  dropSound: {fileID: 0}
 --- !u!114 &1687384878541198399
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -6,21 +6,27 @@ using UnityEngine;
 
 public class PlanetInteract : MonoBehaviour, IInteractable
 {
-    [SerializeField]
-    private int inputNumber;
-    private float cycleLength = 2f;
-    private bool codeEntered = false;
+    [SerializeField] private int inputNumber;
+    [SerializeField] private float cycleLength = 2f;
+    [SerializeField] private bool codeEntered = false;
+    [SerializeField] private bool pickable;
+    [SerializeField] private string actionText;
 
     public static Action<int> UpdateInput;
+
+    /* Not used */
+    private ItemData itemData;
 
     private void OnEnable()
     {
         PlanetsManager.planetCorrect += DisableInteract;
     }
+
     private void OnDisable()
     {
         PlanetsManager.planetCorrect -= DisableInteract;
     }
+
     public void Interact()
     {
         if (codeEntered) { return; }
@@ -28,6 +34,8 @@ public class PlanetInteract : MonoBehaviour, IInteractable
         Rotate();
         gameObject.GetComponent<SphereCollider>().enabled = false;
     }
+
+    public string ActionText { get { return actionText; } set { actionText = value; } }
 
     private void Rotate()
     {
@@ -39,6 +47,11 @@ public class PlanetInteract : MonoBehaviour, IInteractable
 
     void DisableInteract()
     {
+        // Turns off planet interaction upon correct code
         codeEntered = true;
-    }//turns off planet interaction upon correct code
+    }
+
+    public void Use() { return; }
+    public ItemData ItemData { get { return itemData; } set { itemData = value; } }
+    public bool Pickable { get { return pickable; } set { pickable = value; } }
 }
