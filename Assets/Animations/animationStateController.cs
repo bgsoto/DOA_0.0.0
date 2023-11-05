@@ -7,7 +7,7 @@ public class animationStateController : MonoBehaviour
     [Header("Relationships")]
     [SerializeField] private Animator animator;
     [SerializeField] private MonsterStateMachine Anamoly;
-    [SerializeField] private
+   // [SerializeField] private
 
 
 
