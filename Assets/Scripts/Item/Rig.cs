@@ -29,6 +29,7 @@ public class Rig : MonoBehaviour, IInteractable
     private Renderer[] previewRendererList;
     private bool wasPreviewCreated = false;
     private bool hasPlacementStarted = false;
+    private bool canRigBePlaced = false;
     private bool wasPlacementAccepted = false;
 
     private Vector3 rayOrigin = new Vector3(0.5f, 0.5f, 0f);
@@ -77,9 +78,8 @@ public class Rig : MonoBehaviour, IInteractable
                     previewObject.SetActive(true);
                     previewObject.transform.position = hit.point;
                     foreach (Renderer renderer in previewRendererList) { renderer.material = invalidMaterial; }
+                    canRigBePlaced = false;
                     placementPosition = hit.point;
-
-                    Debug.DrawLine(transform.position, placementPosition, Color.red);
                 }
                 else if (hit.collider.gameObject.CompareTag("RigAdapter"))
                 {
@@ -88,6 +88,7 @@ public class Rig : MonoBehaviour, IInteractable
                     previewObject.transform.position = rigAdapterTransform.position;
                     previewObject.transform.rotation = Quaternion.identity;
                     foreach (Renderer renderer in previewRendererList) { renderer.material = validMaterial; }
+                    canRigBePlaced = true;
                     placementPosition = rigAdapterTransform.position;
                 }
             }
@@ -132,20 +133,23 @@ public class Rig : MonoBehaviour, IInteractable
 
     private void PlaceRig()
     {
-        /* Delete rigParentPreview from scene */
-        previewObject.transform.parent = null;
-        Destroy(previewObject);
+        if (canRigBePlaced)
+        {
+            /* Delete rigParentPreview from scene */
+            previewObject.transform.parent = null;
+            Destroy(previewObject);
 
-        /* Unchild from ItemHolder and remove from itemList. */
-        itemHolder.RemoveFromInventory(rigData);
+            /* Unchild from ItemHolder and remove from itemList. */
+            itemHolder.RemoveFromInventory(rigData);
 
-        /* Apply position and rotation. */
-        GameObject rigObject = Instantiate(rigParentFull);
-        rigObject.gameObject.name = "Rig";
-        rigObject.transform.position = new Vector3(placementPosition.x, placementPosition.y, placementPosition.z);
-        rigObject.transform.localRotation = Quaternion.identity;
+            /* Apply position and rotation. */
+            GameObject rigObject = Instantiate(rigParentFull);
+            rigObject.gameObject.name = "Rig";
+            rigObject.transform.position = new Vector3(placementPosition.x, placementPosition.y, placementPosition.z);
+            rigObject.transform.localRotation = Quaternion.identity;
 
-        Destroy(gameObject);
+            Destroy(gameObject);
+        }
     }
 
     public void ResetControls()
