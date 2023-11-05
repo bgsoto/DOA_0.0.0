@@ -16,6 +16,7 @@ TagManager:
   - Anomaly
   - Obstacle
   - DoorTrigger
+  - Locker
   layers:
   - Default
   - TransparentFX
