@@ -122,6 +122,22 @@ namespace StarterAssets
             }
         }
 
+        private void OnEnable()
+        {
+            ShowKeypad.DisableControls += PlayerInput;
+
+            /* Subscribes to event(s). */
+            //UIManager.DisablePlayerControls += PlayerInput;
+        }
+
+        private void OnDisable()
+        {
+            ShowKeypad.DisableControls -= PlayerInput;
+
+            /* Unsubscribes from event(s). */
+            //UIManager.DisablePlayerControls += PlayerInput;
+        }
+
         private void Awake()
         {
             // get a reference to our main camera
@@ -168,19 +184,9 @@ namespace StarterAssets
             }
         }
 
-        private void OnEnable()
-        {
-            /* Subscribes to event(s). */
-            UIManager.DisablePlayerControls += PlayerInput;
-        }
+        //checks if in menu, if true, no move is processed.
+        private void PlayerInput(bool value) { inMenu = value; }
 
-        private void OnDisable()
-        {
-            /* Unsubscribes from event(s). */
-            UIManager.DisablePlayerControls += PlayerInput;
-        }
-
-        private void PlayerInput(bool value) { inMenu = value; } //checks if in menu, if true, no move is processed.
         private void GroundedCheck()
         {
             // set sphere position, with offset below player

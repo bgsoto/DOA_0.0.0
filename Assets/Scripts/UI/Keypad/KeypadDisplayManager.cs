@@ -8,12 +8,9 @@ public class KeypadDisplayManager : MonoBehaviour
 
     public static Action OnCorrectCoor;
 
-    private TMP_Text[] displayTextList;
-    
-    private int currentDisplay = 0;
+    private TMP_Text displayText;
     private bool displayIsFull = false;
     private bool displayIsEmpty = true;
-    private string enteredCoordinates = "";
 
     private void OnEnable()
     {
@@ -33,11 +30,11 @@ public class KeypadDisplayManager : MonoBehaviour
 
     private void Start()
     {
-        displayTextList = GetComponentsInChildren<TMP_Text>();
+        displayText = GetComponentInChildren<TMP_Text>();
     }
 
     /* 
-     * Adds a digit to the current string (currentDisplay) if the list (displayTextList) is not full.
+     * Adds a digit to the string (displayText.text) if the string is not full.
      * If true, sets the display string list as not empty.
      */
     public void AddDigit(string digit)
@@ -45,80 +42,55 @@ public class KeypadDisplayManager : MonoBehaviour
         if (!displayIsFull)
         {
             /* 
-             * Checks if the current string is than less than three digits.
-             * 
+             * Checks if the string is than less than five digits.
              * If true, adds digit to the current string.
-             * 
-             * If false, switches to the next string in the list. If the index value (currentDisplay) 
-             * is more than what the display list has, sets the index value to the last position (string)
-             * of the list and sets the list as full. 
-             * 
-             * Otherwise, adds digit to the next string in the list.
+             * If false, does not add a digit and sets the list as full. 
              */
-            if (displayTextList[currentDisplay].text.Length < 3)
+            if (displayText.text.Length < 5)
             {
-                displayTextList[currentDisplay].text += digit;
+                displayText.text += digit;
+                displayIsEmpty = false;
             }
             else
             {
-                currentDisplay++;
-
-                if (currentDisplay >= displayTextList.Length)
-                {
-                    currentDisplay = displayTextList.Length - 1;
-                    displayIsFull = true;
-                }
-                else
-                {
-                    displayTextList[currentDisplay].text += digit;    
-                }
+                displayIsFull = true;
             }
-
-            displayIsEmpty = false;
         }
     }
 
     /* 
-     * Removes a digit from the current string (currentDisplay) if the current string's length is more than zero. 
-     * If true, enables the list (displayTextList) as not full. 
+     * Removes a digit from the string (displayText.text) if the string's length is more than zero. 
+     * If true, sets the string as not full. 
      */
     public void RemoveDigit()
     {
         if (!displayIsEmpty)
         {
-            /* Removes the last digit of the current sting. */
-            displayTextList[currentDisplay].text = displayTextList[currentDisplay].text[..^1];
-
             /* 
-             * If the current string's length is less than or equal to zero, sets the index value (currentDisplay)
-             * to the previous string in the list.
-             * 
-             * If the index value is less than zero, sets the index value to 0 and sets the list as empty.
+             * Checks if the string's length is than less zero.
+             * If true, removes digit from the string.
+             * If false, does not remove a digit and sets the list as empty. 
              */
-            if (displayTextList[currentDisplay].text.Length <= 0)
+            if (displayText.text.Length > 0)
             {
-                currentDisplay--;
-
-                if (currentDisplay < 0)
-                {
-                    currentDisplay = 0;
-                    displayIsEmpty = true;
-                }
+                /* Shorthand: Removes the last digit of the current sting. */
+                displayText.text = displayText.text[..^1];
+                displayIsFull = false;
             }
-
-            displayIsFull = false;
+            else
+            {
+                displayIsEmpty = true;
+            }
         }  
     }
 
     public void EnterCode()
     {
-        /* For each string in the list (displayTextList) concatenate to enterCoordinates string. */
-        foreach (TMP_Text text in displayTextList) { enteredCoordinates += text.text; }
-
-        if (enteredCoordinates == dimensionalCoordinates)
+        if (displayText.text == dimensionalCoordinates)
         {
-            /* Subscription: UIManager script. */
+            /* Subscription: ShowKeypad script. */
             OnCorrectCoor?.Invoke();
+            Debug.Log("CORRECT CODE");
         }
         else
         {
@@ -129,11 +101,9 @@ public class KeypadDisplayManager : MonoBehaviour
     /* Reset values. */
     private void ResetDisplay()
     {
-        foreach (TMP_Text text in displayTextList) { text.text = ""; }
-        currentDisplay = 0;
+        displayText.text = "";
         displayIsFull = false;
         displayIsEmpty = true;
-        enteredCoordinates = "";
         Debug.Log("INCORRECT CODE");
     }
 }

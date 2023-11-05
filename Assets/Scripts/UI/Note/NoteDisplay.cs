@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using TMPro;
 using UnityEditor;
 using UnityEngine;
+using UnityEngine.UIElements;
 
 public class NoteDisplay : MonoBehaviour, IInteractable
 {
@@ -14,6 +15,12 @@ public class NoteDisplay : MonoBehaviour, IInteractable
     private bool noteCollected = false;
 
     public static Action NoteGathered;
+
+    /* Not used */
+    private ItemData itemData;
+    private bool pickable;
+    private string actionText;
+
     private void Start()
     {
         noteText.text = noteToDisplay.noteText;
@@ -31,4 +38,9 @@ public class NoteDisplay : MonoBehaviour, IInteractable
             Destroy(this); //removes interactable.
         }
     }
+
+    public void Use() { return; }
+    public ItemData ItemData { get { return itemData; } set { itemData = value; } }
+    public bool Pickable { get { return pickable; } set { pickable = value; } }
+    public string ActionText { get { return actionText; } set { actionText = value; } }
 }

@@ -1,0 +1,20 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6b58ab2a7aefbc0439586e55195a2fec, type: 3}
+  m_Name: ContainmentRig
+  m_EditorClassIdentifier: 
+  itemID: 0
+  itemName: Rig
+  itemImage: {fileID: 0}
+  itemPrefab: {fileID: 365405671926710138, guid: 9514d93bcc85be54a81064ee11855d00, type: 3}
+  equippedLocalPosition: {x: 0, y: 1.125, z: -0.625}
+  equippedLocalRotation: {x: 0, y: 90, z: 270}

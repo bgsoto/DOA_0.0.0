@@ -18,18 +18,28 @@ namespace StarterAssets
 		public bool analogMovement;
 
 		[Header("Mouse Cursor Settings")]
-		public bool cursorLocked = true;
+		public bool cursorLocked = false;
 		public bool cursorInputForLook = true;
 
+        private void OnEnable()
+        {
+			ShowKeypad.DisableControls += SetCursorState;
+        }
+
+        private void OnDisable()
+        {
+            ShowKeypad.DisableControls -= SetCursorState;
+        }
+
 #if ENABLE_INPUT_SYSTEM
-		public void OnMove(InputValue value)
+        public void OnMove(InputValue value)
 		{
 			MoveInput(value.Get<Vector2>());
 		}
 
 		public void OnLook(InputValue value)
 		{
-			if(cursorInputForLook)
+			if (cursorInputForLook)
 			{
 				LookInput(value.Get<Vector2>());
 			}
@@ -39,15 +49,15 @@ namespace StarterAssets
 		{
 			JumpInput(value.isPressed);
 		}
-        public void OnCrouch(InputValue value)
-        {
-			if (sprint) { return; }
-            CrouchInput(value.isPressed);
-        }
-        public void OnSprint(InputValue value)
+		public void OnCrouch(InputValue value)
 		{
-            if (crouch) { return; }
-            SprintInput(value.isPressed);
+			if (sprint) { return; }
+			CrouchInput(value.isPressed);
+		}
+		public void OnSprint(InputValue value)
+		{
+			if (crouch) { return; }
+			SprintInput(value.isPressed);
 		}
 #endif
 
@@ -55,7 +65,7 @@ namespace StarterAssets
 		public void MoveInput(Vector2 newMoveDirection)
 		{
 			move = newMoveDirection;
-		} 
+		}
 
 		public void LookInput(Vector2 newLookDirection)
 		{
@@ -66,16 +76,16 @@ namespace StarterAssets
 		{
 			jump = newJumpState;
 		}
-        public void CrouchInput(bool newCrouchState)
-        {
-            crouch = newCrouchState;
-        }
+		public void CrouchInput(bool newCrouchState)
+		{
+			crouch = newCrouchState;
+		}
 
-        public void SprintInput(bool newSprintState)
+		public void SprintInput(bool newSprintState)
 		{
 			sprint = newSprintState;
 		}
-		
+
 		private void OnApplicationFocus(bool hasFocus)
 		{
 			SetCursorState(cursorLocked);
@@ -83,8 +93,7 @@ namespace StarterAssets
 
 		private void SetCursorState(bool newState)
 		{
-			Cursor.lockState = newState ? CursorLockMode.Locked : CursorLockMode.None;
+			Cursor.lockState = newState ? CursorLockMode.Confined : CursorLockMode.Locked;
 		}
 	}
-	
 }

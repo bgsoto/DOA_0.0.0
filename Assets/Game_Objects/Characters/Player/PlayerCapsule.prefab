@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 5306985785905181898}
   - component: {fileID: 3090485472432935353}
   m_Layer: 7
-  m_Name: Inventory
+  m_Name: ItemHolder
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -58,10 +58,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d7f5462d3170c1c49831006a0ca45445, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  wrenchPos: {fileID: 0}
-  tabletPos: {fileID: 0}
-  jerrycanPos: {fileID: 0}
-  flashlightPos: {fileID: 0}
+  itemList: []
+  itemDropTransform: {fileID: 0}
+  inventoryAudioSource: {fileID: 0}
+  pickupSound: {fileID: 8300000, guid: 5887ef6dcbe3eff41b1586f0f1c6c67b, type: 3}
+  dropSound: {fileID: 8300000, guid: 53425ca930e3d5d4cb8fd2173a3d222e, type: 3}
 --- !u!1 &4025930690600305732
 GameObject:
   m_ObjectHideFlags: 0
@@ -366,7 +367,7 @@ Transform:
   - {fileID: 3832420189508309180}
   - {fileID: 4237064563237552578}
   m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!143 &8616685848737228382
 CharacterController:
@@ -475,7 +476,7 @@ MonoBehaviour:
   sprint: 0
   crouch: 0
   analogMovement: 0
-  cursorLocked: 1
+  cursorLocked: 0
   cursorInputForLook: 1
 --- !u!114 &8616685848737228376
 MonoBehaviour:

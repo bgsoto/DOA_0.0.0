@@ -32,13 +32,13 @@ public class PlayerMovement : MonoBehaviour
     private void OnEnable()
     {
         /* Subscribes to event(s). */
-        UIManager.DisablePlayerControls += PlayerInput;
+        //UIManager.DisablePlayerControls += PlayerInput;
     }
 
     private void OnDisable()
     {
         /* Unsubscribes from event(s). */
-        UIManager.DisablePlayerControls += PlayerInput;
+        //UIManager.DisablePlayerControls += PlayerInput;
     }
 
     private void Update()

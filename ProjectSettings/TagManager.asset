@@ -9,13 +9,16 @@ TagManager:
   - Item
   - Key
   - Metal
-  - flashlight
   - Safe
   - Artifact
   - Monster
   - Anomaly
   - Obstacle
   - DoorTrigger
+  - RigAdapter
+  - Rig
+  - KeypadUI
+  - UIManager
   layers:
   - Default
   - TransparentFX
