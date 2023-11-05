@@ -14,7 +14,10 @@ public class ActivateDetector : MonoBehaviour
         if (collider.gameObject.CompareTag("Rig"))
         {
             detectorObject.SetActive(true);
+
+            /* Subscription: ActivateTablet */
             onPluggedRig?.Invoke();
+
             Debug.Log("Plugged");
         }
     }

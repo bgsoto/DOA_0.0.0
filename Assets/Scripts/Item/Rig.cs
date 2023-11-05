@@ -136,7 +136,6 @@ public class Rig : MonoBehaviour, IInteractable
         if (canRigBePlaced)
         {
             /* Delete rigParentPreview from scene */
-            previewObject.transform.parent = null;
             Destroy(previewObject);
 
             /* Unchild from ItemHolder and remove from itemList. */
