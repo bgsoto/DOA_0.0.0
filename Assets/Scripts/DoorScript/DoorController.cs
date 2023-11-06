@@ -1,32 +1,56 @@
 using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 
 public class DoorController : MonoBehaviour
 {
-    public Animator leftDoorAnim;
-    public Animator rightDoorAnim;
+    [System.Serializable]
+    public class Door
+    {
+        public Animator leftDoorAnim;
+        public Animator rightDoorAnim;
+        public DoorTrigger doorTrigger; // Reference to the DoorTrigger script
+    }
 
-    private void OnTriggerEnter(Collider other)
+    public List<Door> doors; // List of doors that you can populate from the Unity Editor
+
+    public void DoorTriggered(DoorTrigger triggeredDoorTrigger, Collider other)
     {
         Debug.Log("Trigger entered by: " + other.gameObject.name);
-        
-        if (other.CompareTag("Player")) // Ensure your player's tag is set to "Player"
+
+        if (other.CompareTag("Player") || other.CompareTag("Monster"))
         {
-            Debug.Log("Player entered the trigger");
-            StartCoroutine(OpenAndCloseDoors());
+            Debug.Log("Entity entered the trigger");
+            Door triggeredDoor = GetDoorFromTrigger(triggeredDoorTrigger);
+            if (triggeredDoor != null)
+            {
+                StartCoroutine(OpenAndCloseDoors(triggeredDoor));
+            }
         }
     }
 
-    private IEnumerator OpenAndCloseDoors()
+    private Door GetDoorFromTrigger(DoorTrigger doorTrigger)
     {
-        Debug.Log("Attempting to open doors");
-        leftDoorAnim.SetTrigger("OpenLeft");
-        rightDoorAnim.SetTrigger("OpenRight");
-        
-        yield return new WaitForSeconds(4);
+        foreach (Door door in doors)
+        {
+            if (door.doorTrigger == doorTrigger)
+            {
+                return door;
+            }
+        }
+        return null;
+    }
 
-        Debug.Log("Attempting to close doors");
-        leftDoorAnim.SetTrigger("CloseLeft");
-        rightDoorAnim.SetTrigger("CloseRight");
+    private IEnumerator OpenAndCloseDoors(Door door)
+    {
+        Debug.Log("Attempting to open door");
+        door.leftDoorAnim.SetTrigger("OpenLeft");
+        door.rightDoorAnim.SetTrigger("OpenRight");
+
+        yield return new WaitForSeconds(3); // Wait for 3 seconds as per your requirement
+
+        Debug.Log("Attempting to close door");
+        door.leftDoorAnim.SetTrigger("CloseLeft");
+        door.rightDoorAnim.SetTrigger("CloseRight");
     }
 }
