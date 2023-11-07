@@ -17,7 +17,8 @@ MonoBehaviour:
   objectiveDescription: 'Search for information about the anomaly:
 
     -Targeting
-    Parameters: ???'
+    Parameters: ???
+
+    -Investigate the Model Solar System.'
   objectiveStage: 10
-  clueDescription: The strange model solar system sticks out like a sore thumb in
-    the research department. Security might have information about how it works...
+  clueDescription: "\t-The security office may have some clues."

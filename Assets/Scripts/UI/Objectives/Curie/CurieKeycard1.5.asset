@@ -16,4 +16,5 @@ MonoBehaviour:
   isObjective2: 0
   objectiveDescription: Find 2 Keycards to Open the Safe
   objectiveStage: 5
-  clueDescription: Interact with computers and tablets to gain useful hints.
+  clueDescription: "\t<s>-By the entrance, a message from B.O.S.S. awaits.</s>\n\t-Interact
+    with computers and tablets to gain useful hints."

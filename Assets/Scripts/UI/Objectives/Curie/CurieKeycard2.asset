@@ -14,8 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   objectiveName: Curie2/ComputerFound
   isObjective2: 0
-  objectiveDescription: "Find 2 Keycards to Open the Safe\n "
+  objectiveDescription: Find 2 Keycards to Open the Safe
   objectiveStage: 10
-  clueDescription: The Head of Research and Chief of Security should be carrying
-    the keycards needed to unlock the safe. Their whereabouts are logged in the meeting
-    room on the left side of the ship.
+  clueDescription: "\t-The Head of Research and Chief of Security had the keycards
+    needed to unlock the safe. \n\t-Their card's last known locations can be found
+    in the meeting room."
