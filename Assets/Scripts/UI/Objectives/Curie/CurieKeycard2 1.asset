@@ -14,9 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   objectiveName: Curie2/ComputerFound
   isObjective2: 0
-  objectiveDescription: "Find 2 Keycards to Open the Safe\n "
+  objectiveDescription: Find 2 Keycards to Open the Safe
   objectiveStage: 15
-  clueDescription: 'Red Card: Last Seen in Meeting Room.
-
-    Blue Card: Last Seen
-    in Cafeteria.'
+  clueDescription: "\t-The Head of Research and Chief of Security had the keycards
+    needed to unlock the safe. \n\t-Red Card: Last Seen in Meeting Room.\n\t-Blue
+    Card: Last Seen in Cafeteria."

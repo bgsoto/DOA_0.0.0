@@ -13,5 +13,7 @@ MonoBehaviour:
   m_Name: TestNote
   m_EditorClassIdentifier: 
   noteTitle: TestTitle
-  noteText: This Note is a TEST of the NOTE mechanic. If you are seeing this, our
-    level designer forgot to do his job!
+  isObjective2: 0
+  noteText: This Note is a TEST of the NOTE mechanic. If you are seeing this, it's
+    a bug!
+  objectiveStage: 0

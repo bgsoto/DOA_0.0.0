@@ -27,7 +27,7 @@ public class CoordAppend : MonoBehaviour
     }
     IEnumerator Appending(bool objective2, int appendStage)
     {
-        yield return new WaitForSeconds(1);//delayed so objective can update
+        yield return new WaitForSeconds(0.5f);//delayed so objective can update
         var stage = objective2 ? 2 : 1;
         if (!objective2 && appendStage == objectiveToUpdateOn) { AppendObjective?.Invoke(stage, textToAppend1); Debug.Log("appending" + textToAppend1); }
         else if (objective2 && appendStage == objectiveToUpdateOn2) { AppendObjective?.Invoke(stage, textToAppend2); Debug.Log("appending" + textToAppend2); }
