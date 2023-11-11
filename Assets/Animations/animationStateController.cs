@@ -44,6 +44,15 @@ public class animationStateController : MonoBehaviour
             animator.SetBool("isRunning", false);
         }
 
+        if (Anamoly.currentState == MonsterStateMachine.AnomalyState.Kill)
+        {
+            animator.SetBool("playerIsCaptured", true);
+        }
+        else
+        {
+            animator.SetBool("playerIsCaptured", false);
+        }
+
 
     }
 }

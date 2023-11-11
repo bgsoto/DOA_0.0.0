@@ -11,6 +11,7 @@ public class AnomalyDirector : MonoBehaviour
     [Header("Relationships")]
     [SerializeField] private MonsterStateMachine anomaly;
     [SerializeField] private Transform playerTransform;
+    
 
     [Header("Patrol Position(s)")]
     [SerializeField] private List<Transform> patrolNodesList;
@@ -18,6 +19,9 @@ public class AnomalyDirector : MonoBehaviour
     [Header("Director Settings")]
     [SerializeField] private float maxPinPointTimer;
 
+    [Header("Camera Controls")]
+    [SerializeField] private GameObject jumpScareCamHolder;
+    [SerializeField] private GameObject playerCamHolder;
     public enum DirectorState
     {
         Search,
@@ -51,6 +55,7 @@ public class AnomalyDirector : MonoBehaviour
                 Hunt();
                 break;
         }
+        PlayJumpScare();
     }
 
     /*
@@ -125,6 +130,19 @@ public class AnomalyDirector : MonoBehaviour
             Debug.Log(huntNodesQueue.Count);
         }
     }
+
+
+    public void PlayJumpScare()
+    {
+        if (anomaly.currentState == MonsterStateMachine.AnomalyState.Kill)
+        {
+            jumpScareCamHolder.SetActive(true);
+            playerCamHolder.SetActive(false);
+        }
+    }
+
+
+
 
     /* Getter/Setters */
     public DirectorState CurrentDirectorState

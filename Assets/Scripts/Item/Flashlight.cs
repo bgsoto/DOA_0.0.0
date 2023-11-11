@@ -4,14 +4,19 @@ using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.Experimental.GlobalIllumination;
+using UnityEngine.UIElements;
 
 public class Flashlight : MonoBehaviour
 {
-    
+
+    [Header("Settings")]
+    [SerializeField] public ItemData flashLightData;
     [SerializeField] public GameObject point, spot;
     [SerializeField] public bool on;
     [SerializeField] public bool isEquipped;
     [SerializeField] public Material lens;
+    [SerializeField] private string actionText;
+    [SerializeField] private bool pickable = true;
 
     private void Start()
     {
@@ -98,11 +103,16 @@ public class Flashlight : MonoBehaviour
         {
             isEquipped = false;
         }
-
-        
-        
-        
     }
 
+    public void Interact()
+    {
+        if (pickable) { Destroy(gameObject); }
+    }
+
+    public bool Pickable { get { return pickable; } set { pickable = value; } }
+    public string ActionText { get { return actionText; } set { actionText = value; } }
+
+    public ItemData itemData { get { return flashLightData; } set { flashLightData = value; } }
 
 }
