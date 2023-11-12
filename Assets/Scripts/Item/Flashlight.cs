@@ -19,7 +19,10 @@ public class Flashlight : MonoBehaviour, IInteractable
     [SerializeField] private bool pickable;
     [SerializeField] private string actionText;
 
-    public void Interact() { Destroy(gameObject); }
+    public void Interact() {
+        lens.DisableKeyword("_EMISSION");
+        Destroy(spot);
+        Destroy(transform.parent.gameObject); }
 
     public void Use()
     {

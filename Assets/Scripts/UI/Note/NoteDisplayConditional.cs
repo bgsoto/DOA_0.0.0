@@ -26,17 +26,10 @@ public class NoteDisplayConditional : MonoBehaviour, IInteractable
         noteTitle.text = noteToDisplay.noteTitle;
         objectiveManager = GameObject.FindGameObjectWithTag("ObjectiveManager").GetComponent<ObjectiveManager>();
     }
-    private void OnEnable()
-    {
-        ObjectiveUpdater.UpdateObjectives += ObjectiveUpdated;
-    }
-    private void OnDisable()
-    {
-        ObjectiveUpdater.UpdateObjectives -= ObjectiveUpdated;
-    }
 
     public void Interact()
     {
+        currentObjectiveStage = objective2 ? objectiveManager.questState2 : objectiveManager.questState;
         if (!noteCollected)
         {
             if (currentObjectiveStage >= objectiveToCheck) { objectiveStage = altObjectiveToSet; }
@@ -46,14 +39,6 @@ public class NoteDisplayConditional : MonoBehaviour, IInteractable
             else { objectiveManager.UpdateObjective(false, objectiveStage); }//sets either objective 1 or 2 depending on what note effects
             NoteDisplay.NoteGathered?.Invoke();
             Destroy(this); //removes interactable.
-        }
-    }
-
-    public void ObjectiveUpdated(bool Objective2, int questStage)
-    {
-        if (objective2 == Objective2)
-        {
-            currentObjectiveStage = questStage;
         }
     }
 

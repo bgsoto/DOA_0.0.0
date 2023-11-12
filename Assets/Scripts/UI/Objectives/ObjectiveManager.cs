@@ -27,8 +27,8 @@ public class ObjectiveManager : MonoBehaviour
     [SerializeField] private AudioSource objectiveUpdatedSound;
     [SerializeField] private AudioClip objectiveUpdatedClip;
 
-    [SerializeField] private int questState = -1;
-    [SerializeField] private int questState2 = -1;
+    public int questState = -1;
+    public int questState2 = -1;
     private bool isFaded = false;
 
     private bool areAllKeysCollected = false;
@@ -49,6 +49,7 @@ public class ObjectiveManager : MonoBehaviour
         PlayerInteraction.onArtifactCollected += UpdateObjective;
         PlayerInteraction.onAllKeysCollected += keysCollected;
         PlayerInteraction.onArtifactCollected += artifactCollected;
+        ObjectiveUpdaterUI.UpdateObjectivesUI += UpdateObjective;
         CoordAppend.AppendObjective += AppendText;
         NoteDisplay.NoteGathered += NoteGatheredNotif;
     }
@@ -58,6 +59,7 @@ public class ObjectiveManager : MonoBehaviour
         PlayerInteraction.onArtifactCollected -= UpdateObjective;
         PlayerInteraction.onAllKeysCollected -= keysCollected;
         PlayerInteraction.onArtifactCollected -= artifactCollected;
+        ObjectiveUpdaterUI.UpdateObjectivesUI -= UpdateObjective;
         CoordAppend.AppendObjective -= AppendText;
         NoteDisplay.NoteGathered -= NoteGatheredNotif;
     }
@@ -66,7 +68,7 @@ public class ObjectiveManager : MonoBehaviour
         if (Input.GetKey(KeyCode.Tab) && !isFaded)
         {
             objectiveCanvas.GetComponent<CanvasGroup>().DOFade(1, 1f);
-            hamburgerIcon.GetComponent<CanvasGroup>().DOFade(0, 1f);
+            hamburgerIcon.GetComponent<CanvasGroup>().DOFade(0, 0.5f);
             objectiveNotif.SetActive(false);
             //UpdateText();
             isFaded = true;

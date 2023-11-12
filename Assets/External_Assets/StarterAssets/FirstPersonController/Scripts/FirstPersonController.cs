@@ -125,6 +125,7 @@ namespace StarterAssets
         private void OnEnable()
         {
             ShowKeypad.DisableControls += PlayerInput;
+            HubUiManager.DisablePlayerControls += PlayerInput;
 
             /* Subscribes to event(s). */
             //UIManager.DisablePlayerControls += PlayerInput;
@@ -133,6 +134,7 @@ namespace StarterAssets
         private void OnDisable()
         {
             ShowKeypad.DisableControls -= PlayerInput;
+            HubUiManager.DisablePlayerControls -= PlayerInput;
 
             /* Unsubscribes from event(s). */
             //UIManager.DisablePlayerControls += PlayerInput;
@@ -255,6 +257,7 @@ namespace StarterAssets
             {
                 // move
                 inputDirection = transform.right * _input.move.x + transform.forward * _input.move.y;
+
             }
 
             // move the player
@@ -330,7 +333,7 @@ namespace StarterAssets
 
         private void SprintFOV()
         {
-            vcam.m_Lens.FieldOfView = _input.sprint ? Mathf.Lerp(vcam.m_Lens.FieldOfView, 50, 10 * Time.deltaTime) : vcam.m_Lens.FieldOfView = Mathf.Lerp(vcam.m_Lens.FieldOfView, 40, 10 * Time.deltaTime);
+            vcam.m_Lens.FieldOfView = _input.sprint ? Mathf.Lerp(vcam.m_Lens.FieldOfView, 60, 10 * Time.deltaTime) : vcam.m_Lens.FieldOfView = Mathf.Lerp(vcam.m_Lens.FieldOfView, 40, 10 * Time.deltaTime);
            /* if (_input.sprint)
             {
                 if (vcam.m_Lens.FieldOfView < 50)

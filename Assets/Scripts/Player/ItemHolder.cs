@@ -19,7 +19,7 @@ public class ItemHolder : MonoBehaviour
         {
             itemIndex--;
             if (itemIndex < 0) { itemIndex = 0; }
-            Debug.Log(itemIndex);
+            //Debug.Log(itemIndex);
             ShowItem(itemIndex);
         }
         else if (Input.GetAxis("Mouse ScrollWheel") > 0)
@@ -32,7 +32,7 @@ public class ItemHolder : MonoBehaviour
                 if (itemIndex < 0) { itemIndex = 0; }
             }
 
-            Debug.Log(itemIndex);
+            //Debug.Log(itemIndex);
             ShowItem(itemIndex);
         }
 
@@ -64,13 +64,16 @@ public class ItemHolder : MonoBehaviour
 
     public void RemoveFromInventory(ItemData itemData)
     {
-        foreach (GameObject itemObject in itemList)
+        if (itemList != null)
         {
-            if (itemObject.GetComponentInChildren<IInteractable>().ItemData.itemID == itemData.itemID)
+            foreach (GameObject itemObject in itemList)
             {
-                itemObject.transform.parent = null;
-                itemList.Remove(itemObject);
-                return;
+                if (itemObject.GetComponentInChildren<IInteractable>().ItemData.itemID == itemData.itemID)
+                {
+                    itemObject.transform.parent = null;
+                    itemList.Remove(itemObject);
+                    return;
+                }
             }
         }
     }
@@ -100,34 +103,37 @@ public class ItemHolder : MonoBehaviour
 
     private void DropItem()
     {
-        GameObject currentItem = itemList[itemIndex];
-
-        if (currentItem.GetComponentInChildren<IInteractable>().ItemData.itemID == 0)
+        if (itemList.Count > 0 && itemList != null)
         {
-            currentItem.GetComponentInChildren<Rig>().ResetControls();
+            GameObject currentItem = itemList[itemIndex];
+
+            if (currentItem.GetComponentInChildren<IInteractable>().ItemData.itemID == 0)
+            {
+                currentItem.GetComponentInChildren<Rig>().ResetControls();
+            }
+
+            currentItem.transform.parent = null;
+            currentItem.GetComponentInChildren<Rigidbody>().isKinematic = false;
+            currentItem.GetComponentInChildren<BoxCollider>().enabled = true;
+            currentItem.GetComponentInChildren<Rigidbody>().DOJump(
+                endValue: itemDropTransform.position,
+                jumpPower: 0.1f,
+                numJumps: 1,
+                duration: 0.3f).SetEase(Ease.InOutSine);
+
+            RemoveFromInventory(itemList[itemIndex].GetComponentInChildren<IInteractable>().ItemData);
+            itemIndex++;
+
+            if (itemList.Count <= 0)
+            {
+                itemIndex = 0;
+            }
+            else
+            {
+                if (itemIndex > itemList.Count) { itemIndex = itemList.Count - 1; }
+            }
+
+            ShowItem(itemIndex);
         }
-
-        currentItem.transform.parent = null;
-        currentItem.GetComponent<Rigidbody>().isKinematic = false;
-        currentItem.GetComponent<BoxCollider>().enabled = true;
-        currentItem.GetComponent<Rigidbody>().DOJump(
-            endValue: itemDropTransform.position,
-            jumpPower: 0.1f,
-            numJumps: 1,
-            duration: 0.3f).SetEase(Ease.InOutSine);
-
-        RemoveFromInventory(itemList[itemIndex].GetComponent<IInteractable>().ItemData);
-        itemIndex++;
-
-        if (itemList.Count <= 0)
-        {
-            itemIndex = 0;
-        }
-        else
-        {
-            if (itemIndex > itemList.Count) { itemIndex = itemList.Count - 1; }
-        }
-
-        ShowItem(itemIndex);
     }
 }

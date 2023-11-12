@@ -16,5 +16,5 @@ MonoBehaviour:
   itemName: Flashlight
   itemImage: {fileID: 0}
   itemPrefab: {fileID: 1324283759585075493, guid: 2fa61b7c050c1624584343d0e18bb787, type: 3}
-  equippedLocalPosition: {x: 0.08, y: -0.1, z: 0.17}
+  equippedLocalPosition: {x: -0.07, y: -0.41, z: 0.17}
   equippedLocalRotation: {x: -95, y: -86.91, z: 0}
