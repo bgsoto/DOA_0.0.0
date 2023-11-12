@@ -12,10 +12,13 @@ public class NoteDisplay : MonoBehaviour, IInteractable
     [SerializeField] private TMP_Text noteText;
     [SerializeField] private TMP_Text noteTitle;
     [SerializeField] private string actionText;
+    [SerializeField] private bool appendToThisNote;
     private int objectiveStage;
+    private bool objective2;
     private bool noteCollected = false;
    
     public static Action NoteGathered;
+    public static Action<bool, int> AppendToNote;
 
     private ObjectiveManager objectiveManager;
 
@@ -36,9 +39,13 @@ public class NoteDisplay : MonoBehaviour, IInteractable
         {
             noteCollected = true;
             objectiveStage = noteToDisplay.objectiveStage;
-            if (noteToDisplay.isObjective2) { objectiveManager.UpdateObjective(true, objectiveStage); }
-            else { objectiveManager.UpdateObjective(false, objectiveStage); }//sets either objective 1 or 2 depending on what note effects
+            objective2 = noteToDisplay.isObjective2;
+            objectiveManager.UpdateObjective(objective2, objectiveStage);
             NoteGathered?.Invoke();
+            if (appendToThisNote)
+            {
+                AppendToNote?.Invoke(objective2, objectiveStage);
+            }
             Destroy(this); //removes interactable.
         }
     }

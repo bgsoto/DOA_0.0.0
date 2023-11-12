@@ -13,16 +13,18 @@ public class CoordAppend : MonoBehaviour
 
     private void OnEnable()
     {
-        ObjectiveUpdater.UpdateObjectives += Append;
+        NoteDisplay.AppendToNote += Append;
 
     }
     private void OnDisable()
     {
-        ObjectiveUpdater.UpdateObjectives -= Append;
+        NoteDisplay.AppendToNote -= Append;
     } //subscribes and unsubscribes on enable/disable
 
     private void Append(bool objective2, int appendStage)
     {
+        if (appendStage != objectiveToUpdateOn && appendStage != objectiveToUpdateOn2) { return; }
+        Debug.Log("appending!");
         StartCoroutine(Appending(objective2, appendStage));
     }
     IEnumerator Appending(bool objective2, int appendStage)

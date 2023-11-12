@@ -66,7 +66,7 @@ public class ObjectiveManager : MonoBehaviour
         if (Input.GetKey(KeyCode.Tab) && !isFaded)
         {
             objectiveCanvas.GetComponent<CanvasGroup>().DOFade(1, 1f);
-            hamburgerIcon.GetComponent<CanvasGroup>().DOFade(0, 0);
+            hamburgerIcon.GetComponent<CanvasGroup>().DOFade(0, 1f);
             objectiveNotif.SetActive(false);
             //UpdateText();
             isFaded = true;
@@ -121,9 +121,11 @@ public class ObjectiveManager : MonoBehaviour
         {
             currentObjective += textToAppend; //if objectiveToAppend is 1, add the string and return
             Debug.Log(currentObjective);
+            UpdateText();
             return;
         }//else do that for objective2
         currentObjective2 += textToAppend;
+        UpdateText();
         //Debug.Log(currentObjective2);
     }
 

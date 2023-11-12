@@ -1,4 +1,5 @@
 using Cinemachine.Utility;
+using System;
 using UnityEngine;
 using UnityEngine.AI;
 using UnityEngine.SceneManagement;
@@ -23,6 +24,8 @@ public class MonsterStateMachine : MonoBehaviour
     [SerializeField] private bool playerDetected;
     [SerializeField] private float Speed;
 
+    [SerializeField] public static Action<int> StateChanged; //patrol 0, hunt 1, stalk 2, chase 3, kill 4
+
     public enum AnomalyState
     {
         Patrol,
@@ -40,6 +43,7 @@ public class MonsterStateMachine : MonoBehaviour
         agent = GetComponent<NavMeshAgent>();
         playerDetected = sensor.canSeePlayer;
         Speed = agent.speed;
+        StateChanged?.Invoke(0);
     }
 
     void Update()
@@ -91,6 +95,7 @@ public class MonsterStateMachine : MonoBehaviour
         if (playerDetected)
         {
             director.CurrentDirectorState = AnomalyDirector.DirectorState.Hunt;
+            StateChanged?.Invoke(3);
             currentState = AnomalyState.Chase;
             director.IsAnomalyMoving = true;
         }
@@ -110,6 +115,7 @@ public class MonsterStateMachine : MonoBehaviour
         {
             director.IsAnomalyMoving = true;
             currentState = AnomalyState.Chase;
+            StateChanged?.Invoke(3);
         }
         else if (Vector3.Distance(transform.position, targetDestination) < 2)
         {
@@ -150,6 +156,7 @@ public class MonsterStateMachine : MonoBehaviour
 
             if (Vector3.Distance(transform.position, director.PlayerPosition) < maxKillRange)
             {
+                StateChanged?.Invoke(4);
                 currentState = AnomalyState.Kill;
             }
         }
@@ -159,6 +166,7 @@ public class MonsterStateMachine : MonoBehaviour
             director.HuntNodesQueue.Clear();
             director.HuntNodesQueue.Enqueue(director.PlayerPosition);
             director.IsAnomalyMoving = false;
+            StateChanged?.Invoke(2);
             currentState = AnomalyState.Stalk;
         }
     }
