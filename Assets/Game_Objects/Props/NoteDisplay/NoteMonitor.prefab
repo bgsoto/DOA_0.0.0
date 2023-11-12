@@ -116,7 +116,6 @@ GameObject:
   - component: {fileID: 4849876282388361457}
   - component: {fileID: 5337411920120406570}
   - component: {fileID: 1283413947348218487}
-  - component: {fileID: 4898497373126381623}
   m_Layer: 0
   m_Name: NoteMonitor
   m_TagString: Untagged
@@ -158,7 +157,7 @@ MonoBehaviour:
   noteToDisplay: {fileID: 11400000, guid: ed6486436fa02fb47a8a7d5f95b0a021, type: 2}
   noteText: {fileID: 6092385083593739847}
   noteTitle: {fileID: 1004412686091548999}
-  actionText: COMPUTER
+  actionText: Record Information
 --- !u!65 &1283413947348218487
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -180,19 +179,6 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 0.57870924, y: 0.46778166, z: 0.12208371}
   m_Center: {x: 0.004704118, y: 0.26610917, z: -0.015310742}
---- !u!114 &4898497373126381623
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1636628372725777684}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 920963a24d8a1794b864414e38fa9d93, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  interactDescription: Press 'E' to Gather Note
 --- !u!1 &1746042272981056028
 GameObject:
   m_ObjectHideFlags: 0
