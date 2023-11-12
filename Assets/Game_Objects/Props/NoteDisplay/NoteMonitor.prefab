@@ -158,6 +158,7 @@ MonoBehaviour:
   noteToDisplay: {fileID: 11400000, guid: ed6486436fa02fb47a8a7d5f95b0a021, type: 2}
   noteText: {fileID: 6092385083593739847}
   noteTitle: {fileID: 1004412686091548999}
+  actionText: COMPUTER
 --- !u!65 &1283413947348218487
 BoxCollider:
   m_ObjectHideFlags: 0

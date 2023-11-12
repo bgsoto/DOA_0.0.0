@@ -20,12 +20,12 @@ public class ShowKeypad : MonoBehaviour, IInteractable
 
     private void OnEnable()
     {
-        KeypadDisplayManager.OnCorrectCoor += HideCanvas;
+        KeypadDisplayManager.OnExitKeypad += HideCanvas;
     }
 
     private void OnDisable()
     {
-        KeypadDisplayManager.OnCorrectCoor -= HideCanvas;
+        KeypadDisplayManager.OnExitKeypad -= HideCanvas;
     }
 
     private void Awake()
@@ -33,13 +33,21 @@ public class ShowKeypad : MonoBehaviour, IInteractable
         UIManager = GameObject.FindGameObjectWithTag("UIManager").GetComponent<UIManager>();
     }
 
-    private void HideCanvas()
+    private void HideCanvas(bool value)
     {
-        canInteract = false;
-        UIManager.ShowKeypad(canInteract);
+        if (!value)
+        {
+            canInteract = true;
+        }
+        else
+        {
+            canInteract = false;
+        }
+
+        UIManager.ShowKeypad(false);
 
         /* Subscription: PlayerInteraction, FirstPersonController, StartAssestsInput */
-        DisableControls?.Invoke(canInteract);
+        DisableControls?.Invoke(false);
     }
 
     public void Interact()

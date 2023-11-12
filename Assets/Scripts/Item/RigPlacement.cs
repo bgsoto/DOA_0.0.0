@@ -4,25 +4,25 @@ using UnityEngine;
 
 public class RigPlacement : MonoBehaviour
 {
-    [Header("Rotation of the Rig When Placed")]
-    [SerializeField] private Vector3 rigPlacementRotation;
+    [Header("Relationships")]
+    [SerializeField] private Transform rigParentTransform;
 
-    private Vector3 rigPlacementPostion;
+    private Transform rigPlacementTransform;
 
     private void Start()
     {
-        rigPlacementPostion = transform.GetComponentInParent<Transform>().position;
+        rigPlacementTransform = gameObject.transform;
     }
 
-    public Vector3 RigPlacementPosition
+    public Transform RigPlacementPosition
     {
-        get { return rigPlacementPostion; }
-        set { rigPlacementPostion = value; }
+        get { return rigPlacementTransform; }
+        set { rigPlacementTransform = value; }
     }
 
-    public Vector3 RigPlacementRotation
+    public Transform RigPlacementRotation
     {
-        get { return rigPlacementRotation; }
-        set { rigPlacementRotation = value; }
+        get { return rigParentTransform; }
+        set { rigParentTransform = value; }
     }
 }

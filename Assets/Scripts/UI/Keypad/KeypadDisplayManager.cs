@@ -6,7 +6,7 @@ public class KeypadDisplayManager : MonoBehaviour
 {
     [SerializeField] private string dimensionalCoordinates;
 
-    public static Action OnCorrectCoor;
+    public static Action<bool> OnExitKeypad;
 
     private TMP_Text displayText;
     private bool displayIsFull = false;
@@ -89,7 +89,7 @@ public class KeypadDisplayManager : MonoBehaviour
         if (displayText.text == dimensionalCoordinates)
         {
             /* Subscription: ShowKeypad script. */
-            OnCorrectCoor?.Invoke();
+            OnExitKeypad?.Invoke(true);
             Debug.Log("CORRECT CODE");
         }
         else
@@ -105,5 +105,11 @@ public class KeypadDisplayManager : MonoBehaviour
         displayIsFull = false;
         displayIsEmpty = true;
         Debug.Log("INCORRECT CODE");
+    }
+
+    public void ExitKeypad()
+    {
+        /* Subscription: ShowKeypad script. */
+        OnExitKeypad?.Invoke(false);
     }
 }

@@ -11,12 +11,7 @@ public class ItemHolder : MonoBehaviour
     [SerializeField] private List<GameObject> itemList = new List<GameObject>();
     [SerializeField] private Transform itemDropTransform;
 
-    [Header("Settings")]
-    [SerializeField] private AudioSource inventoryAudioSource;
-    [SerializeField] private AudioClip pickupSound;
-    [SerializeField] private AudioClip dropSound;
-
-    private int itemIndex = 0;
+    [SerializeField] private int itemIndex = 0;
 
     private void Update()
     {
@@ -24,12 +19,20 @@ public class ItemHolder : MonoBehaviour
         {
             itemIndex--;
             if (itemIndex < 0) { itemIndex = 0; }
+            Debug.Log(itemIndex);
             ShowItem(itemIndex);
         }
         else if (Input.GetAxis("Mouse ScrollWheel") > 0)
         {
             itemIndex++;
-            if (itemIndex > itemList.Count) { itemIndex = itemList.Count - 1; }
+
+            if (itemIndex > itemList.Count - 1) 
+            { 
+                itemIndex = itemList.Count - 1;
+                if (itemIndex < 0) { itemIndex = 0; }
+            }
+
+            Debug.Log(itemIndex);
             ShowItem(itemIndex);
         }
 
@@ -113,7 +116,6 @@ public class ItemHolder : MonoBehaviour
             numJumps: 1,
             duration: 0.3f).SetEase(Ease.InOutSine);
 
-        inventoryAudioSource.PlayOneShot(dropSound);
         RemoveFromInventory(itemList[itemIndex].GetComponent<IInteractable>().ItemData);
         itemIndex++;
 

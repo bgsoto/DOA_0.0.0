@@ -19,6 +19,11 @@ public class ProximitySensor : MonoBehaviour
 
     private int barCount;
 
+    private void Awake()
+    {
+        monsterTransform = GameObject.FindGameObjectWithTag("Monster").transform;
+    }
+
     private void Update()
     {
         GetDistance();

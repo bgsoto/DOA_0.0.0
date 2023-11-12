@@ -83,13 +83,14 @@ public class Rig : MonoBehaviour, IInteractable
                 }
                 else if (hit.collider.gameObject.CompareTag("RigAdapter"))
                 {
+                    RigPlacement rigAdapter = hit.collider.gameObject.GetComponent<RigPlacement>();
+                    
                     previewObject.SetActive(true);
-                    Transform rigAdapterTransform = hit.collider.transform;
-                    previewObject.transform.position = rigAdapterTransform.position;
-                    previewObject.transform.rotation = Quaternion.identity;
+                    previewObject.transform.position = rigAdapter.RigPlacementPosition.position;
+                    previewObject.transform.rotation = Quaternion.Euler(rigAdapter.RigPlacementRotation.localEulerAngles);
                     foreach (Renderer renderer in previewRendererList) { renderer.material = validMaterial; }
                     canRigBePlaced = true;
-                    placementPosition = rigAdapterTransform.position;
+                    placementPosition = rigAdapter.RigPlacementPosition.position;
                 }
             }
             else
@@ -135,17 +136,17 @@ public class Rig : MonoBehaviour, IInteractable
     {
         if (canRigBePlaced)
         {
+            /* Apply position and rotation. */
+            GameObject rigObject = Instantiate(rigParentFull);
+            rigObject.gameObject.name = "Rig";
+            rigObject.transform.position = previewObject.transform.position;
+            rigObject.transform.localRotation = Quaternion.Euler(previewObject.transform.localEulerAngles);
+
             /* Delete rigParentPreview from scene */
             Destroy(previewObject);
 
             /* Unchild from ItemHolder and remove from itemList. */
             itemHolder.RemoveFromInventory(rigData);
-
-            /* Apply position and rotation. */
-            GameObject rigObject = Instantiate(rigParentFull);
-            rigObject.gameObject.name = "Rig";
-            rigObject.transform.position = new Vector3(placementPosition.x, placementPosition.y, placementPosition.z);
-            rigObject.transform.localRotation = Quaternion.identity;
 
             Destroy(gameObject);
         }

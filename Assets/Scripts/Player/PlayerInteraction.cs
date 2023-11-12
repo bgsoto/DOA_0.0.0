@@ -107,10 +107,11 @@ public class PlayerInteraction : MonoBehaviour
     private void AddKey(int value)
     {
         keysCollected++;
+        
         if (keysCollected == 2) 
         { 
             /* Subscription: ObjectiveManager */
-            onAllKeysCollected?.Invoke(false, 30); 
+            onAllKeysCollected?.Invoke(false, 30);
         }
     }
 

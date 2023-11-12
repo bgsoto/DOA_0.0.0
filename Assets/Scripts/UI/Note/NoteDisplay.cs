@@ -11,18 +11,22 @@ public class NoteDisplay : MonoBehaviour, IInteractable
     [SerializeField] private Note noteToDisplay;
     [SerializeField] private TMP_Text noteText;
     [SerializeField] private TMP_Text noteTitle;
+    [SerializeField] private string actionText;
     private int objectiveStage;
     private bool noteCollected = false;
-
+   
     public static Action NoteGathered;
+
+    private ObjectiveManager objectiveManager;
 
     /* Not used */
     private ItemData itemData;
     private bool pickable;
-    private string actionText;
+    
 
     private void Start()
     {
+        objectiveManager = GameObject.FindGameObjectWithTag("ObjectiveManager").GetComponent<ObjectiveManager>();
         noteText.text = noteToDisplay.noteText;
         noteTitle.text = noteToDisplay.noteTitle;
     }
@@ -32,8 +36,8 @@ public class NoteDisplay : MonoBehaviour, IInteractable
         {
             noteCollected = true;
             objectiveStage = noteToDisplay.objectiveStage;
-            if (noteToDisplay.isObjective2) { ObjectiveUpdater.UpdateObjectives?.Invoke(true, objectiveStage); }
-            else { ObjectiveUpdater.UpdateObjectives?.Invoke(false, objectiveStage); }//sets either objective 1 or 2 depending on what note effects
+            if (noteToDisplay.isObjective2) { objectiveManager.UpdateObjective(true, objectiveStage); }
+            else { objectiveManager.UpdateObjective(false, objectiveStage); }//sets either objective 1 or 2 depending on what note effects
             NoteGathered?.Invoke();
             Destroy(this); //removes interactable.
         }

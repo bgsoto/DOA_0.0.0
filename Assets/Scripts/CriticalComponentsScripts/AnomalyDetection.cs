@@ -14,13 +14,13 @@ public class AnomalyDetection : MonoBehaviour
     private void OnEnable()
     {
         /* Subscribes to event(s). */
-        KeypadDisplayManager.OnCorrectCoor += EnableTrap;
+        KeypadDisplayManager.OnExitKeypad += EnableTrap;
     }
 
     private void OnDisable()
     {
         /* Unsubscribes from event(s). */
-        KeypadDisplayManager.OnCorrectCoor -= EnableTrap;
+        KeypadDisplayManager.OnExitKeypad -= EnableTrap;
     }
 
     /* Detects if the Anomaly object is in within the containment area. */
@@ -30,7 +30,6 @@ public class AnomalyDetection : MonoBehaviour
         {
             isDetected = true;
             targetObjectTransform = collider.gameObject.transform;
-            Debug.Log("ANOMALY DETECTED");
         }
     }
 
@@ -39,7 +38,6 @@ public class AnomalyDetection : MonoBehaviour
         if (collider.gameObject.CompareTag(targetObjectTag))
         {
             isDetected = false;
-            Debug.Log("ANOMALY LOST");
         }
     }
 
@@ -63,7 +61,7 @@ public class AnomalyDetection : MonoBehaviour
         }
     }
 
-    public void EnableTrap() { isTrapOn = true; }
+    public void EnableTrap(bool value) { isTrapOn = value; }
 
     /* Reload the current scene */
     private void ResetScene() { SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex); }

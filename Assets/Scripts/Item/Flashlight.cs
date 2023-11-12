@@ -5,104 +5,40 @@ using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.Experimental.GlobalIllumination;
 
-public class Flashlight : MonoBehaviour
+public class Flashlight : MonoBehaviour, IInteractable
 {
-    
-    [SerializeField] public GameObject point, spot;
-    [SerializeField] public bool on;
-    [SerializeField] public bool isEquipped;
-    [SerializeField] public Material lens;
+    [Header("Relationships")]
+    [SerializeField] private GameObject point;
+    [SerializeField] private GameObject spot;
 
-    private void Start()
+    [Header("Settings")]
+    [SerializeField] private ItemData flashlightData;
+    [SerializeField] private Material lens;
+    [SerializeField] private bool isOn = false;
+    [SerializeField] private bool pickable;
+    [SerializeField] private string actionText;
+
+    public void Interact() { Destroy(gameObject); }
+
+    public void Use()
     {
-     
-        
-        FlashLightPosition();
-        on = false;
-    }
+        isOn = !isOn;
 
-    public void Update()
-
-    {
-        checkifEquipped();
-
-        if (isEquipped)
+        if (isOn)
         {
-
-
-            if (Input.GetKeyDown(KeyCode.Mouse0))
-
-            {
-
-                if (on == false)
-
-                {
-
-                    on = true;
-                    TurnOn();
-
-
-                }
-
-                else
-                {
-
-                    on = false;
-                    TurnOff();
-                }
-
-            }
-
-            if (transform.parent == true)
-            {
-                FlashLightPosition();
-            }
-        }
-
-
-
-
-    }
-
-
-    public void TurnOn()
-    {
-        point.SetActive(true);
-        spot.SetActive(true);
-        lens.EnableKeyword("_EMISSION");
-    }
-
-    public void TurnOff()
-    {
-        point.SetActive(false);
-        spot.SetActive(false);
-        lens.DisableKeyword("_EMISSION");
-    }
-
-    void FlashLightPosition()
-
-    {
-            transform.localPosition = new Vector3(0.08f, -0.1f, 0.17f);
-            transform.localRotation = Quaternion.Euler(-95f, -86.91f, 0f);
-        
-    }
-
-    public void checkifEquipped()
-    {
-        if (this.transform.parent != null ) 
-        {
-            
-            isEquipped = true;
+            point.SetActive(true);
+            spot.SetActive(true);
+            lens.EnableKeyword("_EMISSION");
         }
         else
         {
-            isEquipped = false;
+            point.SetActive(false);
+            spot.SetActive(false);
+            lens.DisableKeyword("_EMISSION");
         }
-
-        
-        
-        
     }
 
-
+    public ItemData ItemData { get { return flashlightData; } set { flashlightData = value; } }
+    public bool Pickable { get { return pickable; } set { pickable = value; } }
+    public string ActionText { get { return actionText; } set { actionText = value; } }
 }
