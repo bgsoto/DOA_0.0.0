@@ -16,5 +16,5 @@ MonoBehaviour:
   itemName: Rig
   itemImage: {fileID: 0}
   itemPrefab: {fileID: 365405671926710138, guid: 9514d93bcc85be54a81064ee11855d00, type: 3}
-  equippedLocalPosition: {x: 0, y: 1.125, z: -0.625}
+  equippedLocalPosition: {x: 0.394, y: -0.125, z: -1}
   equippedLocalRotation: {x: 0, y: 90, z: 270}

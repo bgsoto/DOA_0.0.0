@@ -68,7 +68,7 @@ public class ObjectiveManager : MonoBehaviour
             objectiveCanvas.GetComponent<CanvasGroup>().DOFade(1, 1f);
             hamburgerIcon.GetComponent<CanvasGroup>().DOFade(0, 0);
             objectiveNotif.SetActive(false);
-            UpdateText();
+            //UpdateText();
             isFaded = true;
         }
         if (Input.GetKeyUp(KeyCode.Tab))
@@ -78,11 +78,10 @@ public class ObjectiveManager : MonoBehaviour
             isFaded = false;
         }
     }
-    private void UpdateObjective(bool objective2, int questStage)
+    public void UpdateObjective(bool objective2, int questStage)
     {
         if (objective2 ? questStage > questState2 : questStage > questState) //checks if objective 2 is true, if true then checks if questStage is greater than questState2. if obj2 not true, checks questStage1
         {
-            //Debug.Log(objective2);
             objectiveNotif.SetActive(true);
             foreach (var obj in objectiveData)
             {
@@ -93,11 +92,13 @@ public class ObjectiveManager : MonoBehaviour
                     {
                         currentObjective2 = obj.objectiveDescription; questState2 = questStage;
                         activeClue2 = obj.clueDescription;
+                        UpdateText();
                     }
                     else
                     {
                         currentObjective = obj.objectiveDescription; questState = questStage;
                         activeClue = obj.clueDescription;
+                        UpdateText();
                     }
 
                     objectiveUpdatedSound.PlayOneShot(objectiveUpdatedClip);

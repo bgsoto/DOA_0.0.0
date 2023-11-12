@@ -19,6 +19,7 @@ TagManager:
   - Rig
   - KeypadUI
   - UIManager
+  - ObjectiveManager
   layers:
   - Default
   - TransparentFX

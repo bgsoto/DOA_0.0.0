@@ -9,9 +9,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2813781950553651975}
-  - component: {fileID: 918950175974215877}
+  - component: {fileID: 631148632783760015}
   m_Layer: 0
-  m_Name: ItemContainer
+  m_Name: ItemHolder
   m_TagString: Inventory
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -32,7 +32,7 @@ Transform:
   m_Father: {fileID: 3976384085616944452}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &918950175974215877
+--- !u!114 &631148632783760015
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -41,14 +41,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 643527244852736323}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9f207c027f776664eae961beb9312f74, type: 3}
+  m_Script: {fileID: 11500000, guid: d7f5462d3170c1c49831006a0ca45445, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Flashlightscript: {fileID: 0}
-  tabletScript: {fileID: 0}
-  wrenchScript: {fileID: 0}
-  jerrycanScript: {fileID: 0}
-  scriptList: []
+  itemList: []
+  itemDropTransform: {fileID: 1773221873654116822}
 --- !u!1 &1040662207578822036
 GameObject:
   m_ObjectHideFlags: 0
@@ -84,7 +81,6 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 2813781950553651975}
-  - {fileID: 2528692358876217474}
   - {fileID: 1773221873654116822}
   m_Father: {fileID: 5555525225471326621}
   m_RootOrder: -1
@@ -160,27 +156,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ca98dd7b8e8de7e4ba908a06fa017981, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  itemHolder: {fileID: 631148632783760015}
   reticle: {fileID: 0}
-  Rlength: 5
-  player: {fileID: 0}
-  onTarget: 0
-  Inventory: {fileID: 0}
-  itemdropPoint: {fileID: 1773221873654116822}
-  itemslots:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  pickupPoint: {fileID: 2813781950553651975}
-  parentLoc: {fileID: 643527244852736323}
-  childLoc: {fileID: 7983155694369023404}
-  equippedItem: {fileID: 0}
-  scriptArray: []
-  interactTextObject: {fileID: 0}
-  keys_collected: 0
-  Artifact_collected: 0
-  allKeysCollected: 0
-  Artifact: {fileID: 8641274945842966608, guid: 8b20ef73775d2b647aecc51c6fd9ac9d, type: 3}
+  rayLength: 3
+  interactText: {fileID: 0}
   inventoryAudioSource: {fileID: 7023495168625550325}
   pickupSound: {fileID: 8300000, guid: 5887ef6dcbe3eff41b1586f0f1c6c67b, type: 3}
   dropSound: {fileID: 8300000, guid: 53425ca930e3d5d4cb8fd2173a3d222e, type: 3}
@@ -321,7 +300,7 @@ Transform:
   m_Children:
   - {fileID: 3976384085616944452}
   m_Father: {fileID: 0}
-  m_RootOrder: 13
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &3837300230768096040
 GameObject:
@@ -352,37 +331,6 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 7547959984273594909}
-  m_Father: {fileID: 3976384085616944452}
-  m_RootOrder: -1
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &7983155694369023404
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 2528692358876217474}
-  m_Layer: 0
-  m_Name: InventorySlots
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &2528692358876217474
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7983155694369023404}
-  m_LocalRotation: {x: -0, y: -0.81965226, z: -0, w: 0.57286143}
-  m_LocalPosition: {x: -0.15595938, y: -0.18799996, z: 1.1273141}
-  m_LocalScale: {x: 2.378753, y: 1, z: 0.40440387}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
   m_Father: {fileID: 3976384085616944452}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}

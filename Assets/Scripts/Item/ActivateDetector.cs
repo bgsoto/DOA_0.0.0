@@ -17,8 +17,6 @@ public class ActivateDetector : MonoBehaviour
 
             /* Subscription: ActivateTablet */
             onPluggedRig?.Invoke();
-
-            Debug.Log("Plugged");
         }
     }
 }
