@@ -7,6 +7,7 @@ public class MonsterStateMachine : MonoBehaviour
 {
     [Header("Relationships")]
     [SerializeField] private AnomalyDirector director;
+    [SerializeField] private GameObject cameraController;
 
     [Header("Monster Settings")]
     [SerializeField] public anamolySight_Sensor sensor;
@@ -163,7 +164,7 @@ public class MonsterStateMachine : MonoBehaviour
     }
 
     /* Reset the scene after a short delay (adjust the delay time as needed) */
-    private void KillPlayer() { Invoke("ResetScene", 2f); }
+    private void KillPlayer() {Invoke("ResetScene", 5f);}
 
     /* Reload the current scene */
     private void ResetScene() { SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex); }
