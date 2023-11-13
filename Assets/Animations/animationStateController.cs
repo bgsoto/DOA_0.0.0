@@ -7,21 +7,6 @@ public class animationStateController : MonoBehaviour
     [Header("Relationships")]
     [SerializeField] private Animator animator;
     [SerializeField] private MonsterStateMachine Anamoly;
-   // [SerializeField] private
-
-
-
-
-
-
-    // Start is called before the first frame update
-    void Start()
-    {
-
-
-
-    }
-
     // Update is called once per frame
     void Update()
     {
@@ -52,7 +37,5 @@ public class animationStateController : MonoBehaviour
         {
             animator.SetBool("playerIsCaptured", false);
         }
-
-
     }
 }
