@@ -158,6 +158,7 @@ MonoBehaviour:
   noteText: {fileID: 6092385083593739847}
   noteTitle: {fileID: 1004412686091548999}
   actionText: Record Information
+  appendToThisNote: 0
 --- !u!65 &1283413947348218487
 BoxCollider:
   m_ObjectHideFlags: 0

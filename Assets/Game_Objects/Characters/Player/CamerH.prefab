@@ -46,6 +46,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemList: []
   itemDropTransform: {fileID: 1773221873654116822}
+  inventoryAudioSource: {fileID: 7023495168625550325}
+  pickupSound: {fileID: 8300000, guid: 53425ca930e3d5d4cb8fd2173a3d222e, type: 3}
+  dropSound: {fileID: 8300000, guid: 5887ef6dcbe3eff41b1586f0f1c6c67b, type: 3}
+  itemIndex: 0
 --- !u!1 &1040662207578822036
 GameObject:
   m_ObjectHideFlags: 0
@@ -160,9 +164,6 @@ MonoBehaviour:
   reticle: {fileID: 0}
   rayLength: 3
   interactText: {fileID: 0}
-  inventoryAudioSource: {fileID: 7023495168625550325}
-  pickupSound: {fileID: 8300000, guid: 5887ef6dcbe3eff41b1586f0f1c6c67b, type: 3}
-  dropSound: {fileID: 8300000, guid: 53425ca930e3d5d4cb8fd2173a3d222e, type: 3}
 --- !u!114 &6895485216372062175
 MonoBehaviour:
   m_ObjectHideFlags: 0

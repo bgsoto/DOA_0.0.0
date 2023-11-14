@@ -1974,7 +1974,7 @@ Transform:
   - {fileID: 5509940568367046463}
   - {fileID: 4647625667786272713}
   m_Father: {fileID: 0}
-  m_RootOrder: 0
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &5436952731047578154
 MonoBehaviour:
@@ -4345,12 +4345,20 @@ PrefabInstance:
       propertyPath: m_Name
       value: TabCanvas
       objectReference: {fileID: 0}
+    - target: {fileID: 501027419562345986, guid: 94c90b2d910d68e48b9c06f61fe5ed65, type: 3}
+      propertyPath: m_TagString
+      value: ObjectiveManager
+      objectReference: {fileID: 0}
     - target: {fileID: 1140064026019206715, guid: 94c90b2d910d68e48b9c06f61fe5ed65, type: 3}
       propertyPath: m_SizeDelta.y
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1140064026019206715, guid: 94c90b2d910d68e48b9c06f61fe5ed65, type: 3}
       propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1168156224506499302, guid: 94c90b2d910d68e48b9c06f61fe5ed65, type: 3}
+      propertyPath: m_AnchoredPosition.y
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2932311943611641011, guid: 94c90b2d910d68e48b9c06f61fe5ed65, type: 3}
@@ -4533,6 +4541,10 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5045445593887576745, guid: 94c90b2d910d68e48b9c06f61fe5ed65, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5380519599999140836, guid: 94c90b2d910d68e48b9c06f61fe5ed65, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
@@ -4554,6 +4566,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5380519599999140836, guid: 94c90b2d910d68e48b9c06f61fe5ed65, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6804498670176983323, guid: 94c90b2d910d68e48b9c06f61fe5ed65, type: 3}
       propertyPath: m_AnchoredPosition.y
       value: 0
       objectReference: {fileID: 0}
@@ -4719,10 +4735,42 @@ PrefabInstance:
       propertyPath: m_Name
       value: Reticle Canvas
       objectReference: {fileID: 0}
+    - target: {fileID: 3669535507855129491, guid: b14891ab4e4c9494d907006588ae0d05, type: 3}
+      propertyPath: m_fontSize
+      value: 25
+      objectReference: {fileID: 0}
+    - target: {fileID: 3669535507855129491, guid: b14891ab4e4c9494d907006588ae0d05, type: 3}
+      propertyPath: m_fontAsset
+      value: 
+      objectReference: {fileID: 11400000, guid: a4829b83ebe08af40bb04c389258b802, type: 2}
+    - target: {fileID: 3669535507855129491, guid: b14891ab4e4c9494d907006588ae0d05, type: 3}
+      propertyPath: m_fontSizeBase
+      value: 25
+      objectReference: {fileID: 0}
+    - target: {fileID: 3669535507855129491, guid: b14891ab4e4c9494d907006588ae0d05, type: 3}
+      propertyPath: m_sharedMaterial
+      value: 
+      objectReference: {fileID: -1755858522350264391, guid: a4829b83ebe08af40bb04c389258b802, type: 2}
+    - target: {fileID: 3669535507855129491, guid: b14891ab4e4c9494d907006588ae0d05, type: 3}
+      propertyPath: m_VerticalAlignment
+      value: 512
+      objectReference: {fileID: 0}
+    - target: {fileID: 3669535507855129491, guid: b14891ab4e4c9494d907006588ae0d05, type: 3}
+      propertyPath: m_HorizontalAlignment
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 5494995658545069363, guid: b14891ab4e4c9494d907006588ae0d05, type: 3}
       propertyPath: m_Sprite
       value: 
       objectReference: {fileID: 21300000, guid: e495819986c7fc14aa2369ee9a48370b, type: 3}
+    - target: {fileID: 6474250474827278965, guid: b14891ab4e4c9494d907006588ae0d05, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 400
+      objectReference: {fileID: 0}
+    - target: {fileID: 6474250474827278965, guid: b14891ab4e4c9494d907006588ae0d05, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -50
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

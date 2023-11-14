@@ -14,9 +14,6 @@ public class PlayerInteraction : MonoBehaviour
     [Header("Settings")]
     [SerializeField] private float rayLength;
     [SerializeField] private GameObject interactText;
-    [SerializeField] private AudioSource inventoryAudioSource;
-    [SerializeField] private AudioClip pickupSound;
-    [SerializeField] private AudioClip dropSound;
 
     public static Action<bool, int> onAllKeysCollected;
     public static Action<bool, int> onArtifactCollected;

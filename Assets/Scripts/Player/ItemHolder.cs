@@ -10,6 +10,9 @@ public class ItemHolder : MonoBehaviour
     [Header("Relationships")]
     [SerializeField] private List<GameObject> itemList = new List<GameObject>();
     [SerializeField] private Transform itemDropTransform;
+    [SerializeField] private AudioSource inventoryAudioSource;
+    [SerializeField] private AudioClip pickupSound;
+    [SerializeField] private AudioClip dropSound;
 
     [SerializeField] private int itemIndex = 0;
 
@@ -58,6 +61,7 @@ public class ItemHolder : MonoBehaviour
         newItem.GetComponentInChildren<Rigidbody>().isKinematic = true;
         newItem.GetComponentInChildren<BoxCollider>().enabled = false;
         newItem.SetActive(false);
+        inventoryAudioSource.PlayOneShot(pickupSound);
         itemList.Add(newItem);
         ShowItem(itemIndex);
     }
@@ -115,6 +119,7 @@ public class ItemHolder : MonoBehaviour
             currentItem.transform.parent = null;
             currentItem.GetComponentInChildren<Rigidbody>().isKinematic = false;
             currentItem.GetComponentInChildren<BoxCollider>().enabled = true;
+            inventoryAudioSource.PlayOneShot(dropSound);
             currentItem.GetComponentInChildren<Rigidbody>().DOJump(
                 endValue: itemDropTransform.position,
                 jumpPower: 0.1f,
