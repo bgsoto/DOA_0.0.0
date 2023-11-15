@@ -137,7 +137,6 @@ public class AnomalyDirector : MonoBehaviour
         if (anomaly.currentState == MonsterStateMachine.AnomalyState.Kill)
         {
             jumpScareCamHolder.SetActive(true);
-            playerCamHolder.SetActive(false);
         }
     }
 
