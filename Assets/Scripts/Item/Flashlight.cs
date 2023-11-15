@@ -11,6 +11,9 @@ public class Flashlight : MonoBehaviour, IInteractable
     [Header("Relationships")]
     [SerializeField] private GameObject point;
     [SerializeField] private GameObject spot;
+    [SerializeField] private AudioClip onSound;
+    [SerializeField] private AudioClip offSound;
+    private AudioSource source;
 
     [Header("Settings")]
     [SerializeField] private ItemData flashlightData;
@@ -33,12 +36,14 @@ public class Flashlight : MonoBehaviour, IInteractable
             point.SetActive(true);
             spot.SetActive(true);
             lens.EnableKeyword("_EMISSION");
+            source.PlayOneShot(onSound);
         }
         else
         {
             point.SetActive(false);
             spot.SetActive(false);
             lens.DisableKeyword("_EMISSION");
+            source.PlayOneShot(offSound);
         }
     }
 

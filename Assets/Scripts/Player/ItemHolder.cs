@@ -13,42 +13,57 @@ public class ItemHolder : MonoBehaviour
     [SerializeField] private AudioSource inventoryAudioSource;
     [SerializeField] private AudioClip pickupSound;
     [SerializeField] private AudioClip dropSound;
+    
 
     [SerializeField] private int itemIndex = 0;
-
+    private bool inMenu = false;
+    private void OnEnable()
+    {
+        SettingsOpener.PausedGame += DisableInteract;
+        ShowKeypad.DisableControls += DisableInteract;
+    }
+    private void OnDisable()
+    {
+        SettingsOpener.PausedGame -= DisableInteract;
+        ShowKeypad.DisableControls -= DisableInteract;
+    }
     private void Update()
     {
-        if (Input.GetAxis("Mouse ScrollWheel") < 0)
+        if (inMenu) { return; }
+        else
         {
-            itemIndex--;
-            if (itemIndex < 0) { itemIndex = 0; }
-            //Debug.Log(itemIndex);
-            ShowItem(itemIndex);
-        }
-        else if (Input.GetAxis("Mouse ScrollWheel") > 0)
-        {
-            itemIndex++;
-
-            if (itemIndex > itemList.Count - 1) 
-            { 
-                itemIndex = itemList.Count - 1;
-                if (itemIndex < 0) { itemIndex = 0; }
-            }
-
-            //Debug.Log(itemIndex);
-            ShowItem(itemIndex);
-        }
-
-        if (Input.GetMouseButtonDown(0))
-        {
-            if (itemList.Count > 0)
+            if (Input.GetAxis("Mouse ScrollWheel") < 0)
             {
-                itemList[itemIndex].GetComponentInChildren<IInteractable>().Use();
+                itemIndex--;
+                if (itemIndex < 0) { itemIndex = 0; }
+                //Debug.Log(itemIndex);
+                ShowItem(itemIndex);
             }
-        }
-        else if (Input.GetKeyDown(KeyCode.R))
-        {
-            DropItem();
+            else if (Input.GetAxis("Mouse ScrollWheel") > 0)
+            {
+                itemIndex++;
+
+                if (itemIndex > itemList.Count - 1)
+                {
+                    itemIndex = itemList.Count - 1;
+                    if (itemIndex < 0) { itemIndex = 0; }
+                }
+
+                //Debug.Log(itemIndex);
+                ShowItem(itemIndex);
+            }
+
+            if (Input.GetMouseButtonDown(0))
+            {
+                if (itemList.Count > 0)
+                {
+                    itemList[itemIndex].GetComponentInChildren<IInteractable>().Use();
+                }
+            }
+            else if (Input.GetKeyDown(KeyCode.R))
+            {
+                DropItem();
+            }
         }
     }
 
@@ -141,4 +156,5 @@ public class ItemHolder : MonoBehaviour
             ShowItem(itemIndex);
         }
     }
+    private void DisableInteract(bool value) { inMenu = value; }
 }

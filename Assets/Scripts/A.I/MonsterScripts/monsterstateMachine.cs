@@ -133,6 +133,7 @@ public class MonsterStateMachine : MonoBehaviour
         {
             if (hit.collider.CompareTag("Player"))
             {
+                StateChanged?.Invoke(4);
                 KillPlayer();
             }
         }

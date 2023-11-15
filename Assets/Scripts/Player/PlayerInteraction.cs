@@ -2,6 +2,7 @@ using DG.Tweening;
 using System;
 using TMPro;
 using UnityEngine;
+using UnityEngine.InputSystem;
 using UnityEngine.Timeline;
 using UnityEngine.UI;
 
@@ -29,6 +30,7 @@ public class PlayerInteraction : MonoBehaviour
         ShowKeypad.DisableControls += DisableRayCast;
         Key.onKeyCollected += AddKey;
         Artifact.onArtifactCollected += AddArtifact;
+        SettingsOpener.PausedGame += DisableRayCast;
     }
 
     private void OnDisable()
@@ -36,8 +38,9 @@ public class PlayerInteraction : MonoBehaviour
         ShowKeypad.DisableControls -= DisableRayCast;
         Key.onKeyCollected -= AddKey;
         Artifact.onArtifactCollected += AddArtifact;
+        SettingsOpener.PausedGame -= DisableRayCast;
     }
-    
+
     private void Update()
     {
         if (!inMenu)
