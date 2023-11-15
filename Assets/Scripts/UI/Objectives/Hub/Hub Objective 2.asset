@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: Hub Objective 2
   m_EditorClassIdentifier: 
   objectiveName: Hub2
-  objectiveDescription: Depart.
+  isObjective2: 0
+  objectiveDescription: Depart for your destination.
   objectiveStage: 10
   clueDescription: 'Hint: Exit through the doors!'

@@ -2,6 +2,7 @@
 using UnityEngine;
 using DG.Tweening;
 using UnityEngine.InputSystem.XR;
+using UnityEditor;
 #if ENABLE_INPUT_SYSTEM
 using UnityEngine.InputSystem;
 #endif
@@ -47,6 +48,18 @@ namespace StarterAssets
         public float FallTimeout = 0.15f;
 
         [Space(10)]
+        [Tooltip("Speed the player head bobs when walking.")]
+        public float walkBobSpeed = 14f;
+        public float walkBobAmount = 0.05f;
+        [Tooltip("Speed the player head bobs when sprinting.")]
+        public float sprintBobSpeed = 18f;
+        public float sprintBobAmount = 0.1f;
+        [Tooltip("Speed the player head bobs when crouching.")]
+        public float crouchBobSpeed = 8f;
+        public float crouchBobAmount = 0.025f;
+        private float bobTimer;
+
+        [Space(10)]
         [Header("Player Grounded")]
         [Tooltip("If the character is grounded or not. Not part of the CharacterController built in grounded check")]
         public bool Grounded = true;
@@ -69,6 +82,7 @@ namespace StarterAssets
 
         // cinemachine
         private float _cinemachineTargetPitch;
+        private CinemachineCameraOffset _offset;
 
         // player
         private float _speed;
@@ -126,6 +140,7 @@ namespace StarterAssets
         {
             ShowKeypad.DisableControls += PlayerInput;
             HubUiManager.DisablePlayerControls += PlayerInput;
+            SettingsOpener.PausedGame += PlayerInput;
 
             /* Subscribes to event(s). */
             //UIManager.DisablePlayerControls += PlayerInput;
@@ -135,6 +150,7 @@ namespace StarterAssets
         {
             ShowKeypad.DisableControls -= PlayerInput;
             HubUiManager.DisablePlayerControls -= PlayerInput;
+            SettingsOpener.PausedGame -= PlayerInput;
 
             /* Unsubscribes from event(s). */
             //UIManager.DisablePlayerControls += PlayerInput;
@@ -147,6 +163,8 @@ namespace StarterAssets
             {
                 _mainCamera = GameObject.FindGameObjectWithTag("MainCamera");
             }
+            // set default cam y pos
+            _offset = vcam.GetComponent<CinemachineCameraOffset>();
         }
 
         private void Start()
@@ -172,6 +190,10 @@ namespace StarterAssets
                 GroundedCheck();
                 Move();
                 Crouch();
+                if (PlayerPrefs.GetInt("headbobOn") == 1)
+                {
+                    Headbob();
+                }
             }
         }
 
@@ -222,7 +244,6 @@ namespace StarterAssets
         {
             // set target speed based on move speed, sprint speed and if sprint is pressed OR crouch/crouch speed if crouching.
             float targetSpeed = _input.sprint ? SprintSpeed : isCrouching ? CrouchSpeed : MoveSpeed;
-
             // note: Vector2's == operator uses approximation so is not floating point error prone, and is cheaper than magnitude
             // if there is no input, set the target speed to 0
             if (_input.move == Vector2.zero) targetSpeed = 0.0f;
@@ -395,6 +416,29 @@ namespace StarterAssets
                 footstepTimer = GetCurrentOffset;
             }
         }
+
+        private void Headbob()
+        {
+            float BobSpeed = isCrouching ? crouchBobSpeed : _input.sprint ? sprintBobSpeed : walkBobSpeed;
+            float BobAmount = isCrouching ? crouchBobAmount : _input.sprint ? sprintBobAmount : walkBobAmount;
+            if (!_controller.isGrounded) return;
+
+            if (Mathf.Abs(new Vector2(_controller.velocity.x, _controller.velocity.z).magnitude) > 0.1f)
+            {
+                bobTimer += Time.deltaTime * (BobSpeed);
+                _offset.m_Offset = new Vector3(
+                    0f, Mathf.Sin(bobTimer) * BobAmount, 0f
+                );
+            }
+            else if (_offset.m_Offset.y != 0f)
+            {
+                _offset.m_Offset = new Vector3(
+                   0f, 0f, 0f
+               );
+            }
+
+        }
+
         /*public void CheckLayers()
         {
             RaycastHit hit;

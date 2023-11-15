@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 #if ENABLE_INPUT_SYSTEM
 using UnityEngine.InputSystem;
@@ -13,6 +14,7 @@ namespace StarterAssets
 		public bool jump;
 		public bool sprint;
 		public bool crouch;
+		public bool pause;
 
 		[Header("Movement Settings")]
 		public bool analogMovement;
@@ -21,13 +23,17 @@ namespace StarterAssets
 		public bool cursorLocked = false;
 		public bool cursorInputForLook = true;
 
+		//events
+		public static Action pausePressed;
         private void OnEnable()
         {
 			ShowKeypad.DisableControls += SetCursorState;
+			SettingsOpener.PausedGame += SetCursorState;
         }
 
         private void OnDisable()
         {
+            SettingsOpener.PausedGame -= SetCursorState;
             ShowKeypad.DisableControls -= SetCursorState;
         }
 
@@ -59,6 +65,11 @@ namespace StarterAssets
 			if (crouch) { return; }
 			SprintInput(value.isPressed);
 		}
+		public void OnPause(InputValue value)
+		{
+			PauseInput(value.isPressed);
+			pausePressed?.Invoke();
+		}
 #endif
 
 
@@ -84,6 +95,10 @@ namespace StarterAssets
 		public void SprintInput(bool newSprintState)
 		{
 			sprint = newSprintState;
+		}
+		public void PauseInput(bool newPauseState)
+		{
+			pause = newPauseState;
 		}
 
 		private void OnApplicationFocus(bool hasFocus)

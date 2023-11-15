@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: Hub Objective 1
   m_EditorClassIdentifier: 
   objectiveName: Hub1
-  objectiveDescription: Select a Mission on the Navigation Console.
+  isObjective2: 0
+  objectiveDescription: Select a Mission on the Contract Console.
   objectiveStage: 0
   clueDescription: 

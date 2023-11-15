@@ -25,7 +25,6 @@ public class NoteDisplay : MonoBehaviour, IInteractable
     /* Not used */
     private ItemData itemData;
     private bool pickable;
-    
 
     private void Start()
     {

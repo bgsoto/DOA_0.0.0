@@ -1,17 +1,15 @@
 using System;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class HubMenuDisplay : MonoBehaviour, IInteractable
 {
     [SerializeField] private Menu menuToDisplay;
-    [SerializeField] private bool pickable;
+    [SerializeField] private string actionText;
 
     /* Not used */
     private ItemData itemData;
-    private string actionText;
 
+    private bool pickable;
     /* The "list" of the different UI menus. */
     private enum Menu
     {
@@ -25,8 +23,8 @@ public class HubMenuDisplay : MonoBehaviour, IInteractable
     {
         int menuIndex = (int)menuToDisplay;
 
-            /* Subscription: UIManager */
-            OnMenuEnter?.Invoke(menuIndex);
+        /* Subscription: UIManager */
+        OnMenuEnter?.Invoke(menuIndex);
     }
 
     public void Use() { return; }

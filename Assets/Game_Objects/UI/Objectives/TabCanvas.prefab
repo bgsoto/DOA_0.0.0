@@ -164,6 +164,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   stageToSet: 0
+  isObjective2: 0
 --- !u!82 &6271129499929985553
 AudioSource:
   m_ObjectHideFlags: 0

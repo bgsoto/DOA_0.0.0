@@ -346,7 +346,7 @@ MonoBehaviour:
   MoveSpeed: 3
   SprintSpeed: 6
   CrouchSpeed: 2
-  RotationSpeed: 1
+  RotationSpeed: 1.3
   SpeedChangeRate: 10
   CrouchHeight: 1
   CrouchCenter: {x: 0, y: 0.84, z: 0}
@@ -356,6 +356,12 @@ MonoBehaviour:
   Gravity: -15
   JumpTimeout: 0.1
   FallTimeout: 0.15
+  walkBobSpeed: 12
+  walkBobAmount: 0.035
+  sprintBobSpeed: 15
+  sprintBobAmount: 0.05
+  crouchBobSpeed: 6
+  crouchBobAmount: 0.015
   Grounded: 1
   GroundedOffset: -0.14
   GroundedRadius: 0.5
@@ -374,9 +380,9 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 3413289aa6293e341a7a5e3b5ec5b9f6, type: 3}
   - {fileID: 8300000, guid: f410c9792240f0a43860bf58829e000c, type: 3}
   source: {fileID: 3918261780332602872}
-  volumeChangeMultiplier: 0.2
+  volumeChangeMultiplier: 0.135
   pitchChangeMultiplier: 0.2
-  baseVolume: 0.337
+  baseVolume: 0.284
 --- !u!114 &1978471637655604388
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -411,6 +417,7 @@ MonoBehaviour:
   jump: 0
   sprint: 0
   crouch: 0
+  pause: 0
   analogMovement: 0
   cursorLocked: 0
   cursorInputForLook: 1

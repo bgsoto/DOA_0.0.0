@@ -3,10 +3,12 @@ using System.Collections.Generic;
 using DG.Tweening;
 using UnityEngine;
 
-public class anomalynoteunlock : MonoBehaviour
+public class AnomalyNoteUnlock : MonoBehaviour
 {
-    [SerializeField] private GameObject noteToUnlock;
+    [SerializeField] private GameObject noteContainer;
     [SerializeField] private Vector3 movePos = new Vector3();
+    [SerializeField] private AudioSource audiosource;
+    [SerializeField] private AudioClip clip;
     private void OnEnable()
     {
         PlanetsManager.planetCorrect += UnlockNote;
@@ -18,6 +20,8 @@ public class anomalynoteunlock : MonoBehaviour
 
     void UnlockNote()
     {
-        noteToUnlock.gameObject.transform.DOMove(movePos, 1f);
+        audiosource.gameObject.SetActive(true);
+        noteContainer.gameObject.transform.DOLocalMove(movePos, 1f);
+        audiosource.PlayOneShot(clip);
     }
 }
