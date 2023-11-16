@@ -346,7 +346,7 @@ MonoBehaviour:
   MoveSpeed: 3
   SprintSpeed: 6
   CrouchSpeed: 2
-  RotationSpeed: 1.3
+  RotationSpeed: 1
   SpeedChangeRate: 10
   CrouchHeight: 1
   CrouchCenter: {x: 0, y: 0.84, z: 0}

@@ -22,6 +22,10 @@ public class Flashlight : MonoBehaviour, IInteractable
     [SerializeField] private bool pickable;
     [SerializeField] private string actionText;
 
+    private void Awake()
+    {
+        source = GetComponent<AudioSource>();
+    }
     public void Interact() {
         lens.DisableKeyword("_EMISSION");
         Destroy(spot);

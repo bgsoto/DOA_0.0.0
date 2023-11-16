@@ -165,6 +165,7 @@ namespace StarterAssets
             }
             // set default cam y pos
             _offset = vcam.GetComponent<CinemachineCameraOffset>();
+            RotationSpeed = PlayerPrefs.GetFloat("sensitivity", 1);
         }
 
         private void Start()
@@ -209,7 +210,8 @@ namespace StarterAssets
         }
 
         //checks if in menu, if true, no move is processed.
-        private void PlayerInput(bool value) { inMenu = value; }
+        private void PlayerInput(bool value) { inMenu = value; 
+            RotationSpeed = PlayerPrefs.GetFloat("sensitivity", 1); }//updates rotation speed on call too, since pausing the menu already calls this value.
 
         private void GroundedCheck()
         {

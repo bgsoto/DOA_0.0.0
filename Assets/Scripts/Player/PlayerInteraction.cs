@@ -37,7 +37,7 @@ public class PlayerInteraction : MonoBehaviour
     {
         ShowKeypad.DisableControls -= DisableRayCast;
         Key.onKeyCollected -= AddKey;
-        Artifact.onArtifactCollected += AddArtifact;
+        Artifact.onArtifactCollected -= AddArtifact;
         SettingsOpener.PausedGame -= DisableRayCast;
     }
 
