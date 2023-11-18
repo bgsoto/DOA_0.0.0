@@ -1,6 +1,7 @@
 using StarterAssets;
 using System;
 using UnityEngine;
+using UnityEngine.InputSystem.LowLevel;
 
 public class SettingsOpener : MonoBehaviour
 {
@@ -35,14 +36,16 @@ public class SettingsOpener : MonoBehaviour
     public void OnPause()
     {
         PausedGame?.Invoke(true);
-        Time.timeScale = 0f;
+        Cursor.lockState = CursorLockMode.Confined;
         isPaused = true;
         settingsMenu.SetActive(true);
         Debug.Log("Game Paused");
+        Time.timeScale = 0f;
     }
     public void OnResume()
     {
         Time.timeScale = 1.0f;
+        Cursor.lockState = CursorLockMode.Locked;
         isPaused = false;
         PausedGame?.Invoke(false);
         settingsMenu.SetActive(false);

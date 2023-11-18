@@ -1,15 +1,11 @@
-using StarterAssets;
-using Unity.VisualScripting;
 using UnityEngine;
-using UnityEngine.InputSystem;
 
 public class LightFollow : MonoBehaviour
 {
 
     public Transform lightRoot;
     public Light lightObject;
-    [SerializeField] private float speed = 2;
-    [SerializeField] private bool playerIsMoving;
+    [SerializeField] private float speed = 12;
 
     private void OnEnable()
     {
@@ -24,27 +20,10 @@ public class LightFollow : MonoBehaviour
         if (lightRoot.gameObject.activeInHierarchy)
         {
             lightObject.enabled = true;
-            if (playerIsMoving)
-            {
-                var rotation = lightRoot.rotation;
-                transform.rotation = Quaternion.Slerp(transform.rotation, rotation, Time.deltaTime * speed);
-            }
-            else { transform.rotation = lightRoot.rotation; }
+            var rotation = lightRoot.rotation;
+            transform.rotation = Quaternion.Slerp(transform.rotation, rotation, Time.deltaTime * speed);
             transform.position = lightRoot.position;
         }
-        else { lightObject.enabled = false; } 
-    }
-
-    private void FixedUpdate()
-    {
-        if (transform.hasChanged)
-        {
-            playerIsMoving = true;
-            transform.hasChanged = false;
-        }
-        else
-        {
-            playerIsMoving = false;
-        }
+        else { lightObject.enabled = false; }
     }
 }

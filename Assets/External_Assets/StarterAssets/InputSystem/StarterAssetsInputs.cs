@@ -27,13 +27,11 @@ namespace StarterAssets
 		public static Action pausePressed;
         private void OnEnable()
         {
-			ShowKeypad.DisableControls += SetCursorState;
-			SettingsOpener.PausedGame += SetCursorState;
+            ShowKeypad.DisableControls += SetCursorState;
         }
 
         private void OnDisable()
         {
-            SettingsOpener.PausedGame -= SetCursorState;
             ShowKeypad.DisableControls -= SetCursorState;
         }
 

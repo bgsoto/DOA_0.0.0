@@ -356,7 +356,7 @@ namespace StarterAssets
 
         private void SprintFOV()
         {
-            vcam.m_Lens.FieldOfView = _input.sprint ? Mathf.Lerp(vcam.m_Lens.FieldOfView, 60, 10 * Time.deltaTime) : vcam.m_Lens.FieldOfView = Mathf.Lerp(vcam.m_Lens.FieldOfView, 40, 10 * Time.deltaTime);
+            vcam.m_Lens.FieldOfView = _input.sprint ? Mathf.Lerp(vcam.m_Lens.FieldOfView, 75, 10 * Time.deltaTime) : vcam.m_Lens.FieldOfView = Mathf.Lerp(vcam.m_Lens.FieldOfView, 60, 10 * Time.deltaTime);
            /* if (_input.sprint)
             {
                 if (vcam.m_Lens.FieldOfView < 50)

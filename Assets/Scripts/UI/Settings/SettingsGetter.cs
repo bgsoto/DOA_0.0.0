@@ -13,5 +13,4 @@ public class SettingsGetter : MonoBehaviour
         volumeSlider.value = PlayerPrefs.GetFloat("masterVolume");
         sensitivitySlider.value = PlayerPrefs.GetFloat("sensitivity");
     }
-
 }

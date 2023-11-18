@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using FMODUnity;
 using StarterAssets;
+using Unity.VisualScripting;
 
 public class VolumeSetter : MonoBehaviour
 {
@@ -13,6 +14,7 @@ public class VolumeSetter : MonoBehaviour
         AudioListener.volume = PlayerPrefs.GetFloat("masterVolume");
         trigger = GetComponent<StudioGlobalParameterTrigger>();
         trigger.Value = PlayerPrefs.GetFloat("masterVolume");
+        trigger.TriggerParameters();
     }
     private void OnEnable()
     {
