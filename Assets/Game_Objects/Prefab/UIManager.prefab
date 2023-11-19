@@ -1952,6 +1952,7 @@ GameObject:
   - component: {fileID: 4415162639057346123}
   - component: {fileID: 5436952731047578154}
   - component: {fileID: 3246648372139346934}
+  - component: {fileID: 7782536850700115441}
   m_Layer: 0
   m_Name: UIManager
   m_TagString: UIManager
@@ -2005,6 +2006,20 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   settingsMenu: {fileID: 470317930236899158}
   needPause: 1
+--- !u!114 &7782536850700115441
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3400634494372814161}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cb400d526b2c0874a88eb7c4781ac5a6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  fileName: DOASaveData
+  useEncryption: 0
 --- !u!1 &3450430976732006461
 GameObject:
   m_ObjectHideFlags: 0
@@ -4956,6 +4971,10 @@ PrefabInstance:
     - target: {fileID: 7208446426975530168, guid: 4db076e44c1a8e24885c482519e7a505, type: 3}
       propertyPath: m_Name
       value: PauseCanvas
+      objectReference: {fileID: 0}
+    - target: {fileID: 7237657584089775200, guid: 4db076e44c1a8e24885c482519e7a505, type: 3}
+      propertyPath: onHide.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: set_text
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

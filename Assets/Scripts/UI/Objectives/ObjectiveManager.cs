@@ -29,7 +29,7 @@ public class ObjectiveManager : MonoBehaviour
 
     public int questState = -1;
     public int questState2 = -1;
-    private bool isFaded = false;
+    //private bool isFaded = false;
 
     private bool areAllKeysCollected = false;
     private bool isArtifactCollected = false;
@@ -65,19 +65,17 @@ public class ObjectiveManager : MonoBehaviour
     }
     private void Update()
     {
-        if (Input.GetKey(KeyCode.Tab) && !isFaded)
+        if (Input.GetKey(KeyCode.Tab))
         {
             objectiveCanvas.GetComponent<CanvasGroup>().DOFade(1, 1f);
             hamburgerIcon.GetComponent<CanvasGroup>().DOFade(0, 0.5f);
             objectiveNotif.SetActive(false);
             //UpdateText();
-            isFaded = true;
         }
-        if (Input.GetKeyUp(KeyCode.Tab))
+       else if (Input.GetKeyUp(KeyCode.Tab))
         {
             objectiveCanvas.GetComponent<CanvasGroup>().DOFade(0, 1f);
             hamburgerIcon.GetComponent<CanvasGroup>().DOFade(1, 1f);
-            isFaded = false;
         }
     }
     public void UpdateObjective(bool objective2, int questStage)
