@@ -14,10 +14,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   objectiveName: Curie3/Cards
   isObjective2: 0
-  objectiveDescription: '<s>Find 2 Keycards to Open the Safe </s>
+  objectiveDescription: '<s>Search for the Artifact
 
-    Interact With
-    the Safe to Unlock it and Obtain the Artifact'
+    Find 2 Keycards to Open
+    the Safe </s>
+
+    Unlock the Safe and Obtain the Artifact'
   objectiveStage: 30
-  clueDescription: "\t-The safe is a large blue box in the room connected to where
-    you spawned."
+  clueDescription: 

@@ -14,11 +14,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   objectiveName: CurieCoord2
   isObjective2: 1
-  objectiveDescription: 'Search for information about the anomaly:
-
-    -Targeting
-    Parameters: ???
-
-    -Investigate the Model Solar System.'
+  objectiveDescription: Search for information about the Anomaly
   objectiveStage: 10
-  clueDescription: "\t-The security office may have some clues."
+  clueDescription: '- Rig Coordinates: ???
+
+    - The Head Researcher likes to use
+    his birthday, 7/13, as his password.'

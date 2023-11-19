@@ -565,9 +565,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   textToAppend1: 
-  textToAppend2: '<br>-Targeting Parameters: <PARAMHERE>'
+  textToAppend2: '<br>The coordinates are: '
   objectiveToUpdateOn: 0
   objectiveToUpdateOn2: 40
+  parameterToAppend: 
 --- !u!82 &51006527
 AudioSource:
   m_ObjectHideFlags: 0
@@ -7288,13 +7289,17 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1732449312}
     m_Modifications:
+    - target: {fileID: 1283413947348218487, guid: 2269ded345d85944bbd38fa350920150, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1636628372725777684, guid: 2269ded345d85944bbd38fa350920150, type: 3}
       propertyPath: m_Name
       value: AnomalyNoteMonitor
       objectReference: {fileID: 0}
     - target: {fileID: 1636628372725777684, guid: 2269ded345d85944bbd38fa350920150, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1746042272981056028, guid: 2269ded345d85944bbd38fa350920150, type: 3}
       propertyPath: m_IsActive
@@ -9478,7 +9483,7 @@ PrefabInstance:
       objectReference: {fileID: 1407774817}
     - target: {fileID: 4849971627721365512, guid: 4b7233bf67f62c2458934a6b5ac052a5, type: 3}
       propertyPath: OverrideMaxDistance
-      value: 35
+      value: 30
       objectReference: {fileID: 0}
     - target: {fileID: 9007202855766223820, guid: 4b7233bf67f62c2458934a6b5ac052a5, type: 3}
       propertyPath: m_LocalScale.x
@@ -25666,15 +25671,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2703929115062686514, guid: 3c2ece2521e6c364d985eb71296e6799, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -79.3
+      value: -68.964
       objectReference: {fileID: 0}
     - target: {fileID: 2703929115062686514, guid: 3c2ece2521e6c364d985eb71296e6799, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1.112
+      value: 1.124
       objectReference: {fileID: 0}
     - target: {fileID: 2703929115062686514, guid: 3c2ece2521e6c364d985eb71296e6799, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -75.129
+      value: -63.752
       objectReference: {fileID: 0}
     - target: {fileID: 2703929115062686514, guid: 3c2ece2521e6c364d985eb71296e6799, type: 3}
       propertyPath: m_LocalRotation.w

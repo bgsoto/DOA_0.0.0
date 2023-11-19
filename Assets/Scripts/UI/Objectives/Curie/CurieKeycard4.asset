@@ -14,12 +14,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   objectiveName: Curie4/rig
   isObjective2: 0
-  objectiveDescription: '<s>Find 2 Keycards to Open the Safe
+  objectiveDescription: '<s>Search for the Artifact
 
-    Interact With the
-    Safe to Unlock it and Obtain the Artifact</s>
+    Find 2 Keycards to Open
+    the Safe
 
-    Place the Rig Down in the
-    Correct Room'
+    Interact With the Safe to Unlock it and Obtain the Artifact</s>
+
+    Place
+    the Rig Down and Enter the Code'
   objectiveStage: 40
   clueDescription: 

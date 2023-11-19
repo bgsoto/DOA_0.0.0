@@ -14,7 +14,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   objectiveName: Curie1.5
   isObjective2: 0
-  objectiveDescription: Find 2 Keycards to Open the Safe
+  objectiveDescription: '<s>Search for the Artifact</s>
+
+    Find 2 Keycards to Open
+    the Safe'
   objectiveStage: 5
-  clueDescription: "\t<s>-By the entrance, a message from B.O.S.S. awaits.</s>\n\t-Interact
-    with computers and tablets to gain useful hints."
+  clueDescription: '<s>-By the entrance, a message from B.O.S.S. awaits.</s>
+
+    -Interact
+    with computers and tablets to gain useful hints.'

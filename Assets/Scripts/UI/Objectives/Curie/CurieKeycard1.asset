@@ -14,6 +14,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   objectiveName: Curie1
   isObjective2: 0
-  objectiveDescription: Find 2 Keycards to Open the Safe
+  objectiveDescription: Search for the Artifact
   objectiveStage: 0
-  clueDescription: "\t-By the entrance, a message from B.O.S.S. awaits."
+  clueDescription: -By the entrance, a message from B.O.S.S. awaits.

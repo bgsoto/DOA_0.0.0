@@ -12,11 +12,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cb02e16d6b4bc6a4f84468132e69a542, type: 3}
   m_Name: BirthdayNote
   m_EditorClassIdentifier: 
-  noteTitle: 'Incident Report 7/12 : Miles Behaving Strangely'
+  noteTitle: Incident Report - Miles Behaving Strange
   isObjective2: 1
-  noteText: "Our Head Chef, Ms. Estiago, reported something odd to security today.
-    She noticed Miles Cramer, Head of Research, pacing around his office space and
-    repeating a strange chant over and over. He kept repeating \u201CNeptune is 9\u201D,
-    and \u201CTomorrow is the key\u201D. Not sure what that\u2019s all about\u2026
-    I\u2019ll have to ask him at his party tomorrow."
+  noteText: A strange report came in today. Miles Cramer, Head of Research, was seen
+    doodling something odd on his whiteboard. It looked like a solar system similar
+    to the one he had in his office, but instead of planets, he had labeled each
+    one with a number. If the report is to be believed, the numbers went from 9 to
+    1, decending from Neptune to the Sun.
   objectiveStage: 20

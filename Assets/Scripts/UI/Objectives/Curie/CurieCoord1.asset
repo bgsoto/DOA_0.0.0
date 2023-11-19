@@ -14,9 +14,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   objectiveName: CurieCoord1
   isObjective2: 1
-  objectiveDescription: 'Search for information about the anomaly:
-
-    -Targeting
-    Parameters: ???'
+  objectiveDescription: Search for information about the Anomaly
   objectiveStage: 0
-  clueDescription: "\t-The research department may have useful information."
+  clueDescription: '- Rig Coordinates: ???
+
+    -The research department may have
+    useful information.'

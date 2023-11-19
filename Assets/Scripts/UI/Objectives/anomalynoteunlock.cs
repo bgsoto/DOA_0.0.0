@@ -20,7 +20,7 @@ public class AnomalyNoteUnlock : MonoBehaviour
 
     void UnlockNote()
     {
-        audiosource.gameObject.SetActive(true);
+        audiosource.GetComponent<Collider>().enabled = true;
         noteContainer.gameObject.transform.DOLocalMove(movePos, 1f);
         audiosource.PlayOneShot(clip);
     }

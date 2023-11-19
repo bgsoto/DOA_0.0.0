@@ -15,7 +15,8 @@ MonoBehaviour:
   noteTitle: 'Security Log Day 27:'
   isObjective2: 0
   noteText: "6:45 - RED entered the Cafeteria. \r\n7:02 - BLUE entered the Security
-    Room.\r\n7:40 - BLUE entered the Cafeteria.\r\n8:00 - BLUE entered the Meeting
-    Room.\r\n8:10 - Emergency Protocol Triggered.\r\n8:43 - Security System Damaged.
-    End of Log.\r"
+    Room.\n7:10 - RED entered the Bridge.\n7:30 - RED entered the Cafeteria.\r\n7:30
+    - BLUE entered the Cafeteria.\n7:48 - BLUE entered the Lobby.\r\n8:00 - BLUE
+    entered the Meeting Room.\r\n8:10 - Emergency Protocol Triggered.\r\n8:43 - Security
+    System Damaged. End of Log.\r"
   objectiveStage: 15

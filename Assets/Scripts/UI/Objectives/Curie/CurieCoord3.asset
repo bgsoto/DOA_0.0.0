@@ -14,10 +14,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   objectiveName: CurieCoord3
   isObjective2: 1
-  objectiveDescription: 'Search for information about the anomaly:
-
-    -Targeting
-    Parameters: ???'
+  objectiveDescription: Search for information about the Anomaly
   objectiveStage: 20
-  clueDescription: "\t-The head of research was seen reciting \"Neptune is 9\" and
-    \"Tomorrow is key\" on July 12th."
+  clueDescription: '- Rig Coordinates: ???
+
+    - "From 9 to 1, from Neptune to the
+    Sun"'

@@ -14,12 +14,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   objectiveName: CurieCoord3.1
   isObjective2: 1
-  objectiveDescription: 'Search for information about the anomaly:
-
-    -Targeting
-    Parameters: ???
-
-    -Investigate the Model Solar System.'
+  objectiveDescription: Search for information about the Anomaly
   objectiveStage: 30
-  clueDescription: "\t-The head of research was seen reciting \"Neptune is 9\" and
-    \"Tomorrow is key\" on July 12th."
+  clueDescription: '- Rig Coordinates: ???
+
+    - The Head Researcher likes to use
+    his birthday, 7/13, as his password.
+
+    - "From 9 to 1, from Neptune to the
+    Sun"'

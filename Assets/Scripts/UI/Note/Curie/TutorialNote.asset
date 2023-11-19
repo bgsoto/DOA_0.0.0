@@ -13,10 +13,14 @@ MonoBehaviour:
   m_Name: TutorialNote
   m_EditorClassIdentifier: 
   noteTitle: Hey, listen!
-  noteText: 'Around the ship, you might come across terminals or computers displaying
-    notes like this! Make sure to interact with them, and you can record down any
-    information important to the mission. Check your [TAB] menu to view relevant
-    clues at any time!
+  isObjective2: 0
+  noteText: 'Around the ship, you might come across similar terminals or computers
+    displaying notes. These are often mission critical. Interacting with them will
+    allow your tablet to record down any relevant information (unless there is none),
+    and guide you on your next objective. Since this is your first mission in a while,
+    I''ll give you a hint to get you started. The artifact is kept in that large
+    safe just through these doors... but one question remains. How will you get it
+    open?
 
     <align="right">-B.O.S.S.'
   objectiveStage: 5

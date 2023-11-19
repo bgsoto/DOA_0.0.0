@@ -14,7 +14,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   objectiveName: CurieCoord4
   isObjective2: 1
-  objectiveDescription: 'Search for information about the anomaly:'
+  objectiveDescription: <s>Search for information about the Anomaly</s>
   objectiveStage: 40
-  clueDescription: "\t-You have the code and room. Now to find the artifact and set
-    up the rig..."
+  clueDescription: -You have the coordinates for the rig. Now to find the artifact...
