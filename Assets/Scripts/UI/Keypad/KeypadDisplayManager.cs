@@ -1,10 +1,11 @@
 using System;
 using TMPro;
 using UnityEngine;
+using static UnityEngine.InputSystem.InputSettings;
 
 public class KeypadDisplayManager : MonoBehaviour
 {
-    [SerializeField] private string dimensionalCoordinates;
+    [SerializeField] private string keypadCode;
 
     public static Action<bool> OnExitKeypad;
 
@@ -15,6 +16,7 @@ public class KeypadDisplayManager : MonoBehaviour
     private void OnEnable()
     {
         /* Subscribes to event(s). */
+        ObjectiveManager.onGeneratedCode += UpdateCode;
         KeyPress.OnKeyPressed += AddDigit;
         KeyPress.OnReturnPressed += RemoveDigit;
         KeyPress.OnEnterPressed += EnterCode;
@@ -23,6 +25,7 @@ public class KeypadDisplayManager : MonoBehaviour
     private void OnDisable()
     {
         /* Unsubscribes from event(s). */
+        ObjectiveManager.onGeneratedCode -= UpdateCode;
         KeyPress.OnKeyPressed -= AddDigit;
         KeyPress.OnReturnPressed -= RemoveDigit;
         KeyPress.OnEnterPressed -= EnterCode;
@@ -32,6 +35,8 @@ public class KeypadDisplayManager : MonoBehaviour
     {
         displayText = GetComponentInChildren<TMP_Text>();
     }
+
+    private void UpdateCode(string value) { keypadCode = value; }
 
     /* 
      * Adds a digit to the string (displayText.text) if the string is not full.
@@ -86,7 +91,7 @@ public class KeypadDisplayManager : MonoBehaviour
 
     public void EnterCode()
     {
-        if (displayText.text == dimensionalCoordinates)
+        if (displayText.text == keypadCode)
         {
             /* Subscription: ShowKeypad script. */
             OnExitKeypad?.Invoke(true);

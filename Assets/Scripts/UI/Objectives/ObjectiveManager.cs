@@ -1,4 +1,5 @@
 using DG.Tweening;
+using System;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
@@ -27,17 +28,24 @@ public class ObjectiveManager : MonoBehaviour
     [SerializeField] private AudioSource objectiveUpdatedSound;
     [SerializeField] private AudioClip objectiveUpdatedClip;
 
+    public static Action<string> onGeneratedCode;
+
     public int questState = -1;
     public int questState2 = -1;
     //private bool isFaded = false;
 
     private bool areAllKeysCollected = false;
     private bool isArtifactCollected = false;
+    private string rigCode;
 
     [SerializeField] private List<ObjectiveInfo> objectiveData;
 
     private void Start()
     {
+        rigCode = GenerateCode(rigCode);
+        onGeneratedCode?.Invoke(rigCode);
+        Debug.Log(rigCode);
+
         //set objective and clue text to defaults
         UpdateObjective(false, 0);
         UpdateObjective(true, 0);
@@ -78,6 +86,7 @@ public class ObjectiveManager : MonoBehaviour
             hamburgerIcon.GetComponent<CanvasGroup>().DOFade(1, 1f);
         }
     }
+
     public void UpdateObjective(bool objective2, int questStage)
     {
         if (objective2 ? questStage > questState2 : questStage > questState) //checks if objective 2 is true, if true then checks if questStage is greater than questState2. if obj2 not true, checks questStage1
@@ -139,6 +148,17 @@ public class ObjectiveManager : MonoBehaviour
 
     private void keysCollected(bool objective2, int questStage) { areAllKeysCollected = true; }
     private void artifactCollected(bool objective2, int questStage) { isArtifactCollected = true; }
+
+    private string GenerateCode(string value)
+    {
+        for (int i = 0; i < 5; i++)
+        {
+            string randomIntString = Mathf.FloorToInt(UnityEngine.Random.Range(0, 9)).ToString();
+            value += randomIntString;
+        }
+
+        return value;
+    }
 
     public bool AreAllKeysCollected { get { return areAllKeysCollected; } set { areAllKeysCollected = value; } }
     public bool IsArtifactCollected { get { return isArtifactCollected; } set { isArtifactCollected = value; } }
