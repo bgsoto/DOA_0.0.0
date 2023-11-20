@@ -34,7 +34,6 @@ public class Flashlight : MonoBehaviour, IInteractable
     public void Use()
     {
         isOn = !isOn;
-
         if (isOn)
         {
             point.SetActive(true);
@@ -54,4 +53,5 @@ public class Flashlight : MonoBehaviour, IInteractable
     public ItemData ItemData { get { return flashlightData; } set { flashlightData = value; } }
     public bool Pickable { get { return pickable; } set { pickable = value; } }
     public string ActionText { get { return actionText; } set { actionText = value; } }
+    public bool itemOutline { get { return itemOutline; } set { itemOutline = value; } }
 }

@@ -1,8 +1,11 @@
 using DG.Tweening;
+using EPOOutline;
 using System;
 using TMPro;
+using Unity.Services.Analytics;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.ProBuilder.MeshOperations;
 using UnityEngine.Timeline;
 using UnityEngine.UI;
 
@@ -11,6 +14,7 @@ public class PlayerInteraction : MonoBehaviour
     [Header("Relationships")]
     [SerializeField] private ItemHolder itemHolder;
     [SerializeField] private Image reticle;
+    [SerializeField] private Outlinable itemOutline;
 
     [Header("Settings")]
     [SerializeField] private float rayLength;
@@ -64,20 +68,41 @@ public class PlayerInteraction : MonoBehaviour
         /* Determines the color of the reticle if facing hovering over an object that is interactable. */
         if (Physics.Raycast(ray, out RaycastHit hit, rayLength))
         {
+
+            if (hit.collider.gameObject.CompareTag("Item"))
+            {
+                itemOutline = hit.collider.gameObject.GetComponent<Outlinable>();
+                itemOutline.enabled = true;
+                Debug.Log("item detected");
+            }
+            else
+            {
+                if (itemOutline != null)
+                {
+                    itemOutline.enabled = false;
+                    itemOutline = null;
+                }              
+            }
+
+
             if (hit.collider.gameObject.GetComponent<IInteractable>() != null)
             {
                 IInteractable hitInteractable = hit.collider.gameObject.GetComponent<IInteractable>();
+                
                 interactableObject = hitInteractable;
                 reticle.color = Color.green;
                 interactText.GetComponent<TMP_Text>().text = $"{interactableObject.ActionText} (F)";
                 interactText.SetActive(true);
                 canInteract = true;
+             
             }
             else
             {
                 reticle.color = Color.white;
                 interactText.SetActive(false);
                 canInteract = false;
+                
+                
             }
         }
         else
@@ -85,17 +110,27 @@ public class PlayerInteraction : MonoBehaviour
             reticle.color = Color.white;
             interactText.SetActive(false);
             canInteract = false;
+
+            if (itemOutline != null)
+            {
+                itemOutline.enabled = false;
+                itemOutline = null;  // Reset the variable
+            }
+
         }
+
+    
     }
 
-    private void Interact()
+    
+private void Interact()
     {
         if (canInteract)
         {
             if (interactableObject.Pickable)
             {
                 itemHolder.AddToInventory(interactableObject.ItemData);
-                interactableObject.Interact();
+                interactableObject.Interact();              
             }
             else
             {

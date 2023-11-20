@@ -8,4 +8,6 @@ public interface IInteractable
     public void Use();
     public bool Pickable { get; set; }
     public string ActionText { get; set; }
+   
+   
 }
