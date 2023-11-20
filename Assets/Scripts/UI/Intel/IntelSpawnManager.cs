@@ -16,6 +16,7 @@ public class IntelSpawnManager : MonoBehaviour
             //pick a random spawn, spawn intel, remove spawn to prevent duplicate spawns.
             var spawnpoint = spawnPoints[Random.Range(0, spawnPoints.Count)];
             IntelInteract II = spawnpoint.AddComponent<IntelInteract>();
+            spawnpoint.SetActive(true);
             II.intel = intel;
             spawnPoints.Remove(spawnpoint);
         }
