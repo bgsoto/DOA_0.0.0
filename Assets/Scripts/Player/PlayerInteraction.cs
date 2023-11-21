@@ -69,7 +69,7 @@ public class PlayerInteraction : MonoBehaviour
         if (Physics.Raycast(ray, out RaycastHit hit, rayLength))
         {
 
-            if (hit.collider.gameObject.CompareTag("Item"))
+          /*  if (hit.collider.gameObject.CompareTag("Item"))
             {
                 itemOutline = hit.collider.gameObject.GetComponent<Outlinable>();
                 itemOutline.enabled = true;
@@ -83,7 +83,7 @@ public class PlayerInteraction : MonoBehaviour
                     itemOutline = null;
                 }              
             }
-
+          */
 
             if (hit.collider.gameObject.GetComponent<IInteractable>() != null)
             {
@@ -101,8 +101,7 @@ public class PlayerInteraction : MonoBehaviour
                 reticle.color = Color.white;
                 interactText.SetActive(false);
                 canInteract = false;
-                
-                
+             
             }
         }
         else

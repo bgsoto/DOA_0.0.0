@@ -471,15 +471,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2913216304476199033, guid: d78391d1a42431f4c995508b90028ef5, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -87.43602
+      value: -90.877
       objectReference: {fileID: 0}
     - target: {fileID: 2913216304476199033, guid: d78391d1a42431f4c995508b90028ef5, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1.306
+      value: 1.202
       objectReference: {fileID: 0}
     - target: {fileID: 2913216304476199033, guid: d78391d1a42431f4c995508b90028ef5, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -19.917557
+      value: -19.683
       objectReference: {fileID: 0}
     - target: {fileID: 2913216304476199033, guid: d78391d1a42431f4c995508b90028ef5, type: 3}
       propertyPath: m_LocalRotation.w
@@ -822,6 +822,18 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1437570016353271723, guid: 2269ded345d85944bbd38fa350920150, type: 3}
+      propertyPath: outlineTargets.Array.data[0].IsVisible
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1437570016353271723, guid: 2269ded345d85944bbd38fa350920150, type: 3}
+      propertyPath: outlineTargets.Array.data[1].IsVisible
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1437570016353271723, guid: 2269ded345d85944bbd38fa350920150, type: 3}
+      propertyPath: outlineTargets.Array.data[2].IsVisible
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1636628372725777684, guid: 2269ded345d85944bbd38fa350920150, type: 3}
       propertyPath: m_Name
       value: ResearchNoteMonitor
@@ -6751,19 +6763,11 @@ PrefabInstance:
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 5757577360328598219, guid: 2fa61b7c050c1624584343d0e18bb787, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 165663510}
-    - targetCorrespondingSourceObject: {fileID: 5757577360328598219, guid: 2fa61b7c050c1624584343d0e18bb787, type: 3}
-      insertIndex: -1
       addedObject: {fileID: 165663509}
   m_SourcePrefab: {fileID: 100100000, guid: 2fa61b7c050c1624584343d0e18bb787, type: 3}
 --- !u!1 &165663507 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 5757577360328598219, guid: 2fa61b7c050c1624584343d0e18bb787, type: 3}
-  m_PrefabInstance: {fileID: 165663506}
-  m_PrefabAsset: {fileID: 0}
---- !u!23 &165663508 stripped
-MeshRenderer:
-  m_CorrespondingSourceObject: {fileID: 20098687760436961, guid: 2fa61b7c050c1624584343d0e18bb787, type: 3}
   m_PrefabInstance: {fileID: 165663506}
   m_PrefabAsset: {fileID: 0}
 --- !u!114 &165663509
@@ -6778,79 +6782,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 034bc47afcbf5e141a58d5c20b7808e4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &165663510
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 165663507}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3fe91dc294731a9428c0941ea7579110, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  complexMaskingMode: 0
-  drawingMode: 1
-  outlineLayer: 0
-  outlineTargets:
-  - IsVisible: 1
-    CutoutMask: 8
-    edgeDilateAmount: 5
-    frontEdgeDilateAmount: 5
-    backEdgeDilateAmount: 5
-    renderer: {fileID: 165663508}
-    SubmeshIndex: 0
-    BoundsMode: 0
-    Bounds:
-      m_Center: {x: 0, y: 0, z: 0}
-      m_Extent: {x: 0.5, y: 0.5, z: 0.5}
-    CutoutThreshold: 0.5
-    CullMode: 2
-    cutoutTextureName: 
-    DilateRenderingMode: 0
-    cutoutTextureIndex: 0
-  - IsVisible: 1
-    CutoutMask: 8
-    edgeDilateAmount: 5
-    frontEdgeDilateAmount: 5
-    backEdgeDilateAmount: 5
-    renderer: {fileID: 165663508}
-    SubmeshIndex: 1
-    BoundsMode: 0
-    Bounds:
-      m_Center: {x: 0, y: 0, z: 0}
-      m_Extent: {x: 0.5, y: 0.5, z: 0.5}
-    CutoutThreshold: 0.5
-    CullMode: 2
-    cutoutTextureName: 
-    DilateRenderingMode: 0
-    cutoutTextureIndex: 0
-  renderStyle: 1
-  outlineParameters:
-    enabled: 1
-    color: {r: 1, g: 0.92156863, b: 0.015686275, a: 1}
-    dilateShift: 1
-    blurShift: 1
-    fillPass:
-      shader: {fileID: 0}
-      serializedProperties: []
-  backParameters:
-    enabled: 1
-    color: {r: 1, g: 0.92156863, b: 0.015686275, a: 1}
-    dilateShift: 1
-    blurShift: 1
-    fillPass:
-      shader: {fileID: 0}
-      serializedProperties: []
-  frontParameters:
-    enabled: 1
-    color: {r: 1, g: 0.92156863, b: 0.015686275, a: 1}
-    dilateShift: 1
-    blurShift: 1
-    fillPass:
-      shader: {fileID: 0}
-      serializedProperties: []
 --- !u!1001 &177902510
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -7396,6 +7327,18 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1283413947348218487, guid: 2269ded345d85944bbd38fa350920150, type: 3}
       propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1437570016353271723, guid: 2269ded345d85944bbd38fa350920150, type: 3}
+      propertyPath: outlineTargets.Array.data[0].IsVisible
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1437570016353271723, guid: 2269ded345d85944bbd38fa350920150, type: 3}
+      propertyPath: outlineTargets.Array.data[1].IsVisible
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1437570016353271723, guid: 2269ded345d85944bbd38fa350920150, type: 3}
+      propertyPath: outlineTargets.Array.data[2].IsVisible
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1636628372725777684, guid: 2269ded345d85944bbd38fa350920150, type: 3}
@@ -9586,6 +9529,10 @@ PrefabInstance:
       propertyPath: playerReference
       value: 
       objectReference: {fileID: 1407774817}
+    - target: {fileID: 4578669181938385280, guid: 4b7233bf67f62c2458934a6b5ac052a5, type: 3}
+      propertyPath: isGlobal
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4849971627721365512, guid: 4b7233bf67f62c2458934a6b5ac052a5, type: 3}
       propertyPath: OverrideMaxDistance
       value: 30
@@ -12370,68 +12317,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 400006, guid: 6af2d6892b4aa65428f8e4495a396cce, type: 3}
   m_PrefabInstance: {fileID: 628674607}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &641415740 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 365405671926710138, guid: 9514d93bcc85be54a81064ee11855d00, type: 3}
-  m_PrefabInstance: {fileID: 756783166}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &641415744
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 641415740}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3fe91dc294731a9428c0941ea7579110, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  complexMaskingMode: 0
-  drawingMode: 1
-  outlineLayer: 0
-  outlineTargets:
-  - IsVisible: 1
-    CutoutMask: 8
-    edgeDilateAmount: 5
-    frontEdgeDilateAmount: 5
-    backEdgeDilateAmount: 5
-    renderer: {fileID: 1972679556}
-    SubmeshIndex: 0
-    BoundsMode: 0
-    Bounds:
-      m_Center: {x: 0, y: 0, z: 0}
-      m_Extent: {x: 0.5, y: 0.5, z: 0.5}
-    CutoutThreshold: 0.5
-    CullMode: 2
-    cutoutTextureName: 
-    DilateRenderingMode: 0
-    cutoutTextureIndex: 0
-  renderStyle: 1
-  outlineParameters:
-    enabled: 1
-    color: {r: 1, g: 0.92156863, b: 0.015686275, a: 1}
-    dilateShift: 1
-    blurShift: 1
-    fillPass:
-      shader: {fileID: 0}
-      serializedProperties: []
-  backParameters:
-    enabled: 1
-    color: {r: 1, g: 0.92156863, b: 0.015686275, a: 1}
-    dilateShift: 1
-    blurShift: 1
-    fillPass:
-      shader: {fileID: 0}
-      serializedProperties: []
-  frontParameters:
-    enabled: 1
-    color: {r: 1, g: 0.92156863, b: 0.015686275, a: 1}
-    dilateShift: 1
-    blurShift: 1
-    fillPass:
-      shader: {fileID: 0}
-      serializedProperties: []
 --- !u!4 &649894850 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4662557701119162, guid: e62a2529a6ae2304b846f69cbe58ee1e, type: 3}
@@ -13771,9 +13656,6 @@ PrefabInstance:
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 365405671926710138, guid: 9514d93bcc85be54a81064ee11855d00, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 641415744}
     - targetCorrespondingSourceObject: {fileID: 8592256012734127769, guid: 9514d93bcc85be54a81064ee11855d00, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1972679558}
@@ -13786,6 +13668,18 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1437570016353271723, guid: 2269ded345d85944bbd38fa350920150, type: 3}
+      propertyPath: outlineTargets.Array.data[0].IsVisible
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1437570016353271723, guid: 2269ded345d85944bbd38fa350920150, type: 3}
+      propertyPath: outlineTargets.Array.data[1].IsVisible
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1437570016353271723, guid: 2269ded345d85944bbd38fa350920150, type: 3}
+      propertyPath: outlineTargets.Array.data[2].IsVisible
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1636628372725777684, guid: 2269ded345d85944bbd38fa350920150, type: 3}
       propertyPath: m_Name
       value: TutorialNoteMonitor
@@ -15745,6 +15639,18 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1437570016353271723, guid: 2269ded345d85944bbd38fa350920150, type: 3}
+      propertyPath: outlineTargets.Array.data[0].IsVisible
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1437570016353271723, guid: 2269ded345d85944bbd38fa350920150, type: 3}
+      propertyPath: outlineTargets.Array.data[1].IsVisible
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1437570016353271723, guid: 2269ded345d85944bbd38fa350920150, type: 3}
+      propertyPath: outlineTargets.Array.data[2].IsVisible
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1636628372725777684, guid: 2269ded345d85944bbd38fa350920150, type: 3}
       propertyPath: m_Name
       value: KeycardNoteMonitor
@@ -18705,7 +18611,7 @@ MonoBehaviour:
   renderStyle: 1
   outlineParameters:
     enabled: 1
-    color: {r: 1, g: 0.92156863, b: 0.015686275, a: 1}
+    color: {r: 1, g: 1, b: 1, a: 1}
     dilateShift: 1
     blurShift: 1
     fillPass:
@@ -22794,6 +22700,18 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1437570016353271723, guid: 2269ded345d85944bbd38fa350920150, type: 3}
+      propertyPath: outlineTargets.Array.data[0].IsVisible
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1437570016353271723, guid: 2269ded345d85944bbd38fa350920150, type: 3}
+      propertyPath: outlineTargets.Array.data[1].IsVisible
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1437570016353271723, guid: 2269ded345d85944bbd38fa350920150, type: 3}
+      propertyPath: outlineTargets.Array.data[2].IsVisible
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1636628372725777684, guid: 2269ded345d85944bbd38fa350920150, type: 3}
       propertyPath: m_Name
       value: BirthdayNoteMonitor
@@ -23479,11 +23397,6 @@ PrefabInstance:
 --- !u!1 &1972679554 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 8592256012734127769, guid: 9514d93bcc85be54a81064ee11855d00, type: 3}
-  m_PrefabInstance: {fileID: 756783166}
-  m_PrefabAsset: {fileID: 0}
---- !u!23 &1972679556 stripped
-MeshRenderer:
-  m_CorrespondingSourceObject: {fileID: 7068046354051607025, guid: 9514d93bcc85be54a81064ee11855d00, type: 3}
   m_PrefabInstance: {fileID: 756783166}
   m_PrefabAsset: {fileID: 0}
 --- !u!114 &1972679558
@@ -24861,6 +24774,18 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 318242981}
     m_Modifications:
+    - target: {fileID: 1437570016353271723, guid: 2269ded345d85944bbd38fa350920150, type: 3}
+      propertyPath: outlineTargets.Array.data[0].IsVisible
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1437570016353271723, guid: 2269ded345d85944bbd38fa350920150, type: 3}
+      propertyPath: outlineTargets.Array.data[1].IsVisible
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1437570016353271723, guid: 2269ded345d85944bbd38fa350920150, type: 3}
+      propertyPath: outlineTargets.Array.data[2].IsVisible
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1636628372725777684, guid: 2269ded345d85944bbd38fa350920150, type: 3}
       propertyPath: m_Name
       value: KeyClueNoteMonitor
@@ -26258,6 +26183,10 @@ PrefabInstance:
     - target: {fileID: 8005558486928856725, guid: 3c2ece2521e6c364d985eb71296e6799, type: 3}
       propertyPath: m_IsKinematic
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8214507087081886685, guid: 3c2ece2521e6c364d985eb71296e6799, type: 3}
+      propertyPath: outlineTargets.Array.data[0].IsVisible
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
