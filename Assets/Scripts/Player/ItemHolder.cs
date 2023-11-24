@@ -29,6 +29,7 @@ public class ItemHolder : MonoBehaviour
     }
     private void Update()
     {
+        gameObject.transform.rotation = Camera.main.transform.rotation;
         if (inMenu) { return; }
         else
         {
