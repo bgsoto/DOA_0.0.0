@@ -1423,7 +1423,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 820e3173e0443da4c9181ed9a6e17b1c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  dimensionalCoordinates: 11111
+  keypadCode: 
 --- !u!1 &2930027825427182653
 GameObject:
   m_ObjectHideFlags: 0
@@ -4675,10 +4675,6 @@ PrefabInstance:
     - target: {fileID: 9004819937618826135, guid: 94c90b2d910d68e48b9c06f61fe5ed65, type: 3}
       propertyPath: m_Pivot.y
       value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 9004819937618826135, guid: 94c90b2d910d68e48b9c06f61fe5ed65, type: 3}
-      propertyPath: m_AnchoredPosition.y
-      value: -25
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
