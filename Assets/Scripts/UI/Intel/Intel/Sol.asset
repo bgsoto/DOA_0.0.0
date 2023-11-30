@@ -1,0 +1,24 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1b03e56b74788894c8880448eedfa895, type: 3}
+  m_Name: Sol
+  m_EditorClassIdentifier: 
+  intelTitle: The Significance of Sol
+  intelText: Often, I find myself peering out through the window during my space
+    travels. Staring into the great dark nothingness, the ever-present abyss. Often,
+    I feel this longing, this calling, within my heart. In those darkest and loneliest
+    of moments, I wish I were traversing through the Sol System. Passing by the chilling
+    white-cold of Earth, or the mighty blue waves of Neptune. Crossing through that
+    great abyss, with those perfect planets passing me by in that empty yet beautiful
+    star system. Something within wishes I could be there, even now. My first ever
+    star system discovery. The greatest achievement of my career.
+  intelAuthor: By Miles Cramer

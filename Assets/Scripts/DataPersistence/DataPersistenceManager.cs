@@ -42,6 +42,7 @@ public class DataPersistenceManager : MonoBehaviour
     public void NewGame()
     {
         this.playerStats = new PlayerStats();
+        dataHandler.Save(playerStats);
     }
     public void LoadGame()
     {

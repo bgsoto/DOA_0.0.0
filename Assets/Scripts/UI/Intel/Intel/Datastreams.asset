@@ -1,0 +1,23 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1b03e56b74788894c8880448eedfa895, type: 3}
+  m_Name: Datastreams
+  m_EditorClassIdentifier: 
+  intelTitle: Datastreams and You
+  intelText: "\tDatastreams! The new age of media is here! With nothing but your
+    mind and your trusty S.C. tablet, you can write your thoughts straight into a
+    packet of data to be recorded for safekeeping! An intelligent algorithm will
+    ensure the record is intelligible, and will automatically translate it to any
+    language the reader desires! Each Datastream is kept on a small chip which can
+    be easily hooked into any official S.C. terminal, allowing for the easy reading
+    and writing of information straight from your mind!\r"
+  intelAuthor: By Terra Onett

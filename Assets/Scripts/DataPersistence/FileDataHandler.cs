@@ -75,6 +75,7 @@ public class FileDataHandler
                 using (StreamWriter writer = new StreamWriter(stream))
                 {
                     writer.Write(dataToStore);
+                    Debug.Log(fullPath + "\n" + "saved!");
                 }
             }
         }

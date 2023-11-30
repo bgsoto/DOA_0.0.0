@@ -1,18 +1,14 @@
-using FMOD.Studio;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UIElements;
 
-public class SaveGame : MonoBehaviour, IInteractable
+public class NewGame : MonoBehaviour, IInteractable
 {
-    [SerializeField] private string actionText = "Save Game";
+    [SerializeField] private string actionText = "New Game";
     /* Not used */
     private ItemData itemData;
     private bool pickable;
     public void Interact()
     {
-        DataPersistenceManager.Instance.SaveGame();
+        DataPersistenceManager.Instance.NewGame();
     }
 
     public void Use() { return; }
@@ -20,3 +16,4 @@ public class SaveGame : MonoBehaviour, IInteractable
     public bool Pickable { get { return pickable; } set { pickable = value; } }
     public string ActionText { get { return actionText; } set { actionText = value; } }
 }
+

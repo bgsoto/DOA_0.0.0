@@ -1,0 +1,43 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1b03e56b74788894c8880448eedfa895, type: 3}
+  m_Name: Zepto3
+  m_EditorClassIdentifier: 
+  intelTitle: 'History of Zepto-I: Volume 3 '
+  intelText: "\tOn and off Zepto-I, several factions have emerged as major players
+    in the operation of galactic travel. Although each faction has their own perspectives
+    on how things ought to be done, through a recent treaty the 3 have reached an
+    uneasy peace. In these uncertain and unprecedented times, understanding the basics
+    of each faction and their relation to Zepto-I is a must for prospective space
+    travelers.\r\n\tOur first and largest faction is the Space Collective, known
+    colloquially as the \u201CS.C.\u201D The S.C. was formed from the remnants of
+    the old government in the aftermath of the Tech Race. The S.C. is often looked
+    to as the de-facto governmental institution throughout most of the galaxy, although
+    the other two factions do technically have full autonomy over their sector of
+    the known star-systems. The S.C. is run by a large board of administrators, of
+    which many of Zepto-I\u2019s wealthiest citizenry belong to.\r\n\tThe second
+    largest faction, the Theorem League, also technically resides on Zepto-I. Although
+    their base is on a space station orbiting Zepto-I, they technically remain within
+    the planet\u2019s boundaries. The Theorem League is a collective of intellectual
+    minds, most of whom hail from some of the top schools on Zepto-I. After the Tech
+    Race and the establishment of the S.C. several intellectuals disagreed with the
+    direction of their new leadership, and as such, launched into orbit and established
+    their own governmental institution. Due to the exceedingly powerful technology
+    used for their station, the Theorem League more or less forced the S.C. to permit
+    their secession.\r\n\tThe final major faction, the Space Trade Union, is comprised
+    of workers that opposed the intense automation brought on by the Tech Race. After
+    the creation of the Theorem League, the STU followed suit and rioted against
+    their perceived unjust government. The S.C. not wanting a massacre on their hands,
+    ultimately caved and allowed the STU to depart from Zepto-I to form their own
+    minor government. Although this faction is small, they somehow manage to have
+    trade operations running in nearly every occupied star-system.\r"
+  intelAuthor: By Lorenzo Weekly

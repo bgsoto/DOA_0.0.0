@@ -138,6 +138,7 @@ namespace StarterAssets
 
         private void OnEnable()
         {
+            IntelMonitorManger.inIntelMenu += PlayerInput;
             ShowKeypad.DisableControls += PlayerInput;
             HubUiManager.DisablePlayerControls += PlayerInput;
             SettingsOpener.PausedGame += PlayerInput;
@@ -148,6 +149,7 @@ namespace StarterAssets
 
         private void OnDisable()
         {
+            IntelMonitorManger.inIntelMenu -= PlayerInput;
             ShowKeypad.DisableControls -= PlayerInput;
             HubUiManager.DisablePlayerControls -= PlayerInput;
             SettingsOpener.PausedGame -= PlayerInput;

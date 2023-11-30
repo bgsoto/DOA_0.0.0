@@ -1,0 +1,28 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1b03e56b74788894c8880448eedfa895, type: 3}
+  m_Name: Distress
+  m_EditorClassIdentifier: 
+  intelTitle: Distress Beacon
+  intelText: "[This is an exact copy of the message we left on Altair-III, just in
+    case we need to file a formal report later.]\r\n\tCamryn, if you\u2019re reading
+    this, we had to depart from the planet. After your signal went dark, some strange
+    stuff happened with our bio scanners. A strange reading approached our ship,
+    but suddenly vanished into thin air. The next day, we found a weird\u2026 thing
+    in the cargo hold. Miles insists on calling it an \u201Cartifact\u201D, and has
+    taken quite a liking to it. He keeps running experiments, and honestly the whole
+    thing freaks me out. Look, I don\u2019t know what happened to you, but if you
+    found your way to this beacon, just activate your emergency beacon and we\u2019ll
+    send a ship for you. We can\u2019t stay any longer, our expedition is already
+    running behind as it is. I\u2019m sorry to do this to you, but we really have
+    no other choice but to leave now.\r"
+  intelAuthor: By Faith Howard

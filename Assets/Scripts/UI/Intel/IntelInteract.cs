@@ -5,7 +5,7 @@ using UnityEngine.UIElements;
 
 public class IntelInteract : MonoBehaviour, IInteractable
 {
-    [SerializeField] private string actionText = "Gather Intel";
+    [SerializeField] private string actionText = "";
     public Intel intel;
 
     /* Not used */
@@ -14,10 +14,14 @@ public class IntelInteract : MonoBehaviour, IInteractable
 
     private void Start()
     {
-        if(IntelCollectionManager.collectedIntel.Contains(intel))
+        if (IntelCollectionManager.collectedIntel.Contains(intel))
         {
             Debug.Log(intel.name + " already gathered. Destroying.");
             Destroy(this);
+        }
+        else
+        {
+            actionText = "Record Datastream\n" + intel.intelTitle;
         }
     }
     public void Interact()

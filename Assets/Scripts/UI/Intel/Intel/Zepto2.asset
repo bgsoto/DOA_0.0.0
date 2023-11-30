@@ -1,0 +1,34 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1b03e56b74788894c8880448eedfa895, type: 3}
+  m_Name: Zepto2
+  m_EditorClassIdentifier: 
+  intelTitle: 'History of Zepto-I: Volume 2'
+  intelText: "\tOne consequence of the Tech Race was the automation of labor within
+    many industries. In the pursuit of efficiency, almost every job was soon relegated
+    to the realm of automation. Many laborers across practically every field found
+    themselves without a career, and lacking the means to financially support themselves.
+    Due to the lack of demand for workers, the Council decided to pass a Universal
+    Income bill to provide every citizen financially with the bare minimum they required
+    to live.\r\n\tSeveral historical theorists predicted a major boom in the cultural
+    arts during this period, and though they were correct, something else happened
+    that they had not anticipated. Many workers simply did not have the aptitude
+    for creative works, and had found fulfillment in their menial labor jobs. Other
+    workers had their lives' passions pulled from under them, their dreams being
+    taken by metallic unfeeling machines. \r\nThese workers banded together, forming
+    a collective known as the Space  Trade Union. After several riots and clashes
+    in the streets, the Council granted them several spaceships and allowed the STU
+    to leave Zepto-I. The STU then founded a large colony on a distant planet, and
+    outlawed the use of automatons. Despite their lower efficiency and productivity,
+    the STU\u2019s home colony Theos insists on maintaining their traditional way
+    of life.\r"
+  intelAuthor: By Lorenzo Weekly

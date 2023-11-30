@@ -8,4 +8,5 @@ public class Intel : ScriptableObject
     public string intelTitle;
     [TextArea(5, 20)]
     public string intelText;
+    public string intelAuthor;
 }
