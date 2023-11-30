@@ -46,7 +46,7 @@ public class PlanetLights : MonoBehaviour
             });
         }
     }
-    void WrongLights()
+    void WrongLights(string value)
     {
         foreach (Light light in currentLights)
         {

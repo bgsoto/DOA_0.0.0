@@ -32,6 +32,7 @@ public class IntelMonitorManger : MonoBehaviour, IInteractable
             inMenu = false;
             GetComponentInChildren<CanvasGroup>().interactable = false;
             UnityEngine.Cursor.lockState = CursorLockMode.Locked;
+            UnityEngine.Cursor.visible = false;
             coll.enabled = true;
             vcam.m_Priority = -10;
             inIntelMenu?.Invoke(false);
@@ -39,9 +40,10 @@ public class IntelMonitorManger : MonoBehaviour, IInteractable
     }
     public void Interact()
     {
+        UnityEngine.Cursor.lockState = CursorLockMode.Confined;
+        UnityEngine.Cursor.visible = true;
         inMenu = true;
         GetComponentInChildren<CanvasGroup>().interactable = true;
-        UnityEngine.Cursor.lockState = CursorLockMode.Confined;
         coll.enabled = false;
         vcam.m_Priority = 100;
         inIntelMenu?.Invoke(true);

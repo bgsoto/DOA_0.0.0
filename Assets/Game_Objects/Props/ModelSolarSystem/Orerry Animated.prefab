@@ -269,6 +269,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   inputNumber: 3
+  cycleLength: 2
+  codeEntered: 0
+  pickable: 0
+  actionText: 
 --- !u!1 &1455301783877932232
 GameObject:
   m_ObjectHideFlags: 0
@@ -379,8 +383,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d8d7599cde96e8442936a1e1e7664738, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  correctInputs: 010000000200000003000000
-  codeLength: 3
+  correctInput: 713
 --- !u!114 &7952029381937080158
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -465,6 +468,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   inputNumber: 6
+  cycleLength: 2
+  codeEntered: 0
+  pickable: 0
+  actionText: 
 --- !u!1 &1680992167269086679
 GameObject:
   m_ObjectHideFlags: 0
@@ -533,6 +540,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   inputNumber: 5
+  cycleLength: 2
+  codeEntered: 0
+  pickable: 0
+  actionText: 
 --- !u!1 &1690982417598510506
 GameObject:
   m_ObjectHideFlags: 0
@@ -601,6 +612,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   inputNumber: 8
+  cycleLength: 2
+  codeEntered: 0
+  pickable: 0
+  actionText: 
 --- !u!1 &2077199858514982959
 GameObject:
   m_ObjectHideFlags: 0
@@ -700,6 +715,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   inputNumber: 2
+  cycleLength: 2
+  codeEntered: 0
+  pickable: 0
+  actionText: 
 --- !u!1 &2471620046875448837
 GameObject:
   m_ObjectHideFlags: 0
@@ -768,6 +787,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   inputNumber: 4
+  cycleLength: 2
+  codeEntered: 0
+  pickable: 0
+  actionText: 
 --- !u!1 &2648963974381674210
 GameObject:
   m_ObjectHideFlags: 0
@@ -836,6 +859,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   inputNumber: 9
+  cycleLength: 2
+  codeEntered: 0
+  pickable: 0
+  actionText: 
 --- !u!1 &2947019411850429593
 GameObject:
   m_ObjectHideFlags: 0
@@ -935,6 +962,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   inputNumber: 1
+  cycleLength: 2
+  codeEntered: 0
+  pickable: 0
+  actionText: 
 --- !u!1 &4427954754834762296
 GameObject:
   m_ObjectHideFlags: 0
@@ -1637,6 +1668,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   inputNumber: 7
+  cycleLength: 2
+  codeEntered: 0
+  pickable: 0
+  actionText: 
 --- !u!1 &8985644037579134716
 GameObject:
   m_ObjectHideFlags: 0

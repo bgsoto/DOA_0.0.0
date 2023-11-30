@@ -1976,6 +1976,7 @@ Transform:
   - {fileID: 5509940568367046463}
   - {fileID: 4647625667786272713}
   - {fileID: 5224225317302361911}
+  - {fileID: 66676790927295495}
   m_Father: {fileID: 0}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -2717,6 +2718,78 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: bee751dfcdeb6f147aa6e710691f0efb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!1 &4526685270968957548
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 66676790927295495}
+  - component: {fileID: 2601777181402313310}
+  - component: {fileID: 8492254067207595944}
+  m_Layer: 0
+  m_Name: IntelManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &66676790927295495
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4526685270968957548}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 4415162639057346123}
+  m_RootOrder: -1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2601777181402313310
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4526685270968957548}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f666ed82339a6b34dab5257ca8a09d3d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  spawnPoints:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  intelList:
+  - {fileID: 11400000, guid: baf9e4d3f13e0db4bac96b1b4b3fae5f, type: 2}
+  - {fileID: 11400000, guid: b9abc470a6b109a4cad487a517e81f56, type: 2}
+  - {fileID: 11400000, guid: cf4d6b841f697a441aaacd07ba7cc127, type: 2}
+  - {fileID: 11400000, guid: b90f58bd38f6a6846bfabad95f20f3f5, type: 2}
+  - {fileID: 11400000, guid: a65ba9edbef73fe499eb6c9d06d5c692, type: 2}
+  - {fileID: 11400000, guid: d82e3e6b26358e94fac6f14a6f5462ad, type: 2}
+  - {fileID: 11400000, guid: 7e652e155b737434b84a8b2e23bf07f7, type: 2}
+  - {fileID: 11400000, guid: 389b5922f74951a49bc87a1b0b129832, type: 2}
+  - {fileID: 11400000, guid: f338cf63ce258f045a6a48cb383101c5, type: 2}
+  - {fileID: 11400000, guid: 130796977db25514ca2278006f30dc56, type: 2}
+--- !u!114 &8492254067207595944
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4526685270968957548}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e8bab6003a0034d45b7ae0b4d7134ccd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &5751072689596415388
@@ -4805,7 +4878,7 @@ PrefabInstance:
     - target: {fileID: 3669535507855129491, guid: b14891ab4e4c9494d907006588ae0d05, type: 3}
       propertyPath: m_sharedMaterial
       value: 
-      objectReference: {fileID: -1755858522350264391, guid: a4829b83ebe08af40bb04c389258b802, type: 2}
+      objectReference: {fileID: 2100000, guid: 3914217485766b94b8e08fa1db2c4324, type: 2}
     - target: {fileID: 3669535507855129491, guid: b14891ab4e4c9494d907006588ae0d05, type: 3}
       propertyPath: m_VerticalAlignment
       value: 512
@@ -4813,6 +4886,10 @@ PrefabInstance:
     - target: {fileID: 3669535507855129491, guid: b14891ab4e4c9494d907006588ae0d05, type: 3}
       propertyPath: m_HorizontalAlignment
       value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3669535507855129491, guid: b14891ab4e4c9494d907006588ae0d05, type: 3}
+      propertyPath: m_hasFontAssetChanged
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5494995658545069363, guid: b14891ab4e4c9494d907006588ae0d05, type: 3}
       propertyPath: m_Sprite
