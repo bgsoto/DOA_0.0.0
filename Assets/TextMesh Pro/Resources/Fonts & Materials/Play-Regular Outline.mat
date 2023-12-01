@@ -22,9 +22,33 @@ Material:
   m_LockedProperties: 
   m_SavedProperties:
     serializedVersion: 3
-    m_TexEnvs: []
+    m_TexEnvs:
+    - _OutlineTex:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
     m_Ints: []
     m_Floats:
+    - _Bevel: 0.76
+    - _BevelOffset: -0.029
+    - _BevelRoundness: 0.133
+    - _BevelWidth: 0.116
+    - _FaceDilate: 0.34
+    - _GlowInner: 0.42
+    - _GlowOffset: 0.17
+    - _GlowOuter: 0.641
+    - _GlowPower: 1
+    - _OutlineSoftness: 0
     - _OutlineWidth: 0.25
-    m_Colors: []
+    - _ScaleRatioA: 0.9
+    - _ScaleRatioB: 0.42525
+    - _ScaleRatioC: 0.2566385
+    - _ShaderFlags: 0
+    - _UnderlayDilate: 0.72
+    - _UnderlayOffsetX: 0.81
+    - _UnderlayOffsetY: 0.81
+    - _UnderlaySoftness: 0.127
+    m_Colors:
+    - _GlowColor: {r: 1, g: 0, b: 0, a: 0.5}
+    - _UnderlayColor: {r: 1, g: 0, b: 0, a: 0.5}
   m_BuildTextureStacks: []
