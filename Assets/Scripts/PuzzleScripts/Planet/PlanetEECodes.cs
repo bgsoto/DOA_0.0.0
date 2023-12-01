@@ -9,6 +9,8 @@ public class PlanetEECodes : MonoBehaviour
     [SerializeField] private ParticleSystem greenSmoke;
     [SerializeField] private AudioClip zombiesClip;
     [SerializeField] private AudioClip sunClip;
+    [SerializeField] private GameObject gnomeObject;
+    [SerializeField] private AudioClip gnomeClip;
     private void OnEnable()
     {
         PlanetsManager.planetWrong += CodeChecker;
@@ -19,11 +21,12 @@ public class PlanetEECodes : MonoBehaviour
     }
     void CodeChecker(string value)
     {
-        if (value == "666") { DevilEgg(); }
-        if (value == "421") { GreenEgg(); }
-        if (value == "115") { ZombiesEgg(); }
-        if (value == "111") { SunEgg(); }
-        if (value == "361") { SpinEgg(); }
+        if (value == "666") { DevilEgg(); } //the devil went down to curie
+        if (value == "421") { GreenEgg(); } //you know what it is
+        if (value == "115" || value == "935") { ZombiesEgg(); } //doctor?
+        if (value == "111") { SunEgg(); } //praise the sun
+        if (value == "361") { SpinEgg(); } //no 0, so 361 it is
+        if (value == "847") { GnomeEgg(); } //the time that half life 1 starts
     }
     void DevilEgg()
     {
@@ -48,5 +51,11 @@ public class PlanetEECodes : MonoBehaviour
     void SpinEgg()
     {
         gameObject.transform.DOLocalRotate(new Vector3(0, 360, 0), 2f, RotateMode.LocalAxisAdd).SetEase(Ease.Linear);
+    }
+    void GnomeEgg()
+    {
+        planetSource.PlayOneShot(gnomeClip);
+        gnomeObject.SetActive(true);
+        gnomeObject.transform.DOLocalMoveZ(0f, 1);
     }
 }
