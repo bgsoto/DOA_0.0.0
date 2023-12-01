@@ -11,8 +11,10 @@ public class IntelSpawnManager : MonoBehaviour
 
     private void Start()
     {
+        if (spawnPoints == null) { return; }
         foreach (Intel intel in intelList)
         {
+            if (spawnPoints == null || spawnPoints.Count <= 0) { return; }
             //pick a random spawn, spawn intel, remove spawn to prevent duplicate spawns.
             var spawnpoint = spawnPoints[Random.Range(0, spawnPoints.Count)];
             IntelInteract II = spawnpoint.AddComponent<IntelInteract>();

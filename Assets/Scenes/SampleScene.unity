@@ -9378,6 +9378,10 @@ PrefabInstance:
       propertyPath: m_AnchorMax.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2601777181402313310, guid: d196fba78e72a5844a8f8cea2d500c5c, type: 3}
+      propertyPath: spawnPoints.Array.size
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3021600358228531849, guid: d196fba78e72a5844a8f8cea2d500c5c, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
