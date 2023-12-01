@@ -27,7 +27,7 @@ public class PlayerInteraction : MonoBehaviour
     private IInteractable interactableObject;
     private bool inMenu = false;
     private bool canInteract = false;
-    private int keysCollected = 0;
+    public int keysCollected = 0;
     
     private void OnEnable()
     {
