@@ -823,10 +823,6 @@ PrefabInstance:
       propertyPath: m_AnchorMin.x
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 4038565926917951861, guid: 6bbc3dfcf0812a64a80439fc24b5e86c, type: 3}
-      propertyPath: m_text
-      value: Find intel during missions. Escape to unlock and view it here!
-      objectReference: {fileID: 0}
     - target: {fileID: 4235638178617078268, guid: 6bbc3dfcf0812a64a80439fc24b5e86c, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0

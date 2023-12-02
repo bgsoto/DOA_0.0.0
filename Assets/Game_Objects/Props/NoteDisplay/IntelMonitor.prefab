@@ -154,7 +154,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4c53b3f30147354478308f7045743ba9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  actionText: View Intel
+  actionText: View Datastreams
   vcam: {fileID: 8936185370645659105}
 --- !u!1 &1746042272981056028
 GameObject:
@@ -450,10 +450,6 @@ PrefabInstance:
       propertyPath: m_PresetInfoIsWorld
       value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 818546197234399306, guid: 2f5f39ac1d10cf243a5ad9432b5634e2, type: 3}
-      propertyPath: m_text
-      value: No Intel Selected
-      objectReference: {fileID: 0}
     - target: {fileID: 1167437855600095580, guid: 2f5f39ac1d10cf243a5ad9432b5634e2, type: 3}
       propertyPath: m_SizeDelta.y
       value: 0
@@ -505,11 +501,6 @@ PrefabInstance:
     - target: {fileID: 3311171610017506268, guid: 2f5f39ac1d10cf243a5ad9432b5634e2, type: 3}
       propertyPath: m_text
       value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 3556162242063190702, guid: 2f5f39ac1d10cf243a5ad9432b5634e2, type: 3}
-      propertyPath: m_text
-      value: Find intel during missions and sucessfully escape to unlock and view
-        it here!
       objectReference: {fileID: 0}
     - target: {fileID: 3718243333532297767, guid: 2f5f39ac1d10cf243a5ad9432b5634e2, type: 3}
       propertyPath: m_AnchorMax.y

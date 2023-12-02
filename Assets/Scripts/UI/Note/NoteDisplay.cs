@@ -1,10 +1,7 @@
+using EPOOutline;
 using System;
-using System.Collections;
-using System.Collections.Generic;
 using TMPro;
-using UnityEditor;
 using UnityEngine;
-using UnityEngine.UIElements;
 
 public class NoteDisplay : MonoBehaviour, IInteractable
 {
@@ -16,7 +13,7 @@ public class NoteDisplay : MonoBehaviour, IInteractable
     private int objectiveStage;
     private bool objective2;
     private bool noteCollected = false;
-   
+
     public static Action NoteGathered;
     public static Action<bool, int> AppendToNote;
 
@@ -36,6 +33,10 @@ public class NoteDisplay : MonoBehaviour, IInteractable
     {
         if (!noteCollected)
         {
+            if (GetComponent<Outlinable>() != null)
+            {
+                GetComponent<Outlinable>().enabled = false;
+            }
             noteCollected = true;
             objectiveStage = noteToDisplay.objectiveStage;
             objective2 = noteToDisplay.isObjective2;

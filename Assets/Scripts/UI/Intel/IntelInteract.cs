@@ -5,14 +5,14 @@ using UnityEngine.UIElements;
 
 public class IntelInteract : MonoBehaviour, IInteractable
 {
-    [SerializeField] private string actionText = "";
+    [SerializeField] private string actionText;
     public Intel intel;
 
     /* Not used */
     private ItemData itemData;
     private bool pickable;
 
-    private void Start()
+    private void OnEnable()
     {
         if (IntelCollectionManager.collectedIntel.Contains(intel))
         {
@@ -21,7 +21,7 @@ public class IntelInteract : MonoBehaviour, IInteractable
         }
         else
         {
-            actionText = "Record Datastream\n" + intel.intelTitle;
+            actionText = "Record Datastream:\n" + intel.intelTitle;
         }
     }
     public void Interact()

@@ -110,12 +110,12 @@ public class PlayerInteraction : MonoBehaviour
             interactText.SetActive(false);
             canInteract = false;
 
-            if (itemOutline != null)
+           /* if (itemOutline != null)
             {
                 itemOutline.enabled = false;
                 itemOutline = null;  // Reset the variable
             }
-
+           */
         }
 
     

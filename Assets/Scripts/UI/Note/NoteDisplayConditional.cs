@@ -1,3 +1,4 @@
+using EPOOutline;
 using TMPro;
 using UnityEngine;
 
@@ -32,6 +33,10 @@ public class NoteDisplayConditional : MonoBehaviour, IInteractable
         currentObjectiveStage = objective2 ? objectiveManager.questState2 : objectiveManager.questState;
         if (!noteCollected)
         {
+            if (GetComponent<Outlinable>() != null)
+            {
+                GetComponent<Outlinable>().enabled = false;
+            }
             if (currentObjectiveStage >= objectiveToCheck) { objectiveStage = altObjectiveToSet; }
             else { objectiveStage = noteToDisplay.objectiveStage; }
             noteCollected = true;

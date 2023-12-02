@@ -6,7 +6,7 @@ public class PlanetEECodes : MonoBehaviour
     [SerializeField] private AudioSource planetSource;
     [SerializeField] private Light planetLight;
     [SerializeField] private AudioClip devilClip;
-    [SerializeField] private ParticleSystem greenSmoke;
+    [SerializeField] private ParticleSystem devilSmoke;
     [SerializeField] private AudioClip zombiesClip;
     [SerializeField] private AudioClip sunClip;
     [SerializeField] private GameObject gnomeObject;
@@ -22,7 +22,6 @@ public class PlanetEECodes : MonoBehaviour
     void CodeChecker(string value)
     {
         if (value == "666") { DevilEgg(); } //the devil went down to curie
-        if (value == "421") { GreenEgg(); } //you know what it is
         if (value == "115" || value == "935") { ZombiesEgg(); } //doctor?
         if (value == "111") { SunEgg(); } //praise the sun
         if (value == "361") { SpinEgg(); } //no 0, so 361 it is
@@ -32,11 +31,7 @@ public class PlanetEECodes : MonoBehaviour
     {
         planetLight.color = Color.red;
         planetSource.PlayOneShot(devilClip);
-    }
-    void GreenEgg()
-    {
-        planetLight.color = Color.green;
-        greenSmoke.Play();
+        devilSmoke.Play();
     }
     void ZombiesEgg()
     {
