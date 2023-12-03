@@ -36,7 +36,7 @@ public class ObjectiveManager : MonoBehaviour
 
     private bool areAllKeysCollected = false;
     private bool isArtifactCollected = false;
-    private string rigCode;
+    public string rigCode;
 
     [SerializeField] private List<ObjectiveInfo> objectiveData;
 
@@ -45,6 +45,8 @@ public class ObjectiveManager : MonoBehaviour
         rigCode = GenerateCode(rigCode);
         onGeneratedCode?.Invoke(rigCode);
         Debug.Log(rigCode);
+        
+        Debug.Log("Invoked onGeneratedCode event with code: " + rigCode);
 
         //set objective and clue text to defaults
         UpdateObjective(false, 0);

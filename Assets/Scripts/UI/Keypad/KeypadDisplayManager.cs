@@ -1,4 +1,5 @@
 using System;
+using System.Runtime.Serialization;
 using TMPro;
 using UnityEngine;
 using static UnityEngine.InputSystem.InputSettings;
@@ -9,14 +10,20 @@ public class KeypadDisplayManager : MonoBehaviour
 
     public static Action<bool> OnExitKeypad;
 
-    private TMP_Text displayText;
+    public  TMP_Text displayText;
     private bool displayIsFull = false;
     private bool displayIsEmpty = true;
 
+    public ObjectiveManager objectiveManager;
+
+   
+
     private void OnEnable()
     {
+        FindObjectiveManagerAndSetKeypadCode();
         /* Subscribes to event(s). */
         ObjectiveManager.onGeneratedCode += UpdateCode;
+        Debug.Log("subscribed");
         KeyPress.OnKeyPressed += AddDigit;
         KeyPress.OnReturnPressed += RemoveDigit;
         KeyPress.OnEnterPressed += EnterCode;
@@ -26,6 +33,7 @@ public class KeypadDisplayManager : MonoBehaviour
     {
         /* Unsubscribes from event(s). */
         ObjectiveManager.onGeneratedCode -= UpdateCode;
+        Debug.Log("unsubscribed");
         KeyPress.OnKeyPressed -= AddDigit;
         KeyPress.OnReturnPressed -= RemoveDigit;
         KeyPress.OnEnterPressed -= EnterCode;
@@ -33,10 +41,15 @@ public class KeypadDisplayManager : MonoBehaviour
 
     private void Start()
     {
-        displayText = GetComponentInChildren<TMP_Text>();
+
+           
+           displayText = GetComponentInChildren<TMP_Text>();
+        
+
+        FindObjectiveManagerAndSetKeypadCode();
     }
 
-    private void UpdateCode(string value) { keypadCode = value; }
+    private void UpdateCode(string value) { keypadCode = value; Debug.Log("Updated keypadCode: " + keypadCode); }
 
     /* 
      * Adds a digit to the string (displayText.text) if the string is not full.
@@ -110,6 +123,7 @@ public class KeypadDisplayManager : MonoBehaviour
         displayIsFull = false;
         displayIsEmpty = true;
         Debug.Log("INCORRECT CODE");
+        
     }
 
     public void ExitKeypad()
@@ -117,4 +131,11 @@ public class KeypadDisplayManager : MonoBehaviour
         /* Subscription: ShowKeypad script. */
         OnExitKeypad?.Invoke(false);
     }
+
+    private void FindObjectiveManagerAndSetKeypadCode()
+    {
+        keypadCode = objectiveManager.rigCode;
+        Debug.Log(" rig code pulled ");
+    }
 }
+

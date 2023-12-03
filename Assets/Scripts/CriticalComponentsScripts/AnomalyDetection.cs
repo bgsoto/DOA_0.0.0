@@ -52,10 +52,12 @@ public class AnomalyDetection : MonoBehaviour
          */
         if (isDetected) 
         {
+            Debug.Log("anomaly detected");
             float distance = Vector3.Distance(transform.position, targetObjectTransform.position);
 
             if (distance <= distanceToContain && isTrapOn)
             {
+                Debug.Log("anomaly banished");
                 Invoke("ResetScene", 2f);
             }
         }
