@@ -16,4 +16,5 @@ MonoBehaviour:
   isObjective2: 1
   objectiveDescription: <s>Search for information about the Anomaly</s>
   objectiveStage: 40
-  clueDescription: -You have the coordinates for the rig. Now to find the artifact...
+  clueDescription: "\u2022 You have the coordinates for the rig. Now to find the
+    artifact..."

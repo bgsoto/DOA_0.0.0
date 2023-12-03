@@ -25,6 +25,11 @@ public class HubMenuDisplay : MonoBehaviour, IInteractable
 
         /* Subscription: UIManager */
         OnMenuEnter?.Invoke(menuIndex);
+
+        if(GetComponent<ContractOutline>()!= null)
+        {
+            GetComponent<ContractOutline>().OutineOff();
+        }
     }
 
     public void Use() { return; }

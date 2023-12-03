@@ -44,7 +44,6 @@ public class ObjectiveManager : MonoBehaviour
     {
         rigCode = GenerateCode(rigCode);
         onGeneratedCode?.Invoke(rigCode);
-        Debug.Log(rigCode);
         
         Debug.Log("Invoked onGeneratedCode event with code: " + rigCode);
 
@@ -61,7 +60,7 @@ public class ObjectiveManager : MonoBehaviour
         PlayerInteraction.onArtifactCollected += artifactCollected;
         ObjectiveUpdaterUI.UpdateObjectivesUI += UpdateObjective;
         CoordAppend.AppendObjective += AppendText;
-        NoteDisplay.NoteGathered += NoteGatheredNotif;
+        //NoteDisplay.NoteGathered += NoteGatheredNotif;
     }
     private void OnDisable()
     {
@@ -71,7 +70,7 @@ public class ObjectiveManager : MonoBehaviour
         PlayerInteraction.onArtifactCollected -= artifactCollected;
         ObjectiveUpdaterUI.UpdateObjectivesUI -= UpdateObjective;
         CoordAppend.AppendObjective -= AppendText;
-        NoteDisplay.NoteGathered -= NoteGatheredNotif;
+        //NoteDisplay.NoteGathered -= NoteGatheredNotif;
     }
     private void Update()
     {
@@ -111,7 +110,7 @@ public class ObjectiveManager : MonoBehaviour
                         activeClue = obj.clueDescription;
                         UpdateText();
                     }
-
+                    NoteGatheredNotif();
                     objectiveUpdatedSound.PlayOneShot(objectiveUpdatedClip);
                 }
             }
@@ -142,7 +141,7 @@ public class ObjectiveManager : MonoBehaviour
 
     private void NoteGatheredNotif()
     {
-        noteNotif.DOText("Note Gathered", 1f, false, ScrambleMode.Custom, "10").OnComplete(() =>
+        noteNotif.DOText("Objective Updated", 1f, false, ScrambleMode.Custom, "10").OnComplete(() =>
         {
             noteNotif.DOText("         ", 1f, false, ScrambleMode.Custom, "10").SetDelay(0.5f);
         });

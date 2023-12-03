@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class Blinking : MonoBehaviour
@@ -12,7 +10,7 @@ public class Blinking : MonoBehaviour
     public float minTime;
     public float maxTime;
     public float timer;
-    
+
     public Material greyMat;
     public Material whiteMat;
 
@@ -29,29 +27,29 @@ public class Blinking : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        LightsFlickering(); 
- 
+        LightsFlickering();
+
     }
 
     void LightsFlickering()
     {
         if (timer > 0)
             timer -= Time.deltaTime;
-            
+
         if (timer <= 10f)
         {
-            lightOB.enabled = lightOB.enabled;
-            lightOB1.enabled = lightOB1.enabled;
+            if (lightOB != null) { lightOB.enabled = lightOB.enabled; }
+            if (lightOB1 != null) { lightOB1.enabled = lightOB1.enabled; }
             meshRenderer.material = whiteMat;
             timer = Random.Range(minTime, maxTime);
 
         }
         if (timer >= 5f)
         {
-            lightOB.enabled = !lightOB.enabled;
-            lightOB1.enabled = !lightOB1.enabled;
+            if (lightOB != null) { lightOB.enabled = !lightOB.enabled; }
+            if (lightOB1 != null) { lightOB1.enabled = !lightOB1.enabled; }
             meshRenderer.material = greyMat;
-            
+
             //lightSound.Play();
         }
     }

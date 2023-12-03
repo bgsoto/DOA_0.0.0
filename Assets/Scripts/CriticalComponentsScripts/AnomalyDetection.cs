@@ -5,7 +5,8 @@ public class AnomalyDetection : MonoBehaviour
 {
     [SerializeField] private string targetObjectTag;
     [SerializeField] private float distanceToContain;
-    
+    [SerializeField] private int sceneToLoad;
+
     private Transform targetObjectTransform;
 
     private bool isDetected = false;
@@ -58,6 +59,7 @@ public class AnomalyDetection : MonoBehaviour
             if (distance <= distanceToContain && isTrapOn)
             {
                 Debug.Log("anomaly banished");
+                DataPersistenceManager.Instance.SaveGame();
                 Invoke("ResetScene", 2f);
             }
         }
@@ -65,6 +67,6 @@ public class AnomalyDetection : MonoBehaviour
 
     public void EnableTrap(bool value) { isTrapOn = value; }
 
-    /* Reload the current scene */
-    private void ResetScene() { SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex); }
+    /* Loads specified scene */
+    private void ResetScene() { SceneManager.LoadScene(sceneToLoad); }
 }

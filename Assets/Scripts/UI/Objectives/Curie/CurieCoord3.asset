@@ -16,7 +16,5 @@ MonoBehaviour:
   isObjective2: 1
   objectiveDescription: Search for information about the Anomaly
   objectiveStage: 20
-  clueDescription: '- Rig Coordinates: ???
-
-    - "From 9 to 1, from Neptune to the
-    Sun"'
+  clueDescription: "\u2022 Rig Coordinates: ???\n\u2022 \"From 9 to 1, from Neptune
+    to the Sun\""
