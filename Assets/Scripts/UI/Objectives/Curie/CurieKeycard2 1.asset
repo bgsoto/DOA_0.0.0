@@ -19,7 +19,5 @@ MonoBehaviour:
     Find 2 Keycards to Open
     the Safe'
   objectiveStage: 15
-  clueDescription: '-Red Card: Last Seen in Meeting Room.
-
-    -Blue Card: Last Seen
-    in Cafeteria.'
+  clueDescription: "\u2022 Red Card: Last Seen in Meeting Room.\n\u2022 Blue Card:
+    Last Seen in Cafeteria."

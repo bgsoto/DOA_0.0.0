@@ -16,4 +16,5 @@ MonoBehaviour:
   isObjective2: 0
   objectiveDescription: Search for the Artifact
   objectiveStage: 0
-  clueDescription: -By the entrance, a message from B.O.S.S. awaits.
+  clueDescription: "\u2022 B.O.S.S has left you a message on your shuttle. You should
+    read it."

@@ -27,7 +27,7 @@ public class IntelInteract : MonoBehaviour, IInteractable
     public void Interact()
     {
         IntelCollectionManager.collectedIntel.Add(intel);
-        Destroy(this);
+        Destroy(this.gameObject);
     }
 
     public void Use() { return; }

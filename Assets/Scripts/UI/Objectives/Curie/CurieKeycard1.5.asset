@@ -19,7 +19,6 @@ MonoBehaviour:
     Find 2 Keycards to Open
     the Safe'
   objectiveStage: 5
-  clueDescription: '<s>-By the entrance, a message from B.O.S.S. awaits.</s>
-
-    -Interact
-    with computers and tablets to gain useful hints.'
+  clueDescription: "<s>\u2022 B.O.S.S has left you a message on your shuttle. You
+    should read it.</s>\n\u2022 Interact with computers and tablets to gain useful
+    hints."

@@ -16,4 +16,4 @@ MonoBehaviour:
   isObjective2: 0
   objectiveDescription: Depart for your destination.
   objectiveStage: 10
-  clueDescription: 'Hint: Exit through the doors!'
+  clueDescription: "\u2022 Exit through the main door"

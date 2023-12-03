@@ -16,10 +16,6 @@ MonoBehaviour:
   isObjective2: 1
   objectiveDescription: Search for information about the Anomaly
   objectiveStage: 30
-  clueDescription: '- Rig Coordinates: ???
-
-    - The Head Researcher likes to use
-    his birthday, 7/13, as his password.
-
-    - "From 9 to 1, from Neptune to the
-    Sun"'
+  clueDescription: "\u2022 Rig Coordinates: ???\n\u2022 The Head Researcher likes
+    to use his birthday, 7/13, as his password.\n\u2022 \"From 9 to 1, from Neptune
+    to the Sun\""

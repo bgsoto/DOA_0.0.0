@@ -16,7 +16,5 @@ MonoBehaviour:
   isObjective2: 1
   objectiveDescription: Search for information about the Anomaly
   objectiveStage: 0
-  clueDescription: '- Rig Coordinates: ???
-
-    -The research department may have
-    useful information.'
+  clueDescription: "\u2022 Rig Coordinates: ???\n\u2022 The research department may
+    have useful information."
