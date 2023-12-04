@@ -14,11 +14,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   noteTitle: 'Research Log Day 24:'
   isObjective2: 1
+  isVariable: 1
   noteText: "\tWe have taken the specimen from our recent expedition to the lab for
     further experimentation. Our resident biologist, Miss Eveheart, has noted that
-    the specimen responds negatively to specific frequencies\u2026 several of which
-    correspond to the coordinates of known dimensional rifts. \r\n\tThe most prominent
-    reaction is that of the coordinates of a rift not too far from our next destination.
-    I have asked Captain Holcomb to adjust our flight path accordingly, so that we
-    may observe the specimen\u2019s reaction to the rift.\r"
+    the specimen responds negatively to various frequencies\u2026 several of which
+    correspond to the frequency of known dimensional rifts. Specifically, frequency
+    \r\n\t\r"
+  noteText2: " has shown most prominent reaction, and it is not too far from our
+    next destination. I have asked Captain Holcomb to adjust our flight path accordingly,
+    so that we may observe the specimen\u2019s reaction to the rift."
   objectiveStage: 40

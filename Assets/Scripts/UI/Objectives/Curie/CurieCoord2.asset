@@ -16,5 +16,5 @@ MonoBehaviour:
   isObjective2: 1
   objectiveDescription: Search for information about the Anomaly
   objectiveStage: 10
-  clueDescription: "\u2022 Rig Coordinates: ???\n\u2022 The Head Researcher likes
-    to use his birthday, 7/13, as his password."
+  clueDescription: "\u2022 Rig Coordinates: ???\n\u2022 Locate the crew log and find
+    the correct birthday."

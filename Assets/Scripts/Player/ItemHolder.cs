@@ -20,11 +20,13 @@ public class ItemHolder : MonoBehaviour
     private void OnEnable()
     {
         SettingsOpener.PausedGame += DisableInteract;
+        IntelMonitorManger.inIntelMenu += DisableInteract;
         ShowKeypad.DisableControls += DisableInteract;
     }
     private void OnDisable()
     {
         SettingsOpener.PausedGame -= DisableInteract;
+        IntelMonitorManger.inIntelMenu -= DisableInteract;
         ShowKeypad.DisableControls -= DisableInteract;
     }
     private void Update()

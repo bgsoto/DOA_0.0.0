@@ -13,6 +13,7 @@ public class NoteDisplay : MonoBehaviour, IInteractable
     private int objectiveStage;
     private bool objective2;
     private bool noteCollected = false;
+    private string variableText;
 
     public static Action NoteGathered;
     public static Action<bool, int> AppendToNote;
@@ -48,6 +49,13 @@ public class NoteDisplay : MonoBehaviour, IInteractable
             }
             Destroy(this); //removes interactable.
         }
+    }
+
+    public void UpdateNoteText(string variable)
+    {
+        variableText = variable;
+        noteText.text = noteToDisplay.noteText;
+        noteText.text += variableText + noteToDisplay.noteText2;
     }
 
     public void Use() { return; }

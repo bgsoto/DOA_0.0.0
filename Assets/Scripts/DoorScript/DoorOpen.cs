@@ -28,10 +28,12 @@ public class DoorOpen : MonoBehaviour
             count++;
             if (!isOpen)
             {
+                isOpen = true;
+                wingL.transform.DOKill();
+                wingR.transform.DOKill();
                 wingL.transform.DOLocalMove(movePosL, duration);
                 wingR.transform.DOLocalMove(movePosR, duration);
                 doorSource.PlayOneShot(openClip);
-                isOpen = true;
             }
         }
     }
@@ -42,6 +44,8 @@ public class DoorOpen : MonoBehaviour
             count--;
             if (count == 0 && isOpen)
             {
+                wingL.transform.DOKill();
+                wingR.transform.DOKill();
                 wingL.transform.DOLocalMove(defaultPosL, duration / 2);
                 wingR.transform.DOLocalMove(defaultPosR, duration / 2);
                 doorSource.PlayOneShot(closeClip);

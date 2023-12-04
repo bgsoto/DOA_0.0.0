@@ -1,4 +1,6 @@
 using System;
+using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 
 public class PlanetsManager : MonoBehaviour
@@ -9,10 +11,14 @@ public class PlanetsManager : MonoBehaviour
     private string correctInput;
     [SerializeField]
     private int codeLength;
+    public float[] codes;
+    public string[] names;
+
 
     // public static Action planetInputNew; //action called when any planet is interacted with
     public static Action planetCorrect; //action called upon correct code input
     public static Action<string> planetWrong; //action called when wrong code input
+    public static Action<string> birthdayCrew;
     private void OnEnable()
     {
         PlanetInteract.UpdateInput += InputHandler;
@@ -20,6 +26,13 @@ public class PlanetsManager : MonoBehaviour
     private void OnDisable()
     {
         PlanetInteract.UpdateInput -= InputHandler;
+    }
+    private void Start()
+    {
+        int code = UnityEngine.Random.Range(0, codes.Length);
+        correctInput = codes[code].ToString();
+        Debug.Log("correct planet code is " + codes[code].ToString());
+        birthdayCrew?.Invoke(names[code]);
     }
     void InputHandler(int input)
     {

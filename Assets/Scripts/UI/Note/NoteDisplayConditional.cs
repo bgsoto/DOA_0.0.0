@@ -16,6 +16,7 @@ public class NoteDisplayConditional : MonoBehaviour, IInteractable
     private int objectiveStage;
     private bool noteCollected = false;
     private ObjectiveManager objectiveManager;
+    private string variableText;
 
     /* Not used */
     private ItemData itemData;
@@ -45,6 +46,13 @@ public class NoteDisplayConditional : MonoBehaviour, IInteractable
             NoteDisplay.NoteGathered?.Invoke();
             Destroy(this); //removes interactable.
         }
+    }
+
+    public void UpdateNoteText(string variable)
+    {
+        variableText = variable;
+        noteText.text = noteToDisplay.noteText;
+        noteText.text += variableText + noteToDisplay.noteText2;
     }
 
     public void Use() { return; }
