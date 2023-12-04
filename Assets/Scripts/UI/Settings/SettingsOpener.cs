@@ -37,6 +37,7 @@ public class SettingsOpener : MonoBehaviour
     {
         PausedGame?.Invoke(true);
         Cursor.lockState = CursorLockMode.Confined;
+        Cursor.visible = true;
         isPaused = true;
         settingsMenu.SetActive(true);
         Debug.Log("Game Paused");
@@ -46,6 +47,7 @@ public class SettingsOpener : MonoBehaviour
     {
         Time.timeScale = 1.0f;
         Cursor.lockState = CursorLockMode.Locked;
+        Cursor.visible = false;
         isPaused = false;
         PausedGame?.Invoke(false);
         settingsMenu.SetActive(false);

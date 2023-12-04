@@ -1424,6 +1424,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   keypadCode: 
+  displayText: {fileID: 0}
+  objectiveManager: {fileID: 0}
 --- !u!1 &2930027825427182653
 GameObject:
   m_ObjectHideFlags: 0
@@ -2766,6 +2768,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   spawnPoints:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
@@ -4649,10 +4659,6 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 5045445593887576745, guid: 94c90b2d910d68e48b9c06f61fe5ed65, type: 3}
-      propertyPath: m_AnchoredPosition.y
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 5380519599999140836, guid: 94c90b2d910d68e48b9c06f61fe5ed65, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
@@ -4865,15 +4871,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3669535507855129491, guid: b14891ab4e4c9494d907006588ae0d05, type: 3}
       propertyPath: m_fontSize
-      value: 25
+      value: 30
       objectReference: {fileID: 0}
     - target: {fileID: 3669535507855129491, guid: b14891ab4e4c9494d907006588ae0d05, type: 3}
       propertyPath: m_fontAsset
       value: 
       objectReference: {fileID: 11400000, guid: a4829b83ebe08af40bb04c389258b802, type: 2}
     - target: {fileID: 3669535507855129491, guid: b14891ab4e4c9494d907006588ae0d05, type: 3}
+      propertyPath: m_fontStyle
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3669535507855129491, guid: b14891ab4e4c9494d907006588ae0d05, type: 3}
       propertyPath: m_fontSizeBase
-      value: 25
+      value: 30
       objectReference: {fileID: 0}
     - target: {fileID: 3669535507855129491, guid: b14891ab4e4c9494d907006588ae0d05, type: 3}
       propertyPath: m_sharedMaterial

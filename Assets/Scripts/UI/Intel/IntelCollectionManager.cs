@@ -4,7 +4,7 @@ using UnityEngine;
 public class IntelCollectionManager : MonoBehaviour, IDataPersistence
 {
     //manages the list of collected intel, call on awake then any time a match ends.
-    public static List<Intel> collectedIntel = new();
+   [SerializeField] public static List<Intel> collectedIntel = new();
     public void LoadData(PlayerStats data)
     {
         collectedIntel = new List<Intel>();
@@ -18,5 +18,6 @@ public class IntelCollectionManager : MonoBehaviour, IDataPersistence
     {
         data.intelCollected.Clear();
         data.intelCollected = collectedIntel;
+        Debug.Log(collectedIntel);
     }
 }

@@ -45,6 +45,7 @@ public class ShowKeypad : MonoBehaviour, IInteractable
         }
 
         UIManager.ShowKeypad(false);
+        Cursor.visible = false;
 
         /* Subscription: PlayerInteraction, FirstPersonController, StartAssestsInput */
         DisableControls?.Invoke(false);
@@ -55,6 +56,7 @@ public class ShowKeypad : MonoBehaviour, IInteractable
         if (canInteract)
         {
             UIManager.ShowKeypad(canInteract);
+            Cursor.visible = true;
 
             /* Subscription: PlayerInteraction, FirstPersonController, StartAssestsInput */
             DisableControls?.Invoke(canInteract);

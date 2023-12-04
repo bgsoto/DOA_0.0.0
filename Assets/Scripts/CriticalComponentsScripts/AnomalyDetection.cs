@@ -61,6 +61,7 @@ public class AnomalyDetection : MonoBehaviour
                 Debug.Log("anomaly banished");
                 DataPersistenceManager.Instance.SaveGame();
                 Invoke("ResetScene", 2f);
+                isTrapOn = false;
             }
         }
     }
@@ -68,5 +69,5 @@ public class AnomalyDetection : MonoBehaviour
     public void EnableTrap(bool value) { isTrapOn = value; }
 
     /* Loads specified scene */
-    private void ResetScene() { SceneManager.LoadScene(sceneToLoad); }
+    private void ResetScene() { SceneManager.LoadSceneAsync(sceneToLoad); }
 }
