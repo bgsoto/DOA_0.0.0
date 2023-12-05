@@ -13,7 +13,7 @@ public class NoteDisplay : MonoBehaviour, IInteractable
     private int objectiveStage;
     private bool objective2;
     private bool noteCollected = false;
-    private string variableText;
+    [SerializeField] private string variableText;
 
     public static Action NoteGathered;
     public static Action<bool, int> AppendToNote;
@@ -24,7 +24,7 @@ public class NoteDisplay : MonoBehaviour, IInteractable
     private ItemData itemData;
     private bool pickable;
 
-    private void Start()
+    private void Awake()
     {
         objectiveManager = GameObject.FindGameObjectWithTag("ObjectiveManager").GetComponent<ObjectiveManager>();
         noteText.text = noteToDisplay.noteText;
@@ -53,9 +53,10 @@ public class NoteDisplay : MonoBehaviour, IInteractable
 
     public void UpdateNoteText(string variable)
     {
-        variableText = variable;
+        variableText += variable;
         noteText.text = noteToDisplay.noteText;
         noteText.text += variableText + noteToDisplay.noteText2;
+        //Debug.Log(noteText.text);
     }
 
     public void Use() { return; }

@@ -14,13 +14,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   noteTitle: 'Research Log: Altair System Expedition, Day 11'
   isObjective2: 1
-  isVariable: 0
   noteText: Surveyor Camryn proposed a detour to Altair-III, and surprisingly, the
     captain agreed! I wanted to review the data from our last expedition to see what
     we had on Altair-III, but Miles keeps any research data locked in that desk drawer
     of his. I have no clue how to open it, but I bet that weird solar system model
-    has something to do with it. I know that Miles likes to use <b>
-  noteText2: ' </b>birthday as his password... but how does that correspond to those
-    planets? Maybe I should check the crew log to remind myself what that birthday
+    has something to do with it. I know that Miles likes to use <b><u>
+  noteText2: ' </u></b>birthday as his password... but how does that correspond to
+    those planets? Maybe I should check the crew log to remind myself what that birthday
     was again...'
   objectiveStage: 10

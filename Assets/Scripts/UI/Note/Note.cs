@@ -7,7 +7,6 @@ public class Note : ScriptableObject
 {
     public string noteTitle;
     public bool isObjective2;
-    public bool isVariable;
     [TextArea(5, 20)]
     public string noteText;
     [TextArea(5, 20)]

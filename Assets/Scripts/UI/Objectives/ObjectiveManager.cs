@@ -60,6 +60,8 @@ public class ObjectiveManager : MonoBehaviour
         PlayerInteraction.onArtifactCollected += artifactCollected;
         ObjectiveUpdaterUI.UpdateObjectivesUI += UpdateObjective;
         CoordAppend.AppendObjective += AppendText;
+        CardAppend.AppendObjective += AppendClue;
+        BirthdayAppend.AppendObjective += AppendClue;
         //NoteDisplay.NoteGathered += NoteGatheredNotif;
     }
     private void OnDisable()
@@ -70,6 +72,8 @@ public class ObjectiveManager : MonoBehaviour
         PlayerInteraction.onArtifactCollected -= artifactCollected;
         ObjectiveUpdaterUI.UpdateObjectivesUI -= UpdateObjective;
         CoordAppend.AppendObjective -= AppendText;
+        CardAppend.AppendObjective -= AppendClue;
+        BirthdayAppend.AppendObjective -= AppendClue;
         //NoteDisplay.NoteGathered -= NoteGatheredNotif;
     }
     private void Update()
@@ -130,7 +134,7 @@ public class ObjectiveManager : MonoBehaviour
         if (objectiveToAppend == 1)
         {
             currentObjective += textToAppend; //if objectiveToAppend is 1, add the string and return
-            Debug.Log(currentObjective);
+            //Debug.Log(currentObjective);
             UpdateText();
             return;
         }//else do that for objective2
@@ -139,6 +143,19 @@ public class ObjectiveManager : MonoBehaviour
         //Debug.Log(currentObjective2);
     }
 
+    private void AppendClue(int objectiveToAppend, string textToAppend)
+    {
+        if (objectiveToAppend == 1)
+        {
+            activeClue += textToAppend; //if objectiveToAppend is 1, add the string and return
+            //Debug.Log(activeClue);
+            UpdateText();
+            return;
+        }//else do that for objective2
+        activeClue2 += textToAppend;
+        UpdateText();
+        //Debug.Log(currentObjective2);
+    }
     private void NoteGatheredNotif()
     {
         noteNotif.DOText("Objective Updated", 1f, false, ScrambleMode.Custom, "10").OnComplete(() =>

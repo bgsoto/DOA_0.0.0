@@ -2,7 +2,7 @@ using System;
 using System.Collections;
 using UnityEngine;
 
-public class CoordAppend : MonoBehaviour
+public class BirthdayAppend : MonoBehaviour
 {
     [SerializeField] private string textToAppend1; //the text to add to the end of the tmp_text
     [SerializeField] private string textToAppend2;
@@ -11,16 +11,15 @@ public class CoordAppend : MonoBehaviour
     [SerializeField] private string parameterToAppend;
 
     public static Action<int, string> AppendObjective;
-
     private void OnEnable()
     {
-        NoteDisplay.AppendToNote += Append;
-        ObjectiveManager.onGeneratedCode += GetCode;
+        NoteDisplayConditional.AppendToNote += Append;
+        PlanetsManager.birthdayCrew += UpdateBirthday;
     }
     private void OnDisable()
     {
-        NoteDisplay.AppendToNote -= Append;
-        ObjectiveManager.onGeneratedCode -= GetCode;
+        NoteDisplayConditional.AppendToNote -= Append;
+        PlanetsManager.birthdayCrew -= UpdateBirthday;
     } //subscribes and unsubscribes on enable/disable
 
     private void Append(bool objective2, int appendStage)
@@ -35,17 +34,17 @@ public class CoordAppend : MonoBehaviour
         var stage = objective2 ? 2 : 1;
         if (!objective2 && appendStage == objectiveToUpdateOn)
         {
-            AppendObjective?.Invoke(stage, textToAppend1 + parameterToAppend); //Debug.Log("appending" + textToAppend1 + parameterToAppend);
+            AppendObjective?.Invoke(stage, textToAppend1 + parameterToAppend); //Debug.Log("appending1" + textToAppend1 + parameterToAppend);
         }
         else if (objective2 && appendStage == objectiveToUpdateOn2)
         {
-            AppendObjective?.Invoke(stage, textToAppend2 + parameterToAppend); //Debug.Log("appending" + textToAppend2 + parameterToAppend);
+            AppendObjective?.Invoke(stage, textToAppend2 + parameterToAppend); //Debug.Log("appending2" + textToAppend2 + parameterToAppend);
         }
         yield return null;
     }
 
-    void GetCode(string code)
+    void UpdateBirthday(string crewMember)
     {
-        parameterToAppend = code;
+        parameterToAppend += "\n• Miles uses " + crewMember + " birthday as a passcode.";
     }
 }

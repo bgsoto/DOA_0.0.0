@@ -1,4 +1,5 @@
 using EPOOutline;
+using System;
 using TMPro;
 using UnityEngine;
 
@@ -12,17 +13,19 @@ public class NoteDisplayConditional : MonoBehaviour, IInteractable
     [SerializeField] private int altObjectiveToSet; //objective stage to set if current objective is less than check
     [SerializeField] private bool objective2; //if is objective 2, true
     [SerializeField] private string actionText;
+    [SerializeField] private bool appendToThisNote;
     private int currentObjectiveStage;
     private int objectiveStage;
     private bool noteCollected = false;
     private ObjectiveManager objectiveManager;
     private string variableText;
 
+    public static Action<bool, int> AppendToNote;
     /* Not used */
     private ItemData itemData;
     private bool pickable;
 
-    private void Start()
+    private void Awake()
     {
         noteText.text = noteToDisplay.noteText;
         noteTitle.text = noteToDisplay.noteTitle;
@@ -41,8 +44,22 @@ public class NoteDisplayConditional : MonoBehaviour, IInteractable
             if (currentObjectiveStage >= objectiveToCheck) { objectiveStage = altObjectiveToSet; }
             else { objectiveStage = noteToDisplay.objectiveStage; }
             noteCollected = true;
-            if (noteToDisplay.isObjective2) { objectiveManager.UpdateObjective(true, objectiveStage); }
-            else { objectiveManager.UpdateObjective(false, objectiveStage); }//sets either objective 1 or 2 depending on what note effects
+            if (noteToDisplay.isObjective2)
+            {
+                objectiveManager.UpdateObjective(true, objectiveStage);
+                if (appendToThisNote)
+                {
+                    AppendToNote?.Invoke(true, objectiveStage);
+                }
+            }
+            else
+            {
+                objectiveManager.UpdateObjective(false, objectiveStage);
+                if (appendToThisNote)
+                {
+                    AppendToNote?.Invoke(false, objectiveStage); ;
+                }
+            }//sets either objective 1 or 2 depending on what note effects
             NoteDisplay.NoteGathered?.Invoke();
             Destroy(this); //removes interactable.
         }

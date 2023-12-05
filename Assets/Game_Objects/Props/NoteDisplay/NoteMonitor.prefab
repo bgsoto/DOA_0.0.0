@@ -173,6 +173,7 @@ MonoBehaviour:
   noteTitle: {fileID: 1004412686091548999}
   actionText: Record Information
   appendToThisNote: 0
+  variableText: 
 --- !u!65 &1283413947348218487
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -890,7 +891,7 @@ MonoBehaviour:
   m_enableAutoSizing: 1
   m_fontSizeMin: 5
   m_fontSizeMax: 72
-  m_fontStyle: 1
+  m_fontStyle: 0
   m_HorizontalAlignment: 1
   m_VerticalAlignment: 256
   m_textAlignment: 65535

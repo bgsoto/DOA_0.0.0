@@ -14,7 +14,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   objectiveName: CurieCoord4
   isObjective2: 1
-  objectiveDescription: <s>Search for information about the Anomaly</s>
+  objectiveDescription: '<s>Search for information about the Anomaly</s>
+
+    Input
+    the correct frequency'
   objectiveStage: 40
-  clueDescription: "\u2022 You have the coordinates for the rig. Now to find the
-    artifact..."
+  clueDescription: "\u2022 Find the artifact and input the code into the containment
+    rig."

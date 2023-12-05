@@ -22,6 +22,6 @@ MonoBehaviour:
     Interact With the Safe to Unlock it and Obtain the Artifact</s>
 
     Place
-    the Rig Down and Enter the Code'
+    the Rig Down in the Lobby and Enter the Correct Frequency'
   objectiveStage: 40
-  clueDescription: 
+  clueDescription: "\u2022 Investigate the research lab to find the frequency."

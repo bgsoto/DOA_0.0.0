@@ -16,5 +16,5 @@ MonoBehaviour:
   isObjective2: 1
   objectiveDescription: Search for information about the Anomaly
   objectiveStage: 30
-  clueDescription: "\u2022 Rig Coordinates: ???\n\u2022 Locate the crew log and find
-    the correct birthday.\n\u2022 \"From 9 to 1, from Neptune to the Sun\""
+  clueDescription: "\u2022 Rig Coordinates: ???\n\u2022 Locate the crew log.\n\u2022
+    \"From 9 to 1, from Neptune to the Sun\""
