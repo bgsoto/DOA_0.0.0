@@ -6,11 +6,13 @@ public class AnomalyDetection : MonoBehaviour
     [SerializeField] private string targetObjectTag;
     [SerializeField] private float distanceToContain;
     [SerializeField] private int sceneToLoad;
+    [SerializeField] private ParticleSystem containParticles;
 
     private Transform targetObjectTransform;
 
     private bool isDetected = false;
     private bool isTrapOn = false;
+    private bool particlesOn = false;
 
     private void OnEnable()
     {
@@ -51,7 +53,7 @@ public class AnomalyDetection : MonoBehaviour
          * Gets the distance from the center of the capture area and the Anomaly object to ensure
          * the Anomaly object is completely inside the containment area.
          */
-        if (isDetected) 
+        if (isDetected)
         {
             Debug.Log("anomaly detected");
             float distance = Vector3.Distance(transform.position, targetObjectTransform.position);
@@ -63,6 +65,11 @@ public class AnomalyDetection : MonoBehaviour
                 Invoke("ResetScene", 2f);
                 isTrapOn = false;
             }
+        }
+        if (isTrapOn && particlesOn == false)
+        {
+            containParticles.Play();
+            particlesOn = true;
         }
     }
 

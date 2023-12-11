@@ -7,6 +7,7 @@ public class Safe : MonoBehaviour, IInteractable
 {
     [Header("Relationships")]
     [SerializeField] PlayerInteraction playerinteractionScript;
+    [SerializeField] ObjectiveManager objectiveManager;
 
     [Header("Settings")]
     [SerializeField] bool allkeysFound;
@@ -16,14 +17,19 @@ public class Safe : MonoBehaviour, IInteractable
     private ItemData safe;
     private bool pickable = false;
 
-
+    private void Start()
+    {
+        objectiveManager = FindObjectOfType<ObjectiveManager>();
+    }
     public void Interact()
     {
         int keysCollected = playerinteractionScript.keysCollected;
             if (keysCollected == 2)
             {
                 allkeysFound = true;
-                if (allkeysFound) {Destroy(gameObject);}
+                if (allkeysFound) {
+                objectiveManager.UpdateObjective(false, 40);
+                Destroy(gameObject);}
             }
     }
 

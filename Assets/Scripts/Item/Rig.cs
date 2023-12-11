@@ -35,6 +35,8 @@ public class Rig : MonoBehaviour, IInteractable
     private Vector3 rayOrigin = new Vector3(0.5f, 0.5f, 0f);
     private Vector3 placementPosition;
 
+    public static Action<bool> RigPlaced; //used for RigHighlight disabling
+
     private void OnEnable()
     {
         /* Subscribes to event(s). */
@@ -147,6 +149,8 @@ public class Rig : MonoBehaviour, IInteractable
 
             /* Unchild from ItemHolder and remove from itemList. */
             itemHolder.RemoveFromInventory(rigData);
+
+            RigPlaced?.Invoke(true);
 
             Destroy(gameObject);
         }

@@ -16,5 +16,5 @@ MonoBehaviour:
   itemName: Tracker
   itemImage: {fileID: 0}
   itemPrefab: {fileID: 7060071527603090701, guid: b277ef8352580c34f8748ec76f6bba24, type: 3}
-  equippedLocalPosition: {x: 0.174, y: -0.083, z: 0.143}
+  equippedLocalPosition: {x: 0.26, y: -0.083, z: 0.143}
   equippedLocalRotation: {x: 288.46863, y: 339.07214, z: 0.000037731625}
