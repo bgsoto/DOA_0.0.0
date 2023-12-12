@@ -11,9 +11,9 @@ public class SettingsGetter : MonoBehaviour
 
     private void OnEnable()
     {
-        headbobToggle.isOn = PlayerPrefs.GetInt("headbobOn") == 1 ? true : false;
-        volumeSlider.value = PlayerPrefs.GetFloat("masterVolume");
-        sensitivitySlider.value = PlayerPrefs.GetFloat("sensitivity");
+        headbobToggle.isOn = PlayerPrefs.GetFloat("headbobOn", 1) == 1 ? true : false;
+        volumeSlider.value = PlayerPrefs.GetFloat("masterVolume", 0.75f);
+        sensitivitySlider.value = PlayerPrefs.GetFloat("sensitivity", 1);
         brightnessSlider.value = PlayerPrefs.GetFloat("brightness");
         gammaSlider.value = PlayerPrefs.GetFloat("gamma");
     }

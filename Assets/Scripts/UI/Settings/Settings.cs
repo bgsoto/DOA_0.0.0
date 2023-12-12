@@ -5,7 +5,7 @@ public class Settings : MonoBehaviour
 {
     [Header("Settings")]
     public float _volume;
-    public int _headbobOn;
+    public float _headbobOn;
     public float _sensitivity;
     public float _brightness;
     public float _gamma;
@@ -13,6 +13,7 @@ public class Settings : MonoBehaviour
     //subscriptions: BrightnessSetter
     public static Action<float> OnBrightnessChanged;
     public static Action<float> OnGammaChanged;
+    public static Action<float> OnVolumeChanged;
     private void OnEnable()
     {
         SettingsOpener.PausedGame += SaveSettings;
@@ -21,24 +22,22 @@ public class Settings : MonoBehaviour
     {
         SettingsOpener.PausedGame -= SaveSettings;
     }
-    private void Start()
+    private void Awake()
     {
-        _volume = PlayerPrefs.GetFloat("masterVolume", 0.75f);
-        _headbobOn = PlayerPrefs.GetInt("headbobOn", 1);
-        _sensitivity = PlayerPrefs.GetFloat("sensitivity", 1);
-        _brightness = PlayerPrefs.GetFloat("brightness", -50);
-        _gamma = PlayerPrefs.GetFloat("gamma", 1);
+        InitializeSettings();
+        SaveSettings(true);
     }
 
     public void ToggleHeadBob(bool toggle)
     {
         _headbobOn = toggle ? 1 : 0;
-        PlayerPrefs.SetInt("headbobOn", _headbobOn);
+        PlayerPrefs.SetFloat("headbobOn", _headbobOn);
     }
     public void ToggleVolume(float volume)
     {
         _volume = volume;
         PlayerPrefs.SetFloat("masterVolume", _volume);
+        OnVolumeChanged?.Invoke(_volume);
     }
     public void ToggleSensitivity(float sensitivity)
     {
@@ -60,5 +59,13 @@ public class Settings : MonoBehaviour
     public void SaveSettings(bool value)
     {
         PlayerPrefs.Save();
+    }
+    void InitializeSettings()
+    {
+        _volume = PlayerPrefs.GetFloat("masterVolume", 0.75f);
+        _headbobOn = PlayerPrefs.GetFloat("headbobOn", 1f);
+        _sensitivity = PlayerPrefs.GetFloat("sensitivity", 1f);
+        _brightness = PlayerPrefs.GetFloat("brightness", 0f);
+        _gamma = PlayerPrefs.GetFloat("gamma", 0f);
     }
 }

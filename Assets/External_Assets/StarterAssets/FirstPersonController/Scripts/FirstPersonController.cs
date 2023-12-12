@@ -193,7 +193,7 @@ namespace StarterAssets
                 GroundedCheck();
                 Move();
                 Crouch();
-                if (PlayerPrefs.GetInt("headbobOn") == 1)
+                if (PlayerPrefs.GetFloat("headbobOn", 1) == 1)
                 {
                     Headbob();
                 }

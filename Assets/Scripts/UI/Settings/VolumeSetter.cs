@@ -1,9 +1,6 @@
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
 using FMODUnity;
 using StarterAssets;
-using Unity.VisualScripting;
+using UnityEngine;
 
 public class VolumeSetter : MonoBehaviour
 {
@@ -11,24 +8,30 @@ public class VolumeSetter : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        AudioListener.volume = PlayerPrefs.GetFloat("masterVolume");
-        trigger = GetComponent<StudioGlobalParameterTrigger>();
-        trigger.Value = PlayerPrefs.GetFloat("masterVolume");
-        trigger.TriggerParameters();
+        AudioListener.volume = PlayerPrefs.GetFloat("masterVolume", 0.75f);
+        if (trigger != null)
+        {
+            trigger = GetComponent<StudioGlobalParameterTrigger>();
+            trigger.Value = PlayerPrefs.GetFloat("masterVolume", 0.75f);
+            trigger.TriggerParameters();
+        }
     }
     private void OnEnable()
     {
-        StarterAssetsInputs.pausePressed += UpdateVolume;
+        Settings.OnVolumeChanged += UpdateVolume;
     }
     private void OnDisable()
     {
-        StarterAssetsInputs.pausePressed -= UpdateVolume;
+        Settings.OnVolumeChanged -= UpdateVolume;
     }
 
-    void UpdateVolume()
+    void UpdateVolume(float volume)
     {
-        AudioListener.volume = PlayerPrefs.GetFloat("masterVolume");
-        trigger.Value = PlayerPrefs.GetFloat("masterVolume");
-        trigger.TriggerParameters();
+        AudioListener.volume = volume;
+        if (trigger != null)
+        {
+            trigger.Value = volume;
+            trigger.TriggerParameters();
+        }
     }
 }

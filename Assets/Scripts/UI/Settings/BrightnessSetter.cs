@@ -17,7 +17,7 @@ public class BrightnessSetter : MonoBehaviour
     }
     void ChangeBrightness(float brightness)
     {
-        profile.GetSetting<ColorGrading>().brightness.value = brightness + 50;
+        profile.GetSetting<ColorGrading>().brightness.value = brightness;
     }
     void ChangeGamma(float gamma)
     {
