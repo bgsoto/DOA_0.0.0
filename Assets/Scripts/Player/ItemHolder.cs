@@ -1,11 +1,9 @@
 using DG.Tweening;
-using System;
-using System.Collections;
 using System.Collections.Generic;
-using Unity.VisualScripting;
+using Unity.Netcode;
 using UnityEngine;
 
-public class ItemHolder : MonoBehaviour
+public class ItemHolder : NetworkBehaviour
 {
     [Header("Relationships")]
     [SerializeField] private List<GameObject> itemList = new List<GameObject>();
@@ -13,7 +11,7 @@ public class ItemHolder : MonoBehaviour
     [SerializeField] private AudioSource inventoryAudioSource;
     [SerializeField] private AudioClip pickupSound;
     [SerializeField] private AudioClip dropSound;
-    
+
 
     [SerializeField] private int itemIndex = 0;
     private bool inMenu = false;
@@ -31,6 +29,7 @@ public class ItemHolder : MonoBehaviour
     }
     private void Update()
     {
+        if (!IsOwner) return;
         gameObject.transform.rotation = Camera.main.transform.rotation;
         if (inMenu) { return; }
         else
@@ -72,6 +71,7 @@ public class ItemHolder : MonoBehaviour
 
     public void AddToInventory(ItemData itemData)
     {
+        if (!IsOwner) return;
         GameObject newItem = Instantiate(itemData.itemPrefab, transform);
         newItem.gameObject.name = itemData.name;
         newItem.transform.localPosition = itemData.equippedLocalPosition;
@@ -86,6 +86,7 @@ public class ItemHolder : MonoBehaviour
 
     public void RemoveFromInventory(ItemData itemData)
     {
+        if (!IsOwner) return;
         if (itemList != null)
         {
             foreach (GameObject itemObject in itemList)
@@ -102,6 +103,7 @@ public class ItemHolder : MonoBehaviour
 
     private void ShowItem(int itemIndex)
     {
+        if (!IsOwner) return;
         if (itemList.Count > 0)
         {
             for (int i = 0; i < itemList.Count; i++)
@@ -125,6 +127,7 @@ public class ItemHolder : MonoBehaviour
 
     private void DropItem()
     {
+        if (!IsOwner) return;
         if (itemList.Count > 0 && itemList != null)
         {
             GameObject currentItem = itemList[itemIndex];
@@ -159,5 +162,9 @@ public class ItemHolder : MonoBehaviour
             ShowItem(itemIndex);
         }
     }
-    private void DisableInteract(bool value) { inMenu = value; }
+    private void DisableInteract(bool value)
+    {
+        if (!IsOwner) return;
+        inMenu = value;
+    }
 }

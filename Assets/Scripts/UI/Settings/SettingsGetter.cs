@@ -1,7 +1,9 @@
+using System.Globalization;
+using Unity.Netcode;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class SettingsGetter : MonoBehaviour
+public class SettingsGetter : NetworkBehaviour
 {
     [SerializeField] private Toggle headbobToggle;
     [SerializeField] private Slider volumeSlider;
@@ -11,6 +13,7 @@ public class SettingsGetter : MonoBehaviour
 
     private void OnEnable()
     {
+        if (!IsOwner) return;
         headbobToggle.isOn = PlayerPrefs.GetFloat("headbobOn", 1) == 1 ? true : false;
         volumeSlider.value = PlayerPrefs.GetFloat("masterVolume", 0.75f);
         sensitivitySlider.value = PlayerPrefs.GetFloat("sensitivity", 1);

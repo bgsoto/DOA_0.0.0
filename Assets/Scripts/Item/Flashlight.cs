@@ -1,12 +1,13 @@
 using Cinemachine;
 using System.Collections;
 using System.Collections.Generic;
+using Unity.Netcode;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.Experimental.GlobalIllumination;
 using UnityEngine.UIElements;
 
-public class Flashlight : MonoBehaviour, IInteractable
+public class Flashlight : NetworkBehaviour, IInteractable
 {
     [Header("Relationships")]
     [SerializeField] private GameObject point;
@@ -33,6 +34,7 @@ public class Flashlight : MonoBehaviour, IInteractable
 
     public void Use()
     {
+        if (!IsOwner) return;
         isOn = !isOn;
         if (isOn)
         {
