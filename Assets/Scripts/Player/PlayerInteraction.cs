@@ -18,7 +18,7 @@ public class PlayerInteraction : MonoBehaviour
 
     [Header("Settings")]
     [SerializeField] private float rayLength;
-    [SerializeField] private GameObject interactText;
+    [SerializeField] private TMP_Text interactText;
 
     public static Action<bool, int> onAllKeysCollected;
     public static Action<bool, int> onArtifactCollected;
@@ -43,6 +43,11 @@ public class PlayerInteraction : MonoBehaviour
         Key.onKeyCollected -= AddKey;
         Artifact.onArtifactCollected -= AddArtifact;
         SettingsOpener.PausedGame -= DisableRayCast;
+    }
+    private void Start()
+    {
+        reticle = GameObject.FindGameObjectWithTag("Reticle").GetComponentInChildren<Image>();
+        interactText = GameObject.FindGameObjectWithTag("Reticle").GetComponentInChildren<TMP_Text>();
     }
 
     private void Update()
@@ -91,15 +96,15 @@ public class PlayerInteraction : MonoBehaviour
                 
                 interactableObject = hitInteractable;
                 reticle.color = Color.green;
-                interactText.GetComponent<TMP_Text>().text = $"{interactableObject.ActionText} (F)";
-                interactText.SetActive(true);
+                interactText.text = $"{interactableObject.ActionText} (F)";
+                interactText.enabled = true;
                 canInteract = true;
              
             }
             else
             {
                 reticle.color = Color.white;
-                interactText.SetActive(false);
+                interactText.enabled = false;
                 canInteract = false;
              
             }
@@ -107,7 +112,7 @@ public class PlayerInteraction : MonoBehaviour
         else
         {
             reticle.color = Color.white;
-            interactText.SetActive(false);
+            interactText.enabled = false;
             canInteract = false;
 
            /* if (itemOutline != null)

@@ -41,11 +41,11 @@ public class SettingsOpener : MonoBehaviour
         isPaused = true;
         settingsMenu.SetActive(true);
         Debug.Log("Game Paused");
-        Time.timeScale = 0f;
+      //  Time.timeScale = 0f;
     }
     public void OnResume()
     {
-        Time.timeScale = 1.0f;
+       // Time.timeScale = 1.0f;
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
         isPaused = false;

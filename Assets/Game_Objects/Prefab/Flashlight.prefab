@@ -183,6 +183,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   point: {fileID: 5235504003772740057}
   spot: {fileID: 7885212645624099065}
+  onSound: {fileID: 0}
+  offSound: {fileID: 0}
   flashlightData: {fileID: 11400000, guid: 271b7fe2c665a9e4abd80a185d3949db, type: 2}
   lens: {fileID: 2100000, guid: 53458964f4ce2e8438251ae0c80392e9, type: 2}
   isOn: 0
@@ -291,6 +293,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3919454869425717519}
+  - component: {fileID: -2819968086513723510}
   m_Layer: 0
   m_Name: Flashlight
   m_TagString: Item
@@ -314,6 +317,36 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &-2819968086513723510
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7775546678062608144}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e96cb6065543e43c4a752faaa1468eb1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  SyncPositionX: 1
+  SyncPositionY: 1
+  SyncPositionZ: 1
+  SyncRotAngleX: 1
+  SyncRotAngleY: 1
+  SyncRotAngleZ: 1
+  SyncScaleX: 0
+  SyncScaleY: 0
+  SyncScaleZ: 0
+  PositionThreshold: 0.001
+  RotAngleThreshold: 0.01
+  ScaleThreshold: 0.01
+  UseQuaternionSynchronization: 0
+  UseQuaternionCompression: 0
+  UseHalfFloatPrecision: 0
+  InLocalSpace: 0
+  Interpolate: 1
+  SlerpPosition: 0
 --- !u!1 &7885212645624099065
 GameObject:
   m_ObjectHideFlags: 0
@@ -422,5 +455,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   lightRoot: {fileID: 9121238168946341850}
+  lightObject: {fileID: 0}
   speed: 15
-  playerIsMoving: 0

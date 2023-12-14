@@ -21,6 +21,7 @@ TagManager:
   - UIManager
   - ObjectiveManager
   - Settings
+  - Reticle
   layers:
   - Default
   - TransparentFX

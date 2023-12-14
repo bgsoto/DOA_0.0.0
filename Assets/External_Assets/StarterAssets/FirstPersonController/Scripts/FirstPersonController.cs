@@ -3,6 +3,8 @@ using UnityEngine;
 using DG.Tweening;
 using UnityEngine.InputSystem.XR;
 using UnityEditor;
+using Unity.Netcode;
+using Unity.VisualScripting;
 #if ENABLE_INPUT_SYSTEM
 using UnityEngine.InputSystem;
 #endif
@@ -11,9 +13,9 @@ namespace StarterAssets
 {
     [RequireComponent(typeof(CharacterController))]
 #if ENABLE_INPUT_SYSTEM
-    [RequireComponent(typeof(PlayerInput))]
+   // [RequireComponent(typeof(PlayerInput))]
 #endif
-    public class FirstPersonController : MonoBehaviour
+    public class FirstPersonController : NetworkBehaviour
     {
         [Header("Player")]
         [Tooltip("Move speed of the character in m/s")]
@@ -95,7 +97,7 @@ namespace StarterAssets
         private float _jumpTimeoutDelta;
         private float _fallTimeoutDelta;
 
-        public CinemachineVirtualCamera vcam;
+        private CinemachineVirtualCamera vcam;
 
         //footsteps
         public float footstepTimer = 0;
@@ -165,17 +167,15 @@ namespace StarterAssets
             {
                 _mainCamera = GameObject.FindGameObjectWithTag("MainCamera");
             }
-            // set default cam y pos
-            _offset = vcam.GetComponent<CinemachineCameraOffset>();
             RotationSpeed = PlayerPrefs.GetFloat("sensitivity", 1);
         }
 
         private void Start()
         {
             _controller = GetComponent<CharacterController>();
-            _input = GetComponent<StarterAssetsInputs>();
+            _input = FindFirstObjectByType<StarterAssetsInputs>();
 #if ENABLE_INPUT_SYSTEM
-            _playerInput = GetComponent<PlayerInput>();
+            _playerInput = FindFirstObjectByType<PlayerInput>();
 #else
 			Debug.LogError( "Starter Assets package is missing dependencies. Please use Tools/Starter Assets/Reinstall Dependencies to fix it");
 #endif
@@ -183,10 +183,18 @@ namespace StarterAssets
             // reset our timeouts on start
             _jumpTimeoutDelta = JumpTimeout;
             _fallTimeoutDelta = FallTimeout;
+            //vcam
+            vcam = GetComponentInChildren<CinemachineVirtualCamera>();
+            if (!IsOwner) { vcam.Priority = -10; }
+            vcam.transform.SetParent(null);
+            vcam.m_Follow = CinemachineCameraTarget.transform;
+            // set default cam y pos
+            _offset = vcam.GetComponent<CinemachineCameraOffset>();
         }
 
         private void Update()
         {
+            if (!IsOwner) return;
             if (!inMenu)
             {
                 JumpAndGravity();
@@ -202,6 +210,7 @@ namespace StarterAssets
 
         private void LateUpdate()
         {
+            if (!IsOwner) return;
             if (!inMenu)
             {
                 CameraRotation();
@@ -450,6 +459,12 @@ namespace StarterAssets
             {
                 GroundType = hit.transform.tag;
             }
-        } actually not necessary for this game, spaceships are like 100% metal lol*/
+        } actually not necessary for this game, spaceships are like 100% metal lol
+
+        [ServerRpc]
+        private void TestServerRPC()
+        {
+
+        }*/
     }
 }
