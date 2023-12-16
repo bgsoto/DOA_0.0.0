@@ -160,8 +160,4 @@ private void Interact()
         onArtifactCollected?.Invoke(false, 40); 
     }
 
-    public void SetItemHolder(ItemHolder itemholder)
-    {
-        itemHolder = itemholder;
-    }
 }

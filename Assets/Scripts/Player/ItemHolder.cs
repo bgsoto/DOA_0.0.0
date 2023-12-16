@@ -27,13 +27,6 @@ public class ItemHolder : NetworkBehaviour
         IntelMonitorManger.inIntelMenu -= DisableInteract;
         ShowKeypad.DisableControls -= DisableInteract;
     }
-     public override void OnNetworkObjectParentChanged(NetworkObject parentNetworkObject)
-    {
-        if(parentNetworkObject = null) return;
-        transform.parent.GetComponent<PlayerInteraction>().SetItemHolder(this);
-        itemDropTransform = transform.parent.Find("DropPoint");
-        inventoryAudioSource = itemDropTransform.Find("InventoryAudioSource").GetComponent<AudioSource>();
-    }
     private void Update()
     {
         if (!IsOwner) return;

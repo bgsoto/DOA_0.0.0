@@ -123,7 +123,6 @@ public class KeypadDisplayManager : MonoBehaviour
         displayIsFull = false;
         displayIsEmpty = true;
         Debug.Log("INCORRECT CODE");
-        
     }
 
     public void ExitKeypad()

@@ -6,7 +6,7 @@ using Unity.Netcode;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class ObjectiveManager : NetworkBehaviour
+public class ObjectiveManager : MonoBehaviour
 {
     [Header("Relationships")]
     [SerializeField] private GameObject objectiveCanvas;
@@ -30,9 +30,13 @@ public class ObjectiveManager : NetworkBehaviour
     [SerializeField] private AudioClip objectiveUpdatedClip;
 
     public static Action<string> onGeneratedCode;
+    public static Action<int> obj1;
+    public static Action<int> obj2;
+    public static Action<string, string> appendedText;
+    public static Action<string, string> appendedText2;
 
-    public NetworkVariable<int> questState = new NetworkVariable<int>(-1,NetworkVariableReadPermission.Everyone,NetworkVariableWritePermission.Owner);
-    public NetworkVariable<int> questState2 = new NetworkVariable<int>(-1, NetworkVariableReadPermission.Everyone, NetworkVariableWritePermission.Owner);
+    public int questState = -1;
+    public int questState2 = -1;
     //private bool isFaded = false;
 
     private bool areAllKeysCollected = false;
@@ -40,23 +44,6 @@ public class ObjectiveManager : NetworkBehaviour
     public string rigCode;
 
     [SerializeField] private List<ObjectiveInfo> objectiveData;
-
-    public override void OnNetworkSpawn()
-    {
-        questState.OnValueChanged += (int previousValue, int newValue) =>
-        {
-            UpdateObjective(false, newValue);
-        };
-        questState2.OnValueChanged += (int previousValue, int newValue) =>
-        {
-            UpdateObjective(true, newValue);
-        };
-    }
-
-    public override void OnNetworkDespawn()
-    {
-
-    }
 
     private void Start()
     {
@@ -112,7 +99,7 @@ public class ObjectiveManager : NetworkBehaviour
 
     public void UpdateObjective(bool objective2, int questStage)
     {
-        if (objective2 ? questStage > questState2.Value : questStage > questState.Value) //checks if objective 2 is true, if true then checks if questStage is greater than questState2. if obj2 not true, checks questStage1
+        if (objective2 ? questStage > questState2 : questStage > questState) //checks if objective 2 is true, if true then checks if questStage is greater than questState2. if obj2 not true, checks questStage1
         {
             objectiveNotif.SetActive(true);
             foreach (var obj in objectiveData)
@@ -122,15 +109,17 @@ public class ObjectiveManager : NetworkBehaviour
                     //sets objectives according to quest state
                     if (objective2)
                     {
-                        currentObjective2 = obj.objectiveDescription; questState2.Value = questStage;
+                        currentObjective2 = obj.objectiveDescription; questState2 = questStage;
                         activeClue2 = obj.clueDescription;
                         UpdateText();
+                        obj2?.Invoke(questState2);
                     }
                     else
                     {
-                        currentObjective = obj.objectiveDescription; questState.Value = questStage;
+                        currentObjective = obj.objectiveDescription; questState = questStage;
                         activeClue = obj.clueDescription;
                         UpdateText();
+                        obj1?.Invoke(questState);
                     }
                     NoteGatheredNotif();
                     objectiveUpdatedSound.PlayOneShot(objectiveUpdatedClip);
@@ -147,30 +136,34 @@ public class ObjectiveManager : NetworkBehaviour
         clueText2.text = activeClue2;
     }
 
-    private void AppendText(int objectiveToAppend, string textToAppend)
+    public void AppendText(int objectiveToAppend, string textToAppend)
     {
         if (objectiveToAppend == 1)
         {
             currentObjective += textToAppend; //if objectiveToAppend is 1, add the string and return
-            //Debug.Log(currentObjective);
+                                              //Debug.Log(currentObjective);
+            appendedText?.Invoke("Objective", textToAppend);
             UpdateText();
             return;
         }//else do that for objective2
         currentObjective2 += textToAppend;
+        appendedText2?.Invoke("Objective", textToAppend);
         UpdateText();
         //Debug.Log(currentObjective2);
     }
 
-    private void AppendClue(int objectiveToAppend, string textToAppend)
+    public void AppendClue(int objectiveToAppend, string textToAppend)
     {
         if (objectiveToAppend == 1)
         {
             activeClue += textToAppend; //if objectiveToAppend is 1, add the string and return
-            //Debug.Log(activeClue);
+                                        //Debug.Log(activeClue);
+            appendedText?.Invoke("Clue", textToAppend);
             UpdateText();
             return;
         }//else do that for objective2
         activeClue2 += textToAppend;
+        appendedText2?.Invoke("Clue", textToAppend);
         UpdateText();
         //Debug.Log(currentObjective2);
     }

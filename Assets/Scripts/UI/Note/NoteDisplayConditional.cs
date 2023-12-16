@@ -34,7 +34,7 @@ public class NoteDisplayConditional : MonoBehaviour, IInteractable
 
     public void Interact()
     {
-        currentObjectiveStage = objective2 ? objectiveManager.questState2.Value : objectiveManager.questState.Value;
+        currentObjectiveStage = objective2 ? objectiveManager.questState2 : objectiveManager.questState;
         if (!noteCollected)
         {
             if (GetComponent<Outlinable>() != null)

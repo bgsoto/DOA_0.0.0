@@ -1,11 +1,6 @@
 ﻿using Cinemachine;
 using UnityEngine;
-using DG.Tweening;
-using UnityEngine.InputSystem.XR;
-using UnityEditor;
 using Unity.Netcode;
-using Unity.VisualScripting;
-using static UnityEngine.CullingGroup;
 #if ENABLE_INPUT_SYSTEM
 using UnityEngine.InputSystem;
 #endif
@@ -14,7 +9,7 @@ namespace StarterAssets
 {
     [RequireComponent(typeof(CharacterController))]
 #if ENABLE_INPUT_SYSTEM
-   // [RequireComponent(typeof(PlayerInput))]
+    // [RequireComponent(typeof(PlayerInput))]
 #endif
     public class FirstPersonController : NetworkBehaviour
     {
@@ -222,8 +217,11 @@ namespace StarterAssets
         }
 
         //checks if in menu, if true, no move is processed.
-        private void PlayerInput(bool value) { inMenu = value; 
-            RotationSpeed = PlayerPrefs.GetFloat("sensitivity", 1); }//updates rotation speed on call too, since pausing the menu already calls this value.
+        private void PlayerInput(bool value)
+        {
+            inMenu = value;
+            RotationSpeed = PlayerPrefs.GetFloat("sensitivity", 1);
+        }//updates rotation speed on call too, since pausing the menu already calls this value.
 
         private void GroundedCheck()
         {
@@ -369,20 +367,20 @@ namespace StarterAssets
         private void SprintFOV()
         {
             vcam.m_Lens.FieldOfView = _input.sprint ? Mathf.Lerp(vcam.m_Lens.FieldOfView, 75, 10 * Time.deltaTime) : vcam.m_Lens.FieldOfView = Mathf.Lerp(vcam.m_Lens.FieldOfView, 60, 10 * Time.deltaTime);
-           /* if (_input.sprint)
-            {
-                if (vcam.m_Lens.FieldOfView < 50)
-                {
-                    vcam.m_Lens.FieldOfView = Mathf.Lerp(vcam.m_Lens.FieldOfView, 50, 10 * Time.deltaTime);
-                }
-            }
-            else
-            {
-                if (vcam.m_Lens.FieldOfView > 40)
-                {
-                    vcam.m_Lens.FieldOfView = Mathf.Lerp(vcam.m_Lens.FieldOfView, 40, 10 * Time.deltaTime);
-                }
-            }*/
+            /* if (_input.sprint)
+             {
+                 if (vcam.m_Lens.FieldOfView < 50)
+                 {
+                     vcam.m_Lens.FieldOfView = Mathf.Lerp(vcam.m_Lens.FieldOfView, 50, 10 * Time.deltaTime);
+                 }
+             }
+             else
+             {
+                 if (vcam.m_Lens.FieldOfView > 40)
+                 {
+                     vcam.m_Lens.FieldOfView = Mathf.Lerp(vcam.m_Lens.FieldOfView, 40, 10 * Time.deltaTime);
+                 }
+             }*/
         }
 
         private void Crouch()
@@ -422,7 +420,7 @@ namespace StarterAssets
             {
                 //if (GroundType == "Metal")
                 //{
-                    source.clip = metalSounds[Random.Range(0, metalSounds.Length)]; //plays footsteps with randomized pitch and volume when footstep timer is 0. timer updated every frame if moving.
+                source.clip = metalSounds[Random.Range(0, metalSounds.Length)]; //plays footsteps with randomized pitch and volume when footstep timer is 0. timer updated every frame if moving.
                 //}
                 source.volume = Random.Range(baseVolume - volumeChangeMultiplier, baseVolume);
                 source.pitch = Random.Range(1 - pitchChangeMultiplier, 1 + pitchChangeMultiplier);

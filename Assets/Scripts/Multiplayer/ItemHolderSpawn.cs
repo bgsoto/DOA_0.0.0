@@ -12,7 +12,7 @@ public class ItemHolderSpawn : NetworkBehaviour
     public override void OnNetworkSpawn()
     {
         // Only the server spawns, clients will disable this component on their side
-        enabled = IsClient;
+        enabled = IsServer;
         if (!enabled || PrefabToSpawn == null)
         {
             return;
