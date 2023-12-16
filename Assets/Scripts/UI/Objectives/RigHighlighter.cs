@@ -24,7 +24,7 @@ public class RigHighlighter : MonoBehaviour
 
     private void Update()
     {
-        if (manager.questState < 40 || manager.questState2 < 40)
+        if (manager.questState.Value < 40 || manager.questState2.Value < 40)
         {
             return;
         }

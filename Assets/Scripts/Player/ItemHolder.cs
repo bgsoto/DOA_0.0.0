@@ -27,11 +27,18 @@ public class ItemHolder : NetworkBehaviour
         IntelMonitorManger.inIntelMenu -= DisableInteract;
         ShowKeypad.DisableControls -= DisableInteract;
     }
+     public override void OnNetworkObjectParentChanged(NetworkObject parentNetworkObject)
+    {
+        if(parentNetworkObject = null) return;
+        transform.parent.GetComponent<PlayerInteraction>().SetItemHolder(this);
+        itemDropTransform = transform.parent.Find("DropPoint");
+        inventoryAudioSource = itemDropTransform.Find("InventoryAudioSource").GetComponent<AudioSource>();
+    }
     private void Update()
     {
         if (!IsOwner) return;
         gameObject.transform.rotation = Camera.main.transform.rotation;
-        if (inMenu) { return; }
+        if (inMenu)  return; 
         else
         {
             if (Input.GetAxis("Mouse ScrollWheel") < 0)
@@ -73,6 +80,8 @@ public class ItemHolder : NetworkBehaviour
     {
         if (!IsOwner) return;
         GameObject newItem = Instantiate(itemData.itemPrefab, transform);
+        newItem.GetComponent<NetworkObject>().Spawn(true);
+        newItem.GetComponent<NetworkObject>().TrySetParent(transform);
         newItem.gameObject.name = itemData.name;
         newItem.transform.localPosition = itemData.equippedLocalPosition;
         newItem.transform.localRotation = Quaternion.Euler(itemData.equippedLocalRotation);
@@ -93,7 +102,8 @@ public class ItemHolder : NetworkBehaviour
             {
                 if (itemObject.GetComponentInChildren<IInteractable>().ItemData.itemID == itemData.itemID)
                 {
-                    itemObject.transform.parent = null;
+                    itemObject.GetComponent<NetworkObject>().TryRemoveParent();
+                    //itemObject.transform.parent = null;
                     itemList.Remove(itemObject);
                     return;
                 }

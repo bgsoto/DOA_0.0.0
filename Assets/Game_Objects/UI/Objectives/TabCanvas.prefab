@@ -12,7 +12,8 @@ GameObject:
   - component: {fileID: 377406061953869355}
   - component: {fileID: 6875864752150487697}
   - component: {fileID: 2661481728113470832}
-  - component: {fileID: 9061735161199567254}
+  - component: {fileID: 5691180202799484771}
+  - component: {fileID: 1453013254184761757}
   - component: {fileID: 8457618004269100804}
   - component: {fileID: 6271129499929985553}
   m_Layer: 5
@@ -40,7 +41,7 @@ RectTransform:
   - {fileID: 1168156224506499302}
   - {fileID: 6804498670176983323}
   m_Father: {fileID: 0}
-  m_RootOrder: 0
+  m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -110,7 +111,27 @@ MonoBehaviour:
   m_BlockingMask:
     serializedVersion: 2
     m_Bits: 4294967295
---- !u!114 &9061735161199567254
+--- !u!114 &5691180202799484771
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 501027419562345986}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d5a57f767e5e46a458fc5d3c628d0cbb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  GlobalObjectIdHash: 3156093921
+  AlwaysReplicateAsRoot: 0
+  SynchronizeTransform: 1
+  ActiveSceneSynchronization: 0
+  SceneMigrationSynchronization: 1
+  SpawnWithObservers: 1
+  DontDestroyWithOwner: 0
+  AutoObjectParentSync: 1
+--- !u!114 &1453013254184761757
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -136,8 +157,10 @@ MonoBehaviour:
   objectiveNotif: {fileID: 1021915276567130269}
   objectiveUpdatedSound: {fileID: 6271129499929985553}
   objectiveUpdatedClip: {fileID: 8300000, guid: 9bba835b52519184282a295e02995ecc, type: 3}
-  questState: -1
-  questState2: -1
+  questState:
+    m_InternalValue: -1
+  questState2:
+    m_InternalValue: -1
   rigCode: 
   objectiveData:
   - {fileID: 11400000, guid: 2efe5df0a8672624a984a5aca0856600, type: 2}

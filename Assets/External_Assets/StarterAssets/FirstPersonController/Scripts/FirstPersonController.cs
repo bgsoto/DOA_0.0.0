@@ -5,6 +5,7 @@ using UnityEngine.InputSystem.XR;
 using UnityEditor;
 using Unity.Netcode;
 using Unity.VisualScripting;
+using static UnityEngine.CullingGroup;
 #if ENABLE_INPUT_SYSTEM
 using UnityEngine.InputSystem;
 #endif

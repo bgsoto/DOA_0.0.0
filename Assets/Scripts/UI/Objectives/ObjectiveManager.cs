@@ -2,10 +2,11 @@ using DG.Tweening;
 using System;
 using System.Collections.Generic;
 using TMPro;
+using Unity.Netcode;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class ObjectiveManager : MonoBehaviour
+public class ObjectiveManager : NetworkBehaviour
 {
     [Header("Relationships")]
     [SerializeField] private GameObject objectiveCanvas;
@@ -30,8 +31,8 @@ public class ObjectiveManager : MonoBehaviour
 
     public static Action<string> onGeneratedCode;
 
-    public int questState = -1;
-    public int questState2 = -1;
+    public NetworkVariable<int> questState = new NetworkVariable<int>(-1,NetworkVariableReadPermission.Everyone,NetworkVariableWritePermission.Owner);
+    public NetworkVariable<int> questState2 = new NetworkVariable<int>(-1, NetworkVariableReadPermission.Everyone, NetworkVariableWritePermission.Owner);
     //private bool isFaded = false;
 
     private bool areAllKeysCollected = false;
@@ -40,11 +41,28 @@ public class ObjectiveManager : MonoBehaviour
 
     [SerializeField] private List<ObjectiveInfo> objectiveData;
 
+    public override void OnNetworkSpawn()
+    {
+        questState.OnValueChanged += (int previousValue, int newValue) =>
+        {
+            UpdateObjective(false, newValue);
+        };
+        questState2.OnValueChanged += (int previousValue, int newValue) =>
+        {
+            UpdateObjective(true, newValue);
+        };
+    }
+
+    public override void OnNetworkDespawn()
+    {
+
+    }
+
     private void Start()
     {
         rigCode = GenerateCode(rigCode);
         onGeneratedCode?.Invoke(rigCode);
-        
+
         Debug.Log("Invoked onGeneratedCode event with code: " + rigCode);
 
         //set objective and clue text to defaults
@@ -85,7 +103,7 @@ public class ObjectiveManager : MonoBehaviour
             objectiveNotif.SetActive(false);
             //UpdateText();
         }
-       else if (Input.GetKeyUp(KeyCode.Tab))
+        else if (Input.GetKeyUp(KeyCode.Tab))
         {
             objectiveCanvas.GetComponent<CanvasGroup>().DOFade(0, 1f);
             hamburgerIcon.GetComponent<CanvasGroup>().DOFade(1, 1f);
@@ -94,7 +112,7 @@ public class ObjectiveManager : MonoBehaviour
 
     public void UpdateObjective(bool objective2, int questStage)
     {
-        if (objective2 ? questStage > questState2 : questStage > questState) //checks if objective 2 is true, if true then checks if questStage is greater than questState2. if obj2 not true, checks questStage1
+        if (objective2 ? questStage > questState2.Value : questStage > questState.Value) //checks if objective 2 is true, if true then checks if questStage is greater than questState2. if obj2 not true, checks questStage1
         {
             objectiveNotif.SetActive(true);
             foreach (var obj in objectiveData)
@@ -104,13 +122,13 @@ public class ObjectiveManager : MonoBehaviour
                     //sets objectives according to quest state
                     if (objective2)
                     {
-                        currentObjective2 = obj.objectiveDescription; questState2 = questStage;
+                        currentObjective2 = obj.objectiveDescription; questState2.Value = questStage;
                         activeClue2 = obj.clueDescription;
                         UpdateText();
                     }
                     else
                     {
-                        currentObjective = obj.objectiveDescription; questState = questStage;
+                        currentObjective = obj.objectiveDescription; questState.Value = questStage;
                         activeClue = obj.clueDescription;
                         UpdateText();
                     }

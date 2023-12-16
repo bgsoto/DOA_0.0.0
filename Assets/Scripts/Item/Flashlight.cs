@@ -1,11 +1,6 @@
-using Cinemachine;
-using System.Collections;
-using System.Collections.Generic;
 using Unity.Netcode;
-using Unity.VisualScripting;
+using UnityEditorInternal.Profiling.Memory.Experimental;
 using UnityEngine;
-using UnityEngine.Experimental.GlobalIllumination;
-using UnityEngine.UIElements;
 
 public class Flashlight : NetworkBehaviour, IInteractable
 {
@@ -27,10 +22,13 @@ public class Flashlight : NetworkBehaviour, IInteractable
     {
         source = GetComponent<AudioSource>();
     }
-    public void Interact() {
+    public void Interact()
+    {
         lens.DisableKeyword("_EMISSION");
+        transform.parent.gameObject.GetComponent<NetworkObject>().Despawn(true);
         Destroy(spot);
-        Destroy(transform.parent.gameObject); }
+        Destroy(transform.parent.gameObject);
+    }
 
     public void Use()
     {

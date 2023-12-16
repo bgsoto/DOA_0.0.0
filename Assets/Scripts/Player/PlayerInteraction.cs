@@ -159,4 +159,9 @@ private void Interact()
         /* Subscription: ObjectiveManager */
         onArtifactCollected?.Invoke(false, 40); 
     }
+
+    public void SetItemHolder(ItemHolder itemholder)
+    {
+        itemHolder = itemholder;
+    }
 }
