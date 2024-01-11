@@ -49,12 +49,7 @@ public class Pipe : MonoBehaviour {
                 if (Application.isPlaying) {
                     Destroy(go);
                 } else {
-                    try {
-                        DestroyImmediate(go);
-                    }
-                    catch {
-                        // Unity 2018.3 Bug. 
-                    }
+                    DestroyImmediate(go);
                 }
             }
         }

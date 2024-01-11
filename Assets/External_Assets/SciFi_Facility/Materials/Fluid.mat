@@ -2,26 +2,20 @@
 %TAG !u! tag:unity3d.com,2011:
 --- !u!21 &2100000
 Material:
-  serializedVersion: 8
+  serializedVersion: 6
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: Fluid
-  m_Shader: {fileID: 4800000, guid: 9130aa04737fe0649adf7112e08c7d71, type: 3}
-  m_Parent: {fileID: 0}
-  m_ModifiedSerializedProperties: 0
-  m_ValidKeywords: []
-  m_InvalidKeywords:
-  - _ALPHABLEND_ON
-  - _NORMALMAP
-  m_LightmapFlags: 1
+  m_Shader: {fileID: 4800000, guid: 27831c22fce5eb24db231f89a4f55949, type: 3}
+  m_ShaderKeywords: _ALPHABLEND_ON _NORMALMAP
+  m_LightmapFlags: 2
   m_EnableInstancingVariants: 0
   m_DoubleSidedGI: 0
   m_CustomRenderQueue: -1
   stringTagMap: {}
   disabledShaderPasses: []
-  m_LockedProperties: 
   m_SavedProperties:
     serializedVersion: 3
     m_TexEnvs:
@@ -81,15 +75,15 @@ Material:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
-    m_Ints: []
     m_Floats:
-    - _BaseEmission: 0.07
+    - _AlphaCutoff: 0.5
+    - _BaseEmission: 0.15
     - _BumpScale: 1
     - _ChromaticAberration: 0.019
     - _Cutoff: 0.5
     - _DetailNormalMapScale: 1
     - _DstBlend: 10
-    - _EmissionStrength: 10
+    - _EmissionStrength: 50
     - _Float0: 0.58
     - _GlossMapScale: 1
     - _Glossiness: 0.908
@@ -120,4 +114,3 @@ Material:
     - _Color: {r: 0.5541418, g: 0.63235295, b: 0.53939706, a: 0.347}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
     - _TintColor: {r: 0.5, g: 0.5, b: 0.5, a: 0.5}
-  m_BuildTextureStacks: []

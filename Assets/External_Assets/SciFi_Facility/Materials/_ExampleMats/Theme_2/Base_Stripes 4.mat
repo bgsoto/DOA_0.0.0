@@ -4,10 +4,11 @@
 Material:
   serializedVersion: 6
   m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
   m_Name: Base_Stripes 4
-  m_Shader: {fileID: 4800000, guid: b0c61295e3038714ca08a4a08cbe11b5, type: 3}
+  m_Shader: {fileID: 4800000, guid: bdd6b61cd61b659479fefc0f86a203ef, type: 3}
   m_ShaderKeywords: _ALPHATEST_ON
   m_LightmapFlags: 4
   m_EnableInstancingVariants: 0
@@ -72,6 +73,7 @@ Material:
         m_Offset: {x: 0, y: 0}
     m_Floats:
     - PixelSnap: 0
+    - _AlphaCutoff: 0.5
     - _BumpScale: 1
     - _Cutoff: 0.9
     - _DetailNormalMapScale: 1
