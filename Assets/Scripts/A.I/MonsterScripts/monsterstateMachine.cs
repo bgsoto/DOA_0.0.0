@@ -33,6 +33,7 @@ public class MonsterStateMachine : MonoBehaviour
         Stalk,
         Chase,
         Kill,
+        Investigate,
     }
 
     private Vector3 targetDestination;
