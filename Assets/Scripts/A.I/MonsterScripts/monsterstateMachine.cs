@@ -22,9 +22,10 @@ public class MonsterStateMachine : MonoBehaviour
     [SerializeField] public float coneAngle = 45f;
     [SerializeField] public float maxDetectDistance = 10f;
     [SerializeField] private bool playerDetected;
+    [SerializeField] private bool playerWasHeard;
     [SerializeField] private float Speed;
 
-    [SerializeField] public static Action<int> StateChanged; //patrol 0, hunt 1, stalk 2, chase 3, kill 4
+    [SerializeField] public static Action<int> StateChanged; //patrol 0, hunt 1, stalk 2, chase 3, kill 4, InvestigateSound 5
 
     public enum AnomalyState
     {
@@ -33,7 +34,7 @@ public class MonsterStateMachine : MonoBehaviour
         Stalk,
         Chase,
         Kill,
-        Investigate,
+        InvestigateSound,
     }
 
     private Vector3 targetDestination;
@@ -74,6 +75,10 @@ public class MonsterStateMachine : MonoBehaviour
                     case AnomalyState.Kill:
                         Kill();
                         break;
+                    case AnomalyState.InvestigateSound:
+                        InvestigateSound();
+                        agent.speed = 6;
+                        break;
                 }
 
                 break;
@@ -104,6 +109,17 @@ public class MonsterStateMachine : MonoBehaviour
         {
             director.IsAnomalyMoving = false;
         }
+
+        if (playerWasHeard)
+        {
+            Debug.Log("Switching from patrol to Investigate sound");
+            playerWasHeard = false;
+            StateChanged?.Invoke(5);
+            currentState = AnomalyState.InvestigateSound;
+            //playerWasHeard = false;
+        }
+        
+
     }
 
     /* Only during Hunt State (Director) <Look at Patrol comment> */
@@ -153,7 +169,7 @@ public class MonsterStateMachine : MonoBehaviour
         if (Vector3.Distance(transform.position, director.PlayerPosition) < maxDetectDistance)
         {
             Speed = 7f;
-            Debug.Log("IN");
+           // Debug.Log("IN");
             agent.SetDestination(director.PlayerPosition);
 
             if (Vector3.Distance(transform.position, director.PlayerPosition) < maxKillRange)
@@ -164,13 +180,44 @@ public class MonsterStateMachine : MonoBehaviour
         }
         else
         {
-            Debug.Log("OUT");
+           // Debug.Log("OUT");
             director.HuntNodesQueue.Clear();
             director.HuntNodesQueue.Enqueue(director.PlayerPosition);
             director.IsAnomalyMoving = false;
             StateChanged?.Invoke(2);
             currentState = AnomalyState.Stalk;
         }
+    }
+
+    void InvestigateSound()
+    {
+        Debug.Log("state succesfully switched to investigate sound");
+        playerWasHeard = true;
+
+        if (playerWasHeard)
+        {
+            Debug.Log("state succesfully switched to investigate sound");
+            director.HuntNodesQueue.Clear();
+            Debug.Log("Queue cleared");
+            director.HuntNodesQueue.Enqueue(director.PlayerPosition);
+            Debug.Log("player position added first in queue");
+        }
+        
+
+        if (playerDetected)
+        {
+            director.CurrentDirectorState = AnomalyDirector.DirectorState.Hunt;
+            StateChanged?.Invoke(3);
+            currentState = AnomalyState.Chase;
+            director.IsAnomalyMoving = true;
+        }
+        else if (Vector3.Distance(transform.position, targetDestination) < 2)
+        {
+            director.IsAnomalyMoving = false;
+        }
+       // playerWasHeard = false;
+
+
     }
 
     /* Reset the scene after a short delay (adjust the delay time as needed) */
@@ -193,6 +240,29 @@ public class MonsterStateMachine : MonoBehaviour
     {
         get { return targetDestination; }
         set { targetDestination = value; }
+    }
+
+    private void OnEnable()
+    {
+        Sound.onPlayerHeard += playerHeard;
+        Debug.Log("subscribed to event");
+    }
+
+    private void OnDisable()
+    {
+        Sound.onPlayerHeard -= playerHeard;
+      Debug.Log("unsubscribed from event");
+    }
+
+    private void playerHeard()
+    {
+        if (currentState == AnomalyState.Patrol || currentState == AnomalyState.Stalk)
+        {
+           // currentState = AnomalyState.investigateSound; StateChanged?.Invoke(5);
+            Debug.Log("Player heard function played");
+            playerWasHeard = true;
+
+        }
     }
 }
 
