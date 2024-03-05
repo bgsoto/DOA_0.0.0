@@ -22,7 +22,7 @@ public class MonsterStateMachine : MonoBehaviour
     [SerializeField] public float coneAngle = 45f;
     [SerializeField] public float maxDetectDistance = 10f;
     [SerializeField] private bool playerDetected;
-    [SerializeField] private bool playerWasHeard;
+    [SerializeField] public bool playerWasHeard;
     [SerializeField] private float Speed;
 
     [SerializeField] public static Action<int> StateChanged; //patrol 0, hunt 1, stalk 2, chase 3, kill 4, InvestigateSound 5
@@ -50,8 +50,8 @@ public class MonsterStateMachine : MonoBehaviour
 
     void Update()
     {
-        CheckForPlayer();
 
+        CheckForPlayer();
         switch(director.CurrentDirectorState)
         {
             case AnomalyDirector.DirectorState.Search:
@@ -164,7 +164,7 @@ public class MonsterStateMachine : MonoBehaviour
 
             if (Vector3.Distance(transform.position, director.PlayerPosition) < maxKillRange)
             {
-                StateChanged?.Invoke(4);
+               // StateChanged?.Invoke(4);
                 currentState = AnomalyState.Kill;
             }
         }
@@ -220,8 +220,7 @@ public class MonsterStateMachine : MonoBehaviour
         
        Debug.Log("Player heard function played");
        playerWasHeard = true;
-       director.HuntNodesQueue.Clear();
-       director.HuntNodesQueue.Enqueue(director.PlayerPosition);
+       
         
     }
 }

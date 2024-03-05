@@ -73,7 +73,15 @@ public class AnomalyDirector : MonoBehaviour
             int nodeIndex = UnityEngine.Random.Range(0, patrolNodesList.Count);
             anomaly.TargetDestination = patrolNodesList[nodeIndex].position;
             isAnomalyMoving = true;
+           
         }
+
+        if (anomaly.playerWasHeard)
+        {
+            anomaly.TargetDestination = playerTransform.position;
+            anomaly.playerWasHeard = false;
+        }
+
     }
 
     /*
