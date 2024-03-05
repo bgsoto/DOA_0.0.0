@@ -33,8 +33,8 @@ public class MonsterStateMachine : MonoBehaviour
         Hunt,
         Stalk,
         Chase,
-        Kill,
-        InvestigateSound,
+        Kill
+        
     }
 
     private Vector3 targetDestination;
@@ -75,10 +75,7 @@ public class MonsterStateMachine : MonoBehaviour
                     case AnomalyState.Kill:
                         Kill();
                         break;
-                    case AnomalyState.InvestigateSound:
-                        InvestigateSound();
-                        agent.speed = 6;
-                        break;
+                    
                 }
 
                 break;
@@ -110,14 +107,7 @@ public class MonsterStateMachine : MonoBehaviour
             director.IsAnomalyMoving = false;
         }
 
-        if (playerWasHeard)
-        {
-            Debug.Log("Switching from patrol to Investigate sound");
-            playerWasHeard = false;
-            StateChanged?.Invoke(5);
-            currentState = AnomalyState.InvestigateSound;
-            //playerWasHeard = false;
-        }
+        
         
 
     }
@@ -189,36 +179,7 @@ public class MonsterStateMachine : MonoBehaviour
         }
     }
 
-    void InvestigateSound()
-    {
-        Debug.Log("state succesfully switched to investigate sound");
-        playerWasHeard = true;
-
-        if (playerWasHeard)
-        {
-            Debug.Log("state succesfully switched to investigate sound");
-            director.HuntNodesQueue.Clear();
-            Debug.Log("Queue cleared");
-            director.HuntNodesQueue.Enqueue(director.PlayerPosition);
-            Debug.Log("player position added first in queue");
-        }
-        
-
-        if (playerDetected)
-        {
-            director.CurrentDirectorState = AnomalyDirector.DirectorState.Hunt;
-            StateChanged?.Invoke(3);
-            currentState = AnomalyState.Chase;
-            director.IsAnomalyMoving = true;
-        }
-        else if (Vector3.Distance(transform.position, targetDestination) < 2)
-        {
-            director.IsAnomalyMoving = false;
-        }
-       // playerWasHeard = false;
-
-
-    }
+    
 
     /* Reset the scene after a short delay (adjust the delay time as needed) */
     private void KillPlayer() {Invoke("ResetScene", 5f);}
@@ -251,18 +212,17 @@ public class MonsterStateMachine : MonoBehaviour
     private void OnDisable()
     {
         Sound.onPlayerHeard -= playerHeard;
-      Debug.Log("unsubscribed from event");
+        Debug.Log("unsubscribed from event");
     }
 
     private void playerHeard()
     {
-        if (currentState == AnomalyState.Patrol || currentState == AnomalyState.Stalk)
-        {
-           // currentState = AnomalyState.investigateSound; StateChanged?.Invoke(5);
-            Debug.Log("Player heard function played");
-            playerWasHeard = true;
-
-        }
+        
+       Debug.Log("Player heard function played");
+       playerWasHeard = true;
+       director.HuntNodesQueue.Clear();
+       director.HuntNodesQueue.Enqueue(director.PlayerPosition);
+        
     }
 }
 

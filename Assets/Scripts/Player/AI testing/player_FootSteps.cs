@@ -55,7 +55,7 @@ public class player_Footsteps : MonoBehaviour
             footStepSoundRadius = 2f;
             //Debug.Log("Your crouching sound decresed to 2");
        }
-       if (starterAssetsInputs.sprint == true)
+       if (starterAssetsInputs.sprint == true && starterAssetsInputs.move != Vector2.zero)
         {
             footStepSoundRadius = 15f;
             //Debug.Log("your sprinting your sound is increased by 15");

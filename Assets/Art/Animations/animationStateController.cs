@@ -19,7 +19,7 @@ public class animationStateController : MonoBehaviour
             animator.SetBool("isWalking", false);
         }
 
-        if (Anamoly.currentState == MonsterStateMachine.AnomalyState.Chase || Anamoly.currentState == MonsterStateMachine.AnomalyState.InvestigateSound)
+        if (Anamoly.currentState == MonsterStateMachine.AnomalyState.Chase)
         {
             animator.SetBool("isRunning", true);
 
