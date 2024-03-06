@@ -22,9 +22,10 @@ public class MonsterStateMachine : MonoBehaviour
     [SerializeField] public float coneAngle = 45f;
     [SerializeField] public float maxDetectDistance = 10f;
     [SerializeField] private bool playerDetected;
+    [SerializeField] public bool playerWasHeard;
     [SerializeField] private float Speed;
 
-    [SerializeField] public static Action<int> StateChanged; //patrol 0, hunt 1, stalk 2, chase 3, kill 4
+    [SerializeField] public static Action<int> StateChanged; //patrol 0, hunt 1, stalk 2, chase 3, kill 4, InvestigateSound 5
 
     public enum AnomalyState
     {
@@ -32,7 +33,8 @@ public class MonsterStateMachine : MonoBehaviour
         Hunt,
         Stalk,
         Chase,
-        Kill,
+        Kill
+        
     }
 
     private Vector3 targetDestination;
@@ -48,8 +50,8 @@ public class MonsterStateMachine : MonoBehaviour
 
     void Update()
     {
-        CheckForPlayer();
 
+        CheckForPlayer();
         switch(director.CurrentDirectorState)
         {
             case AnomalyDirector.DirectorState.Search:
@@ -73,6 +75,7 @@ public class MonsterStateMachine : MonoBehaviour
                     case AnomalyState.Kill:
                         Kill();
                         break;
+                    
                 }
 
                 break;
@@ -103,6 +106,10 @@ public class MonsterStateMachine : MonoBehaviour
         {
             director.IsAnomalyMoving = false;
         }
+
+        
+        
+
     }
 
     /* Only during Hunt State (Director) <Look at Patrol comment> */
@@ -152,18 +159,18 @@ public class MonsterStateMachine : MonoBehaviour
         if (Vector3.Distance(transform.position, director.PlayerPosition) < maxDetectDistance)
         {
             Speed = 7f;
-            Debug.Log("IN");
+           // Debug.Log("IN");
             agent.SetDestination(director.PlayerPosition);
 
             if (Vector3.Distance(transform.position, director.PlayerPosition) < maxKillRange)
             {
-                StateChanged?.Invoke(4);
+               // StateChanged?.Invoke(4);
                 currentState = AnomalyState.Kill;
             }
         }
         else
         {
-            Debug.Log("OUT");
+           // Debug.Log("OUT");
             director.HuntNodesQueue.Clear();
             director.HuntNodesQueue.Enqueue(director.PlayerPosition);
             director.IsAnomalyMoving = false;
@@ -171,6 +178,8 @@ public class MonsterStateMachine : MonoBehaviour
             currentState = AnomalyState.Stalk;
         }
     }
+
+    
 
     /* Reset the scene after a short delay (adjust the delay time as needed) */
     private void KillPlayer() {Invoke("ResetScene", 5f);}
@@ -192,6 +201,27 @@ public class MonsterStateMachine : MonoBehaviour
     {
         get { return targetDestination; }
         set { targetDestination = value; }
+    }
+
+    private void OnEnable()
+    {
+        Sound.onPlayerHeard += playerHeard;
+        Debug.Log("subscribed to event");
+    }
+
+    private void OnDisable()
+    {
+        Sound.onPlayerHeard -= playerHeard;
+        Debug.Log("unsubscribed from event");
+    }
+
+    private void playerHeard()
+    {
+        
+       Debug.Log("Player heard function played");
+       playerWasHeard = true;
+       
+        
     }
 }
 

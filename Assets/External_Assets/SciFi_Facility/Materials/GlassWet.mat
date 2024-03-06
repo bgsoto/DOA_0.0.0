@@ -4,12 +4,13 @@
 Material:
   serializedVersion: 6
   m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
   m_Name: GlassWet
-  m_Shader: {fileID: 4800000, guid: b45fbe1c64f19af42ad6483af6157f02, type: 3}
+  m_Shader: {fileID: 4800000, guid: 05bf6ca5144ac1f408297c1c3a498af5, type: 3}
   m_ShaderKeywords: _ALPHABLEND_ON _NORMALMAP
-  m_LightmapFlags: 5
+  m_LightmapFlags: 2
   m_EnableInstancingVariants: 0
   m_DoubleSidedGI: 0
   m_CustomRenderQueue: -1
@@ -71,6 +72,7 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     m_Floats:
+    - _AlphaCutoff: 0.5
     - _BumpScale: 1
     - _ChromaticAberration: 0.01
     - _Cutoff: 0.5

@@ -37,5 +37,7 @@ public class animationStateController : MonoBehaviour
         {
             animator.SetBool("playerIsCaptured", false);
         }
+
+        
     }
 }

@@ -73,12 +73,20 @@ public class AnomalyDirector : MonoBehaviour
             int nodeIndex = UnityEngine.Random.Range(0, patrolNodesList.Count);
             anomaly.TargetDestination = patrolNodesList[nodeIndex].position;
             isAnomalyMoving = true;
+           
         }
+
+        if (anomaly.playerWasHeard)
+        {
+            anomaly.TargetDestination = playerTransform.position;
+            anomaly.playerWasHeard = false;
+        }
+
     }
 
     /*
      * During Hunt State, assigns the Anomaly's target position through a queue and 
-     * a list of transfroms. If the Anomaly is not moving, it checks if the queue is empty. If false,
+     * a list of transforms. If the Anomaly is not moving, it checks if the queue is empty. If false,
      * removes and returns the first element in the queue and assigns it. If true, assigns a random
      * transform's position like the Search function.
      * 

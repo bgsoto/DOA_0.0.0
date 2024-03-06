@@ -55,12 +55,12 @@ public class AnomalyDetection : MonoBehaviour
          */
         if (isDetected)
         {
-            Debug.Log("anomaly detected");
+            //Debug.Log("anomaly detected");
             float distance = Vector3.Distance(transform.position, targetObjectTransform.position);
 
             if (distance <= distanceToContain && isTrapOn)
             {
-                Debug.Log("anomaly banished");
+              //  Debug.Log("anomaly banished");
                 DataPersistenceManager.Instance.SaveGame();
                 Invoke("ResetScene", 2f);
                 isTrapOn = false;
