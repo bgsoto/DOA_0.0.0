@@ -36,14 +36,14 @@ public class Flashlight : MonoBehaviour, IInteractable
         isOn = !isOn;
         if (isOn)
         {
-            point.SetActive(true);
+           //point.SetActive(true);
             spot.SetActive(true);
             lens.EnableKeyword("_EMISSION");
             source.PlayOneShot(onSound);
         }
         else
         {
-            point.SetActive(false);
+            //point.SetActive(false);
             spot.SetActive(false);
             lens.DisableKeyword("_EMISSION");
             source.PlayOneShot(offSound);
