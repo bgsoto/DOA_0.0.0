@@ -17,4 +17,4 @@ MonoBehaviour:
   itemImage: {fileID: 0}
   itemPrefab: {fileID: 7515244837173000009, guid: 7f90a99e385b7394ca5a69cf89287c3b, type: 3}
   equippedLocalPosition: {x: 0.26, y: -0.083, z: 0.143}
-  equippedLocalRotation: {x: 288.46863, y: 339.07214, z: 0.000037731625}
+  equippedLocalRotation: {x: -154.4, y: 333.21, z: -262.2}

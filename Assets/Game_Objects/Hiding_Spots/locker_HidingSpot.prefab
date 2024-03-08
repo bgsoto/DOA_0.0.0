@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 171323491054231736}
   - component: {fileID: 6186317182087242382}
   - component: {fileID: 3344497614514528074}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Cube.216
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -347,7 +347,7 @@ GameObject:
   - component: {fileID: 5880379750676785244}
   - component: {fileID: 1021001359930307260}
   - component: {fileID: 6672589858067928267}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: locker_HidingSpot
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -408,6 +408,7 @@ MonoBehaviour:
   player: {fileID: 0}
   doorisOpen: 0
   animator: {fileID: 1021001359930307260}
+  actionText: 
 --- !u!1 &9071622930827890497
 GameObject:
   m_ObjectHideFlags: 0
