@@ -76,11 +76,7 @@ public class AnomalyDirector : MonoBehaviour
            
         }
 
-        if (anomaly.playerWasHeard)
-        {
-            anomaly.TargetDestination = playerTransform.position;
-            anomaly.playerWasHeard = false;
-        }
+        PinPointSound();    
 
     }
 
@@ -95,7 +91,7 @@ public class AnomalyDirector : MonoBehaviour
     private void Hunt()
     {
         PinPointPlayer();
-
+        PinPointSound();
         if (!isAnomalyMoving)
         {
             if (huntNodesQueue.Count != 0)
@@ -147,12 +143,27 @@ public class AnomalyDirector : MonoBehaviour
             jumpScareCamHolder.SetActive(true);
         }
     }
+    public void PinPointSound()
+    {
+        if (anomaly.playerWasHeard)
+        {
+            anomaly.TargetDestination = playerTransform.position;
+            anomaly.playerWasHeard = false;
+        }
+
+        if (currentState == DirectorState.Hunt && anomaly.playerWasHeard)
+        {
+            Debug.Log("Player heard in hunt state");
+            huntNodesQueue.Clear();
+            huntNodesQueue.Enqueue(playerTransform.position);
+        }
+    }
 
 
 
 
-    /* Getter/Setters */
-    public DirectorState CurrentDirectorState
+/* Getter/Setters */
+public DirectorState CurrentDirectorState
     {
         get { return currentState; }
         set { currentState = value; }
