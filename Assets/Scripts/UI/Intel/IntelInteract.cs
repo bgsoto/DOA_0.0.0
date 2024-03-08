@@ -34,4 +34,5 @@ public class IntelInteract : MonoBehaviour, IInteractable
     public ItemData ItemData { get { return itemData; } set { itemData = value; } }
     public bool Pickable { get { return pickable; } set { pickable = value; } }
     public string ActionText { get { return actionText; } set { actionText = value; } }
+    public bool itemOutline { get { return itemOutline; } set { itemOutline = value; } }
 }
