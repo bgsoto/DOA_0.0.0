@@ -68425,8 +68425,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   starterAssetsInputs: {fileID: 1713027868}
-  isCourchWalking: 0
-  footsteps: 0
   footStepSoundRadius: 2
 --- !u!1 &1717254010
 GameObject:
