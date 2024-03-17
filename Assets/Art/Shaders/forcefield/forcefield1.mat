@@ -21,8 +21,7 @@ Material:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: forcefield1
-  m_Shader: {fileID: -6465566751694194690, guid: 78ab61a2b835a6440be2cd00d3ae2400,
-    type: 3}
+  m_Shader: {fileID: -6465566751694194690, guid: 78ab61a2b835a6440be2cd00d3ae2400, type: 3}
   m_Parent: {fileID: 0}
   m_ModifiedSerializedProperties: 0
   m_ValidKeywords: []
@@ -53,10 +52,10 @@ Material:
     m_Floats:
     - _QueueControl: 0
     - _QueueOffset: 0
-    - _flickerSpeed1: 4.9
+    - _flickerSpeed1: 0.83
     - _flickerSpeed2: 9.4
     - _lineAmount: 41.97
-    - _lineOpacity: 0.31
+    - _lineOpacity: 0.683
     - _lineSize: 0.14
     - _lineSpeed: -0.34
     - _noiseSpeed: 0.04
