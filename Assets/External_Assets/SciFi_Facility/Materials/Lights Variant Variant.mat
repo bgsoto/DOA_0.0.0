@@ -41,15 +41,14 @@ Material:
     - _DstBlend: 0
     - _GlossMapScale: 0.719
     - _Mode: 0
-    - _Smoothness: 0.719
     - _SmoothnessTextureChannel: 0
     - _SrcBlend: 1
     - _ZWrite: 1
     m_Colors:
-    - _Color: {r: 1, g: 1, b: 1, a: 1}
+    - _Color: {r: 0.3301887, g: 0.3301887, b: 0.3301887, a: 1}
     - _EmissionColor: {r: 0.47138664, g: 0.8382657, b: 0.9339623, a: 1}
   m_BuildTextureStacks: []
---- !u!114 &4934708983721555449
+--- !u!114 &1642655812277838873
 MonoBehaviour:
   m_ObjectHideFlags: 11
   m_CorrespondingSourceObject: {fileID: 0}
