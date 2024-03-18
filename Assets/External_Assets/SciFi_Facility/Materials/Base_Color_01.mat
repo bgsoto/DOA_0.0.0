@@ -132,7 +132,7 @@ Material:
     - _BaseNormalStrength: 0.4
     - _BaseRoughness: 0.5
     - _BaseSmoothnes: 1
-    - _BaseSmoothness: 0.95
+    - _BaseSmoothness: 0
     - _BumpScale: 1
     - _Cutoff: 0.5
     - _DetailCavityStrength: 0
