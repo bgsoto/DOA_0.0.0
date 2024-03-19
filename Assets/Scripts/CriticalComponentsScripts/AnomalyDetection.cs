@@ -7,12 +7,13 @@ public class AnomalyDetection : MonoBehaviour
     [SerializeField] private float distanceToContain;
     [SerializeField] private int sceneToLoad;
     [SerializeField] private ParticleSystem containParticles;
-
+    [SerializeField] private GameObject detectorShield;
     private Transform targetObjectTransform;
 
     private bool isDetected = false;
     private bool isTrapOn = false;
     private bool particlesOn = false;
+    private bool shieldisOn = false;
 
     private void OnEnable()
     {
@@ -69,11 +70,14 @@ public class AnomalyDetection : MonoBehaviour
         if (isTrapOn && particlesOn == false)
         {
             containParticles.Play();
-            particlesOn = true;
+            particlesOn = true;   
+            detectorShield.SetActive(true);
+            
         }
     }
 
-    public void EnableTrap(bool value) { isTrapOn = value; }
+    public void EnableTrap(bool value) {
+        isTrapOn = value; }
 
     /* Loads specified scene */
     private void ResetScene() { SceneManager.LoadSceneAsync(sceneToLoad); }
