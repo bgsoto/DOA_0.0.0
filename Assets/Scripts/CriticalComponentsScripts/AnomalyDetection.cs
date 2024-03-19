@@ -13,7 +13,7 @@ public class AnomalyDetection : MonoBehaviour
     private bool isDetected = false;
     private bool isTrapOn = false;
     private bool particlesOn = false;
-    private bool shieldisOn = false;
+   // private bool shieldisOn = false;
 
     private void OnEnable()
     {
