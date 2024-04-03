@@ -1,80 +1,218 @@
 fileFormatVersion: 2
 guid: 032716ede672fae42b2bb628bf21e9bf
-timeCreated: 1516265471
-licenseType: Store
 ModelImporter:
-  serializedVersion: 22
-  fileIDToRecycleName:
-    100000: //RootNode
-    100002: Plane.122
-    100004: Plane.123
-    100006: Plane.124
-    100008: Plane.125
-    100010: Plane.126
-    100012: Plane.120
-    100014: Plane.121
-    100016: Plane.127
-    100018: Cube.125
-    100020: Plane.563
-    100022: Plane.564
-    100024: Plane.566
-    100026: Plane.567
-    400000: //RootNode
-    400002: Plane.122
-    400004: Plane.123
-    400006: Plane.124
-    400008: Plane.125
-    400010: Plane.126
-    400012: Plane.120
-    400014: Plane.121
-    400016: Plane.127
-    400018: Cube.125
-    400020: Plane.563
-    400022: Plane.564
-    400024: Plane.566
-    400026: Plane.567
-    2300000: //RootNode
-    2300002: Plane.122
-    2300004: Plane.123
-    2300006: Plane.124
-    2300008: Plane.125
-    2300010: Plane.126
-    2300012: Plane.120
-    2300014: Plane.121
-    2300016: Plane.127
-    2300018: Cube.125
-    2300020: Plane.563
-    2300022: Plane.564
-    2300024: Plane.566
-    2300026: Plane.567
-    3300000: //RootNode
-    3300002: Plane.122
-    3300004: Plane.123
-    3300006: Plane.124
-    3300008: Plane.125
-    3300010: Plane.126
-    3300012: Plane.120
-    3300014: Plane.121
-    3300016: Plane.127
-    3300018: Cube.125
-    3300020: Plane.563
-    3300022: Plane.564
-    3300024: Plane.566
-    3300026: Plane.567
-    4300000: Plane.119
-    4300002: Plane.124
-    4300004: Plane.123
-    4300006: Plane.122
-    4300008: Plane.125
-    4300010: Plane.126
-    4300012: Plane.121
-    4300014: Plane.120
-    4300016: Plane.127
-    4300018: Cube.125
-    4300020: Plane.567
-    4300022: Plane.566
-    4300024: Plane.564
-    4300026: Plane.563
+  serializedVersion: 22200
+  internalIDToNameTable:
+  - first:
+      1: 100000
+    second: //RootNode
+  - first:
+      1: 100002
+    second: Plane.122
+  - first:
+      1: 100004
+    second: Plane.123
+  - first:
+      1: 100006
+    second: Plane.124
+  - first:
+      1: 100008
+    second: Plane.125
+  - first:
+      1: 100010
+    second: Plane.126
+  - first:
+      1: 100012
+    second: Plane.120
+  - first:
+      1: 100014
+    second: Plane.121
+  - first:
+      1: 100016
+    second: Plane.127
+  - first:
+      1: 100018
+    second: Cube.125
+  - first:
+      1: 100020
+    second: Plane.563
+  - first:
+      1: 100022
+    second: Plane.564
+  - first:
+      1: 100024
+    second: Plane.566
+  - first:
+      1: 100026
+    second: Plane.567
+  - first:
+      4: 400000
+    second: //RootNode
+  - first:
+      4: 400002
+    second: Plane.122
+  - first:
+      4: 400004
+    second: Plane.123
+  - first:
+      4: 400006
+    second: Plane.124
+  - first:
+      4: 400008
+    second: Plane.125
+  - first:
+      4: 400010
+    second: Plane.126
+  - first:
+      4: 400012
+    second: Plane.120
+  - first:
+      4: 400014
+    second: Plane.121
+  - first:
+      4: 400016
+    second: Plane.127
+  - first:
+      4: 400018
+    second: Cube.125
+  - first:
+      4: 400020
+    second: Plane.563
+  - first:
+      4: 400022
+    second: Plane.564
+  - first:
+      4: 400024
+    second: Plane.566
+  - first:
+      4: 400026
+    second: Plane.567
+  - first:
+      23: 2300000
+    second: //RootNode
+  - first:
+      23: 2300002
+    second: Plane.122
+  - first:
+      23: 2300004
+    second: Plane.123
+  - first:
+      23: 2300006
+    second: Plane.124
+  - first:
+      23: 2300008
+    second: Plane.125
+  - first:
+      23: 2300010
+    second: Plane.126
+  - first:
+      23: 2300012
+    second: Plane.120
+  - first:
+      23: 2300014
+    second: Plane.121
+  - first:
+      23: 2300016
+    second: Plane.127
+  - first:
+      23: 2300018
+    second: Cube.125
+  - first:
+      23: 2300020
+    second: Plane.563
+  - first:
+      23: 2300022
+    second: Plane.564
+  - first:
+      23: 2300024
+    second: Plane.566
+  - first:
+      23: 2300026
+    second: Plane.567
+  - first:
+      33: 3300000
+    second: //RootNode
+  - first:
+      33: 3300002
+    second: Plane.122
+  - first:
+      33: 3300004
+    second: Plane.123
+  - first:
+      33: 3300006
+    second: Plane.124
+  - first:
+      33: 3300008
+    second: Plane.125
+  - first:
+      33: 3300010
+    second: Plane.126
+  - first:
+      33: 3300012
+    second: Plane.120
+  - first:
+      33: 3300014
+    second: Plane.121
+  - first:
+      33: 3300016
+    second: Plane.127
+  - first:
+      33: 3300018
+    second: Cube.125
+  - first:
+      33: 3300020
+    second: Plane.563
+  - first:
+      33: 3300022
+    second: Plane.564
+  - first:
+      33: 3300024
+    second: Plane.566
+  - first:
+      33: 3300026
+    second: Plane.567
+  - first:
+      43: 4300000
+    second: Plane.119
+  - first:
+      43: 4300002
+    second: Plane.124
+  - first:
+      43: 4300004
+    second: Plane.123
+  - first:
+      43: 4300006
+    second: Plane.122
+  - first:
+      43: 4300008
+    second: Plane.125
+  - first:
+      43: 4300010
+    second: Plane.126
+  - first:
+      43: 4300012
+    second: Plane.121
+  - first:
+      43: 4300014
+    second: Plane.120
+  - first:
+      43: 4300016
+    second: Plane.127
+  - first:
+      43: 4300018
+    second: Cube.125
+  - first:
+      43: 4300020
+    second: Plane.567
+  - first:
+      43: 4300022
+    second: Plane.566
+  - first:
+      43: 4300024
+    second: Plane.564
+  - first:
+      43: 4300026
+    second: Plane.563
   externalObjects:
   - first:
       type: UnityEngine:Material
@@ -97,7 +235,7 @@ ModelImporter:
       name: __TrimsDetails
     second: {fileID: 2100000, guid: c739b23251e904172a34afc6fa419d6b, type: 2}
   materials:
-    importMaterials: 0
+    materialImportMode: 0
     materialName: 0
     materialSearch: 1
     materialLocation: 0
@@ -106,6 +244,7 @@ ModelImporter:
     bakeSimulation: 0
     resampleCurves: 1
     optimizeGameObjects: 0
+    removeConstantScaleCurves: 0
     motionNodeName: 
     rigImportErrors: 
     rigImportWarnings: 
@@ -114,6 +253,7 @@ ModelImporter:
     animationRetargetingWarnings: 
     animationDoRetargetingWarnings: 0
     importAnimatedCustomProperties: 0
+    importConstraints: 0
     animationCompression: 1
     animationRotationError: 0.5
     animationPositionError: 0.5
@@ -128,30 +268,49 @@ ModelImporter:
     globalScale: 1
     meshCompression: 0
     addColliders: 0
+    useSRGBMaterialColor: 1
+    sortHierarchyByName: 1
+    importPhysicalCameras: 0
     importVisibility: 1
     importBlendShapes: 1
     importCameras: 1
     importLights: 1
+    nodeNameCollisionStrategy: 0
+    fileIdsGeneration: 1
     swapUVChannels: 0
-    generateSecondaryUV: 0
+    generateSecondaryUV: 1
     useFileUnits: 1
-    optimizeMeshForGPU: 1
     keepQuads: 0
     weldVertices: 1
+    bakeAxisConversion: 0
+    preserveHierarchy: 0
+    skinWeightsMode: 0
+    maxBonesPerVertex: 4
+    minBoneWeight: 0.001
+    optimizeBones: 1
+    meshOptimizationFlags: -1
+    indexFormat: 0
     secondaryUVAngleDistortion: 8
     secondaryUVAreaDistortion: 15.000001
     secondaryUVHardAngle: 88
+    secondaryUVMarginMethod: 0
+    secondaryUVMinLightmapResolution: 40
+    secondaryUVMinObjectScale: 1
     secondaryUVPackMargin: 4
     useFileScale: 1
+    strictVertexDataChecks: 0
   tangentSpace:
     normalSmoothAngle: 60
     normalImportMode: 1
     tangentImportMode: 3
-    normalCalculationMode: 2
+    normalCalculationMode: 4
+    legacyComputeAllNormalsFromSmoothingGroupsWhenMeshHasBlendShapes: 1
+    blendShapeNormalImportMode: 1
+    normalSmoothingSource: 0
+  referencedClips: []
   importAnimation: 1
-  copyAvatar: 0
   humanDescription:
-    serializedVersion: 2
+    serializedVersion: 3
     human: []
     skeleton: []
     armTwist: 0.5
@@ -161,14 +320,19 @@ ModelImporter:
     armStretch: 0.05
     legStretch: 0.05
     feetSpacing: 0
+    globalScale: 1
     rootMotionBoneName: 
-    rootMotionBoneRotation: {x: 0, y: 0, z: 0, w: 1}
     hasTranslationDoF: 0
     hasExtraRoot: 0
     skeletonHasParents: 1
   lastHumanDescriptionAvatarSource: {instanceID: 0}
+  autoGenerateAvatarMappingIfUnspecified: 1
   animationType: 0
   humanoidOversampling: 1
+  avatarSetup: 0
+  addHumanoidExtraRootOnlyWhenUsingAvatar: 0
+  importBlendShapeDeformPercent: 0
+  remapMaterialsIfMaterialImportModeIsNone: 1
   additionalBone: 0
   userData: 
   assetBundleName: 

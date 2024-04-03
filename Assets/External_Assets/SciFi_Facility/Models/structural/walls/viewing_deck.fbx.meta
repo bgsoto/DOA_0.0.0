@@ -1,134 +1,386 @@
 fileFormatVersion: 2
 guid: ffb87211eee30ac46a708c4ae5cd3534
 ModelImporter:
-  serializedVersion: 22
-  fileIDToRecycleName:
-    100000: //RootNode
-    100002: Cube.384
-    100004: Cube.385
-    100006: Cube.386
-    100008: Cube.387
-    100010: Cube.388
-    100012: Cube.389
-    100014: Cube.390
-    100016: Cube.391
-    100018: Cube.392
-    100020: Cube.402
-    100022: Cube.403
-    100024: Cube.393
-    100026: Cube.395
-    100028: Cube.396
-    100030: Cube.400
-    100032: Cube.401
-    100034: Cube.405
-    100036: Cube.406
-    100038: Cube.407
-    100040: Cube.408
-    100042: Cube.409
-    100044: Cube.410
-    100046: Cube.411
-    100048: Cube.412
-    400000: //RootNode
-    400002: Cube.384
-    400004: Cube.385
-    400006: Cube.386
-    400008: Cube.387
-    400010: Cube.388
-    400012: Cube.389
-    400014: Cube.390
-    400016: Cube.391
-    400018: Cube.392
-    400020: Cube.402
-    400022: Cube.403
-    400024: Cube.393
-    400026: Cube.395
-    400028: Cube.396
-    400030: Cube.400
-    400032: Cube.401
-    400034: Cube.405
-    400036: Cube.406
-    400038: Cube.407
-    400040: Cube.408
-    400042: Cube.409
-    400044: Cube.410
-    400046: Cube.411
-    400048: Cube.412
-    2300000: //RootNode
-    2300002: Cube.384
-    2300004: Cube.385
-    2300006: Cube.386
-    2300008: Cube.387
-    2300010: Cube.388
-    2300012: Cube.389
-    2300014: Cube.390
-    2300016: Cube.391
-    2300018: Cube.392
-    2300020: Cube.402
-    2300022: Cube.403
-    2300024: Cube.393
-    2300026: Cube.395
-    2300028: Cube.396
-    2300030: Cube.400
-    2300032: Cube.401
-    2300034: Cube.405
-    2300036: Cube.406
-    2300038: Cube.407
-    2300040: Cube.408
-    2300042: Cube.409
-    2300044: Cube.410
-    2300046: Cube.411
-    2300048: Cube.412
-    3300000: //RootNode
-    3300002: Cube.384
-    3300004: Cube.385
-    3300006: Cube.386
-    3300008: Cube.387
-    3300010: Cube.388
-    3300012: Cube.389
-    3300014: Cube.390
-    3300016: Cube.391
-    3300018: Cube.392
-    3300020: Cube.402
-    3300022: Cube.403
-    3300024: Cube.393
-    3300026: Cube.395
-    3300028: Cube.396
-    3300030: Cube.400
-    3300032: Cube.401
-    3300034: Cube.405
-    3300036: Cube.406
-    3300038: Cube.407
-    3300040: Cube.408
-    3300042: Cube.409
-    3300044: Cube.410
-    3300046: Cube.411
-    3300048: Cube.412
-    4300000: Cube.383
-    4300002: Cube.384
-    4300004: Cube.385
-    4300006: Cube.386
-    4300008: Cube.387
-    4300010: Cube.388
-    4300012: Cube.390
-    4300014: Cube.389
-    4300016: Cube.391
-    4300018: Cube.392
-    4300020: Cube.402
-    4300022: Cube.403
-    4300024: Cube.405
-    4300026: Cube.401
-    4300028: Cube.400
-    4300030: Cube.396
-    4300032: Cube.395
-    4300034: Cube.393
-    4300036: Cube.407
-    4300038: Cube.406
-    4300040: Cube.411
-    4300042: Cube.410
-    4300044: Cube.409
-    4300046: Cube.408
-    4300048: Cube.412
-    2186277476908879412: ImportLogs
+  serializedVersion: 22200
+  internalIDToNameTable:
+  - first:
+      1: 100000
+    second: //RootNode
+  - first:
+      1: 100002
+    second: Cube.384
+  - first:
+      1: 100004
+    second: Cube.385
+  - first:
+      1: 100006
+    second: Cube.386
+  - first:
+      1: 100008
+    second: Cube.387
+  - first:
+      1: 100010
+    second: Cube.388
+  - first:
+      1: 100012
+    second: Cube.389
+  - first:
+      1: 100014
+    second: Cube.390
+  - first:
+      1: 100016
+    second: Cube.391
+  - first:
+      1: 100018
+    second: Cube.392
+  - first:
+      1: 100020
+    second: Cube.402
+  - first:
+      1: 100022
+    second: Cube.403
+  - first:
+      1: 100024
+    second: Cube.393
+  - first:
+      1: 100026
+    second: Cube.395
+  - first:
+      1: 100028
+    second: Cube.396
+  - first:
+      1: 100030
+    second: Cube.400
+  - first:
+      1: 100032
+    second: Cube.401
+  - first:
+      1: 100034
+    second: Cube.405
+  - first:
+      1: 100036
+    second: Cube.406
+  - first:
+      1: 100038
+    second: Cube.407
+  - first:
+      1: 100040
+    second: Cube.408
+  - first:
+      1: 100042
+    second: Cube.409
+  - first:
+      1: 100044
+    second: Cube.410
+  - first:
+      1: 100046
+    second: Cube.411
+  - first:
+      1: 100048
+    second: Cube.412
+  - first:
+      4: 400000
+    second: //RootNode
+  - first:
+      4: 400002
+    second: Cube.384
+  - first:
+      4: 400004
+    second: Cube.385
+  - first:
+      4: 400006
+    second: Cube.386
+  - first:
+      4: 400008
+    second: Cube.387
+  - first:
+      4: 400010
+    second: Cube.388
+  - first:
+      4: 400012
+    second: Cube.389
+  - first:
+      4: 400014
+    second: Cube.390
+  - first:
+      4: 400016
+    second: Cube.391
+  - first:
+      4: 400018
+    second: Cube.392
+  - first:
+      4: 400020
+    second: Cube.402
+  - first:
+      4: 400022
+    second: Cube.403
+  - first:
+      4: 400024
+    second: Cube.393
+  - first:
+      4: 400026
+    second: Cube.395
+  - first:
+      4: 400028
+    second: Cube.396
+  - first:
+      4: 400030
+    second: Cube.400
+  - first:
+      4: 400032
+    second: Cube.401
+  - first:
+      4: 400034
+    second: Cube.405
+  - first:
+      4: 400036
+    second: Cube.406
+  - first:
+      4: 400038
+    second: Cube.407
+  - first:
+      4: 400040
+    second: Cube.408
+  - first:
+      4: 400042
+    second: Cube.409
+  - first:
+      4: 400044
+    second: Cube.410
+  - first:
+      4: 400046
+    second: Cube.411
+  - first:
+      4: 400048
+    second: Cube.412
+  - first:
+      23: 2300000
+    second: //RootNode
+  - first:
+      23: 2300002
+    second: Cube.384
+  - first:
+      23: 2300004
+    second: Cube.385
+  - first:
+      23: 2300006
+    second: Cube.386
+  - first:
+      23: 2300008
+    second: Cube.387
+  - first:
+      23: 2300010
+    second: Cube.388
+  - first:
+      23: 2300012
+    second: Cube.389
+  - first:
+      23: 2300014
+    second: Cube.390
+  - first:
+      23: 2300016
+    second: Cube.391
+  - first:
+      23: 2300018
+    second: Cube.392
+  - first:
+      23: 2300020
+    second: Cube.402
+  - first:
+      23: 2300022
+    second: Cube.403
+  - first:
+      23: 2300024
+    second: Cube.393
+  - first:
+      23: 2300026
+    second: Cube.395
+  - first:
+      23: 2300028
+    second: Cube.396
+  - first:
+      23: 2300030
+    second: Cube.400
+  - first:
+      23: 2300032
+    second: Cube.401
+  - first:
+      23: 2300034
+    second: Cube.405
+  - first:
+      23: 2300036
+    second: Cube.406
+  - first:
+      23: 2300038
+    second: Cube.407
+  - first:
+      23: 2300040
+    second: Cube.408
+  - first:
+      23: 2300042
+    second: Cube.409
+  - first:
+      23: 2300044
+    second: Cube.410
+  - first:
+      23: 2300046
+    second: Cube.411
+  - first:
+      23: 2300048
+    second: Cube.412
+  - first:
+      33: 3300000
+    second: //RootNode
+  - first:
+      33: 3300002
+    second: Cube.384
+  - first:
+      33: 3300004
+    second: Cube.385
+  - first:
+      33: 3300006
+    second: Cube.386
+  - first:
+      33: 3300008
+    second: Cube.387
+  - first:
+      33: 3300010
+    second: Cube.388
+  - first:
+      33: 3300012
+    second: Cube.389
+  - first:
+      33: 3300014
+    second: Cube.390
+  - first:
+      33: 3300016
+    second: Cube.391
+  - first:
+      33: 3300018
+    second: Cube.392
+  - first:
+      33: 3300020
+    second: Cube.402
+  - first:
+      33: 3300022
+    second: Cube.403
+  - first:
+      33: 3300024
+    second: Cube.393
+  - first:
+      33: 3300026
+    second: Cube.395
+  - first:
+      33: 3300028
+    second: Cube.396
+  - first:
+      33: 3300030
+    second: Cube.400
+  - first:
+      33: 3300032
+    second: Cube.401
+  - first:
+      33: 3300034
+    second: Cube.405
+  - first:
+      33: 3300036
+    second: Cube.406
+  - first:
+      33: 3300038
+    second: Cube.407
+  - first:
+      33: 3300040
+    second: Cube.408
+  - first:
+      33: 3300042
+    second: Cube.409
+  - first:
+      33: 3300044
+    second: Cube.410
+  - first:
+      33: 3300046
+    second: Cube.411
+  - first:
+      33: 3300048
+    second: Cube.412
+  - first:
+      43: 4300000
+    second: Cube.383
+  - first:
+      43: 4300002
+    second: Cube.384
+  - first:
+      43: 4300004
+    second: Cube.385
+  - first:
+      43: 4300006
+    second: Cube.386
+  - first:
+      43: 4300008
+    second: Cube.387
+  - first:
+      43: 4300010
+    second: Cube.388
+  - first:
+      43: 4300012
+    second: Cube.390
+  - first:
+      43: 4300014
+    second: Cube.389
+  - first:
+      43: 4300016
+    second: Cube.391
+  - first:
+      43: 4300018
+    second: Cube.392
+  - first:
+      43: 4300020
+    second: Cube.402
+  - first:
+      43: 4300022
+    second: Cube.403
+  - first:
+      43: 4300024
+    second: Cube.405
+  - first:
+      43: 4300026
+    second: Cube.401
+  - first:
+      43: 4300028
+    second: Cube.400
+  - first:
+      43: 4300030
+    second: Cube.396
+  - first:
+      43: 4300032
+    second: Cube.395
+  - first:
+      43: 4300034
+    second: Cube.393
+  - first:
+      43: 4300036
+    second: Cube.407
+  - first:
+      43: 4300038
+    second: Cube.406
+  - first:
+      43: 4300040
+    second: Cube.411
+  - first:
+      43: 4300042
+    second: Cube.410
+  - first:
+      43: 4300044
+    second: Cube.409
+  - first:
+      43: 4300046
+    second: Cube.408
+  - first:
+      43: 4300048
+    second: Cube.412
+  - first:
+      41386430: 2186277476908879412
+    second: ImportLogs
   externalObjects:
   - first:
       type: UnityEngine:Material
@@ -151,7 +403,7 @@ ModelImporter:
       name: __TrimsDetails
     second: {fileID: 2100000, guid: c739b23251e904172a34afc6fa419d6b, type: 2}
   materials:
-    importMaterials: 0
+    materialImportMode: 0
     materialName: 0
     materialSearch: 1
     materialLocation: 0
@@ -160,6 +412,7 @@ ModelImporter:
     bakeSimulation: 0
     resampleCurves: 1
     optimizeGameObjects: 0
+    removeConstantScaleCurves: 0
     motionNodeName: 
     rigImportErrors: 
     rigImportWarnings: 
@@ -183,32 +436,49 @@ ModelImporter:
     globalScale: 1
     meshCompression: 0
     addColliders: 0
+    useSRGBMaterialColor: 1
+    sortHierarchyByName: 1
+    importPhysicalCameras: 0
     importVisibility: 1
     importBlendShapes: 1
     importCameras: 1
     importLights: 1
+    nodeNameCollisionStrategy: 0
+    fileIdsGeneration: 1
     swapUVChannels: 0
     generateSecondaryUV: 1
     useFileUnits: 1
-    optimizeMeshForGPU: 1
     keepQuads: 0
     weldVertices: 1
+    bakeAxisConversion: 0
     preserveHierarchy: 0
+    skinWeightsMode: 0
+    maxBonesPerVertex: 4
+    minBoneWeight: 0.001
+    optimizeBones: 1
+    meshOptimizationFlags: -1
     indexFormat: 0
     secondaryUVAngleDistortion: 8
     secondaryUVAreaDistortion: 15.000001
     secondaryUVHardAngle: 88
+    secondaryUVMarginMethod: 0
+    secondaryUVMinLightmapResolution: 40
+    secondaryUVMinObjectScale: 1
     secondaryUVPackMargin: 4
     useFileScale: 1
+    strictVertexDataChecks: 0
   tangentSpace:
     normalSmoothAngle: 50
     normalImportMode: 1
     tangentImportMode: 3
     normalCalculationMode: 2
+    legacyComputeAllNormalsFromSmoothingGroupsWhenMeshHasBlendShapes: 1
+    blendShapeNormalImportMode: 1
+    normalSmoothingSource: 0
+  referencedClips: []
   importAnimation: 1
-  copyAvatar: 0
   humanDescription:
-    serializedVersion: 2
+    serializedVersion: 3
     human: []
     skeleton: []
     armTwist: 0.5
@@ -218,14 +488,19 @@ ModelImporter:
     armStretch: 0.05
     legStretch: 0.05
     feetSpacing: 0
+    globalScale: 1
     rootMotionBoneName: 
-    rootMotionBoneRotation: {x: 0, y: 0, z: 0, w: 1}
     hasTranslationDoF: 0
     hasExtraRoot: 0
     skeletonHasParents: 1
   lastHumanDescriptionAvatarSource: {instanceID: 0}
+  autoGenerateAvatarMappingIfUnspecified: 1
   animationType: 0
   humanoidOversampling: 1
+  avatarSetup: 0
+  addHumanoidExtraRootOnlyWhenUsingAvatar: 0
+  importBlendShapeDeformPercent: 0
+  remapMaterialsIfMaterialImportModeIsNone: 1
   additionalBone: 0
   userData: 
   assetBundleName: 

@@ -1,34 +1,80 @@
 fileFormatVersion: 2
 guid: c98ac98b0efbbb24dbe25949dd292173
-timeCreated: 1516251468
-licenseType: Store
 ModelImporter:
-  serializedVersion: 22
-  fileIDToRecycleName:
-    100000: //RootNode
-    100002: Cylinder.036
-    100004: Plane.112
-    100006: Cylinder.046
-    100008: Plane.197
-    400000: //RootNode
-    400002: Cylinder.036
-    400004: Plane.112
-    400006: Cylinder.046
-    400008: Plane.197
-    2300000: //RootNode
-    2300002: Cylinder.036
-    2300004: Plane.112
-    2300006: Cylinder.046
-    2300008: Plane.197
-    3300000: //RootNode
-    3300002: Cylinder.036
-    3300004: Plane.112
-    3300006: Cylinder.046
-    3300008: Plane.197
-    4300000: Plane.112
-    4300002: Cylinder.036
-    4300004: Plane.197
-    4300006: Cylinder.046
+  serializedVersion: 22200
+  internalIDToNameTable:
+  - first:
+      1: 100000
+    second: //RootNode
+  - first:
+      1: 100002
+    second: Cylinder.036
+  - first:
+      1: 100004
+    second: Plane.112
+  - first:
+      1: 100006
+    second: Cylinder.046
+  - first:
+      1: 100008
+    second: Plane.197
+  - first:
+      4: 400000
+    second: //RootNode
+  - first:
+      4: 400002
+    second: Cylinder.036
+  - first:
+      4: 400004
+    second: Plane.112
+  - first:
+      4: 400006
+    second: Cylinder.046
+  - first:
+      4: 400008
+    second: Plane.197
+  - first:
+      23: 2300000
+    second: //RootNode
+  - first:
+      23: 2300002
+    second: Cylinder.036
+  - first:
+      23: 2300004
+    second: Plane.112
+  - first:
+      23: 2300006
+    second: Cylinder.046
+  - first:
+      23: 2300008
+    second: Plane.197
+  - first:
+      33: 3300000
+    second: //RootNode
+  - first:
+      33: 3300002
+    second: Cylinder.036
+  - first:
+      33: 3300004
+    second: Plane.112
+  - first:
+      33: 3300006
+    second: Cylinder.046
+  - first:
+      33: 3300008
+    second: Plane.197
+  - first:
+      43: 4300000
+    second: Plane.112
+  - first:
+      43: 4300002
+    second: Cylinder.036
+  - first:
+      43: 4300004
+    second: Plane.197
+  - first:
+      43: 4300006
+    second: Cylinder.046
   externalObjects:
   - first:
       type: UnityEngine:Material
@@ -41,7 +87,7 @@ ModelImporter:
       name: __TrimsDetails
     second: {fileID: 2100000, guid: c739b23251e904172a34afc6fa419d6b, type: 2}
   materials:
-    importMaterials: 0
+    materialImportMode: 0
     materialName: 0
     materialSearch: 1
     materialLocation: 0
@@ -50,6 +96,7 @@ ModelImporter:
     bakeSimulation: 0
     resampleCurves: 1
     optimizeGameObjects: 0
+    removeConstantScaleCurves: 0
     motionNodeName: 
     rigImportErrors: 
     rigImportWarnings: 
@@ -58,6 +105,7 @@ ModelImporter:
     animationRetargetingWarnings: 
     animationDoRetargetingWarnings: 0
     importAnimatedCustomProperties: 0
+    importConstraints: 0
     animationCompression: 1
     animationRotationError: 0.5
     animationPositionError: 0.5
@@ -72,30 +120,49 @@ ModelImporter:
     globalScale: 1
     meshCompression: 0
     addColliders: 0
+    useSRGBMaterialColor: 1
+    sortHierarchyByName: 1
+    importPhysicalCameras: 0
     importVisibility: 0
     importBlendShapes: 0
     importCameras: 0
     importLights: 0
+    nodeNameCollisionStrategy: 0
+    fileIdsGeneration: 1
     swapUVChannels: 0
-    generateSecondaryUV: 0
+    generateSecondaryUV: 1
     useFileUnits: 1
-    optimizeMeshForGPU: 1
     keepQuads: 0
     weldVertices: 1
+    bakeAxisConversion: 0
+    preserveHierarchy: 0
+    skinWeightsMode: 0
+    maxBonesPerVertex: 4
+    minBoneWeight: 0.001
+    optimizeBones: 1
+    meshOptimizationFlags: -1
+    indexFormat: 0
     secondaryUVAngleDistortion: 8
     secondaryUVAreaDistortion: 15.000001
     secondaryUVHardAngle: 88
+    secondaryUVMarginMethod: 0
+    secondaryUVMinLightmapResolution: 40
+    secondaryUVMinObjectScale: 1
     secondaryUVPackMargin: 4
     useFileScale: 0
+    strictVertexDataChecks: 0
   tangentSpace:
     normalSmoothAngle: 60
     normalImportMode: 1
     tangentImportMode: 3
     normalCalculationMode: 2
+    legacyComputeAllNormalsFromSmoothingGroupsWhenMeshHasBlendShapes: 1
+    blendShapeNormalImportMode: 1
+    normalSmoothingSource: 0
+  referencedClips: []
   importAnimation: 0
-  copyAvatar: 0
   humanDescription:
-    serializedVersion: 2
+    serializedVersion: 3
     human: []
     skeleton: []
     armTwist: 0.5
@@ -105,14 +172,19 @@ ModelImporter:
     armStretch: 0.05
     legStretch: 0.05
     feetSpacing: 0
+    globalScale: 1
     rootMotionBoneName: 
-    rootMotionBoneRotation: {x: 0, y: 0, z: 0, w: 1}
     hasTranslationDoF: 0
     hasExtraRoot: 0
     skeletonHasParents: 1
   lastHumanDescriptionAvatarSource: {instanceID: 0}
+  autoGenerateAvatarMappingIfUnspecified: 1
   animationType: 0
   humanoidOversampling: 1
+  avatarSetup: 0
+  addHumanoidExtraRootOnlyWhenUsingAvatar: 0
+  importBlendShapeDeformPercent: 0
+  remapMaterialsIfMaterialImportModeIsNone: 1
   additionalBone: 0
   userData: 
   assetBundleName: 

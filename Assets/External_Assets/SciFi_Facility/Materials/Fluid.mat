@@ -84,7 +84,7 @@ Material:
     m_Ints: []
     m_Floats:
     - _AlphaCutoff: 0.5
-    - _BaseEmission: 0.15
+    - _BaseEmission: 0.028
     - _BumpScale: 1
     - _ChromaticAberration: 0.019
     - _Cutoff: 0.5

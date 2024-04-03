@@ -1,93 +1,263 @@
 fileFormatVersion: 2
 guid: 2de07c0fa3e512c4b96a868c9db0d342
 ModelImporter:
-  serializedVersion: 22
-  fileIDToRecycleName:
-    100000: //RootNode
-    100002: Plane.474
-    100004: Plane.475
-    100006: Plane.476
-    100008: Plane.477
-    100010: Plane.479
-    100012: Plane.481
-    100014: Plane.482
-    100016: Plane.483
-    100018: Plane.484
-    100020: Plane.485
-    100022: Plane.486
-    100024: Plane.487
-    100026: Cube.382
-    100028: Plane.488
-    100030: Plane.489
-    100032: Plane.490
-    400000: //RootNode
-    400002: Plane.474
-    400004: Plane.475
-    400006: Plane.476
-    400008: Plane.477
-    400010: Plane.479
-    400012: Plane.481
-    400014: Plane.482
-    400016: Plane.483
-    400018: Plane.484
-    400020: Plane.485
-    400022: Plane.486
-    400024: Plane.487
-    400026: Cube.382
-    400028: Plane.488
-    400030: Plane.489
-    400032: Plane.490
-    2300000: //RootNode
-    2300002: Plane.474
-    2300004: Plane.475
-    2300006: Plane.476
-    2300008: Plane.477
-    2300010: Plane.479
-    2300012: Plane.481
-    2300014: Plane.482
-    2300016: Plane.483
-    2300018: Plane.484
-    2300020: Plane.485
-    2300022: Plane.486
-    2300024: Plane.487
-    2300026: Cube.382
-    2300028: Plane.488
-    2300030: Plane.489
-    2300032: Plane.490
-    3300000: //RootNode
-    3300002: Plane.474
-    3300004: Plane.475
-    3300006: Plane.476
-    3300008: Plane.477
-    3300010: Plane.479
-    3300012: Plane.481
-    3300014: Plane.482
-    3300016: Plane.483
-    3300018: Plane.484
-    3300020: Plane.485
-    3300022: Plane.486
-    3300024: Plane.487
-    3300026: Cube.382
-    3300028: Plane.488
-    3300030: Plane.489
-    3300032: Plane.490
-    4300000: Plane.474
-    4300002: Plane.475
-    4300004: Plane.476
-    4300006: Plane.477
-    4300008: Plane.479
-    4300010: Plane.485
-    4300012: Plane.484
-    4300014: Plane.483
-    4300016: Plane.482
-    4300018: Plane.481
-    4300020: Plane.486
-    4300022: Plane.487
-    4300024: Cube.382
-    4300026: Plane.490
-    4300028: Plane.489
-    4300030: Plane.488
-    2186277476908879412: ImportLogs
+  serializedVersion: 22200
+  internalIDToNameTable:
+  - first:
+      1: 100000
+    second: //RootNode
+  - first:
+      1: 100002
+    second: Plane.474
+  - first:
+      1: 100004
+    second: Plane.475
+  - first:
+      1: 100006
+    second: Plane.476
+  - first:
+      1: 100008
+    second: Plane.477
+  - first:
+      1: 100010
+    second: Plane.479
+  - first:
+      1: 100012
+    second: Plane.481
+  - first:
+      1: 100014
+    second: Plane.482
+  - first:
+      1: 100016
+    second: Plane.483
+  - first:
+      1: 100018
+    second: Plane.484
+  - first:
+      1: 100020
+    second: Plane.485
+  - first:
+      1: 100022
+    second: Plane.486
+  - first:
+      1: 100024
+    second: Plane.487
+  - first:
+      1: 100026
+    second: Cube.382
+  - first:
+      1: 100028
+    second: Plane.488
+  - first:
+      1: 100030
+    second: Plane.489
+  - first:
+      1: 100032
+    second: Plane.490
+  - first:
+      4: 400000
+    second: //RootNode
+  - first:
+      4: 400002
+    second: Plane.474
+  - first:
+      4: 400004
+    second: Plane.475
+  - first:
+      4: 400006
+    second: Plane.476
+  - first:
+      4: 400008
+    second: Plane.477
+  - first:
+      4: 400010
+    second: Plane.479
+  - first:
+      4: 400012
+    second: Plane.481
+  - first:
+      4: 400014
+    second: Plane.482
+  - first:
+      4: 400016
+    second: Plane.483
+  - first:
+      4: 400018
+    second: Plane.484
+  - first:
+      4: 400020
+    second: Plane.485
+  - first:
+      4: 400022
+    second: Plane.486
+  - first:
+      4: 400024
+    second: Plane.487
+  - first:
+      4: 400026
+    second: Cube.382
+  - first:
+      4: 400028
+    second: Plane.488
+  - first:
+      4: 400030
+    second: Plane.489
+  - first:
+      4: 400032
+    second: Plane.490
+  - first:
+      23: 2300000
+    second: //RootNode
+  - first:
+      23: 2300002
+    second: Plane.474
+  - first:
+      23: 2300004
+    second: Plane.475
+  - first:
+      23: 2300006
+    second: Plane.476
+  - first:
+      23: 2300008
+    second: Plane.477
+  - first:
+      23: 2300010
+    second: Plane.479
+  - first:
+      23: 2300012
+    second: Plane.481
+  - first:
+      23: 2300014
+    second: Plane.482
+  - first:
+      23: 2300016
+    second: Plane.483
+  - first:
+      23: 2300018
+    second: Plane.484
+  - first:
+      23: 2300020
+    second: Plane.485
+  - first:
+      23: 2300022
+    second: Plane.486
+  - first:
+      23: 2300024
+    second: Plane.487
+  - first:
+      23: 2300026
+    second: Cube.382
+  - first:
+      23: 2300028
+    second: Plane.488
+  - first:
+      23: 2300030
+    second: Plane.489
+  - first:
+      23: 2300032
+    second: Plane.490
+  - first:
+      33: 3300000
+    second: //RootNode
+  - first:
+      33: 3300002
+    second: Plane.474
+  - first:
+      33: 3300004
+    second: Plane.475
+  - first:
+      33: 3300006
+    second: Plane.476
+  - first:
+      33: 3300008
+    second: Plane.477
+  - first:
+      33: 3300010
+    second: Plane.479
+  - first:
+      33: 3300012
+    second: Plane.481
+  - first:
+      33: 3300014
+    second: Plane.482
+  - first:
+      33: 3300016
+    second: Plane.483
+  - first:
+      33: 3300018
+    second: Plane.484
+  - first:
+      33: 3300020
+    second: Plane.485
+  - first:
+      33: 3300022
+    second: Plane.486
+  - first:
+      33: 3300024
+    second: Plane.487
+  - first:
+      33: 3300026
+    second: Cube.382
+  - first:
+      33: 3300028
+    second: Plane.488
+  - first:
+      33: 3300030
+    second: Plane.489
+  - first:
+      33: 3300032
+    second: Plane.490
+  - first:
+      43: 4300000
+    second: Plane.474
+  - first:
+      43: 4300002
+    second: Plane.475
+  - first:
+      43: 4300004
+    second: Plane.476
+  - first:
+      43: 4300006
+    second: Plane.477
+  - first:
+      43: 4300008
+    second: Plane.479
+  - first:
+      43: 4300010
+    second: Plane.485
+  - first:
+      43: 4300012
+    second: Plane.484
+  - first:
+      43: 4300014
+    second: Plane.483
+  - first:
+      43: 4300016
+    second: Plane.482
+  - first:
+      43: 4300018
+    second: Plane.481
+  - first:
+      43: 4300020
+    second: Plane.486
+  - first:
+      43: 4300022
+    second: Plane.487
+  - first:
+      43: 4300024
+    second: Cube.382
+  - first:
+      43: 4300026
+    second: Plane.490
+  - first:
+      43: 4300028
+    second: Plane.489
+  - first:
+      43: 4300030
+    second: Plane.488
+  - first:
+      41386430: 2186277476908879412
+    second: ImportLogs
   externalObjects:
   - first:
       type: UnityEngine:Material
@@ -105,7 +275,7 @@ ModelImporter:
       name: __TrimsDetails
     second: {fileID: 2100000, guid: c739b23251e904172a34afc6fa419d6b, type: 2}
   materials:
-    importMaterials: 0
+    materialImportMode: 0
     materialName: 0
     materialSearch: 1
     materialLocation: 0
@@ -114,6 +284,7 @@ ModelImporter:
     bakeSimulation: 0
     resampleCurves: 1
     optimizeGameObjects: 0
+    removeConstantScaleCurves: 0
     motionNodeName: 
     rigImportErrors: 
     rigImportWarnings: 
@@ -137,32 +308,49 @@ ModelImporter:
     globalScale: 1
     meshCompression: 0
     addColliders: 0
+    useSRGBMaterialColor: 1
+    sortHierarchyByName: 1
+    importPhysicalCameras: 0
     importVisibility: 1
     importBlendShapes: 1
     importCameras: 1
     importLights: 1
+    nodeNameCollisionStrategy: 0
+    fileIdsGeneration: 1
     swapUVChannels: 0
-    generateSecondaryUV: 0
+    generateSecondaryUV: 1
     useFileUnits: 1
-    optimizeMeshForGPU: 1
     keepQuads: 0
     weldVertices: 1
+    bakeAxisConversion: 0
     preserveHierarchy: 0
+    skinWeightsMode: 0
+    maxBonesPerVertex: 4
+    minBoneWeight: 0.001
+    optimizeBones: 1
+    meshOptimizationFlags: -1
     indexFormat: 0
     secondaryUVAngleDistortion: 8
     secondaryUVAreaDistortion: 15.000001
     secondaryUVHardAngle: 88
+    secondaryUVMarginMethod: 0
+    secondaryUVMinLightmapResolution: 40
+    secondaryUVMinObjectScale: 1
     secondaryUVPackMargin: 4
     useFileScale: 1
+    strictVertexDataChecks: 0
   tangentSpace:
     normalSmoothAngle: 60
     normalImportMode: 1
     tangentImportMode: 3
     normalCalculationMode: 2
+    legacyComputeAllNormalsFromSmoothingGroupsWhenMeshHasBlendShapes: 1
+    blendShapeNormalImportMode: 1
+    normalSmoothingSource: 0
+  referencedClips: []
   importAnimation: 1
-  copyAvatar: 0
   humanDescription:
-    serializedVersion: 2
+    serializedVersion: 3
     human: []
     skeleton: []
     armTwist: 0.5
@@ -172,14 +360,19 @@ ModelImporter:
     armStretch: 0.05
     legStretch: 0.05
     feetSpacing: 0
+    globalScale: 1
     rootMotionBoneName: 
-    rootMotionBoneRotation: {x: 0, y: 0, z: 0, w: 1}
     hasTranslationDoF: 0
     hasExtraRoot: 0
     skeletonHasParents: 1
   lastHumanDescriptionAvatarSource: {instanceID: 0}
+  autoGenerateAvatarMappingIfUnspecified: 1
   animationType: 0
   humanoidOversampling: 1
+  avatarSetup: 0
+  addHumanoidExtraRootOnlyWhenUsingAvatar: 0
+  importBlendShapeDeformPercent: 0
+  remapMaterialsIfMaterialImportModeIsNone: 1
   additionalBone: 0
   userData: 
   assetBundleName: 

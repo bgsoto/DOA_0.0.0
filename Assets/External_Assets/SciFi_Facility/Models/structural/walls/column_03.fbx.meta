@@ -1,79 +1,215 @@
 fileFormatVersion: 2
 guid: 8c6a4a0bc620f1c48a0da0f47e0f437a
-timeCreated: 1519613057
-licenseType: Store
 ModelImporter:
-  serializedVersion: 22
-  fileIDToRecycleName:
-    100000: //RootNode
-    100002: Cube.338
-    100004: Cube.339
-    100006: Cube.340
-    100008: Cube.341
-    100010: Cube.343
-    100012: Cube.344
-    100014: Cube.342
-    100016: Cube.345
-    100018: Cube.346
-    100020: Cube.347
-    100022: Cube.348
-    100024: Cube.349
-    100026: Cube.350
-    400000: //RootNode
-    400002: Cube.338
-    400004: Cube.339
-    400006: Cube.340
-    400008: Cube.341
-    400010: Cube.343
-    400012: Cube.344
-    400014: Cube.342
-    400016: Cube.345
-    400018: Cube.346
-    400020: Cube.347
-    400022: Cube.348
-    400024: Cube.349
-    400026: Cube.350
-    2300000: Cube.338
-    2300002: Cube.339
-    2300004: //RootNode
-    2300006: Cube.340
-    2300008: Cube.341
-    2300010: Cube.343
-    2300012: Cube.344
-    2300014: Cube.342
-    2300016: Cube.345
-    2300018: Cube.346
-    2300020: Cube.347
-    2300022: Cube.348
-    2300024: Cube.349
-    2300026: Cube.350
-    3300000: Cube.338
-    3300002: Cube.339
-    3300004: //RootNode
-    3300006: Cube.340
-    3300008: Cube.341
-    3300010: Cube.343
-    3300012: Cube.344
-    3300014: Cube.342
-    3300016: Cube.345
-    3300018: Cube.346
-    3300020: Cube.347
-    3300022: Cube.348
-    3300024: Cube.349
-    3300026: Cube.350
-    4300000: Cube.339
-    4300002: Cube.338
-    4300004: Cube.340
-    4300006: Cube.341
-    4300008: Cube.343
-    4300010: Cube.344
-    4300012: Cube.342
-    4300014: Cube.345
-    4300016: Cube.346
-    4300018: Cube.347
-    4300020: Cube.350
-    4300022: Cube.349
-    4300024: Cube.348
+  serializedVersion: 22200
+  internalIDToNameTable:
+  - first:
+      1: 100000
+    second: //RootNode
+  - first:
+      1: 100002
+    second: Cube.338
+  - first:
+      1: 100004
+    second: Cube.339
+  - first:
+      1: 100006
+    second: Cube.340
+  - first:
+      1: 100008
+    second: Cube.341
+  - first:
+      1: 100010
+    second: Cube.343
+  - first:
+      1: 100012
+    second: Cube.344
+  - first:
+      1: 100014
+    second: Cube.342
+  - first:
+      1: 100016
+    second: Cube.345
+  - first:
+      1: 100018
+    second: Cube.346
+  - first:
+      1: 100020
+    second: Cube.347
+  - first:
+      1: 100022
+    second: Cube.348
+  - first:
+      1: 100024
+    second: Cube.349
+  - first:
+      1: 100026
+    second: Cube.350
+  - first:
+      4: 400000
+    second: //RootNode
+  - first:
+      4: 400002
+    second: Cube.338
+  - first:
+      4: 400004
+    second: Cube.339
+  - first:
+      4: 400006
+    second: Cube.340
+  - first:
+      4: 400008
+    second: Cube.341
+  - first:
+      4: 400010
+    second: Cube.343
+  - first:
+      4: 400012
+    second: Cube.344
+  - first:
+      4: 400014
+    second: Cube.342
+  - first:
+      4: 400016
+    second: Cube.345
+  - first:
+      4: 400018
+    second: Cube.346
+  - first:
+      4: 400020
+    second: Cube.347
+  - first:
+      4: 400022
+    second: Cube.348
+  - first:
+      4: 400024
+    second: Cube.349
+  - first:
+      4: 400026
+    second: Cube.350
+  - first:
+      23: 2300000
+    second: Cube.338
+  - first:
+      23: 2300002
+    second: Cube.339
+  - first:
+      23: 2300004
+    second: //RootNode
+  - first:
+      23: 2300006
+    second: Cube.340
+  - first:
+      23: 2300008
+    second: Cube.341
+  - first:
+      23: 2300010
+    second: Cube.343
+  - first:
+      23: 2300012
+    second: Cube.344
+  - first:
+      23: 2300014
+    second: Cube.342
+  - first:
+      23: 2300016
+    second: Cube.345
+  - first:
+      23: 2300018
+    second: Cube.346
+  - first:
+      23: 2300020
+    second: Cube.347
+  - first:
+      23: 2300022
+    second: Cube.348
+  - first:
+      23: 2300024
+    second: Cube.349
+  - first:
+      23: 2300026
+    second: Cube.350
+  - first:
+      33: 3300000
+    second: Cube.338
+  - first:
+      33: 3300002
+    second: Cube.339
+  - first:
+      33: 3300004
+    second: //RootNode
+  - first:
+      33: 3300006
+    second: Cube.340
+  - first:
+      33: 3300008
+    second: Cube.341
+  - first:
+      33: 3300010
+    second: Cube.343
+  - first:
+      33: 3300012
+    second: Cube.344
+  - first:
+      33: 3300014
+    second: Cube.342
+  - first:
+      33: 3300016
+    second: Cube.345
+  - first:
+      33: 3300018
+    second: Cube.346
+  - first:
+      33: 3300020
+    second: Cube.347
+  - first:
+      33: 3300022
+    second: Cube.348
+  - first:
+      33: 3300024
+    second: Cube.349
+  - first:
+      33: 3300026
+    second: Cube.350
+  - first:
+      43: 4300000
+    second: Cube.339
+  - first:
+      43: 4300002
+    second: Cube.338
+  - first:
+      43: 4300004
+    second: Cube.340
+  - first:
+      43: 4300006
+    second: Cube.341
+  - first:
+      43: 4300008
+    second: Cube.343
+  - first:
+      43: 4300010
+    second: Cube.344
+  - first:
+      43: 4300012
+    second: Cube.342
+  - first:
+      43: 4300014
+    second: Cube.345
+  - first:
+      43: 4300016
+    second: Cube.346
+  - first:
+      43: 4300018
+    second: Cube.347
+  - first:
+      43: 4300020
+    second: Cube.350
+  - first:
+      43: 4300022
+    second: Cube.349
+  - first:
+      43: 4300024
+    second: Cube.348
   externalObjects:
   - first:
       type: UnityEngine:Material
@@ -91,7 +227,7 @@ ModelImporter:
       name: __TrimsDetails
     second: {fileID: 2100000, guid: c739b23251e904172a34afc6fa419d6b, type: 2}
   materials:
-    importMaterials: 0
+    materialImportMode: 0
     materialName: 0
     materialSearch: 1
     materialLocation: 0
@@ -100,6 +236,7 @@ ModelImporter:
     bakeSimulation: 0
     resampleCurves: 1
     optimizeGameObjects: 0
+    removeConstantScaleCurves: 0
     motionNodeName: 
     rigImportErrors: 
     rigImportWarnings: 
@@ -108,6 +245,7 @@ ModelImporter:
     animationRetargetingWarnings: 
     animationDoRetargetingWarnings: 0
     importAnimatedCustomProperties: 0
+    importConstraints: 0
     animationCompression: 1
     animationRotationError: 0.5
     animationPositionError: 0.5
@@ -122,30 +260,49 @@ ModelImporter:
     globalScale: 1
     meshCompression: 0
     addColliders: 0
+    useSRGBMaterialColor: 1
+    sortHierarchyByName: 1
+    importPhysicalCameras: 0
     importVisibility: 1
     importBlendShapes: 1
     importCameras: 1
     importLights: 1
+    nodeNameCollisionStrategy: 0
+    fileIdsGeneration: 1
     swapUVChannels: 0
-    generateSecondaryUV: 0
+    generateSecondaryUV: 1
     useFileUnits: 1
-    optimizeMeshForGPU: 1
     keepQuads: 0
     weldVertices: 1
+    bakeAxisConversion: 0
+    preserveHierarchy: 0
+    skinWeightsMode: 0
+    maxBonesPerVertex: 4
+    minBoneWeight: 0.001
+    optimizeBones: 1
+    meshOptimizationFlags: -1
+    indexFormat: 0
     secondaryUVAngleDistortion: 8
     secondaryUVAreaDistortion: 15.000001
     secondaryUVHardAngle: 88
+    secondaryUVMarginMethod: 0
+    secondaryUVMinLightmapResolution: 40
+    secondaryUVMinObjectScale: 1
     secondaryUVPackMargin: 4
     useFileScale: 1
+    strictVertexDataChecks: 0
   tangentSpace:
     normalSmoothAngle: 55
     normalImportMode: 1
     tangentImportMode: 3
-    normalCalculationMode: 2
+    normalCalculationMode: 4
+    legacyComputeAllNormalsFromSmoothingGroupsWhenMeshHasBlendShapes: 1
+    blendShapeNormalImportMode: 1
+    normalSmoothingSource: 0
+  referencedClips: []
   importAnimation: 1
-  copyAvatar: 0
   humanDescription:
-    serializedVersion: 2
+    serializedVersion: 3
     human: []
     skeleton: []
     armTwist: 0.5
@@ -155,14 +312,19 @@ ModelImporter:
     armStretch: 0.05
     legStretch: 0.05
     feetSpacing: 0
+    globalScale: 1
     rootMotionBoneName: 
-    rootMotionBoneRotation: {x: 0, y: 0, z: 0, w: 1}
     hasTranslationDoF: 0
     hasExtraRoot: 0
     skeletonHasParents: 1
   lastHumanDescriptionAvatarSource: {instanceID: 0}
+  autoGenerateAvatarMappingIfUnspecified: 1
   animationType: 0
   humanoidOversampling: 1
+  avatarSetup: 0
+  addHumanoidExtraRootOnlyWhenUsingAvatar: 0
+  importBlendShapeDeformPercent: 0
+  remapMaterialsIfMaterialImportModeIsNone: 1
   additionalBone: 0
   userData: 
   assetBundleName: 
